@@ -1,4 +1,4 @@
 ---
 layout: home
-image: /assets/img/og.png
+image: /assets/img/events/og.png
 ---
