@@ -1,0 +1,20 @@
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  padding-left: max(var(--page-padding), env(safe-area-inset-left));
+  padding-right: max(var(--page-padding), env(safe-area-inset-right));
+
+  > button {
+    border-radius: 0.5rem;
+    // height: 1.875rem;
+    padding-block: 0.348rem;
+    background-color: var(--color-background);
+    white-space: nowrap;
+    border: none;
+    padding-inline: 0.5rem;
+    user-select: none;
+    font-size: var(--font-size-small);
+  }
+}

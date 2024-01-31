@@ -1,13 +1,20 @@
 ---
 ---
 
-@import "reset";
-@import "global";
+@layer reset, defaults, components;
 
-// #region Components
+@layer reset {
+  @import "reset";
+}
 
-// #endregion
+@layer defaults {
+  @import "global";
+  @import "layout";
+}
 
-// #region Pages
-@import "landing";
-// #endregion
+@layer components {
+  @import "event-list";
+  @import "event-list-filter";
+  @import "globe";
+  @import "header";
+}

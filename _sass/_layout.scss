@@ -1,0 +1,23 @@
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  max-height: 100vh;
+  max-height: 100dvh;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-areas: "header" "main";
+
+  header {
+    grid-area: header;
+  }
+
+  main {
+    grid-area: main;
+    overflow: hidden auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--page-padding);
+    padding-bottom: max(var(--page-padding), env(safe-area-inset-bottom));
+  }
+}
