@@ -1,0 +1,14 @@
+.globe {
+  // background-color: pink;
+  padding-left: max(var(--page-padding), env(safe-area-inset-left));
+  padding-right: max(var(--page-padding), env(safe-area-inset-right));
+  height: calc(50vh - var(--header-height));
+  height: calc(50dvh - var(--header-height));
+
+  > canvas {
+    // border: 1px solid red;
+    height: 100%;
+    aspect-ratio: 1/1;
+    margin-inline: auto;
+  }
+}

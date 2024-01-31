@@ -1,0 +1,11 @@
+header {
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  > svg {
+    fill: var(--color-text);
+    height: 75%;
+  }
+}
