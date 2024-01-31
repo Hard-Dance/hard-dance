@@ -31,7 +31,7 @@ permalink: /:categories/:title:output_ext
 markdown: kramdown
 plugins:
   - jekyll-feed
-  # - jekyll-seo-tag
+  - jekyll-seo-tag
   # - jekyll-sitemap
 
 sass:
