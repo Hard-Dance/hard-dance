@@ -22,7 +22,7 @@ title: Hard.Dance
 email: me@JonGraft.design
 description: "Coming soon"
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://www.hard.dance" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://hard-dance.netlify.app" # the base hostname & protocol for your site, e.g. http://example.com
 lang: "en-US"
 
 permalink: /:categories/:title:output_ext
