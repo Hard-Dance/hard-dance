@@ -1,1 +1,48 @@
-{{ page.title | slugify }}
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+  <head>
+    {% include head.html %}
+    <script src="https://unpkg.com/color.js@1.2.0/dist/color.js"></script>
+  </head>
+  <body>
+    {% include header.html %}
+
+    <main>
+      <div
+        class="banner event-banner"
+        style="background-image: url({{ page.image }});"
+      >
+        <h1>{{ page.title }}</h1>
+      </div>
+
+      <iframe
+        width="520"
+        height="400"
+        frameborder="0"
+        scrolling="no"
+        marginheight="0"
+        marginwidth="0"
+        id="gmap_canvas"
+        src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q={{ page.location | uri_escape }}+()&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+      ></iframe>
+    </main>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Select all images
+        const images = document.querySelectorAll(".event-list-item-image");
+
+        images.forEach((img) => {
+          const index = img.dataset.index; // Get the index from the data attribute
+          colorjs.average(img.src).then((color) => {
+            const rgbColor = `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
+            const listItem = document.getElementById(
+              `event-list-item-${index}`
+            );
+            listItem.style.backgroundColor = rgbColor; // Apply the color to the <li>
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

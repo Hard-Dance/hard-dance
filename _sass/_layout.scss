@@ -1,23 +1,96 @@
 body {
   min-height: 100vh;
   min-height: 100dvh;
-  max-height: 100vh;
-  max-height: 100dvh;
-  overflow: hidden;
   display: grid;
-  grid-template-rows: auto 1fr;
-  grid-template-areas: "header" "main";
+  row-gap: 1rem;
+  padding-bottom: max(var(--page-padding), env(safe-area-inset-bottom));
+}
 
-  header {
-    grid-area: header;
+header {
+  grid-area: header;
+}
+
+.banner {
+  padding-left: max(var(--page-padding), env(safe-area-inset-left));
+  padding-right: max(var(--page-padding), env(safe-area-inset-right));
+  height: calc(50vh - var(--header-height));
+  height: calc(50dvh - var(--header-height));
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-logo {
+  fill: var(--color-text);
+  width: 42.5%;
+}
+
+.globe-container {
+  width: 15%;
+  aspect-ratio: 1/1;
+  position: relative;
+
+  > canvas {
+    border-radius: 50%;
+    width: 120%;
+    aspect-ratio: 1/1;
+    contain: layout paint size;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
-  main {
-    grid-area: main;
-    overflow: hidden auto;
-    display: flex;
-    flex-direction: column;
-    gap: var(--page-padding);
-    padding-bottom: max(var(--page-padding), env(safe-area-inset-bottom));
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
   }
+
+  // Shadow
+  &::before {
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, black 30%, transparent 70%);
+  }
+
+  // Pulse
+  &::after {
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    @media (prefers-reduced-motion: no-preference) {
+      animation: pulse 1.6s infinite;
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 0 white;
+        }
+
+        70% {
+          box-shadow: 0 0 0 6vh rgba(0, 0, 0, 0);
+        }
+
+        100% {
+          box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+        }
+      }
+    }
+  }
+}
+
+.page-title {
+  // background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: max(var(--page-padding), env(safe-area-inset-left));
+  padding-right: max(var(--page-padding), env(safe-area-inset-right));
 }
