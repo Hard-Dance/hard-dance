@@ -3,8 +3,6 @@ nav {
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.5rem;
-  padding-left: max(var(--page-padding), env(safe-area-inset-left));
-  padding-right: max(var(--page-padding), env(safe-area-inset-right));
 
   > button {
     border-radius: 0.5rem;

@@ -5,12 +5,10 @@
     <script src="https://unpkg.com/color.js@1.2.0/dist/color.js"></script>
   </head>
   <body>
-    {% include header.html %}
+    <div class="banner">{% include globe.html %}</div>
 
-    <main>
-      <div class="banner">{% include globe.html %}</div>
-
-      <h1 style="margin-inline: auto">Events</h1>
+    <div class="page-title">
+      <h1>Events</h1>
 
       <nav>
         <button>North America</button>
@@ -18,38 +16,39 @@
         <button>Europe</button>
         <button>Asia</button>
       </nav>
+    </div>
 
-      <ol class="event-list">
-        {% assign sorted_posts = site.posts | sort: 'datestart' %} {% for post
-        in sorted_posts %}
-        <li class="event-list-item" id="event-list-item-{{ forloop.index }}">
-          <img
-            class="event-list-item-image"
-            src="{{ post.image }}"
-            alt="{{ post.title | smartify }} image"
-            data-index="{{ forloop.index }}"
-            draggable="false"
-            loading="lazy"
-          />
+    <ol class="event-list">
+      {% assign sorted_posts = site.posts | sort: 'datestart' %} {% for post in
+      sorted_posts %}
+      <li class="event-list-item" id="event-list-item-{{ forloop.index }}">
+        <img
+          class="event-list-item-image"
+          src="{{ post.image }}"
+          alt="{{ post.title | smartify }} image"
+          data-index="{{ forloop.index }}"
+          draggable="false"
+          loading="lazy"
+        />
 
-          <div class="event-list-item-metadata">
-            <a class="event-list-item-metadata-title" href="{{ post.url }}"
-              >{{ post.title | smartify }}</a
-            >
-            <div class="event-list-item-metadata-date">
-              <time datetime="{{ post.datestart | date: '%Y-%m-%d' }}">
-                {{ post.datestart | date: "%b %d" }}
-              </time>
+        <div class="event-list-item-metadata">
+          <a class="event-list-item-metadata-title" href="{{ post.url }}"
+            >{{ post.title | smartify }}</a
+          >
+          <div class="event-list-item-metadata-date">
+            <time datetime="{{ post.datestart | date: '%Y-%m-%d' }}">
+              {{ post.datestart | date: "%b %d" }}
+            </time>
 
-              {% if post.dateend %} &nbsp;–&nbsp;
-              <time datetime="{{ post.dateend | date: '%Y-%m-%d' }}">
-                {{ post.dateend | date: "%b %d" }}
-              </time>
-              {% endif %}
-            </div>
-            <div class="event-list-item-metadata-location">
-              <!-- prettier-ignore -->
-              {% assign location_parts = post.location | split: ',' %}
+            {% if post.dateend %} &nbsp;–&nbsp;
+            <time datetime="{{ post.dateend | date: '%Y-%m-%d' }}">
+              {{ post.dateend | date: "%b %d" }}
+            </time>
+            {% endif %}
+          </div>
+          <div class="event-list-item-metadata-location">
+            <!-- prettier-ignore -->
+            {% assign location_parts = post.location | split: ',' %}
               {% assign country_part = location_parts | last | strip %}
               {% assign country = country_part %} 
 
@@ -69,12 +68,11 @@
               {% endcase %}
 
               {{ flag }}
-            </div>
           </div>
-        </li>
-        {% endfor %}
-      </ol>
-    </main>
+        </div>
+      </li>
+      {% endfor %}
+    </ol>
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {

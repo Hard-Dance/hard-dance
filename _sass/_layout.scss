@@ -1,29 +1,16 @@
 body {
   min-height: 100vh;
   min-height: 100dvh;
-  max-height: 100vh;
-  max-height: 100dvh;
-  overflow: hidden;
   display: grid;
-  grid-template-rows: auto 1fr;
-  grid-template-areas: "header" "main";
+  row-gap: 1rem;
+  padding-bottom: max(var(--page-padding), env(safe-area-inset-bottom));
 }
 
 header {
   grid-area: header;
 }
 
-main {
-  grid-area: main;
-  overflow: hidden auto;
-  display: grid;
-  row-gap: 1rem;
-  padding-bottom: max(var(--page-padding), env(safe-area-inset-bottom));
-}
-
 .banner {
-  // border: 5px solid purple;
-  // background-color: red;
   padding-left: max(var(--page-padding), env(safe-area-inset-left));
   padding-right: max(var(--page-padding), env(safe-area-inset-right));
   height: calc(50vh - var(--header-height));
@@ -37,7 +24,6 @@ main {
 .banner-logo {
   fill: var(--color-text);
   width: 42.5%;
-  // border: 1px solid red;
 }
 
 .globe-container {
@@ -47,7 +33,6 @@ main {
 
   > canvas {
     border-radius: 50%;
-    // background-color: red;
     width: 120%;
     aspect-ratio: 1/1;
     contain: layout paint size;
@@ -90,7 +75,7 @@ main {
         }
 
         70% {
-          box-shadow: 0 0 0 6rem rgba(0, 0, 0, 0);
+          box-shadow: 0 0 0 6vh rgba(0, 0, 0, 0);
         }
 
         100% {
@@ -99,4 +84,13 @@ main {
       }
     }
   }
+}
+
+.page-title {
+  // background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: max(var(--page-padding), env(safe-area-inset-left));
+  padding-right: max(var(--page-padding), env(safe-area-inset-right));
 }
