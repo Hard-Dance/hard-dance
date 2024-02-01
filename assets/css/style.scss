@@ -13,8 +13,8 @@
 }
 
 @layer components {
+  @import "event-banner";
   @import "event-list";
   @import "event-list-filter";
-  @import "globe";
   @import "header";
 }
