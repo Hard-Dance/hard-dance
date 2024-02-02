@@ -7,7 +7,12 @@ body {
 }
 
 header {
-  grid-area: header;
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+  height: var(--header-height);
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 2;
 }
 
 .banner {
@@ -15,82 +20,4 @@ header {
   padding-right: max(var(--page-padding), env(safe-area-inset-right));
   height: calc(50vh - var(--header-height));
   height: calc(50dvh - var(--header-height));
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.banner-logo {
-  fill: var(--color-text);
-  width: 42.5%;
-}
-
-.globe-container {
-  width: 15%;
-  aspect-ratio: 1/1;
-  position: relative;
-
-  > canvas {
-    border-radius: 50%;
-    width: 120%;
-    aspect-ratio: 1/1;
-    contain: layout paint size;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-  }
-
-  // Shadow
-  &::before {
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle at center, black 30%, transparent 70%);
-  }
-
-  // Pulse
-  &::after {
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-
-    @media (prefers-reduced-motion: no-preference) {
-      animation: pulse 1.6s infinite;
-    }
-    @media (prefers-reduced-motion: no-preference) {
-      @keyframes pulse {
-        0% {
-          box-shadow: 0 0 0 0 white;
-        }
-
-        70% {
-          box-shadow: 0 0 0 6vh rgba(0, 0, 0, 0);
-        }
-
-        100% {
-          box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-        }
-      }
-    }
-  }
-}
-
-.page-title {
-  // background-color: red;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-left: max(var(--page-padding), env(safe-area-inset-left));
-  padding-right: max(var(--page-padding), env(safe-area-inset-right));
 }

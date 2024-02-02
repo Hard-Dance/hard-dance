@@ -1,0 +1,17 @@
+<dialog id="info">
+  <div class="dialog-header">
+    <h1>About {{ site.title }}</h1>
+
+    <button
+      autofocus
+      onclick="document.getElementById('info').close()"
+      title="Close"
+    >
+      <svg alt="Close" loading="lazy" aria-hidden="true">
+        <use xlink:href="/assets/symbols.svg#close"></use>
+      </svg>
+      <span class="visually-hidden">Close</span>
+    </button>
+  </div>
+  <p>Who we are. How to contribute. Cori is a bitch.</p>
+</dialog>

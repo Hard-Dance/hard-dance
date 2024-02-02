@@ -5,17 +5,34 @@
     <script src="https://unpkg.com/color.js@1.2.0/dist/color.js"></script>
   </head>
   <body>
-    <div class="banner">{% include globe.html %}</div>
+    {% include header.html %}
+
+    <div class="banner" data-variant="events" id="top">
+      {% include banner-events.html %}
+    </div>
 
     <div class="page-title">
       <h1>Events</h1>
 
-      <nav>
-        <button>North America</button>
-        <button>South America</button>
-        <button>Europe</button>
-        <button>Asia</button>
-      </nav>
+      <div>
+        <label for="pet-select">Location</label>
+        <select name="pets" id="pet-select">
+          <option value="all" selected>All</option>
+          <option value="north-america">North America</option>
+          <option value="south-america">South America</option>
+          <option value="europe">Europe</option>
+          <option value="asia">Asia</option>
+        </select>
+
+        <label for="pet-select">Genre</label>
+        <select name="pets" id="pet-select">
+          <option value="all" selected>All</option>
+          <option value="north-america">Multigenre</option>
+          <option value="south-america">Hardstyle</option>
+          <option value="europe">Hardcore</option>
+          <option value="asia">Uptempo</option>
+        </select>
+      </div>
     </div>
 
     <ol class="event-list">
@@ -73,6 +90,8 @@
       </li>
       {% endfor %}
     </ol>
+
+    {% include footer.html %} {% include dialog.html %}
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {

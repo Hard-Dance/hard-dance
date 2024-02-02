@@ -26,6 +26,7 @@
   --color-background: rgb(var(--color-background-rgb));
   --color-background-backdrop: rgb(var(--color-background-backdrop-rgb));
   --color-background-hover: rgb(var(--color-background-hover-rgb));
+  --color-background-transparent-hover: rgba(var(--color-text-rgb), 0.1);
   --color-text: rgb(var(--color-text-rgb));
   --color-text-muted: rgb(var(--color-text-muted-rgb));
   --color-border: rgb(var(--color-border-rgb));
@@ -41,4 +42,8 @@ body {
   line-height: 1.5;
   color: var(--color-text);
   background-color: var(--color-background-backdrop);
+
+  @media (prefers-reduced-motion: no-preference) {
+    scroll-behavior: smooth; // TODO: Why isn't this working?
+  }
 }
