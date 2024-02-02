@@ -20,6 +20,7 @@ header {
   padding-right: max(var(--page-padding), env(safe-area-inset-right));
   height: calc(50vh - var(--header-height));
   height: calc(50dvh - var(--header-height));
+  min-height: 15rem;
 }
 
 .page-title {
