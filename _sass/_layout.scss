@@ -21,3 +21,12 @@ header {
   height: calc(50vh - var(--header-height));
   height: calc(50dvh - var(--header-height));
 }
+
+.page-title {
+  // background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: max(var(--page-padding), env(safe-area-inset-left));
+  padding-right: max(var(--page-padding), env(safe-area-inset-right));
+}
