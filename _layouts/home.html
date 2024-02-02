@@ -14,31 +14,69 @@
     <div class="page-title">
       <h1>Events</h1>
 
-      <div>
-        <label for="pet-select">Location</label>
-        <select name="pets" id="pet-select">
-          <option value="all" selected>All</option>
-          <option value="north-america">North America</option>
-          <option value="south-america">South America</option>
-          <option value="europe">Europe</option>
-          <option value="asia">Asia</option>
-        </select>
+      <div class="page-title-input-container">
+        <label for="location"
+          >Location
+          <select name="location" id="location">
+            <option value="all" selected>All</option>
+            <option value="north-america">North America</option>
+            <option value="south-america">South America</option>
+            <option value="europe">Europe</option>
+            <option value="asia">Asia</option>
+          </select>
+        </label>
 
-        <label for="pet-select">Genre</label>
-        <select name="pets" id="pet-select">
-          <option value="all" selected>All</option>
-          <option value="north-america">Multigenre</option>
-          <option value="south-america">Hardstyle</option>
-          <option value="europe">Hardcore</option>
-          <option value="asia">Uptempo</option>
-        </select>
+        <label for="type"
+          >Type
+          <select name="type" id="type" disabled>
+            <option value="all" selected>All</option>
+            <option value="festival">Festival</option>
+            <option value="arena">Arena</option>
+            <option value="club">Club</option>
+            <option value="underground">Underground</option>
+          </select>
+        </label>
+
+        <label for="genre"
+          >Genre
+          <select name="genre" id="genre" disabled>
+            <option value="all" selected>All</option>
+            <option value="multigenre">Multigenre</option>
+            <option value="hardstyle">Hardstyle</option>
+            <option value="hardcore">Hardcore</option>
+            <option value="uptempo">Uptempo</option>
+          </select>
+        </label>
       </div>
     </div>
 
-    <ol class="event-list">
+    <ol class="grid event-list">
       {% assign sorted_posts = site.posts | sort: 'datestart' %} {% for post in
       sorted_posts %}
-      <li class="event-list-item" id="event-list-item-{{ forloop.index }}">
+      <!-- prettier-ignore -->
+      {% assign location_parts = post.location | split: ',' %}
+      {% assign country_part = location_parts | last | strip %}
+      {% assign country = country_part %} 
+
+      {% case country %}
+        {% when 'USA' %}
+          {% assign flag = '🇺🇸' %}
+        {% when 'Canada' %}
+          {% assign flag = '🇨🇦' %}
+        {% when 'UK' %}
+          {% assign flag = '🇬🇧' %}
+        {% when 'Nederland' %}
+          {% assign flag = '🇳🇱' %}
+        {% when 'Belgium' %}
+          {% assign flag = '🇧🇪' %}
+        {%- else -%}
+          {% assign flag = '' %}
+      {% endcase %}
+      <li
+        class="event-list-item"
+        id="event-list-item-{{ forloop.index }}"
+        data-location="{{ country_part | downcase }}"
+      >
         <img
           class="event-list-item-image"
           src="{{ post.image }}"
@@ -63,51 +101,101 @@
             </time>
             {% endif %}
           </div>
-          <div class="event-list-item-metadata-location">
-            <!-- prettier-ignore -->
-            {% assign location_parts = post.location | split: ',' %}
-              {% assign country_part = location_parts | last | strip %}
-              {% assign country = country_part %} 
-
-              {% case country %}
-                {% when 'USA' %}
-                  {% assign flag = '🇺🇸' %}
-                {% when 'Canada' %}
-                  {% assign flag = '🇨🇦' %}
-                {% when 'UK' %}
-                  {% assign flag = '🇬🇧' %}
-                {% when 'Nederland' %}
-                  {% assign flag = '🇳🇱' %}
-                {% when 'Belgium' %}
-                  {% assign flag = '🇧🇪' %}
-                {%- else -%}
-                  {% assign flag = '' %}
-              {% endcase %}
-
-              {{ flag }}
-          </div>
+          <div class="event-list-item-metadata-location">{{ flag }}</div>
         </div>
       </li>
       {% endfor %}
     </ol>
+    <div class="empty-state" style="display: none">
+      <div class="empty-state-emoji">🔇</div>
+      <h2>No events found.</h2>
+      <p>
+        Do you know of an event that should be listed here?
+        <a href="mailto:{{ site.email }}">Reach out to us</a> or
+        <a href="#">consider adding it yourself</a>.
+      </p>
+    </div>
 
     {% include footer.html %} {% include dialog.html %}
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        // Select all images
         const images = document.querySelectorAll(".event-list-item-image");
 
         images.forEach((img) => {
-          const index = img.dataset.index; // Get the index from the data attribute
+          const index = img.dataset.index;
           colorjs.average(img.src).then((color) => {
             const rgbColor = `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
             const listItem = document.getElementById(
               `event-list-item-${index}`
             );
-            listItem.style.backgroundColor = rgbColor; // Apply the color to the <li>
+            listItem.style.backgroundColor = rgbColor;
           });
         });
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const locationSelect = document.getElementById("location");
+        const posts = document.querySelectorAll(".event-list-item");
+        const postList = document.querySelector(".event-list"); // Select the <ol>
+        const emptyStateDiv = document.querySelector(".empty-state"); // Select the empty state div
+
+        function checkForVisiblePosts() {
+          // Check if any posts are visible
+          const anyVisible = Array.from(posts).some(
+            (post) => post.style.display !== "none"
+          );
+          if (anyVisible) {
+            postList.style.display = ""; // Show the <ol> if there are visible posts
+            emptyStateDiv.style.display = "none"; // Hide the empty state div
+          } else {
+            postList.style.display = "none"; // Hide the <ol> if there are no visible posts
+            emptyStateDiv.style.display = "flex"; // Show the empty state div
+          }
+        }
+
+        locationSelect.addEventListener("change", function () {
+          const selectedLocation = this.value;
+
+          posts.forEach((post) => {
+            const postLocation = post
+              .getAttribute("data-location")
+              .toLowerCase();
+
+            // Decide whether to show or hide the post based on the selectedLocation
+            switch (selectedLocation) {
+              case "all":
+                post.style.display = "";
+                break;
+              case "north-america":
+                if (postLocation === "usa" || postLocation === "canada") {
+                  post.style.display = "";
+                } else {
+                  post.style.display = "none";
+                }
+                break;
+              case "europe":
+                if (
+                  postLocation === "nederland" ||
+                  postLocation === "belgium"
+                ) {
+                  post.style.display = "";
+                } else {
+                  post.style.display = "none";
+                }
+                break;
+              // ... include other cases as needed ...
+              default:
+                post.style.display = "none";
+            }
+          });
+
+          checkForVisiblePosts(); // Check if any posts are visible and update the display accordingly
+        });
+
+        checkForVisiblePosts(); // Run once on load to set the correct initial state
       });
     </script>
   </body>

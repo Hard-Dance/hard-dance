@@ -11,9 +11,11 @@ dialog {
   max-width: 100vw;
   max-width: 100dvw;
   border: none;
+  color: var(--color-text);
   overscroll-behavior: none;
   background-color: var(--color-background-backdrop);
   z-index: 3;
+  isolation: isolate;
   transform: scale(1);
   transition: opacity var(--duration) ease-out,
     transform var(--duration) ease-out;
@@ -27,8 +29,8 @@ dialog {
 }
 
 .dialog-header {
-  background-color: red !important;
-  padding-left: env(safe-area-inset-left);
+  z-index: 1;
+  padding-left: max(var(--page-padding), env(safe-area-inset-left));
   padding-right: env(safe-area-inset-right);
   display: flex;
   align-items: center;
@@ -36,37 +38,107 @@ dialog {
   height: var(--header-height);
   position: sticky;
   inset: 0 0 auto 0;
-  background-color: var(--color-background);
-  @supports (backdrop-filter: saturate(180%) blur(20px)) {
-    background-color: hsl(var(--color-background-hsl) / 0.8);
-    backdrop-filter: saturate(180%) blur(20px);
-  }
-  @media (forced-colors: active) {
-    background-color: var(--color-background);
-    backdrop-filter: none;
-  }
+  background-color: var(--color-background-backdrop);
 
-  svg {
-    width: 50%;
-    height: 50%;
-    fill: currentColor;
-    @media (forced-colors: active) {
-      fill: LinkText;
-    }
-  }
-
-  > button,
-  > a {
-    aspect-ratio: 1/1;
+  a,
+  button {
+    color: inherit;
     background-color: transparent;
     border: none;
+    height: 100%;
+    padding-inline: var(--page-padding);
     display: flex;
     align-items: center;
     justify-content: center;
-    outline-offset: calc(var(--border-width) * -2);
+    text-decoration: none;
+    font-weight: var(--font-weight-bold);
+    transition: background-color var(--duration) ease;
+    user-select: none;
+    outline-offset: calc(var(--border-width) * -1);
 
     &:hover {
-      background-color: var(--color-background-hover);
+      background-color: var(--color-background-transparent-hover);
+    }
+
+    &[aria-active="current"] {
+      box-shadow: inset 0 4px 0 currentColor;
     }
   }
+
+  svg {
+    fill: currentColor;
+    width: var(--icon-size);
+    height: var(--icon-size);
+  }
+}
+
+.dialog-body {
+  overflow-y: auto;
+  padding-left: max(var(--page-padding), env(safe-area-inset-left));
+  padding-right: max(var(--page-padding), env(safe-area-inset-right));
+  padding-top: var(--page-padding);
+  padding-bottom: calc(var(--page-padding) + env(safe-area-inset-bottom));
+}
+
+blockquote {
+  // font-family: "Kalam", cursive;
+  font-size: var(--font-size-large);
+  text-align: center;
+  position: relative;
+  margin-inline: auto;
+  text-wrap: balance;
+  width: min(
+    calc(60rem - var(--page-padding) * 2),
+    calc(100% - var(--page-padding) * 2)
+  );
+
+  p {
+    margin-bottom: 1.5rem;
+  }
+
+  &::before,
+  &::after {
+    position: absolute;
+    font-size: calc(var(--font-size-largest) * 2);
+    font-family: "Kalam", cursive;
+  }
+
+  &::before {
+    content: open-quote;
+    top: 0;
+    left: -1ch;
+  }
+  &::after {
+    content: "\201E";
+    bottom: 0;
+    right: -1ch;
+  }
+
+  ~ figcaption {
+    text-align: right;
+    font-family: "Kalam", cursive;
+    font-size: var(--font-size-larger);
+    text-wrap: balance;
+    margin-inline: auto;
+    width: min(
+      calc(60rem - var(--page-padding) * 2),
+      calc(100% - var(--page-padding) * 2)
+    );
+
+    > span {
+      font-weight: 700;
+    }
+
+    &::before {
+      content: "— ";
+    }
+  }
+}
+
+.handwritten {
+  font-size: var(--font-size-largest);
+  text-align: center;
+  font-weight: 700;
+  font-family: "Kalam", cursive;
+  text-wrap: balance;
 }

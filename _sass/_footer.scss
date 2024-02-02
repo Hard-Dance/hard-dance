@@ -6,6 +6,7 @@ footer {
   padding-left: max(var(--page-padding), env(safe-area-inset-left));
   padding-right: max(var(--page-padding), env(safe-area-inset-right));
   padding-bottom: env(safe-area-inset-bottom);
+  margin-top: auto;
   height: var(--header-height);
   color: var(--color-text-muted);
   font-size: var(--font-size-small);
