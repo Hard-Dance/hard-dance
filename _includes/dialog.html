@@ -1,0 +1,110 @@
+<dialog id="info">
+  <div class="dialog-header">
+    <h1>About {{ site.title }}</h1>
+
+    <button
+      autofocus
+      onclick="document.getElementById('info').close()"
+      title="Close"
+    >
+      <svg alt="Close" loading="lazy" aria-hidden="true">
+        <use xlink:href="/assets/symbols.svg#close"></use>
+      </svg>
+      <span class="visually-hidden">Close</span>
+    </button>
+  </div>
+
+  <div class="dialog-body">
+    <h2 class="handwritten">Welcome to our digital tribe!</h2>
+    <blockquote>
+      <p>
+        We are not just a platform; we're a vibrant community of hard dance
+        enthusiasts united by our passion for the rhythm, energy, and spirit of
+        the genre. Our journey began with a simple yet powerful vision: to
+        create a worldwide resource where hard dance lovers can discover, share,
+        and engage with events near and far.
+      </p>
+
+      <p>
+        Born out of genuine love and respect for the hard dance scene, our
+        platform is a testament to the strength and unity of our community. We
+        take immense pride in launching this platform — a place built by the
+        community, for the community. It's a space where the heart-pounding
+        beats meet the soulful connections of dancers and fans alike.
+      </p>
+
+      <p>
+        Our dedication goes beyond the dance floor. We're committed to fostering
+        a welcoming and inclusive environment where every member can express
+        themselves freely, share their experiences, and connect with fellow hard
+        dance lovers. This platform is your go-to destination for event
+        information, but it's also a place where memories are made, friendships
+        are forged, and the hard dance culture thrives.
+      </p>
+
+      <p>Welcome to the tribe – your digital home for all things hard dance!</p>
+    </blockquote>
+    <figcaption>Your <span>{{ site.title }}</span> crew</figcaption>
+
+    <h2>The crew</h2>
+    <ul class="grid admin-list">
+      {% for admin in site.admins %}
+      <li>
+        <img
+          src="/assets/img/admins/{{ admin.name | slugify }}.jpg"
+          alt="A photo of {{ admin.name }}"
+          draggable="false"
+        />
+        <div class="admin-list-body">
+          <h3>
+            {{ admin.name }}{% if admin.alias %} / {{ admin.alias }}{% endif %}
+          </h3>
+          <p>{{ admin.position }}</p>
+          <ul>
+            {% if admin.website %}
+            <li>
+              <a
+                href="{{ admin.website }}"
+                aria-label="Visit {{ admin.name }}'s website"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg alt="Website icon" aria-hidden="true">
+                  <use xlink:href="/assets/symbols.svg#website"></use>
+                </svg>
+              </a>
+            </li>
+            {% endif %}
+            <li>
+              <a
+                href="mailto:{{ admin.email }}"
+                aria-label="Email {{ admin.name }}"
+              >
+                <svg alt="Email icon" aria-hidden="true">
+                  <use xlink:href="/assets/symbols.svg#email"></use>
+                </svg>
+              </a>
+            </li>
+            {% for social in admin.socials %}
+            <li>
+              <a
+                href="{{ social.url }}"
+                aria-label="Follow {{ admin.name }} on {{ social.service }}"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg alt="{{ social.service }} icon" aria-hidden="true">
+                  <use
+                    xlink:href="/assets/symbols.svg#{{ social.service | slugify }}"
+                  ></use>
+                </svg>
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</dialog>

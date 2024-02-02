@@ -19,7 +19,7 @@
 # in the templates via {{ site.myvariable }}.
 
 title: Hard.Dance
-email: me@JonGraft.design
+email: info@hard.dance
 description: "Coming soon"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://hard-dance.netlify.app" # the base hostname & protocol for your site, e.g. http://example.com
@@ -58,3 +58,39 @@ incremental: true
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+admins:
+  - name: Eugene Berzin
+    alias: Treachery
+    position: Owner
+    email: eugene@hard.dance
+    website: https://djtreachery.com
+    socials:
+      - service: Facebook
+        url: https://www.facebook.com/djtreachery/
+      - service: Instagram
+        url: https://www.instagram.com/djtreachery/
+      - service: Discord
+        url: https://discordapp.com/users/djtreachery
+      - service: Spotify
+        url: https://open.spotify.com/artist/5b4RTDc2Q3bNHmv0L8ZPlj
+      - service: YouTube
+        url: https://www.youtube.com/channel/UCZFth4RG7KqOig5MAsmft3g
+      - service: Soundcloud
+        url: http://www.soundcloud.com/djtreachery
+      - service: Apple Music
+        url: https://music.apple.com/us/artist/treachery/300126894
+  - name: Jon Graft
+    alias: Johnny Hardstyle
+    position: Web designer & developer
+    email: me@jongraft.design
+    website: https://jongraft.design
+    socials:
+      - service: Facebook
+        url: https://www.facebook.com/FlyersPh9
+      - service: Twitter
+        url: https://www.twitter.com/JonGraftDesign
+      - service: GitHub
+        url: https://github.com/FlyersPh9
+      - service: Discord
+        url: https://discordapp.com/users/flyersph9

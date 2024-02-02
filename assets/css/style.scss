@@ -13,8 +13,10 @@
 }
 
 @layer components {
-  @import "event-banner";
+  @import "banner";
+  @import "dialog";
   @import "event-list";
   @import "event-list-filter";
+  @import "footer";
   @import "header";
 }

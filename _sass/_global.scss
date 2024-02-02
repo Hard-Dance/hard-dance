@@ -26,6 +26,7 @@
   --color-background: rgb(var(--color-background-rgb));
   --color-background-backdrop: rgb(var(--color-background-backdrop-rgb));
   --color-background-hover: rgb(var(--color-background-hover-rgb));
+  --color-background-transparent-hover: rgba(var(--color-text-rgb), 0.1);
   --color-text: rgb(var(--color-text-rgb));
   --color-text-muted: rgb(var(--color-text-muted-rgb));
   --color-border: rgb(var(--color-border-rgb));
@@ -33,7 +34,23 @@
   --color-accent: rgb(var(--color-accent-rgb));
   // #endregion Colors
 
+  --border-width: 2px;
+  --icon-size: 1.25rem;
   --header-height: 4rem;
+}
+
+*:focus-visible {
+  outline: var(--border-width) solid var(--color-accent);
+}
+
+*::selection {
+  background-color: var(--color-accent);
+}
+
+html {
+  @media (prefers-reduced-motion: no-preference) {
+    scroll-behavior: smooth;
+  }
 }
 
 body {
@@ -41,4 +58,9 @@ body {
   line-height: 1.5;
   color: var(--color-text);
   background-color: var(--color-background-backdrop);
+}
+
+a:not([class]) {
+  color: var(--color-text);
+  font-weight: var(--font-weight-bold);
 }
