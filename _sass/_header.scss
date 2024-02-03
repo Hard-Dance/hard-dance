@@ -5,6 +5,11 @@ header {
   transition: background-color var(--duration) ease, color var(--duration) ease;
   color: var(--color-text-muted);
 
+  background-image: linear-gradient(
+    var(--color-background-backdrop),
+    transparent
+  );
+
   &[data-scrolled="true"] {
     background-color: var(--color-background-backdrop);
     color: var(--color-text);
@@ -29,6 +34,7 @@ header {
     transition: background-color var(--duration) ease;
     user-select: none;
     outline-offset: calc(var(--border-width) * -1);
+    text-shadow: 0 1px 0 var(--color-background-backdrop);
 
     &:hover {
       background-color: var(--color-background-transparent-hover);
@@ -43,6 +49,7 @@ header {
     fill: currentColor;
     width: var(--icon-size);
     height: var(--icon-size);
+    filter: drop-shadow(0 1px 0 var(--color-background-backdrop));
   }
 }
 
