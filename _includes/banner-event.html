@@ -9,7 +9,12 @@
 
 <div class="banner-event-slides">
   <div id="poster">
-    <img src="{{ page.image }}" alt="" draggable="false" />
+    <img
+      src="{{ page.image }}"
+      alt=""
+      draggable="false"
+      style="view-transition-name: post-image-{{ page.title | slugify }};"
+    />
   </div>
   <div id="map">
     <iframe

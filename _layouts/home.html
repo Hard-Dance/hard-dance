@@ -85,10 +85,14 @@
             data-index="{{ forloop.index }}"
             draggable="false"
             loading="lazy"
+            style="view-transition-name: post-image-{{ post.title | slugify }};"
           />
 
           <div class="event-list-item-metadata">
-            <a class="event-list-item-metadata-title" href="{{ post.url }}"
+            <a
+              class="event-list-item-metadata-title"
+              href="{{ post.url }}"
+              style="view-transition-name: post-title-{{ post.title | slugify }};"
               >{{ post.title | smartify }}</a
             >
             <div class="event-list-item-metadata-date">

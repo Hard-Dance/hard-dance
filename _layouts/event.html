@@ -13,7 +13,11 @@
 
     <main>
       <div class="page-title">
-        <h1>{{ page.title }}</h1>
+        <h1
+          style="view-transition-name: post-title-{{ page.title | slugify }};"
+        >
+          {{ page.title }}
+        </h1>
 
         <ul class="page-title-input-container">
           <li>
