@@ -1,14 +1,17 @@
 .banner {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-
   &[data-variant="events"] {
     position: relative;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-left: max(var(--page-padding), env(safe-area-inset-left));
+    padding-right: max(var(--page-padding), env(safe-area-inset-right));
+  }
+
+  &[data-variant="event"] {
+    overflow: hidden;
+    position: relative;
   }
 }
 
@@ -79,7 +82,7 @@
 }
 
 @function multiple-box-shadow($n) {
-  $value: "#{random(2000)}px #{random(2000)}px #FFF";
+  $value: "#{random(2000)}px #{random(2000)}px #FFF"; // TODO: This doesnt work on ultrawides
   @for $i from 2 through $n {
     $value: "#{$value}, #{random(2000)}px #{random(2000)}px #FFF";
   }
@@ -151,3 +154,79 @@ $shadows-big: multiple-box-shadow(100);
   }
 }
 // #endregion Events
+
+// #region Event
+// .banner-event-slider {
+//   background-image: var(--event-banner-image);
+//   background-repeat: no-repeat;
+//   background-position: center;
+//   background-size: cover;
+//   width: 100%;
+//   height: 100%;
+
+//   > img {
+//     display: none;
+//   }
+// }
+
+.banner-event-links {
+  background-color: var(--color-background);
+  border: var(--border-width) solid var(--color-background);
+  position: absolute;
+  bottom: var(--page-padding);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  column-gap: var(--border-width);
+  border-radius: var(--border-radius);
+  // TODO: Add frosted glass effect
+
+  a {
+    display: block;
+    padding-block: calc(var(--border-radius) * 0.5);
+    padding-inline: var(--border-radius);
+    text-decoration: none;
+    border-radius: var(--border-radius); // TODO: This can be better
+    transition: background-color var(--duration) ease;
+
+    &:hover {
+      background-color: var(--color-background-hover);
+    }
+  }
+}
+
+.banner-event-slides {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  outline-offset: calc(var(--border-width) * -1);
+
+  > div {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    width: 100%;
+    // height: 100%;
+    height: calc(50vh - var(--header-height));
+    height: calc(50dvh - var(--header-height));
+    // transform-origin: center center;
+    // transform: scale(1);
+    // transition: transform 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+#poster > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+#map > iframe {
+  width: 100%;
+  height: 100%;
+}
+// #endregion Event

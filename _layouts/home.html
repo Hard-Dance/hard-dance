@@ -11,50 +11,51 @@
       {% include banner-events.html %}
     </div>
 
-    <div class="page-title">
-      <h1>Events</h1>
+    <main>
+      <div class="page-title">
+        <h1>Events</h1>
 
-      <div class="page-title-input-container">
-        <label for="location"
-          >Location
-          <select name="location" id="location">
-            <option value="all" selected>All</option>
-            <option value="north-america">North America</option>
-            <option value="south-america">South America</option>
-            <option value="europe">Europe</option>
-            <option value="asia">Asia</option>
-          </select>
-        </label>
+        <div class="page-title-input-container">
+          <label for="location"
+            >Location
+            <select name="location" id="location">
+              <option value="all" selected>All</option>
+              <option value="north-america">North America</option>
+              <option value="south-america">South America</option>
+              <option value="europe">Europe</option>
+              <option value="asia">Asia</option>
+            </select>
+          </label>
 
-        <label for="type"
-          >Type
-          <select name="type" id="type" disabled>
-            <option value="all" selected>All</option>
-            <option value="festival">Festival</option>
-            <option value="arena">Arena</option>
-            <option value="club">Club</option>
-            <option value="underground">Underground</option>
-          </select>
-        </label>
+          <label for="type"
+            >Type
+            <select name="type" id="type" disabled>
+              <option value="all" selected>All</option>
+              <option value="festival">Festival</option>
+              <option value="arena">Arena</option>
+              <option value="club">Club</option>
+              <option value="underground">Underground</option>
+            </select>
+          </label>
 
-        <label for="genre"
-          >Genre
-          <select name="genre" id="genre" disabled>
-            <option value="all" selected>All</option>
-            <option value="multigenre">Multigenre</option>
-            <option value="hardstyle">Hardstyle</option>
-            <option value="hardcore">Hardcore</option>
-            <option value="uptempo">Uptempo</option>
-          </select>
-        </label>
+          <label for="genre"
+            >Genre
+            <select name="genre" id="genre" disabled>
+              <option value="all" selected>All</option>
+              <option value="multigenre">Multigenre</option>
+              <option value="hardstyle">Hardstyle</option>
+              <option value="hardcore">Hardcore</option>
+              <option value="uptempo">Uptempo</option>
+            </select>
+          </label>
+        </div>
       </div>
-    </div>
 
-    <ol class="grid event-list">
-      {% assign sorted_posts = site.posts | sort: 'datestart' %} {% for post in
-      sorted_posts %}
-      <!-- prettier-ignore -->
-      {% assign location_parts = post.location | split: ',' %}
+      <ol class="grid event-list">
+        {% assign sorted_posts = site.posts | sort: 'datestart' %} {% for post
+        in sorted_posts %}
+        <!-- prettier-ignore -->
+        {% assign location_parts = post.location | split: ',' %}
       {% assign country_part = location_parts | last | strip %}
       {% assign country = country_part %} 
 
@@ -72,49 +73,50 @@
         {%- else -%}
           {% assign flag = '' %}
       {% endcase %}
-      <li
-        class="event-list-item"
-        id="event-list-item-{{ forloop.index }}"
-        data-location="{{ country_part | downcase }}"
-      >
-        <img
-          class="event-list-item-image"
-          src="{{ post.image }}"
-          alt="{{ post.title | smartify }} image"
-          data-index="{{ forloop.index }}"
-          draggable="false"
-          loading="lazy"
-        />
+        <li
+          class="event-list-item"
+          id="event-list-item-{{ forloop.index }}"
+          data-location="{{ country_part | downcase }}"
+        >
+          <img
+            class="event-list-item-image"
+            src="{{ post.image }}"
+            alt="{{ post.title | smartify }} image"
+            data-index="{{ forloop.index }}"
+            draggable="false"
+            loading="lazy"
+          />
 
-        <div class="event-list-item-metadata">
-          <a class="event-list-item-metadata-title" href="{{ post.url }}"
-            >{{ post.title | smartify }}</a
-          >
-          <div class="event-list-item-metadata-date">
-            <time datetime="{{ post.datestart | date: '%Y-%m-%d' }}">
-              {{ post.datestart | date: "%b %d" }}
-            </time>
+          <div class="event-list-item-metadata">
+            <a class="event-list-item-metadata-title" href="{{ post.url }}"
+              >{{ post.title | smartify }}</a
+            >
+            <div class="event-list-item-metadata-date">
+              <time datetime="{{ post.datestart | date: '%Y-%m-%d' }}">
+                {{ post.datestart | date: "%b %d" }}
+              </time>
 
-            {% if post.dateend %} &nbsp;–&nbsp;
-            <time datetime="{{ post.dateend | date: '%Y-%m-%d' }}">
-              {{ post.dateend | date: "%b %d" }}
-            </time>
-            {% endif %}
+              {% if post.dateend %} &nbsp;–&nbsp;
+              <time datetime="{{ post.dateend | date: '%Y-%m-%d' }}">
+                {{ post.dateend | date: "%b %d" }}
+              </time>
+              {% endif %}
+            </div>
+            <div class="event-list-item-metadata-location">{{ flag }}</div>
           </div>
-          <div class="event-list-item-metadata-location">{{ flag }}</div>
-        </div>
-      </li>
-      {% endfor %}
-    </ol>
-    <div class="empty-state" style="display: none">
-      <div class="empty-state-emoji">🔇</div>
-      <h2>No events found.</h2>
-      <p>
-        Do you know of an event that should be listed here?
-        <a href="mailto:{{ site.email }}">Reach out to us</a> or
-        <a href="#">consider adding it yourself</a>.
-      </p>
-    </div>
+        </li>
+        {% endfor %}
+      </ol>
+      <div class="empty-state" style="display: none">
+        <div class="empty-state-emoji">🔇</div>
+        <h2>No events found.</h2>
+        <p>
+          Do you know of an event that should be listed here?
+          <a href="mailto:{{ site.email }}">Reach out to us</a> or
+          <a href="#">consider adding it yourself</a>.
+        </p>
+      </div>
+    </main>
 
     {% include footer.html %} {% include dialog.html %}
 

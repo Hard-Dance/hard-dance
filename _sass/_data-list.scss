@@ -1,0 +1,21 @@
+dl {
+  //   background-color: red;
+  padding-left: max(var(--page-padding), env(safe-area-inset-left));
+  padding-right: max(var(--page-padding), env(safe-area-inset-right));
+  text-align: center;
+
+  > dt {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-large);
+
+    &::after {
+      content: ":";
+    }
+  }
+
+  > dd {
+    font-size: var(--font-size-larger);
+    font-weight: var(--font-weight-bold);
+    margin-block-end: var(--page-padding);
+  }
+}

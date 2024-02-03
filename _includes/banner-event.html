@@ -1,0 +1,39 @@
+<ol class="banner-event-links">
+  <li>
+    <a href="#poster" tabindex="-1">Poster</a>
+  </li>
+  <li>
+    <a href="#map" tabindex="-1">Map</a>
+  </li>
+</ol>
+
+<div class="banner-event-slides">
+  <div id="poster">
+    <img src="{{ page.image }}" alt="" draggable="false" />
+  </div>
+  <div id="map">
+    <iframe
+      frameborder="0"
+      scrolling="no"
+      marginheight="0"
+      marginwidth="0"
+      loading="lazy"
+      id="gmap_canvas"
+      src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q={{ page.location | uri_escape }}+()&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+    ></iframe>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const posterImage = document.querySelector("#poster > img");
+    const poster = document.getElementById("poster");
+
+    if (posterImage && poster) {
+      colorjs.average(posterImage.src).then((color) => {
+        const rgbColor = `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
+        poster.style.backgroundColor = rgbColor;
+      });
+    }
+  });
+</script>

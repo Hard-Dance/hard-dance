@@ -7,42 +7,85 @@
   <body>
     {% include header.html %}
 
+    <div class="banner" data-variant="event" id="top">
+      {% include banner-event.html %}
+    </div>
+
     <main>
-      <div
-        class="banner event-banner"
-        style="background-image: url({{ page.image }});"
-      >
+      <div class="page-title">
         <h1>{{ page.title }}</h1>
+
+        <ul class="page-title-input-container">
+          <li>
+            <a href="#">Event page</a>
+          </li>
+          <li>
+            <a href="#">Calendar</a>
+          </li>
+          <li>
+            <a href="#">Discord</a>
+          </li>
+        </ul>
       </div>
 
-      <iframe
-        width="520"
-        height="400"
-        frameborder="0"
-        scrolling="no"
-        marginheight="0"
-        marginwidth="0"
-        id="gmap_canvas"
-        src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q={{ page.location | uri_escape }}+()&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-      ></iframe>
+      <dl>
+        <dt>Date announced</dt>
+        <dd>
+          <time datetime="{{ page.date | date: '%Y-%m-%d' }}">
+            {{ page.date | date: "%B %d, %Y" }}
+          </time>
+        </dd>
+
+        <dt>Date{% if page.dateend %}s{% endif %}</dt>
+        <dd>
+          <time datetime="{{ page.datestart | date: '%Y-%m-%d' }}">
+            {{ page.datestart | date: "%B %d, %Y" }}
+          </time>
+          {% if page.dateend %}&nbsp;–&nbsp;
+          <time datetime="{{ page.dateend | date: '%Y-%m-%d' }}">
+            {{ page.dateend | date: "%B %d, %Y" }}
+          </time>
+          {% endif %}
+        </dd>
+
+        {% if page.location %}
+        <dt>Location</dt>
+        <dd>
+          <a
+            href="https://www.google.com/maps/place/{{ page.location | uri_escape }}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {{ page.location }}
+          </a>
+        </dd>
+        {% endif %} {% if page.type %}
+        <dt>Type</dt>
+        <dd>{{ page.type }}</dd>
+        {% endif %} {% if page.genre %}
+        <dt>Genre</dt>
+        <dd>{{ page.genre }}</dd>
+        {% endif %} {% if page.age %}
+        <dt>Age</dt>
+        <dd>{{ page.age }}</dd>
+        {% endif %} {% if page.host %}
+        <dt>Host</dt>
+        <dd>{{ page.host }}</dd>
+        {% endif %} {% if page.tickets %}
+        <dt>Tickets</dt>
+        <dd>
+          <a
+            href="{{ page.tickets }}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Purchase
+          </a>
+        </dd>
+        {% endif %}
+      </dl>
     </main>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // Select all images
-        const images = document.querySelectorAll(".event-list-item-image");
-
-        images.forEach((img) => {
-          const index = img.dataset.index; // Get the index from the data attribute
-          colorjs.average(img.src).then((color) => {
-            const rgbColor = `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
-            const listItem = document.getElementById(
-              `event-list-item-${index}`
-            );
-            listItem.style.backgroundColor = rgbColor; // Apply the color to the <li>
-          });
-        });
-      });
-    </script>
+    {% include footer.html %} {% include dialog.html %}
   </body>
 </html>

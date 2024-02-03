@@ -88,6 +88,7 @@ header {
   justify-content: center;
   padding-left: max(var(--page-padding), env(safe-area-inset-left));
   padding-right: max(var(--page-padding), env(safe-area-inset-right));
+  text-align: center;
 }
 
 .empty-state-emoji {
