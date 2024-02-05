@@ -10,7 +10,8 @@ genre: Hardstyle
 age: 19+
 hosts:
   - Hard Dance NYC
-tickets: https://link.dice.fm/SdZ34RmCVGb
-facebook:
+links:
+  - title: Website
+    url: https://link.dice.fm/SdZ34RmCVGb
 image: /assets/img/events/hard-dance-nyc-presents-radical-redemption-2024.jpg
 ---

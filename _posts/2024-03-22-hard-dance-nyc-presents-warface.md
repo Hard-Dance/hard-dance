@@ -10,7 +10,8 @@ genre: Hardstyle
 age: 19+
 hosts:
   - Hard Dance NYC
-tickets: https://link.dice.fm/Dr1AsGeCVGb
-facebook:
+links:
+  - title: Website
+    url: https://link.dice.fm/Dr1AsGeCVGb
 image: /assets/img/events/hard-dance-nyc-presents-warface-2024.jpg
 ---

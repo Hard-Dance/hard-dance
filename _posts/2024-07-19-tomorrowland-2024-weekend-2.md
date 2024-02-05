@@ -11,7 +11,10 @@ genre: Multigenre
 age: 18+
 hosts:
   - Tomorrowland
-tickets: https://www.tomorrowland.com/home/
-facebook: https://www.facebook.com/events/6749346075117818
+links:
+  - title: Website
+    url: https://www.tomorrowland.com/home/
+  - title: Facebook
+    url: https://www.facebook.com/events/6749346075117818
 image: /assets/img/events/tomorrowland-2024.jpg
 ---
