@@ -1,0 +1,101 @@
+<div class="banner-event-slides">
+  <div id="poster">
+    <img
+      src="{{ page.image }}"
+      alt=""
+      draggable="false"
+      style="view-transition-name: post-image-{{ page.title | slugify }};"
+    />
+  </div>
+  <div id="map" data-location="{{ page.location | uri_escape }}"></div>
+</div>
+
+<ol class="banner-event-links">
+  <li>
+    <a href="#poster" tabindex="-1">Poster</a>
+  </li>
+  <li>
+    <a href="#map" tabindex="-1">Map</a>
+  </li>
+</ol>
+
+<script>
+  function initMap() {
+    const location = { lat: -34.397, lng: 150.644 };
+    const map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 12,
+      center: location,
+      disableDefaultUI: true,
+      zoomControl: false,
+      mapTypeControl: false,
+      scaleControl: false,
+      streetViewControl: false,
+      rotateControl: false,
+      fullscreenControl: false,
+    });
+
+    const marker = new google.maps.Marker({
+      position: location,
+      map: map,
+    });
+  }
+</script>
+
+<!-- <script>
+  function initMap(lat, lng) {
+    const location = { lat: lat, lng: lng };
+    const map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 12,
+      center: location,
+      disableDefaultUI: true,
+      zoomControl: false,
+      mapTypeControl: false,
+      scaleControl: false,
+      streetViewControl: false,
+      rotateControl: false,
+      fullscreenControl: false,
+    });
+
+    const marker = new google.maps.Marker({
+      position: location,
+      map: map,
+    });
+  }
+
+  function geocodeAddressAndInitMap(address) {
+    const geocoder = new google.maps.Geocoder();
+
+    geocoder.geocode({ address: address }, function (results, status) {
+      if (status === "OK") {
+        const lat = results[0].geometry.location.lat();
+        const lng = results[0].geometry.location.lng();
+        initMap(lat, lng);
+      } else {
+        alert("Geocode was not successful for the following reason: " + status);
+      }
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const locationDataElement = document.getElementById("locationData");
+    const locationAddress = locationDataElement.getAttribute("data-location");
+
+    geocodeAddressAndInitMap(locationAddress);
+  });
+</script> -->
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const bannerEventSlides = document.querySelectorAll(".banner-event-slides");
+
+    bannerEventSlides.forEach((slide) => {
+      const slideImage = slide.querySelector("img");
+      if (slideImage) {
+        colorjs.average(slideImage.src).then((color) => {
+          const rgbColor = `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
+          slide.style.backgroundColor = rgbColor;
+        });
+      }
+    });
+  });
+</script>

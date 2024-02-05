@@ -1,7 +1,8 @@
 body {
   min-height: 100vh;
   min-height: 100dvh;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   row-gap: 1rem;
   padding-bottom: max(var(--page-padding), env(safe-area-inset-bottom));
 }
@@ -16,9 +17,8 @@ header {
 }
 
 .banner {
-  padding-left: max(var(--page-padding), env(safe-area-inset-left));
-  padding-right: max(var(--page-padding), env(safe-area-inset-right));
   height: calc(50vh - var(--header-height));
   height: calc(50dvh - var(--header-height));
   min-height: 15rem;
+  flex-shrink: 0;
 }

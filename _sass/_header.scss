@@ -2,15 +2,24 @@ header {
   display: flex;
   align-items: stretch;
   justify-content: space-between;
-  transition: background-color var(--duration) ease, color var(--duration) ease;
+  transition: color var(--duration) ease;
   color: var(--color-text-muted);
+  @supports (backdrop-filter: blur(20px)) {
+    backdrop-filter: blur(20px);
+    background-image: linear-gradient(
+      var(--color-background-backdrop),
+      transparent
+    );
+  }
+  @supports not (backdrop-filter: blur(20px)) {
+    background-color: var(--color-background-backdrop);
+  }
 
   &[data-scrolled="true"] {
-    background-color: var(--color-background-backdrop);
     color: var(--color-text);
   }
 
-  > UL {
+  > ul {
     display: flex;
   }
 
@@ -29,6 +38,7 @@ header {
     transition: background-color var(--duration) ease;
     user-select: none;
     outline-offset: calc(var(--border-width) * -1);
+    text-shadow: 0 1px 0 var(--color-background-backdrop);
 
     &:hover {
       background-color: var(--color-background-transparent-hover);
@@ -43,6 +53,7 @@ header {
     fill: currentColor;
     width: var(--icon-size);
     height: var(--icon-size);
+    filter: drop-shadow(0 1px 0 var(--color-background-backdrop));
   }
 }
 
@@ -88,6 +99,7 @@ header {
   justify-content: center;
   padding-left: max(var(--page-padding), env(safe-area-inset-left));
   padding-right: max(var(--page-padding), env(safe-area-inset-right));
+  text-align: center;
 }
 
 .empty-state-emoji {

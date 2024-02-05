@@ -1,0 +1,55 @@
+{% for host in page.hosts %}
+<li>
+  {% assign lowercase_host = host | slugify %} {% if lowercase_host == 'q-dance'
+  %}
+  <a href="https://www.q-dance.com" target="_blank" rel="noopener noreferrer">
+    <div class="icon">
+      <svg alt="{{ host }} icon" aria-hidden="true">
+        <use xlink:href="/assets/symbols.svg#{{ lowercase_host }}"></use>
+      </svg>
+    </div>
+    {{ host }}
+  </a>
+  {% elsif lowercase_host == 'b2s' %}
+  <a href="https://www.b2s.nl" target="_blank" rel="noopener noreferrer">
+    <div class="icon">
+      <svg alt="{{ host }} icon" aria-hidden="true">
+        <use xlink:href="/assets/symbols.svg#{{ lowercase_host }}"></use>
+      </svg>
+    </div>
+    {{ host }}
+  </a>
+  {% elsif lowercase_host == 'art-of-dance' %}
+  <a href="https://www.artofdance.nl" target="_blank" rel="noopener noreferrer">
+    <div class="icon">
+      <svg alt="{{ host }} icon" aria-hidden="true">
+        <use xlink:href="/assets/symbols.svg#{{ lowercase_host }}"></use>
+      </svg>
+    </div>
+    {{ host }}
+  </a>
+  {% elsif lowercase_host == 'tomorrowland' %}
+  <a
+    href="https://www.tomorrowland.com"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <div class="icon">
+      <svg alt="{{ host }} icon" aria-hidden="true">
+        <use xlink:href="/assets/symbols.svg#{{ lowercase_host }}"></use>
+      </svg>
+    </div>
+    {{ host }}
+  </a>
+  {% elsif lowercase_host == 'bass-events' %}
+  <a href="https://www.bassevents.be" target="_blank" rel="noopener noreferrer">
+    <div class="icon">
+      <svg alt="{{ host }} icon" aria-hidden="true">
+        <use xlink:href="/assets/symbols.svg#{{ lowercase_host }}"></use>
+      </svg>
+    </div>
+    {{ host }}
+  </a>
+  {% else %} {{ host }} {% endif %}
+</li>
+{% endfor %}

@@ -1,14 +1,17 @@
 .banner {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-
   &[data-variant="events"] {
     position: relative;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-left: max(var(--page-padding), env(safe-area-inset-left));
+    padding-right: max(var(--page-padding), env(safe-area-inset-right));
+  }
+
+  &[data-variant="event"] {
+    overflow: hidden;
+    position: relative;
   }
 }
 
@@ -79,7 +82,7 @@
 }
 
 @function multiple-box-shadow($n) {
-  $value: "#{random(2000)}px #{random(2000)}px #FFF";
+  $value: "#{random(2000)}px #{random(2000)}px #FFF"; // TODO: This doesnt work on ultrawides
   @for $i from 2 through $n {
     $value: "#{$value}, #{random(2000)}px #{random(2000)}px #FFF";
   }
@@ -151,3 +154,65 @@ $shadows-big: multiple-box-shadow(100);
   }
 }
 // #endregion Events
+
+// #region Event
+
+.banner-event-links {
+  background-color: var(--color-background);
+  border: var(--border-width) solid var(--color-background);
+  position: absolute;
+  bottom: var(--page-padding);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  column-gap: var(--border-width);
+  border-radius: var(--border-radius);
+  user-select: none;
+
+  @supports (backdrop-filter: blur(20px)) {
+    background-color: rgba(var(--color-background-rgb), 0.5);
+    backdrop-filter: blur(20px);
+    border-color: transparent;
+    text-shadow: 0 1px 0 var(--color-background-backdrop);
+  }
+
+  a {
+    display: block;
+    padding-block: calc(var(--border-radius) * 0.5);
+    padding-inline: var(--border-radius);
+    text-decoration: none;
+    border-radius: calc(var(--border-radius) - var(--border-width));
+    transition: background-color var(--duration) ease;
+
+    &:hover {
+      background-color: var(--color-background-transparent-hover);
+    }
+  }
+}
+
+.banner-event-slides {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  outline-offset: calc(var(--border-width) * -1);
+  user-select: none;
+
+  > div {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    width: 100%;
+    height: calc(50vh - var(--header-height));
+    height: calc(50dvh - var(--header-height));
+    display: flex;
+    justify-content: center;
+  }
+}
+
+#poster > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+// #endregion Event
