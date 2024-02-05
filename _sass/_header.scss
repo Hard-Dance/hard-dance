@@ -2,20 +2,24 @@ header {
   display: flex;
   align-items: stretch;
   justify-content: space-between;
-  transition: background-color var(--duration) ease, color var(--duration) ease;
+  transition: color var(--duration) ease;
   color: var(--color-text-muted);
-
-  background-image: linear-gradient(
-    var(--color-background-backdrop),
-    transparent
-  );
+  @supports (backdrop-filter: blur(20px)) {
+    backdrop-filter: blur(20px);
+    background-image: linear-gradient(
+      var(--color-background-backdrop),
+      transparent
+    );
+  }
+  @supports not (backdrop-filter: blur(20px)) {
+    background-color: var(--color-background-backdrop);
+  }
 
   &[data-scrolled="true"] {
-    background-color: var(--color-background-backdrop);
     color: var(--color-text);
   }
 
-  > UL {
+  > ul {
     display: flex;
   }
 

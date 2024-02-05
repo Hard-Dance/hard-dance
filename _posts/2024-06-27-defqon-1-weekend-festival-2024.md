@@ -9,7 +9,10 @@ location: Spijkweg 30, 8256 RJ Biddinghuizen, Nederland
 type: Festival
 genre: xyz
 age: 18+
-host: Q-dance
-tickets: https://www.q-dance.com/l/defqon1-2024-tickets
+hosts:
+  - Q-dance
+  - b2s
+tickets: https://defqon1.com
+facebook: https://www.facebook.com/events/838924394232971
 image: /assets/img/events/defqon-1-weekend-festival-2024.jpg
 ---

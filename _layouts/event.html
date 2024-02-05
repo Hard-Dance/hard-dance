@@ -3,6 +3,11 @@
   <head>
     {% include head.html %}
     <script src="https://unpkg.com/color.js@1.2.0/dist/color.js"></script>
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANeiVn8QggK5O5mS3kGAFzJ0pL7sOi3No&callback=initMap"
+    ></script>
   </head>
   <body>
     {% include header.html %}
@@ -20,15 +25,27 @@
         </h1>
 
         <ul class="page-title-input-container">
+          {% if page.facebook %}
           <li>
-            <a href="#">Event page</a>
+            <a
+              href="{{ page.facebook }}"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Facebook
+            </a>
           </li>
+          {% endif %} {% if page.tickets %}
           <li>
-            <a href="#">Calendar</a>
+            <a
+              href="{{ page.tickets }}"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Purchase
+            </a>
           </li>
-          <li>
-            <a href="#">Discord</a>
-          </li>
+          {% endif %}
         </ul>
       </div>
 
@@ -72,19 +89,12 @@
         {% endif %} {% if page.age %}
         <dt>Age</dt>
         <dd>{{ page.age }}</dd>
-        {% endif %} {% if page.host %}
-        <dt>Host</dt>
-        <dd>{{ page.host }}</dd>
-        {% endif %} {% if page.tickets %}
-        <dt>Tickets</dt>
+        {% endif %} {% if page.hosts %}
+        <dt>Host{% if page.hosts.size > 1 %}s{% endif %}</dt>
         <dd>
-          <a
-            href="{{ page.tickets }}"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Purchase
-          </a>
+          <ul>
+            {% include hosts.html %}
+          </ul>
         </dd>
         {% endif %}
       </dl>

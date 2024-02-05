@@ -156,18 +156,6 @@ $shadows-big: multiple-box-shadow(100);
 // #endregion Events
 
 // #region Event
-// .banner-event-slider {
-//   background-image: var(--event-banner-image);
-//   background-repeat: no-repeat;
-//   background-position: center;
-//   background-size: cover;
-//   width: 100%;
-//   height: 100%;
-
-//   > img {
-//     display: none;
-//   }
-// }
 
 .banner-event-links {
   background-color: var(--color-background);
@@ -179,18 +167,25 @@ $shadows-big: multiple-box-shadow(100);
   display: flex;
   column-gap: var(--border-width);
   border-radius: var(--border-radius);
-  // TODO: Add frosted glass effect
+  user-select: none;
+
+  @supports (backdrop-filter: blur(20px)) {
+    background-color: rgba(var(--color-background-rgb), 0.5);
+    backdrop-filter: blur(20px);
+    border-color: transparent;
+    text-shadow: 0 1px 0 var(--color-background-backdrop);
+  }
 
   a {
     display: block;
     padding-block: calc(var(--border-radius) * 0.5);
     padding-inline: var(--border-radius);
     text-decoration: none;
-    border-radius: var(--border-radius); // TODO: This can be better
+    border-radius: calc(var(--border-radius) - var(--border-width));
     transition: background-color var(--duration) ease;
 
     &:hover {
-      background-color: var(--color-background-hover);
+      background-color: var(--color-background-transparent-hover);
     }
   }
 }
@@ -202,20 +197,16 @@ $shadows-big: multiple-box-shadow(100);
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   outline-offset: calc(var(--border-width) * -1);
+  user-select: none;
 
   > div {
     scroll-snap-align: start;
     flex-shrink: 0;
     width: 100%;
-    // height: 100%;
     height: calc(50vh - var(--header-height));
     height: calc(50dvh - var(--header-height));
-    // transform-origin: center center;
-    // transform: scale(1);
-    // transition: transform 0.5s;
     display: flex;
     justify-content: center;
-    align-items: center;
   }
 }
 
@@ -223,10 +214,5 @@ $shadows-big: multiple-box-shadow(100);
   width: 100%;
   height: 100%;
   object-fit: contain;
-}
-
-#map > iframe {
-  width: 100%;
-  height: 100%;
 }
 // #endregion Event

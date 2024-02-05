@@ -29,23 +29,12 @@
 
           <label for="type"
             >Type
-            <select name="type" id="type" disabled>
+            <select name="type" id="type">
               <option value="all" selected>All</option>
               <option value="festival">Festival</option>
               <option value="arena">Arena</option>
               <option value="club">Club</option>
               <option value="underground">Underground</option>
-            </select>
-          </label>
-
-          <label for="genre"
-            >Genre
-            <select name="genre" id="genre" disabled>
-              <option value="all" selected>All</option>
-              <option value="multigenre">Multigenre</option>
-              <option value="hardstyle">Hardstyle</option>
-              <option value="hardcore">Hardcore</option>
-              <option value="uptempo">Uptempo</option>
             </select>
           </label>
         </div>
@@ -77,6 +66,7 @@
           class="event-list-item"
           id="event-list-item-{{ forloop.index }}"
           data-location="{{ country_part | downcase }}"
+          data-type="{{ post.type | downcase }}"
         >
           <img
             class="event-list-item-image"
@@ -144,6 +134,7 @@
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const locationSelect = document.getElementById("location");
+        const typeSelect = document.getElementById("type"); // Get the type select element
         const posts = document.querySelectorAll(".event-list-item");
         const postList = document.querySelector(".event-list"); // Select the <ol>
         const emptyStateDiv = document.querySelector(".empty-state"); // Select the empty state div
@@ -162,24 +153,27 @@
           }
         }
 
-        locationSelect.addEventListener("change", function () {
-          const selectedLocation = this.value;
+        function filterPosts() {
+          const selectedLocation = locationSelect.value;
+          const selectedType = typeSelect.value; // Get the selected type
 
           posts.forEach((post) => {
             const postLocation = post
               .getAttribute("data-location")
               .toLowerCase();
+            const postType = post.getAttribute("data-type").toLowerCase(); // Get the post type
 
-            // Decide whether to show or hide the post based on the selectedLocation
+            // Decide whether to show or hide the post based on the selectedLocation and selectedType
+            let showPost = false;
+
+            // Check location
             switch (selectedLocation) {
               case "all":
-                post.style.display = "";
+                showPost = true;
                 break;
               case "north-america":
                 if (postLocation === "usa" || postLocation === "canada") {
-                  post.style.display = "";
-                } else {
-                  post.style.display = "none";
+                  showPost = true;
                 }
                 break;
               case "europe":
@@ -187,21 +181,34 @@
                   postLocation === "nederland" ||
                   postLocation === "belgium"
                 ) {
-                  post.style.display = "";
-                } else {
-                  post.style.display = "none";
+                  showPost = true;
                 }
                 break;
-              // ... include other cases as needed ...
-              default:
-                post.style.display = "none";
+              // ... include other location cases as needed ...
             }
+
+            // Check type, if showPost is still true from the location check
+            if (
+              showPost &&
+              selectedType !== "all" &&
+              postType !== selectedType
+            ) {
+              showPost = false;
+            }
+
+            post.style.display = showPost ? "" : "none"; // Apply the display style
           });
 
           checkForVisiblePosts(); // Check if any posts are visible and update the display accordingly
-        });
+        }
 
-        checkForVisiblePosts(); // Run once on load to set the correct initial state
+        // Add event listener for changes in the type select
+        typeSelect.addEventListener("change", filterPosts);
+
+        // Add event listener for changes in the location select
+        locationSelect.addEventListener("change", filterPosts);
+
+        filterPosts(); // Run once on load to set the correct initial state
       });
     </script>
   </body>

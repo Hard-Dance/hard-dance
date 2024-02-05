@@ -64,3 +64,16 @@ a:not([class]) {
   color: var(--color-text);
   font-weight: var(--font-weight-bold);
 }
+
+.icon {
+  display: inline-flex;
+  align-self: center;
+
+  > svg {
+    height: 1em;
+    width: 1em;
+    fill: currentColor;
+    top: 0.125em;
+    position: relative;
+  }
+}
