@@ -1,6 +1,8 @@
 <footer>
   <ul>
-    <li>&copy; {{site.time | date: "%Y" }} {{ site.title }}</li>
+    <li title="Last updated on {{ 'now' | date: '%b %d, %Y @ %H:%M %Z' }}">
+      &copy; {{ "now" | date: "%Y" }} {{ site.title }}
+    </li>
     <li>
       <a href="mailto:{{ site.email }}">Contact us</a>
     </li>

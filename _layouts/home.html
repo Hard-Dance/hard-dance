@@ -41,33 +41,39 @@
       </div>
 
       <ol class="grid event-list">
-        {% assign sorted_posts = site.posts | sort: 'datestart' %} {% for post
-        in sorted_posts %}
         <!-- prettier-ignore -->
-        {% assign location_parts = post.location | split: ',' %}
-      {% assign country_part = location_parts | last | strip %}
-      {% assign country = country_part %} 
-
-      {% case country %}
-        {% when 'USA' %}
-          {% assign flag = '🇺🇸' %}
-        {% when 'Canada' %}
-          {% assign flag = '🇨🇦' %}
-        {% when 'UK' %}
-          {% assign flag = '🇬🇧' %}
-        {% when 'Nederland' %}
-          {% assign flag = '🇳🇱' %}
-        {% when 'Belgium' %}
-          {% assign flag = '🇧🇪' %}
-        {%- else -%}
-          {% assign flag = '' %}
-      {% endcase %}
+        {% assign current_time = 'now' | date: '%s' %}
+        {% assign sorted_posts = site.posts | sort: 'datestart' %}
+        
+        {% for post in sorted_posts %}
+          {% assign post_time = post.datestart | date: '%s' %}
+          {% if post_time >= current_time %}
+            {% assign location_parts = post.location | split: ',' %}
+            {% assign country_part = location_parts | last | strip %}
+        
+            {% case country_part %}
+              {% when 'USA' %}      {% assign flag = '🇺🇸' %}
+              {% when 'Canada' %}   {% assign flag = '🇨🇦' %}
+              {% when 'UK' %}       {% assign flag = '🇬🇧' %}
+              {% when 'Nederland' %}{% assign flag = '🇳🇱' %}
+              {% when 'Belgium' %}  {% assign flag = '🇧🇪' %}
+              {% else %}            {% assign flag = '' %}
+            {% endcase %}
         <li
           class="event-list-item"
           id="event-list-item-{{ forloop.index }}"
           data-location="{{ country_part | downcase }}"
           data-type="{{ post.type | downcase }}"
+          {%
+          if
+          post.featured
+          %}
+          data-featured="true"
+          {%
+          endif
+          %}
         >
+          <!-- Event Image -->
           <img
             class="event-list-item-image"
             src="{{ post.image }}"
@@ -89,7 +95,6 @@
               <time datetime="{{ post.datestart | date: '%Y-%m-%d' }}">
                 {{ post.datestart | date: "%b %d" }}
               </time>
-
               {% if post.dateend %} &nbsp;–&nbsp;
               <time datetime="{{ post.dateend | date: '%Y-%m-%d' }}">
                 {{ post.dateend | date: "%b %d" }}
@@ -98,8 +103,9 @@
             </div>
             <div class="event-list-item-metadata-location">{{ flag }}</div>
           </div>
+          <!-- <div class="event-list-item-status">Live</div> -->
         </li>
-        {% endfor %}
+        {% endif %} {% endfor %}
       </ol>
       <div class="empty-state" style="display: none">
         <div class="empty-state-emoji">🔇</div>
@@ -125,7 +131,7 @@
             const listItem = document.getElementById(
               `event-list-item-${index}`
             );
-            listItem.style.backgroundColor = rgbColor;
+            listItem.style.setProperty("--color-tile-image-color", rgbColor);
           });
         });
       });
