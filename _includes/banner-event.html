@@ -10,14 +10,14 @@
   <div id="map" data-location="{{ page.location | uri_escape }}"></div>
 </div>
 
-<ol class="banner-event-links">
+<ul class="button-group banner-event-links" data-variant="overlay">
   <li>
-    <a href="#poster" tabindex="-1">Poster</a>
+    <a class="button" href="#poster" tabindex="-1">Poster</a>
   </li>
   <li>
-    <a href="#map" tabindex="-1">Map</a>
+    <a class="button" href="#map" tabindex="-1">Map</a>
   </li>
-</ol>
+</ul>
 
 <script>
   function initMap() {
