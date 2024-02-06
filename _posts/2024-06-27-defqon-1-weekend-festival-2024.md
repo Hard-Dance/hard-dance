@@ -11,8 +11,11 @@ genre: xyz
 age: 18+
 hosts:
   - Q-dance
-  - b2s
-tickets: https://defqon1.com
-facebook: https://www.facebook.com/events/838924394232971
+links:
+  - title: Website
+    url: https://defqon1.com
+  - title: Facebook
+    url: https://www.facebook.com/events/838924394232971
 image: /assets/img/events/defqon-1-weekend-festival-2024.jpg
+featured: true
 ---

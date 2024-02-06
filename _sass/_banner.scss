@@ -158,36 +158,10 @@ $shadows-big: multiple-box-shadow(100);
 // #region Event
 
 .banner-event-links {
-  background-color: var(--color-background);
-  border: var(--border-width) solid var(--color-background);
   position: absolute;
   bottom: var(--page-padding);
   left: 50%;
   transform: translateX(-50%);
-  display: flex;
-  column-gap: var(--border-width);
-  border-radius: var(--border-radius);
-  user-select: none;
-
-  @supports (backdrop-filter: blur(20px)) {
-    background-color: rgba(var(--color-background-rgb), 0.5);
-    backdrop-filter: blur(20px);
-    border-color: transparent;
-    text-shadow: 0 1px 0 var(--color-background-backdrop);
-  }
-
-  a {
-    display: block;
-    padding-block: calc(var(--border-radius) * 0.5);
-    padding-inline: var(--border-radius);
-    text-decoration: none;
-    border-radius: calc(var(--border-radius) - var(--border-width));
-    transition: background-color var(--duration) ease;
-
-    &:hover {
-      background-color: var(--color-background-transparent-hover);
-    }
-  }
 }
 
 .banner-event-slides {

@@ -4,7 +4,7 @@
       <a
         role="menuitem"
         {% if page.url == '/' or page.url == '/events/' %}
-          aria-active="current"
+          aria-current="page"
         {% endif %}
         {% if page.url == '/' %}
           href="#top"
@@ -14,7 +14,7 @@
         >Events</a>
     </li>
     <li role="presentation">
-      <a role="menuitem" href="/community.html" {% if page.url == '/community.html' %}aria-active="current"{% endif %}>Community</a>
+      <a role="menuitem" href="/community.html" {% if page.url == '/community.html' %}aria-current="page"{% endif %}>Community</a>
     </li>
   </ul>
 

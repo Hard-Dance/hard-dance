@@ -11,7 +11,10 @@ genre:
 age:
 hosts:
   - b2s
-tickets: https://www.b2s.nl/en/events/decibel/decibel-outdoor-2024/
-facebook: https://www.facebook.com/events/1018558175935669
+links:
+  - title: Website
+    url: https://www.b2s.nl/en/events/decibel/decibel-outdoor-2024/
+  - title: Facebook
+    url: https://www.facebook.com/events/1018558175935669
 image: /assets/img/events/decibel-outdoor-festival-2024.jpg
 ---

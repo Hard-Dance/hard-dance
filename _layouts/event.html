@@ -24,29 +24,27 @@
           {{ page.title }}
         </h1>
 
-        <ul class="page-title-input-container">
-          {% if page.facebook %}
+        {% if page.links %}
+        <ul class="button-group">
+          {% for link in page.links %}
           <li>
             <a
-              href="{{ page.facebook }}"
+              class="button"
+              href="{{ link.url }}"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Facebook
+              <svg alt="{{ link.title }} icon" aria-hidden="true">
+                <use
+                  xlink:href="/assets/symbols.svg#{{ link.title | slugify }}"
+                ></use>
+              </svg>
+              {{ link.title }}
             </a>
           </li>
-          {% endif %} {% if page.tickets %}
-          <li>
-            <a
-              href="{{ page.tickets }}"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Purchase
-            </a>
-          </li>
-          {% endif %}
+          {% endfor %}
         </ul>
+        {% endif %}
       </div>
 
       <dl>

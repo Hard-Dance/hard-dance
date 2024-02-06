@@ -1,0 +1,54 @@
+.page-title {
+  display: grid;
+  column-gap: var(--page-padding);
+  row-gap: 0.25rem;
+  grid-template-columns: 1fr auto;
+  grid-template-areas: "title controls" "dropdown dropdown";
+  // background-color: red;
+  margin-bottom: 1rem;
+
+  > h1 {
+    grid-area: title;
+    text-wrap: balance;
+    margin-left: max(var(--page-padding), env(safe-area-inset-left));
+  }
+
+  > .page-title-input-container {
+    grid-area: dropdown;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    column-gap: var(--page-padding);
+  }
+
+  > label {
+    grid-area: controls;
+    margin-right: max(var(--page-padding), env(safe-area-inset-right));
+  }
+
+  > input {
+    appearance: none;
+    outline: none;
+
+    &:focus-visible + label {
+      outline: var(--border-width) solid var(--color-accent);
+    }
+
+    &:checked ~ .page-title-input-container {
+      display: flex;
+      overflow-x: scroll;
+      padding: calc(var(--border-width) * 2);
+      -webkit-overflow-scrolling: touch;
+      padding-left: max(var(--page-padding), env(safe-area-inset-left));
+      padding-right: max(var(--page-padding), env(safe-area-inset-right));
+
+      > label:first-child {
+        margin-inline-start: auto;
+      }
+    }
+
+    &:not(:checked) ~ .page-title-input-container {
+      display: none;
+    }
+  }
+}

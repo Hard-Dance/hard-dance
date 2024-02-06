@@ -1,0 +1,62 @@
+.button-group {
+  display: flex;
+  gap: var(--border-width);
+  background-color: var(--_button-group-background-color);
+  border: var(--border-width) solid var(--_button-group-background-color);
+  border-radius: var(--border-radius);
+  transition: background-color var(--duration) ease,
+    border-color var(--duration) ease;
+
+  &:not([data-variant]) {
+    --_button-group-background-color: var(--color-background-backdrop);
+
+    &:hover,
+    &:focus-within {
+      --_button-group-background-color: var(--color-background);
+    }
+  }
+
+  &[data-variant="overlay"] {
+    --_button-group-background-color: var(--color-background);
+
+    @supports (backdrop-filter: blur(20px)) {
+      background-color: rgba(var(--color-background-rgb), 0.5);
+      backdrop-filter: blur(20px);
+      border-color: transparent;
+      text-shadow: 0 1px 0 var(--color-background-backdrop);
+    }
+  }
+
+  > li > .button {
+    border-radius: calc(var(--border-radius) - var(--border-width));
+  }
+}
+
+.button {
+  height: var(--component-height);
+  padding-inline: var(--border-radius);
+  text-decoration: none;
+  background-color: transparent;
+  color: var(--color-text);
+  border: 1px solid transparent;
+  font-weight: var(--font-weight-bold);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--duration) ease,
+    border-color var(--duration) ease;
+  border-radius: var(--border-radius);
+  gap: calc(var(--border-radius) * 0.5);
+  user-select: none;
+
+  &:hover {
+    background-color: var(--color-background-transparent-hover);
+  }
+
+  > svg {
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+    flex-shrink: 0;
+  }
+}

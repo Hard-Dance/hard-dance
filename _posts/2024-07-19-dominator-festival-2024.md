@@ -12,7 +12,10 @@ age: 18+
 hosts:
   - Art of Dance
   - Q-dance
-tickets: https://www.dominatorfestival.com/
-facebook: https://www.facebook.com/events/241948618764469
+links:
+  - title: Website
+    url: https://www.dominatorfestival.com/
+  - title: Facebook
+    url: https://www.facebook.com/events/241948618764469
 image: /assets/img/events/dominator-festival-2024.jpg
 ---

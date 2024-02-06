@@ -10,7 +10,10 @@ genre: Hardstyle
 age: 19+
 hosts:
   - Hard Dance NYC
-tickets: https://link.dice.fm/AOYylJYwVGb
-facebook: https://www.facebook.com/events/895102885541828/
+links:
+  - title: Website
+    url: https://link.dice.fm/AOYylJYwVGb
+  - title: Facebook
+    url: https://www.facebook.com/events/895102885541828/
 image: /assets/img/events/hard-dance-nyc-presents-sub-zero-project-2024.jpg
 ---

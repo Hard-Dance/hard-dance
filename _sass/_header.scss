@@ -44,8 +44,8 @@ header {
       background-color: var(--color-background-transparent-hover);
     }
 
-    &[aria-active="current"] {
-      box-shadow: inset 0 4px 0 currentColor;
+    &[aria-current="page"] {
+      box-shadow: inset 0 calc(var(--border-width) * 2) 0 currentColor;
     }
   }
 
@@ -54,42 +54,6 @@ header {
     width: var(--icon-size);
     height: var(--icon-size);
     filter: drop-shadow(0 1px 0 var(--color-background-backdrop));
-  }
-}
-
-.page-title {
-  // background-color: red;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-left: max(var(--page-padding), env(safe-area-inset-left));
-  padding-right: max(var(--page-padding), env(safe-area-inset-right));
-
-  > .page-title-input-container {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    flex-wrap: wrap;
-    column-gap: 1rem;
-    row-gap: 0.5rem;
-
-    // background-color: red;
-  }
-
-  label {
-    font-size: var(--font-size-small);
-    font-weight: var(--font-weight-bold);
-    user-select: none;
-    display: flex;
-    column-gap: 1ch;
-    color: var(--color-text-muted);
-  }
-
-  select {
-    background-color: var(--color-background);
-    border-color: var(--color-background);
-    width: 7rem;
-    color: var(--color-text);
   }
 }
 

@@ -10,7 +10,10 @@ genre: Hardstyle
 age:
 hosts:
   - b2s
-tickets: https://www.b2s.nl/en/events/synergy/synergy-2024/
-facebook: https://www.facebook.com/events/2726441687515166
+links:
+  - title: Website
+    url: https://www.b2s.nl/en/events/synergy/synergy-2024/
+  - title: Facebook
+    url: https://www.facebook.com/events/2726441687515166
 image: /assets/img/events/synergy-revolution-of-raw-2024.jpg
 ---
