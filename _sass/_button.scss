@@ -36,12 +36,15 @@
   height: var(--component-height);
   padding-inline: var(--border-radius);
   text-decoration: none;
+  background-color: transparent;
   color: var(--color-text);
+  border: 1px solid transparent;
   font-weight: var(--font-weight-bold);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: background-color var(--duration) ease;
+  transition: background-color var(--duration) ease,
+    border-color var(--duration) ease;
   border-radius: var(--border-radius);
   gap: calc(var(--border-radius) * 0.5);
   user-select: none;
