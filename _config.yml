@@ -176,6 +176,8 @@ event-hosts:
     facebook: https://www.facebook.com/twisted.events.official/
   - name: WhiteNorat.
     facebook: https://www.facebook.com/Whitenoratevents/
+  - name: XYZ
+    facebook: www.facebook.com/xyz
 
 event-types:
   - Festival
