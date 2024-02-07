@@ -1,0 +1,89 @@
+<div class="page-title">
+  <div class="page-title-start">
+    {% if page.layout == 'events' %}
+    <h1>{{ page.title }}</h1>
+    <button
+      aria-label="Add event"
+      class="button"
+      onclick="document.getElementById('add-event').showModal()"
+    >
+      <svg alt="Add icon" aria-hidden="true">
+        <use xlink:href="/assets/symbols.svg#add"></use>
+      </svg>
+      <span class="hide-on-mobile">Add</span>
+    </button>
+    {% elsif page.layout == 'event' %}
+    <h1 style="view-transition-name: post-title-{{ page.title | slugify }};">
+      {{ page.title }}
+    </h1>
+    {% endif %}
+  </div>
+
+  {% if page.layout == 'events' %}
+  <input
+    class="page-title-drawer-button"
+    type="checkbox"
+    id="filters"
+    name="filters"
+  />
+  <label class="button page-title-end" for="filters">
+    <svg alt="Filter icon" aria-hidden="true">
+      <use xlink:href="/assets/symbols.svg#options"></use>
+    </svg>
+    <span class="hide-on-mobile">Filters</span>
+  </label>
+  {% elsif page.layout == 'event' %} {% if page.links %}
+  <ul class="button-group event-button-group page-title-end">
+    {% for link in page.links %}
+    <li>
+      <a
+        class="button"
+        href="{{ link.url }}"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <svg alt="{{ link.title }} icon" aria-hidden="true">
+          <use
+            xlink:href="/assets/symbols.svg#{{ link.title | slugify }}"
+          ></use>
+        </svg>
+        <span class="hide-on-mobile">{{ link.title }}</span>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+  {% endif %} {% endif %} {% if page.layout == 'events' %}
+  <div class="page-title-drawer">
+    <label for="location">
+      Location
+      <select name="location" id="location">
+        <option value="all" selected>All</option>
+        <option value="north-america">North America</option>
+        <option value="south-america">South America</option>
+        <option value="europe">Europe</option>
+        <option value="asia">Asia</option>
+      </select>
+    </label>
+
+    <label for="type">
+      Type
+      <select name="type" id="type">
+        <option value="all" selected>All</option>
+        {% for type in site.event-types %}
+        <option value="{{ type | slugify }}">{{ type }}</option>
+        {% endfor %}
+      </select>
+    </label>
+
+    <label for="host">
+      Host
+      <select name="host" id="host">
+        <option value="all" selected>All</option>
+        {% for host in site.event-hosts %}
+        <option value="{{ host.name | slugify }}">{{ host.name }}</option>
+        {% endfor %}
+      </select>
+    </label>
+  </div>
+  {% endif %}
+</div>

@@ -1,0 +1,14 @@
+fieldset {
+  border: var(--border-width) solid var(--color-background);
+}
+
+legend {
+  font-weight: var(--font-weight-bold);
+  user-select: none;
+  color: var(--color-text-muted);
+}
+
+.fieldset-body {
+  display: flex;
+  padding: calc(var(--page-padding) * 0.5);
+}

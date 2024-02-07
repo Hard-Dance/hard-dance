@@ -1,5 +1,8 @@
 dialog {
-  display: block;
+  display: grid;
+  grid-template-rows: var(--header-height) 1fr auto;
+  grid-template-areas: "header" "body" "footer";
+
   position: fixed;
   inset: 0;
   min-height: 100vh;
@@ -29,6 +32,7 @@ dialog {
 }
 
 .dialog-header {
+  grid-area: header;
   z-index: 1;
   padding-left: max(var(--page-padding), env(safe-area-inset-left));
   padding-right: env(safe-area-inset-right);
@@ -73,6 +77,7 @@ dialog {
 }
 
 .dialog-body {
+  grid-area: body;
   overflow-y: auto;
   padding-left: max(var(--page-padding), env(safe-area-inset-left));
   padding-right: max(var(--page-padding), env(safe-area-inset-right));
@@ -80,65 +85,12 @@ dialog {
   padding-bottom: calc(var(--page-padding) + env(safe-area-inset-bottom));
 }
 
-blockquote {
-  // font-family: "Kalam", cursive;
-  font-size: var(--font-size-large);
-  text-align: center;
-  position: relative;
-  margin-inline: auto;
-  text-wrap: balance;
-  width: min(
-    calc(60rem - var(--page-padding) * 2),
-    calc(100% - var(--page-padding) * 2)
-  );
-
-  p {
-    margin-bottom: 1.5rem;
-  }
-
-  &::before,
-  &::after {
-    position: absolute;
-    font-size: calc(var(--font-size-largest) * 2);
-    font-family: "Kalam", cursive;
-  }
-
-  &::before {
-    content: open-quote;
-    top: 0;
-    left: -1ch;
-  }
-  &::after {
-    content: "\201E";
-    bottom: 0;
-    right: -1ch;
-  }
-
-  ~ figcaption {
-    text-align: right;
-    font-family: "Kalam", cursive;
-    font-size: var(--font-size-larger);
-    text-wrap: balance;
-    margin-inline: auto;
-    width: min(
-      calc(60rem - var(--page-padding) * 2),
-      calc(100% - var(--page-padding) * 2)
-    );
-
-    > span {
-      font-weight: 700;
-    }
-
-    &::before {
-      content: "— ";
-    }
-  }
-}
-
-.handwritten {
-  font-size: var(--font-size-largest);
-  text-align: center;
-  font-weight: 700;
-  font-family: "Kalam", cursive;
-  text-wrap: balance;
+.dialog-footer {
+  grid-area: footer;
+  display: flex;
+  justify-content: flex-end;
+  padding-top: calc(var(--page-padding) * 0.5);
+  padding-left: max(var(--page-padding), env(safe-area-inset-left));
+  padding-right: max(var(--page-padding), env(safe-area-inset-right));
+  padding-bottom: max(var(--page-padding), env(safe-area-inset-bottom));
 }

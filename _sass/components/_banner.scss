@@ -1,4 +1,6 @@
 .banner {
+  min-height: 25rem;
+
   &[data-variant="events"] {
     position: relative;
     overflow: hidden;
@@ -156,7 +158,6 @@ $shadows-big: multiple-box-shadow(100);
 // #endregion Events
 
 // #region Event
-
 .banner-event-links {
   position: absolute;
   bottom: var(--page-padding);
@@ -179,14 +180,35 @@ $shadows-big: multiple-box-shadow(100);
     width: 100%;
     height: calc(50vh - var(--header-height));
     height: calc(50dvh - var(--header-height));
+    min-height: 25rem;
     display: flex;
     justify-content: center;
   }
 }
 
-#poster > img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+#poster {
+  isolation: isolate;
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    position: absolute;
+    inset: 0;
+    background-image: var(--_post-image);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(30px);
+    z-index: 1;
+  }
+
+  > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: 2;
+  }
 }
 // #endregion Event

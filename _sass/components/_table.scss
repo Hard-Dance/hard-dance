@@ -1,0 +1,58 @@
+table {
+  width: 100%;
+  overflow-x: auto;
+  isolation: isolate;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+thead {
+  height: var(--component-height);
+
+  > tr > th {
+    border-bottom: var(--border-width) solid var(--color-background);
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background-color: var(--color-background);
+  }
+}
+
+tbody {
+  > tr {
+    height: var(--component-height);
+    &:nth-of-type(even) {
+      background-color: var(--color-background-transparent-hover);
+    }
+  }
+}
+
+th,
+td {
+  text-align: left;
+  padding-inline: calc(var(--page-padding) * 0.5);
+
+  &:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    background-color: var(--color-background);
+  }
+}
+
+th,
+td {
+  text-align: left;
+  padding-inline: calc(var(--page-padding) * 0.5);
+
+  &:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    background-color: var(--color-background);
+  }
+}
+
+// TODO: Overflow / sticky / z-index issue on table header

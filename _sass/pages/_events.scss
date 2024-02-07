@@ -1,0 +1,16 @@
+.events-grid {
+  grid-column: content-start / content-end;
+}
+
+.events-empty-state {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  grid-column: content-start / content-end;
+}
+
+.events-empty-state-emoji {
+  font-size: 6rem;
+  user-select: none;
+}

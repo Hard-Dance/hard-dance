@@ -1,0 +1,85 @@
+.about-details-summary {
+  font-size: var(--font-size-large);
+}
+
+.about-the-crew-button-group {
+  background-color: transparent;
+  border-color: transparent;
+
+  &:hover {
+    background-color: var(--color-background-backdrop);
+    border-color: var(--color-background-backdrop);
+  }
+}
+
+blockquote {
+  grid-column: content-start / content-end;
+  font-size: var(--font-size-large);
+  text-align: center;
+  position: relative;
+  margin-inline: auto;
+  text-wrap: balance;
+  width: min(
+    calc(60rem - var(--page-padding) * 2),
+    calc(100% - var(--page-padding) * 2)
+  );
+
+  p {
+    margin-bottom: 1.5rem;
+  }
+
+  &::before,
+  &::after {
+    position: absolute;
+    font-size: calc(var(--font-size-largest) * 2);
+    font-family: "Kalam", cursive;
+  }
+
+  &::before {
+    content: open-quote;
+    top: 0;
+    left: -1ch;
+  }
+  &::after {
+    content: "\201E";
+    bottom: 0;
+    right: -1ch;
+  }
+
+  ~ figcaption {
+    text-align: right;
+    font-family: "Kalam", cursive;
+    font-size: var(--font-size-larger);
+    text-wrap: balance;
+    margin-inline: auto;
+    width: min(
+      calc(60rem - var(--page-padding) * 2),
+      calc(100% - var(--page-padding) * 2)
+    );
+
+    > span {
+      font-weight: 700;
+    }
+
+    &::before {
+      content: "— ";
+    }
+  }
+}
+
+.handwritten {
+  margin-top: calc(var(--header-height) + 1rem);
+  grid-column: content-start / content-end;
+  font-size: var(--font-size-largest);
+  text-align: center;
+  font-weight: 700;
+  font-family: "Kalam", cursive;
+  text-wrap: balance;
+}
+
+figcaption,
+details {
+  grid-column: content-start / content-end;
+}
+
+// TODO: A lot of this is temporary, fix this!

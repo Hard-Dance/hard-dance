@@ -1,0 +1,9 @@
+label {
+  font-weight: var(--font-weight-bold);
+  user-select: none;
+  display: flex;
+  align-items: center;
+  column-gap: 1ch;
+  color: var(--color-text-muted);
+  width: fit-content;
+}

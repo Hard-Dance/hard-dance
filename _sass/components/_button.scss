@@ -27,6 +27,11 @@
     }
   }
 
+  &[data-wrap] {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
   > li > .button {
     border-radius: calc(var(--border-radius) - var(--border-width));
   }
@@ -48,6 +53,7 @@
   border-radius: var(--border-radius);
   gap: calc(var(--border-radius) * 0.5);
   user-select: none;
+  flex-shrink: 0;
 
   &:hover {
     background-color: var(--color-background-transparent-hover);
@@ -58,5 +64,22 @@
     height: 1em;
     fill: currentColor;
     flex-shrink: 0;
+  }
+
+  &[data-variant="call-to-action"] {
+    background-color: var(--color-accent);
+
+    &:hover {
+      background-color: var(--color-accent);
+    }
+  }
+
+  &[disabled] {
+    &,
+    &:hover {
+      background-color: var(--color-background-backdrop);
+      color: var(--color-text-muted);
+      font-weight: var(--font-weight-normal);
+    }
   }
 }
