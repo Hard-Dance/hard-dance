@@ -2,6 +2,7 @@
   <ul role="menu">
     <li role="presentation">
       <a
+        class="header-button"
         role="menuitem"
         {% if page.url == '/' or page.url == '/events/' %}
           aria-current="page"
@@ -11,17 +12,27 @@
         {% else %}
           href="/"
         {% endif %}
-        >Events</a>
+        >
+        <svg alt="Calendar icon" aria-hidden="true">
+          <use xlink:href="/assets/symbols.svg#calendar"></use>
+        </svg>
+        Events
+      </a>
     </li>
     <li role="presentation">
-      <a role="menuitem" href="/community.html" {% if page.url == '/community.html' %}aria-current="page"{% endif %}>Community</a>
+      <a class="header-button" role="menuitem" href="/community.html" {% if page.url == '/community.html' %}aria-current="page"{% endif %}>
+        <svg alt="Chat icon" aria-hidden="true">
+          <use xlink:href="/assets/symbols.svg#chat"></use>
+        </svg>
+        Community
+      </a>
     </li>
-    <li role="presentation" style="margin-inline-start: auto;">
-      <a role="menuitem" href="/about.html" {% if page.url == '/about.html' %}aria-current="page"{% endif %}>
-        About
-        <!-- <svg alt="Information" aria-hidden="true">
+    <li role="presentation">
+      <a class="header-button" role="menuitem" href="/about.html" {% if page.url == '/about.html' %}aria-current="page"{% endif %}>
+        <svg alt="Information icon" aria-hidden="true">
           <use xlink:href="/assets/symbols.svg#info"></use>
-        </svg> -->
+        </svg>
+        About
       </a>
     </li>
   </ul>

@@ -10,8 +10,9 @@
   --font-size-small: 0.7862rem;
   --font-weight-normal: 400;
   --font-weight-bold: 550;
-  --opacity: 0.28;
-  --page-padding: 2rem;
+  --opacity: 0.28; // TODO: Not used so far
+  --padding: 1rem;
+  --page-padding: calc(var(--padding) * 2);
 
   // #region Colors
   --color-background-rgb: 28, 28, 30;
@@ -21,7 +22,7 @@
   --color-text-muted-rgb: 151, 150, 156;
   --color-icon-rgb: 153, 153, 153;
   --color-border-rgb: 061, 060, 065;
-  --color-accent-rgb: 059, 130, 246;
+  --color-accent-rgb: 226, 006, 019;
 
   --color-background: rgb(var(--color-background-rgb));
   --color-background-backdrop: rgb(var(--color-background-backdrop-rgb));
@@ -36,7 +37,16 @@
 
   --border-width: 2px;
   --icon-size: 1.25rem;
-  --header-height: 4rem;
 
   --component-height: 2.75rem;
+
+  // Desktop
+  @media only screen and (min-width: 769px) {
+    --header-height: 4rem;
+  }
+
+  // Mobile
+  @media only screen and (max-width: 768px) {
+    --header-height: 5rem;
+  }
 }
