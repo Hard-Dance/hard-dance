@@ -17,6 +17,11 @@ body {
   line-height: 1.5;
   color: var(--color-text);
   background-color: var(--color-background-backdrop);
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
 }
 
 main {
@@ -36,6 +41,13 @@ main {
     [content-end]
     max(var(--page-padding), env(safe-area-inset-right))
     [full-width-end];
+}
+
+.banner {
+  height: 40vh;
+  height: 40dvh;
+  // min-height: 15rem; // TODO: Is this working?
+  flex-shrink: 0;
 }
 
 @media only screen and (max-width: 768px) {

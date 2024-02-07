@@ -5,7 +5,19 @@ footer {
   justify-content: center;
   padding-bottom: env(safe-area-inset-bottom);
   margin-top: auto;
-  min-height: var(--header-height);
   color: var(--color-text-muted);
   font-size: var(--font-size-small);
+  flex-shrink: 0;
+  height: var(--header-height);
+
+  // Desktop
+  @media only screen and (min-width: 769px) {
+  }
+
+  // Mobile
+  @media only screen and (max-width: 768px) {
+    padding-bottom: var(--header-height);
+  }
 }
+
+// TODO: This is not working in mobile

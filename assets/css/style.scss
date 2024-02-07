@@ -10,7 +10,6 @@
 @layer defaults {
   @import "variables";
   @import "global";
-  @import "layout";
 }
 
 @layer components {
@@ -35,6 +34,7 @@
 
 @layer pages {
   @import "pages/about";
+  @import "pages/community";
   @import "pages/event";
   @import "pages/events";
 }
