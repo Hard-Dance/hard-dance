@@ -17,35 +17,7 @@
     </div>
 
     <main>
-      <div class="page-title">
-        <h1
-          style="view-transition-name: post-title-{{ page.title | slugify }};"
-        >
-          {{ page.title }}
-        </h1>
-
-        {% if page.links %}
-        <ul class="button-group">
-          {% for link in page.links %}
-          <li>
-            <a
-              class="button"
-              href="{{ link.url }}"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <svg alt="{{ link.title }} icon" aria-hidden="true">
-                <use
-                  xlink:href="/assets/symbols.svg#{{ link.title | slugify }}"
-                ></use>
-              </svg>
-              {{ link.title }}
-            </a>
-          </li>
-          {% endfor %}
-        </ul>
-        {% endif %}
-      </div>
+      {% include title-bar.html %}
 
       <dl>
         <dt>Date announced</dt>
@@ -75,6 +47,11 @@
             target="_blank"
             rel="noopener noreferrer"
           >
+            <div class="icon">
+              <svg alt="{{ host }} icon" aria-hidden="true">
+                <use xlink:href="/assets/symbols.svg#location"></use>
+              </svg>
+            </div>
             {{ page.location }}
           </a>
         </dd>
@@ -98,6 +75,6 @@
       </dl>
     </main>
 
-    {% include footer.html %} {% include dialog.html %}
+    {% include footer.html %}
   </body>
 </html>

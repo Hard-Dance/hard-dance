@@ -63,6 +63,7 @@ admins:
   - name: Eugene Berzin
     alias: Treachery
     position: Owner
+    location: 🇪🇸
     email: eugene@hard.dance
     website: https://djtreachery.com
     socials:
@@ -83,6 +84,7 @@ admins:
   - name: Jon Graft
     alias: Johnny Hardstyle
     position: Web designer & developer
+    location: 🇺🇸
     email: me@jongraft.design
     website: https://jongraft.design
     socials:
@@ -94,3 +96,89 @@ admins:
         url: https://github.com/FlyersPh9
       - service: Discord
         url: https://discordapp.com/users/flyersph9
+
+event-hosts:
+  - name: A.L.E.X. Events
+    url: https://www.alex-events.net
+    facebook: https://www.facebook.com/Official.alexevents/
+  - name: Airbeat One
+    url: https://airbeat-one.de
+    facebook: https://www.facebook.com/airbeatone/
+  - name: Army of Hardcore USA
+    facebook: https://www.facebook.com/armyofhardcore.usa/
+  - name: Art of Dance
+    url: https://www.artofdance.nl
+    facebook: https://www.facebook.com/artofdanceofficial/
+  - name: b2s
+    url: https://www.b2s.nl
+    facebook: https://www.facebook.com/officialb2s/
+  - name: Bass Events
+    url: https://www.bassevents.be
+    facebook: https://www.facebook.com/bassevents/
+  - name: Basscon
+    facebook: https://www.facebook.com/bassconmassive/
+  - name: BKJN events
+    facebook: https://www.facebook.com/BKJNevents/
+  - name: Devastator Events
+    url: https://devastatorevents.cz
+    facebook: https://www.facebook.com/Devastator.events/
+  - name: Dreamfields Mexico
+    url: https://dreamfields.mx
+    facebook: https://www.facebook.com/dreamfieldsmexico/
+  - name: Dropzone
+    url: https://dropzonefest.com
+    facebook: https://www.facebook.com/dropzonefest/
+  - name: East Coast Hard Dance
+    url: https://eastcoastharddance.com
+    facebook: https://www.facebook.com/EastCoastHardDance/
+  - name: Fatality
+    facebook: https://www.facebook.com/fatalityevent/
+  - name: Gearbox Digital
+    url: https://gearboxdigital.com
+    facebook: https://www.facebook.com/GearboxDigital/
+  - name: Hardice
+    facebook: https://www.facebook.com/hardice.ch/
+  - name: Hardstyle Arena
+    facebook: https://www.facebook.com/FreshHardstyleArena/
+  - name: Harmony of Hardcore
+    url: https://www.harmonyofhardcore.nl
+    facebook: https://www.facebook.com/HOHfestival/
+  - name: Hellfire
+    url: https://hell-fire.co.uk
+    facebook: https://www.facebook.com/Hellfireshow/
+  - name: I AM HARDSTYLE
+    url: https://iamhardstyle.com
+    facebook: https://www.facebook.com/iamhardstyleofficial/
+  - name: Intents Festival
+    url: https://www.intentsfestival.nl
+    facebook: https://www.facebook.com/intentsfestival/
+  - name: Matrixx
+    url: https://www.matrixx.nl
+    facebook: https://www.facebook.com/MatrixxEvents/
+  - name: Multigroove
+    url: https://multigroove.com
+    facebook: https://www.facebook.com/multigroove/
+  - name: Musical Madness
+    url: https://www.musical-madness.de
+    facebook: https://www.facebook.com/musicalmadnessofficial/
+  - name: Project Hardstyle CH
+    facebook: https://www.facebook.com/ProjectHardstyleCH/
+  - name: Q-dance
+    url: https://www.q-dance.com
+    facebook: https://www.facebook.com/Qdance/
+  - name: Shockerz
+    url: https://shockerz.nl
+    facebook: https://www.facebook.com/shockerzofficial/
+  - name: Tomorrowland
+    url: https://www.tomorrowland.com
+    facebook: https://www.facebook.com/tomorrowland/
+  - name: Twisted Events
+    facebook: https://www.facebook.com/twisted.events.official/
+  - name: WhiteNorat.
+    facebook: https://www.facebook.com/Whitenoratevents/
+
+event-types:
+  - Festival
+  - Arena
+  - Club
+  - Underground

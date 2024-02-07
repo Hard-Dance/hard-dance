@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+  <head>
+    {% include head.html %}
+    <script src="https://cdn.jsdelivr.net/npm/@widgetbot/html-embed"></script>
+  </head>
+  <body>
+    {% include header.html %}
+
+    <main>
+      <h2 class="handwritten">Welcome to our digital tribe!</h2>
+      <blockquote>{{ content }}</blockquote>
+      <figcaption>Your <span>{{ site.title }}</span> crew</figcaption>
+
+      <details>
+        <summary class="about-details-summary">
+          The crew
+          <span class="details-summary-badge">{{ site.admins | size }}</span>
+        </summary>
+        <div class="details-body">
+          <ul class="grid">
+            {% for admin in site.admins %}
+            <li class="grid-item">
+              <img
+                class="grid-item-image"
+                src="/assets/img/admins/{{ admin.name | slugify }}.jpg"
+                alt="A photo of {{ admin.name }}"
+                draggable="false"
+              />
+
+              <div class="grid-item-metadata">
+                <h3 class="grid-item-metadata-title">
+                  {{ admin.name }}{% if admin.alias %} / {{ admin.alias }}{%
+                  endif %}
+                </h3>
+                <div class="grid-item-metadata-subtitle">
+                  {{ admin.position }}
+                </div>
+                <div class="grid-item-metadata-symbol">
+                  {{ admin.location }}
+                </div>
+                <ul
+                  class="button-group grid-item-metadata-body about-the-crew-button-group"
+                  data-wrap
+                >
+                  {% if admin.website %}
+                  <li>
+                    <a
+                      href="{{ admin.website }}"
+                      aria-label="Visit {{ admin.name }}'s website"
+                      class="button"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <svg alt="Website icon" aria-hidden="true">
+                        <use xlink:href="/assets/symbols.svg#website"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  {% endif %}
+                  <li>
+                    <a
+                      href="mailto:{{ admin.email }}"
+                      aria-label="Email {{ admin.name }}"
+                      class="button"
+                    >
+                      <svg alt="Email icon" aria-hidden="true">
+                        <use xlink:href="/assets/symbols.svg#email"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  {% for social in admin.socials %}
+                  <li>
+                    <a
+                      href="{{ social.url }}"
+                      aria-label="Follow {{ admin.name }} on {{ social.service }}"
+                      class="button"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <svg alt="{{ social.service }} icon" aria-hidden="true">
+                        <use
+                          xlink:href="/assets/symbols.svg#{{ social.service | slugify }}"
+                        ></use>
+                      </svg>
+                    </a>
+                  </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary class="about-details-summary">
+          The hosts we check
+          <span class="details-summary-badge">
+            {{ site.event-hosts | size }}
+          </span>
+        </summary>
+        <div class="details-body" data-padding="false">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Website</th>
+                <th scope="col">Facebook</th>
+                <th scope="col">Icon</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {% for event-host in site.event-hosts %}
+              <tr>
+                <th scope="row">{{ event-host.name }}</th>
+                <td>
+                  <a
+                    href="{{ event-host.url }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {{ event-host.url | remove: 'https://' | remove: 'www.' }}
+                  </a>
+                </td>
+                <td>
+                  <a
+                    href="{{ event-host.facebook }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {{ event-host.facebook | remove: 'https://' | remove: 'www.'
+                    }}
+                  </a>
+                </td>
+                <td>
+                  <div class="icon">
+                    <svg alt="{{ event-host.name }} icon" aria-hidden="true">
+                      <use
+                        xlink:href="/assets/symbols.svg#{{ event-host.name | slugify }}"
+                      ></use>
+                    </svg>
+                  </div>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </details>
+    </main>
+    {% include footer.html %}
+  </body>
+</html>

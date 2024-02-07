@@ -56,17 +56,3 @@ header {
     filter: drop-shadow(0 1px 0 var(--color-background-backdrop));
   }
 }
-
-.empty-state {
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding-left: max(var(--page-padding), env(safe-area-inset-left));
-  padding-right: max(var(--page-padding), env(safe-area-inset-right));
-  text-align: center;
-}
-
-.empty-state-emoji {
-  font-size: 6rem;
-  user-select: none;
-}

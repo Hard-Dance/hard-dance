@@ -16,12 +16,13 @@
     <li role="presentation">
       <a role="menuitem" href="/community.html" {% if page.url == '/community.html' %}aria-current="page"{% endif %}>Community</a>
     </li>
+    <li role="presentation" style="margin-inline-start: auto;">
+      <a role="menuitem" href="/about.html" {% if page.url == '/about.html' %}aria-current="page"{% endif %}>
+        About
+        <!-- <svg alt="Information" aria-hidden="true">
+          <use xlink:href="/assets/symbols.svg#info"></use>
+        </svg> -->
+      </a>
+    </li>
   </ul>
-
-  <button title="Information" onclick="document.getElementById('info').showModal()">
-    <svg alt="Information" aria-hidden="true">
-      <use xlink:href="/assets/symbols.svg#info"></use>
-    </svg>
-    <span class="visually-hidden">Information</span>
-  </button>
 </header>

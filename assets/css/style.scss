@@ -1,26 +1,40 @@
 ---
 ---
 
-@layer reset, defaults, components;
+@layer reset, defaults, components, pages;
 
 @layer reset {
   @import "reset";
 }
 
 @layer defaults {
+  @import "variables";
   @import "global";
   @import "layout";
 }
 
 @layer components {
-  @import "banner";
-  @import "button";
-  @import "data-list";
-  @import "dialog";
-  @import "event-list";
-  @import "event-list-filter";
-  @import "footer";
-  @import "header";
-  @import "select";
-  @import "title-bar";
+  @import "components/anchor";
+  @import "components/banner";
+  @import "components/button";
+  @import "components/checkbox-radio";
+  @import "components/details";
+  @import "components/dialog";
+  @import "components/fieldset";
+  @import "components/footer";
+  @import "components/form";
+  @import "components/grid";
+  @import "components/header";
+  @import "components/icon";
+  @import "components/input";
+  @import "components/label";
+  @import "components/select";
+  @import "components/table";
+  @import "components/title-bar";
+}
+
+@layer pages {
+  @import "pages/about";
+  @import "pages/event";
+  @import "pages/events";
 }

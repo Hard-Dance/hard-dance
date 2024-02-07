@@ -1,0 +1,4 @@
+a:not([class]) {
+  color: var(--color-text);
+  font-weight: var(--font-weight-bold);
+}
