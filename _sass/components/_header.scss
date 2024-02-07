@@ -4,16 +4,12 @@ header {
   justify-content: space-between;
   transition: color var(--duration) ease;
   color: var(--color-text-muted);
-  @supports (backdrop-filter: blur(20px)) {
-    backdrop-filter: blur(20px);
-    background-image: linear-gradient(
-      var(--color-background-backdrop),
-      transparent
-    );
-  }
-  @supports not (backdrop-filter: blur(20px)) {
-    background-color: var(--color-background-backdrop);
-  }
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  background-image: linear-gradient(
+    var(--color-background-backdrop),
+    transparent
+  );
 
   &[data-scrolled="true"] {
     color: var(--color-text);
