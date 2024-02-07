@@ -10,9 +10,11 @@
   &:not([data-variant]) {
     --_button-group-background-color: var(--color-background-backdrop);
 
-    &:hover,
-    &:focus-within {
-      --_button-group-background-color: var(--color-background);
+    @media (hover: hover) {
+      &:hover,
+      &:focus-within {
+        --_button-group-background-color: var(--color-background);
+      }
     }
   }
 
@@ -52,8 +54,10 @@
   user-select: none;
   flex-shrink: 0;
 
-  &:hover {
-    background-color: var(--color-background-transparent-hover);
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--color-background-transparent-hover);
+    }
   }
 
   > svg {
@@ -66,8 +70,10 @@
   &[data-variant="call-to-action"] {
     background-color: var(--color-accent);
 
-    &:hover {
-      background-color: var(--color-accent);
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--color-accent);
+      }
     }
   }
 
