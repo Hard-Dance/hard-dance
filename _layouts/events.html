@@ -23,16 +23,12 @@
         {% assign country = country_part %} 
 
         {% case country %}
-          {% when 'USA' %}
-            {% assign flag = '🇺🇸' %}
-          {% when 'Canada' %}
-            {% assign flag = '🇨🇦' %}
-          {% when 'UK' %}
-            {% assign flag = '🇬🇧' %}
-          {% when 'Nederland' %}
-            {% assign flag = '🇳🇱' %}
-          {% when 'Belgium' %}
-            {% assign flag = '🇧🇪' %}
+          {% when 'USA' %} {% assign flag = '🇺🇸' %}
+          {% when 'Canada' %} {% assign flag = '🇨🇦' %}
+          {% when 'UK' %} {% assign flag = '🇬🇧' %}
+          {% when 'Nederland' %} {% assign flag = '🇳🇱' %}
+          {% when 'Belgium' %} {% assign flag = '🇧🇪' %}
+          {% when 'Germany' %} {% assign flag = '🇩🇪' %}
           {%- else -%}
             {% assign flag = '' %}
         {% endcase %}

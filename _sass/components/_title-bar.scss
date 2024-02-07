@@ -11,12 +11,12 @@
 .page-title-drawer {
   display: flex;
   align-items: center;
-  column-gap: calc(var(--page-padding) * 0.5);
 }
 
 .page-title-start {
   // background-color: red;
   grid-area: start;
+  column-gap: calc(var(--page-padding) * 0.5);
   margin-left: max(var(--page-padding), env(safe-area-inset-left));
 
   > h1 {
@@ -51,10 +51,6 @@
 
     &:first-child {
       margin-inline-start: auto;
-    }
-
-    &:not(:first-child)::before {
-      width: 0px;
     }
   }
 }
