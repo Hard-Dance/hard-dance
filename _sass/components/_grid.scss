@@ -64,7 +64,6 @@
 
 .grid-item-metadata-subtitle,
 .grid-item-metadata-symbol {
-  font-size: var(--font-size-small);
   color: var(--color-text-muted);
   font-weight: var(--font-weight-bold);
   text-transform: uppercase;
@@ -72,6 +71,8 @@
 
 .grid-item-metadata-subtitle {
   grid-area: subtitle;
+  font-size: var(--font-size-small);
+  align-self: center;
 }
 
 .grid-item-metadata-symbol {

@@ -1,3 +1,45 @@
+.about-banner {
+  grid-column: full-width-start / full-width-end;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+
+  // Desktop
+  @media only screen and (min-width: 769px) {
+    padding-block-start: calc(var(--header-height) + 2rem);
+  }
+
+  // Mobile
+  @media only screen and (max-width: 768px) {
+    padding-block-start: 2rem;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      circle,
+      var(--color-background-backdrop) 25%,
+      transparent 26%
+    );
+    background-size: 1em 1em;
+    background-color: rgba(var(--color-background-backdrop-rgb), 0.5);
+    opacity: 1;
+    z-index: -1;
+  }
+}
+
+.about-banner-video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  inset: 0;
+  z-index: -2;
+  mask-image: linear-gradient(#000 90%, transparent 100%);
+}
+
 .about-details-summary {
   font-size: var(--font-size-large);
 }
@@ -12,13 +54,15 @@
   }
 }
 
+// TODO: A lot of this below is temporary, fix this!
+
 blockquote {
   grid-column: content-start / content-end;
   font-size: var(--font-size-large);
   text-align: center;
   position: relative;
   margin-inline: auto;
-  text-wrap: balance;
+  text-wrap: pretty;
   width: min(
     calc(60rem - var(--page-padding) * 2),
     calc(100% - var(--page-padding) * 2)
@@ -28,22 +72,27 @@ blockquote {
     margin-bottom: 1.5rem;
   }
 
-  &::before,
-  &::after {
-    position: absolute;
-    font-size: calc(var(--font-size-largest) * 2);
-    font-family: "Kalam", cursive;
-  }
+  // Desktop
+  @media only screen and (min-width: 769px) {
+    &::before,
+    &::after {
+      position: absolute;
+      font-size: calc(var(--font-size-largest) * 2);
+      font-family: "Kalam", cursive;
+      color: var(--color-accent);
+    }
 
-  &::before {
-    content: open-quote;
-    top: 0;
-    left: -1ch;
-  }
-  &::after {
-    content: "\201E";
-    bottom: 0;
-    right: -1ch;
+    &::before {
+      content: open-quote;
+      top: 0;
+      left: -1ch;
+    }
+
+    &::after {
+      content: "\201E";
+      bottom: 0;
+      right: -1ch;
+    }
   }
 
   ~ figcaption {
@@ -59,6 +108,7 @@ blockquote {
 
     > span {
       font-weight: 700;
+      color: var(--color-accent);
     }
 
     &::before {
@@ -68,7 +118,6 @@ blockquote {
 }
 
 .handwritten {
-  margin-top: calc(var(--header-height) + 1rem);
   grid-column: content-start / content-end;
   font-size: var(--font-size-largest);
   text-align: center;
@@ -82,4 +131,37 @@ details {
   grid-column: content-start / content-end;
 }
 
-// TODO: A lot of this is temporary, fix this!
+.x {
+  // background-color: red;
+  margin-block: var(--padding);
+
+  > dt {
+    font-size: var(--font-size-large);
+  }
+
+  > dd {
+    position: relative;
+    padding-inline-start: 1rem;
+
+    &:not(:last-child) {
+      margin-block-end: var(--padding);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0.25rem;
+      width: var(--border-width);
+      background-color: var(--color-background-hover);
+    }
+
+    > ol,
+    > ul {
+      list-style: revert;
+
+      > li {
+        margin-inline-start: 1rem;
+      }
+    }
+  }
+}

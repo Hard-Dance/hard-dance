@@ -24,6 +24,7 @@ description: "Coming soon"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://hard-dance.netlify.app" # the base hostname & protocol for your site, e.g. http://example.com
 lang: "en-US"
+repository: "https://github.com/FlyersPh9/hard-dance"
 
 permalink: /:categories/:title:output_ext
 
@@ -182,3 +183,11 @@ event-types:
   - Arena
   - Club
   - Underground
+
+friends:
+  - title: /r/hardstyle
+    subtitle: Reddit
+    url: https://www.reddit.com/r/hardstyle/
+  - title: Hard Dance Release Radar
+    subtitle: Spotify
+    url: https://www.hdrr.info

@@ -19,7 +19,7 @@
     <main>
       {% include title-bar.html %}
 
-      <dl>
+      <dl class="event-data-list">
         <dt>Date announced</dt>
         <dd>
           <time datetime="{{ page.date | date: '%Y-%m-%d' }}">
@@ -67,7 +67,7 @@
         {% endif %} {% if page.hosts %}
         <dt>Host{% if page.hosts.size > 1 %}s{% endif %}</dt>
         <dd>
-          <ul>
+          <ul class="event-data-list-host-list">
             {% include hosts.html %}
           </ul>
         </dd>

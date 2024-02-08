@@ -33,7 +33,7 @@
             {% assign flag = '' %}
         {% endcase %}
         <li
-          class="grid-item {% for host in post.hosts %}filter-host-{{ host | slugify }} {% endfor %}"
+          class="grid-item events-grid-item {% for host in post.hosts %}filter-host-{{ host | slugify }} {% endfor %}"
           id="grid-item-{{ forloop.index }}"
           data-location="{{ country_part | downcase }}"
           data-type="{{ post.type | downcase }}"
@@ -97,10 +97,30 @@
           colorjs.average(img.src).then((color) => {
             const rgbColor = `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
             const listItem = document.getElementById(`grid-item-${index}`);
-            listItem.style.backgroundColor = rgbColor;
+
+            // Determine the best text color for contrast
+            const textColor = getContrastYIQ(color);
+
+            // Set CSS custom properties for background and text color
+            listItem.style.setProperty(
+              "--_color-grid-item-background",
+              rgbColor
+            );
+            listItem.style.setProperty(
+              "--_color-grid-item-text-color",
+              textColor
+            );
           });
         });
       });
+
+      function getContrastYIQ(rgbColor) {
+        var r = rgbColor[0];
+        var g = rgbColor[1];
+        var b = rgbColor[2];
+        var yiq = (r * 299 + g * 587 + b * 114) / 1000;
+        return yiq >= 128 ? "black" : "white";
+      }
     </script>
 
     <script>
