@@ -8,9 +8,24 @@
     {% include header.html %}
 
     <main>
-      <h2 class="handwritten">Welcome to our digital tribe!</h2>
-      <blockquote>{{ content }}</blockquote>
-      <figcaption>Your <span>{{ site.title }}</span> crew</figcaption>
+      <section class="about-banner" id="top">
+        <h2 class="handwritten">Welcome to our digital tribe!</h2>
+        <blockquote>{{ content }}</blockquote>
+        <figcaption>Your <span>{{ site.title }}</span> crew</figcaption>
+
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          poster="/assets/video/about-banner.jpg"
+          class="about-banner-video"
+        >
+          <source src="/assets/video/about-banner.mp4" type="video/mp4" />
+          <source src="/assets/video/about-banner.ogv" type="video/ogv" />
+          <source src="/assets/video/about-banner.webm" type="video/webm" />
+        </video>
+      </section>
 
       <details>
         <summary class="about-details-summary">
@@ -148,6 +163,224 @@
               {% endfor %}
             </tbody>
           </table>
+        </div>
+      </details>
+
+      <details>
+        <summary class="about-details-summary">
+          Our friends
+          <span class="details-summary-badge">{{ site.friends | size }}</span>
+        </summary>
+        <div class="details-body">
+          <ul class="grid">
+            {% for friend in site.friends %}
+            <li class="grid-item">
+              <img
+                class="grid-item-image"
+                src="/assets/img/friends/{{ friend.title | slugify }}.png"
+                alt="A graphic of {{ friend.title }}"
+                draggable="false"
+              />
+
+              <div class="grid-item-metadata">
+                <a
+                  class="grid-item-metadata-title"
+                  href="{{ friend.url }}"
+                  aria-label="Visit {{ friend.title }}'s website"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >{{ friend.title }}</a
+                >
+                <div class="grid-item-metadata-subtitle">
+                  {{ friend.subtitle }}
+                </div>
+                <div class="grid-item-metadata-symbol">
+                  <div class="icon">
+                    <svg alt="Website icon" aria-hidden="true">
+                      <use
+                        xlink:href="/assets/symbols.svg#{{ friend.subtitle | slugify }}"
+                      ></use>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary class="about-details-summary">How to help us</summary>
+        <div class="details-body">
+          <p>
+            We are an open source platform, meaning anyone can contribute to the
+            Hard.Dance project. There's a couple of ways that you can
+            contribute:
+          </p>
+
+          <dl class="x">
+            <dt>Add a missing event</dt>
+            <dd>
+              If there is a hard dance event that we're not showing, you have
+              two options:
+              <ul>
+                <li>
+                  Go to the
+                  <a href="/"
+                    ><div class="icon">
+                      <svg alt="Calendar icon" aria-hidden="true">
+                        <use xlink:href="/assets/symbols.svg#calendar"></use>
+                      </svg>
+                    </div>
+                    Events</a
+                  >
+                  page and click on the
+                  <strong
+                    ><div class="icon">
+                      <svg alt="Add icon" aria-hidden="true">
+                        <use xlink:href="/assets/symbols.svg#add"></use>
+                      </svg>
+                    </div>
+                    Add</strong
+                  >
+                  &nbsp;button to fill out a form to submit an event.
+                </li>
+                <li>
+                  Go to
+                  <a
+                    href="{{ site.repository }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >the open source GitHub repository</a
+                  >
+                  and submit a pull request. This is the preferred method as it
+                  is fewer steps for us, however this is developer centric and
+                  not easy for everyone.
+                </li>
+              </ul>
+            </dd>
+
+            <dt>Add a missing host</dt>
+            <dd>Coming soon!</dd>
+
+            <dt>Help in other ways</dt>
+            <dd>
+              Your unique insights and innovative ideas are invaluable to us. If
+              you see opportunities for improvement or have suggestions that
+              could enhance our website, we're all ears. While we can't promise
+              to implement every idea, we genuinely appreciate and consider all
+              contributions. Let's collaborate to make our site even better for
+              everyone.
+            </dd>
+
+            <dt>Donations</dt>
+            <dd>
+              As we continue to enhance our website, your support can make a
+              significant difference. Every donation we receive goes directly
+              into developing new features, improving user experience, and
+              covering hosting and maintenance costs. By contributing, you're
+              not just donating; you're investing in a platform that grows with
+              and for its community.
+            </dd>
+          </dl>
+        </div>
+      </details>
+
+      <details open>
+        <summary class="about-details-summary">
+          How to get the Hard.Dance app
+        </summary>
+        <div class="details-body">
+          <p>
+            While Hard.Dance is not available in app stores, you can easily
+            install it as a Progressive Web App (PWA) for a seamless app-like
+            experience. Follow these platform-specific instructions:
+          </p>
+
+          <dl class="x">
+            <dt>iOS</dt>
+            <dd>
+              <ol>
+                <li>Open Safari and navigate to Hard.Dance.</li>
+                <li>
+                  Tap the
+                  <div class="icon">
+                    <svg alt="Share icon" aria-hidden="true">
+                      <use xlink:href="/assets/symbols.svg#share"></use>
+                    </svg>
+                  </div>
+                  <strong>Share</strong> icon at the bottom of the screen.
+                </li>
+                <li>
+                  Scroll down and select
+                  <div class="icon">
+                    <svg alt="Add to home screen icon" aria-hidden="true">
+                      <use xlink:href="/assets/symbols.svg#add-square"></use>
+                    </svg>
+                  </div>
+                  <strong>Add to Home Screen</strong>.
+                </li>
+                <li>Tap <strong>Add</strong> to install.</li>
+              </ol>
+            </dd>
+
+            <dt>Android</dt>
+            <dd>
+              <ol>
+                <li>Open Chrome and visit Hard.Dance.</li>
+                <li>Tap the menu icon (3 dots) in the top right corner.</li>
+                <li>Tap "Add to Home screen."</li>
+                <li>Name the app if desired, then tap "Add."</li>
+              </ol>
+            </dd>
+
+            <dt>macOS</dt>
+            <dd>
+              <ol>
+                <li>Open Safari and go to Hard.Dance.</li>
+                <li>
+                  Click the
+                  <div class="icon">
+                    <svg alt="Share icon" aria-hidden="true">
+                      <use xlink:href="/assets/symbols.svg#share"></use>
+                    </svg>
+                  </div>
+                  <strong>Share</strong> icon in the toolbar.
+                </li>
+                <li>
+                  Choose
+                  <div class="icon">
+                    <svg alt="Add to home screen icon" aria-hidden="true">
+                      <use xlink:href="/assets/symbols.svg#add-square"></use>
+                    </svg>
+                  </div>
+                  <strong>Add to Home Screen</strong> from the share options.
+                </li>
+                <li>Name your app and then click <strong>Add</strong>.</li>
+              </ol>
+            </dd>
+
+            <dt>Windows</dt>
+            <dd>
+              <ol>
+                <li>Open Chrome and navigate to Hard.Dance.</li>
+                <li>
+                  Click the three dots in the top right corner for the menu.
+                </li>
+                <li>Select "More tools," then "Create shortcut."</li>
+                <li>
+                  Name the app and check "Open as window," then click "Create."
+                </li>
+              </ol>
+            </dd>
+          </dl>
+
+          <p>
+            Now, Hard.Dance will run just like an app from your device,
+            providing a full-screen, immersive experience without the need for a
+            traditional app store download.
+          </p>
         </div>
       </details>
     </main>

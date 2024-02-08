@@ -60,8 +60,8 @@
   }
 
   > svg {
-    width: 1em;
-    height: 1em;
+    width: var(--icon-size);
+    height: var(--icon-size);
     fill: currentColor;
     flex-shrink: 0;
   }

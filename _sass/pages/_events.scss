@@ -2,6 +2,24 @@
   grid-column: content-start / content-end;
 }
 
+.events-grid-item {
+  background-color: var(--_color-grid-item-background);
+  color: var(--_color-grid-item-text-color);
+
+  .grid-item-metadata-title,
+  .grid-item-metadata-subtitle {
+    color: inherit;
+  }
+
+  .grid-item-metadata-title {
+    opacity: 0.9;
+  }
+
+  .grid-item-metadata-subtitle {
+    opacity: 0.5;
+  }
+}
+
 .events-empty-state {
   flex-direction: column;
   align-items: center;

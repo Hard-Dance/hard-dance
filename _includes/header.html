@@ -1,10 +1,10 @@
 <header>
-  <ul role="menu">
+  <ul class="header-menu-list" role="menu">
     <li role="presentation">
       <a
         class="header-button"
         role="menuitem"
-        {% if page.url == '/' or page.url == '/events/' %}
+        {% if page.url == '/' or page.url contains '/events/' %}
           aria-current="page"
         {% endif %}
         {% if page.url == '/' %}
@@ -28,7 +28,16 @@
       </a>
     </li>
     <li role="presentation">
-      <a class="header-button" role="menuitem" href="/about.html" {% if page.url == '/about.html' %}aria-current="page"{% endif %}>
+      <a
+      class="header-button"
+      role="menuitem"
+      {% if page.url == '/about.html' %}
+        aria-current="page"
+        href="#top"
+      {% else %}
+        href="/about.html"
+      {% endif %}
+      >
         <svg alt="Information icon" aria-hidden="true">
           <use xlink:href="/assets/symbols.svg#info"></use>
         </svg>
@@ -36,4 +45,6 @@
       </a>
     </li>
   </ul>
+
+  <a class="header-button" href="#" data-variant="live">Live stream</a>
 </header>
