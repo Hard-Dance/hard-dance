@@ -1,3 +1,58 @@
+// #region Banner
+.banner-event-links {
+  position: absolute;
+  bottom: var(--page-padding);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.banner-event-slides {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  outline-offset: calc(var(--border-width) * -1);
+  user-select: none;
+
+  > div {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    width: 100%;
+    height: calc(50vh - var(--header-height));
+    height: calc(50dvh - var(--header-height));
+    min-height: 25rem;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+#poster {
+  isolation: isolate;
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    background-image: var(--_post-image);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(30px);
+    z-index: 1;
+  }
+
+  > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: 2;
+  }
+}
+// #endregion Banner
+
 .event-button-group {
   align-self: center;
 

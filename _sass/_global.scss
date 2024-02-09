@@ -35,19 +35,13 @@ main {
     [content-start]
     minmax(0, 1fr)
     [padded-start]
-    min(calc(60rem - var(--page-padding) * 2), calc(100% - var(--page-padding) * 2))
+    min(calc(60rem - max(var(--page-padding), env(safe-area-inset-left)) - max(var(--page-padding), env(safe-area-inset-right))),
+    calc(100% - max(var(--page-padding), env(safe-area-inset-left)) - max(var(--page-padding), env(safe-area-inset-right))))
     [padded-end]
     minmax(0, 1fr)
     [content-end]
     max(var(--page-padding), env(safe-area-inset-right))
     [full-width-end];
-}
-
-.banner {
-  height: 40vh;
-  height: 40dvh;
-  // min-height: 15rem; // TODO: Is this working?
-  flex-shrink: 0;
 }
 
 @media only screen and (max-width: 768px) {

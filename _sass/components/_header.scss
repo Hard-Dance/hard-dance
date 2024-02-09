@@ -11,10 +11,6 @@ header {
   user-select: none;
   color: var(--color-text);
 
-  .header-menu-list {
-    display: grid;
-  }
-
   // Desktop
   @media only screen and (min-width: 769px) {
     inset: 0 0 auto 0;
@@ -23,10 +19,6 @@ header {
     justify-content: space-between;
     height: var(--header-height);
     border-block-end-width: var(--border-width);
-
-    .header-menu-list {
-      grid-template-columns: repeat(3, auto);
-    }
   }
 
   // Mobile
@@ -35,12 +27,36 @@ header {
     height: calc(var(--header-height) + env(safe-area-inset-bottom));
     padding-bottom: env(safe-area-inset-bottom);
     border-block-start-width: var(--border-width);
+  }
+}
 
-    .header-menu-list {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      height: 100%;
-    }
+.header-menu-list {
+  display: grid;
+
+  // Desktop
+  @media only screen and (min-width: 769px) {
+    grid-template-columns: repeat(3, auto);
+  }
+
+  // Mobile
+  @media only screen and (max-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: 100%;
+  }
+}
+
+.header-brand {
+  fill: currentColor;
+  width: calc(var(--icon-size) * 1.5);
+  height: calc(var(--icon-size) * 1.5);
+  margin-inline: var(--page-padding);
+  margin-block: auto;
+  cursor: none;
+
+  // Mobile
+  @media only screen and (max-width: 768px) {
+    display: none;
   }
 }
 
@@ -83,16 +99,6 @@ header {
         background-color: var(--color-accent);
         animation: blink 2s infinite;
       }
-
-      @keyframes blink {
-        0%,
-        100% {
-          opacity: 0;
-        } /* more concise! */
-        50% {
-          opacity: 1;
-        }
-      }
     }
   }
 
@@ -120,5 +126,6 @@ header {
     fill: currentColor;
     width: var(--icon-size);
     height: var(--icon-size);
+    flex-shrink: 0;
   }
 }

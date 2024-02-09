@@ -32,7 +32,7 @@ tbody {
 th,
 td {
   text-align: left;
-  padding-inline: calc(var(--page-padding) * 0.5);
+  padding-inline: var(--padding);
 
   &:first-child {
     position: sticky;
@@ -45,7 +45,7 @@ td {
 th,
 td {
   text-align: left;
-  padding-inline: calc(var(--page-padding) * 0.5);
+  padding-inline: var(--padding);
 
   &:first-child {
     position: sticky;

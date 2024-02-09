@@ -10,10 +10,6 @@ footer {
   flex-shrink: 0;
   height: var(--header-height);
 
-  // Desktop
-  @media only screen and (min-width: 769px) {
-  }
-
   // Mobile
   @media only screen and (max-width: 768px) {
     padding-bottom: var(--header-height);
@@ -21,3 +17,13 @@ footer {
 }
 
 // TODO: This is not working in mobile
+
+.footer-list {
+  display: flex;
+  column-gap: 2ch;
+}
+
+.footer-anchor {
+  color: inherit;
+  text-decoration: none;
+}

@@ -1,5 +1,6 @@
 details {
   border-radius: var(--border-radius);
+  position: relative;
 
   &[open] > summary {
     border-bottom-left-radius: 0px;
@@ -9,6 +10,10 @@ details {
       transform: rotate(90deg);
     }
   }
+
+  &:target > summary {
+    background-color: var(--color-accent);
+  }
 }
 
 summary {
@@ -17,7 +22,7 @@ summary {
   gap: 1ch;
   align-items: center;
   height: var(--component-height);
-  padding-inline: var(--border-radius);
+  padding-inline: var(--component-padding-inline);
   border-radius: var(--border-radius);
   user-select: none;
   font-weight: var(--font-weight-bold);
@@ -25,8 +30,10 @@ summary {
   transition: background-color var(--duration) ease,
     border-radius var(--duration) ease;
 
-  &:hover {
-    background-color: var(--color-background-hover);
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--color-background-hover);
+    }
   }
 
   &::before {
@@ -42,8 +49,8 @@ summary {
 }
 
 .details-summary-badge {
-  padding-inline: var(--border-radius);
-  border-radius: calc(var(--border-radius) - var(--border-width));
+  padding-inline: var(--component-padding-inline);
+  border-radius: calc(var(--component-padding-inline) - var(--border-width));
   margin-inline-start: auto;
   background-color: var(--color-background-transparent-hover);
   font-size: var(--font-size);
