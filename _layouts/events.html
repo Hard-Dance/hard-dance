@@ -7,7 +7,7 @@
   <body>
     {% include header.html %}
 
-    <div class="banner" data-variant="events" id="top">
+    <div class="banner events-banner" id="top">
       {% include banner-events.html %}
     </div>
 
@@ -37,6 +37,14 @@
           id="grid-item-{{ forloop.index }}"
           data-location="{{ country_part | downcase }}"
           data-type="{{ post.type | downcase }}"
+          {%
+          if
+          post.featured
+          %}
+          data-featured="true"
+          {%
+          endif
+          %}
         >
           <img
             class="grid-item-image"
@@ -67,6 +75,7 @@
               {% endif %}
             </div>
             <div class="grid-item-metadata-symbol">{{ flag }}</div>
+            <div class="event-list-item-status">Live</div>
           </div>
         </li>
         {% endfor %}

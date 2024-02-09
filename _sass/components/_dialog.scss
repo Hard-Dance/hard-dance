@@ -89,7 +89,7 @@ dialog {
   grid-area: footer;
   display: flex;
   justify-content: flex-end;
-  padding-top: calc(var(--page-padding) * 0.5);
+  padding-top: var(--padding);
   padding-left: max(var(--page-padding), env(safe-area-inset-left));
   padding-right: max(var(--page-padding), env(safe-area-inset-right));
   padding-bottom: max(var(--page-padding), env(safe-area-inset-bottom));

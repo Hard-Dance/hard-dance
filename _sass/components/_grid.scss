@@ -30,7 +30,7 @@
 }
 
 .grid-item-metadata {
-  padding: calc(var(--page-padding) * 0.5);
+  padding: var(--padding);
   padding-top: 0;
   display: grid;
   grid-template-areas: "subtitle symbol" "title title" "body body";
@@ -81,6 +81,6 @@
 }
 
 .grid-item-metadata-body {
-  margin-top: calc(var(--page-padding) * 0.5);
+  margin-top: var(--padding);
   grid-area: body;
 }

@@ -10,5 +10,5 @@ legend {
 
 .fieldset-body {
   display: flex;
-  padding: calc(var(--page-padding) * 0.5);
+  padding: var(--padding);
 }
