@@ -45,12 +45,8 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-            <div class="icon">
-              <svg alt="{{ host }} icon" aria-hidden="true">
-                <use xlink:href="/assets/symbols.svg#location"></use>
-              </svg>
-            </div>
-            {{ page.location }}
+            {% include icon.html id="location" name="Location" %} {{
+            page.location }}
           </a>
         </dd>
         {% endif %} {% if page.type %}
