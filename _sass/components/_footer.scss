@@ -7,6 +7,7 @@ footer {
   color: var(--color-text-muted);
   font-size: var(--font-size-small);
   height: var(--header-height);
+  padding-bottom: 1rem;
 
   // Mobile
   @media only screen and (max-width: 768px) {
