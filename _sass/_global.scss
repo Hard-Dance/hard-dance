@@ -27,7 +27,6 @@ body {
 main {
   display: grid;
   row-gap: 1rem;
-  // TODO: This is not working on iOS yet, something to do with the safe-area-insets
   /* prettier-ignore */
   grid-template-columns:
     [full-width-start]
