@@ -3,20 +3,18 @@ footer {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-bottom: env(safe-area-inset-bottom);
   margin-top: auto;
   color: var(--color-text-muted);
   font-size: var(--font-size-small);
-  flex-shrink: 0;
   height: var(--header-height);
+  padding-bottom: 1rem;
 
   // Mobile
   @media only screen and (max-width: 768px) {
     padding-bottom: var(--header-height);
+    height: calc(var(--header-height) * 2 + env(safe-area-inset-bottom));
   }
 }
-
-// TODO: This is not working in mobile
 
 .footer-list {
   display: flex;

@@ -2,7 +2,9 @@
 <html lang="{{ page.lang | default: site.lang | default: 'en' }}">
   <head>
     {% include head.html %}
+    <link rel="stylesheet" href="/assets/css/animate-on-scroll.css" />
     <script src="https://unpkg.com/color.js@1.2.0/dist/color.js"></script>
+    <script src="/assets/js/animate-on-scroll.js"></script>
   </head>
   <body>
     {% include header.html %}
@@ -45,6 +47,7 @@
           {%
           endif
           %}
+          data-aos="zoom-in-up"
         >
           <img
             class="grid-item-image"
@@ -134,9 +137,9 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        const locationSelect = document.getElementById("location");
-        const typeSelect = document.getElementById("type");
-        const hostSelect = document.getElementById("host");
+        const locationSelect = document.getElementById("filter-location");
+        const typeSelect = document.getElementById("filter-type");
+        const hostSelect = document.getElementById("filter-host");
         const posts = document.querySelectorAll(".grid-item");
         const postList = document.querySelector(".grid");
         const emptyStateDiv = document.querySelector(".events-empty-state");
@@ -214,6 +217,11 @@
         hostSelect.addEventListener("change", filterPosts);
 
         filterPosts(); // Run once on load to set the correct initial state
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        AOS.init();
       });
     </script>
   </body>

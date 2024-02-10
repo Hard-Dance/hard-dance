@@ -12,9 +12,16 @@
       "src": "/assets/img/android-chrome-icon.png",
       "sizes": "512x512",
       "type": "image/png"
+    },
+    {
+      "src": "/assets/img/path/to/maskable_icon.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ],
   "theme_color": "#000000",
   "background_color": "#000000",
-  "display": "standalone"
+  "display": "standalone",
+  "start_url": "https://hard-dance.netlify.app/"
 }

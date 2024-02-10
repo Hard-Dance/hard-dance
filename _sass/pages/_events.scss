@@ -198,6 +198,7 @@ $shadows-big: multiple-box-shadow(100);
       position: absolute;
       inset: 0;
       border-radius: inherit;
+      pointer-events: none;
       border: calc(var(--border-width) * 3) solid
         var(--_color-grid-item-background, transparent);
     }

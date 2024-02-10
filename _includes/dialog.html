@@ -8,7 +8,7 @@
       autofocus
       onclick="document.getElementById('add-event').close()"
     >
-      <svg alt="Close" loading="lazy" aria-hidden="true">
+      <svg alt="Close" aria-hidden="true">
         <use xlink:href="/assets/symbols.svg#close"></use>
       </svg>
     </button>
@@ -19,7 +19,9 @@
       name="add-event-form"
       id="add-event-form"
       method="POST"
+      enctype="multipart/form-data"
       data-netlify="true"
+      data-netlify-recaptcha="true"
     >
       <label for="event-name">Event name</label>
       <input
@@ -29,18 +31,6 @@
         required
         placeholder="Defqon.1 Weekend Festival {{ 'now' | date: '%Y' }}"
       />
-
-      <!-- <fieldset>
-        <legend>Single day or multiple days?</legend>
-
-        <div class="fieldset-body">
-          <input type="radio" name="days" id="single" value="single" />
-          <label for="single">Single</label>
-
-          <input type="radio" name="days" id="multiple" value="multiple" />
-          <label for="multiple">Multiple</label>
-        </div>
-      </fieldset> -->
 
       <label for="datestart">Event start date & time</label>
       <input type="datetime-local" name="datestart" id="datestart" required />
@@ -120,6 +110,8 @@
           style="display: none"
         />
       </div>
+
+      <div data-netlify-recaptcha="true"></div>
     </form>
   </div>
 
