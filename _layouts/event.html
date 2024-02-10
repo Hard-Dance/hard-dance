@@ -62,7 +62,32 @@
         <dt>Host{% if page.hosts.size > 1 %}s{% endif %}</dt>
         <dd>
           <ul class="event-data-list-host-list">
-            {% include hosts.html %}
+            {% for postHost in page.hosts %} {% assign hostMatchFound = false
+            %}{% for eventHost in site.event-hosts %} {% if eventHost.name ==
+            postHost %} {% assign hostMatchFound = true %} {% assign
+            matchedHostFB = eventHost.facebook %} {% assign matchedHostName =
+            eventHost.name %} {% break %} {% endif %} {% endfor %}{% if
+            hostMatchFound %}
+            <li>
+              <a
+                href="{{ matchedHostFB }}"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div class="icon">
+                  <svg
+                    alt="{{ {{ matchedHostName }} }} icon"
+                    aria-hidden="true"
+                  >
+                    <use
+                      xlink:href="/assets/symbols.svg#{{ matchedHostName | slugify }}"
+                    ></use>
+                  </svg>
+                </div>
+                {{ matchedHostName }}
+              </a>
+            </li>
+            {% else %} {{ postHost }} {% endif %} {% endfor %}
           </ul>
         </dd>
         {% endif %}
