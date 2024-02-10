@@ -16,6 +16,8 @@
     <h1 style="view-transition-name: post-title-{{ page.title | slugify }};">
       {{ page.title }}
     </h1>
+    {% elsif page.layout == 'archives' %}
+    <h1>Past events</h1>
     {% endif %}
   </div>
 
