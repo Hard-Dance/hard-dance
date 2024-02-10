@@ -39,6 +39,7 @@ input {
   cursor: pointer;
   transition: background-color var(--duration) ease;
   overflow: hidden;
+  user-select: none;
 
   &:hover {
     background-color: var(--color-background-hover);
