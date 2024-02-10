@@ -99,3 +99,33 @@
     }
   }
 </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const alertBanner = document.querySelector(".banner-events-alert");
+    const closeButton = alertBanner.querySelector(
+      '.button[aria-label="Close dialog"]'
+    );
+
+    // Function to hide the alert banner
+    function hideAlertBanner() {
+      alertBanner.style.display = "none";
+      // Record the current time as the banner close time in localStorage
+      const now = new Date().getTime();
+      localStorage.setItem("alertBannerClosedTime", now);
+    }
+
+    // Check if the alert banner was closed within the last 24 hours
+    const alertBannerClosedTime = localStorage.getItem("alertBannerClosedTime");
+    if (alertBannerClosedTime) {
+      const elapsedTime = new Date().getTime() - alertBannerClosedTime;
+      if (elapsedTime < 24 * 60 * 60 * 1000) {
+        // If it was closed less than 24 hours ago, keep it hidden
+        alertBanner.style.display = "none";
+      }
+    }
+
+    // Add event listener to the close button
+    closeButton.addEventListener("click", hideAlertBanner);
+  });
+</script>
