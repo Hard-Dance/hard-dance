@@ -9,6 +9,7 @@ widgetbot {
 
   // Mobile
   @media only screen and (max-width: 768px) {
-    margin-block-end: calc(var(--header-height) + env(safe-area-inset-bottom));
+    padding-block-start: env(safe-area-inset-top); // TODO: Not working
+    padding-block-end: calc(var(--header-height) + env(safe-area-inset-bottom));
   }
 }
