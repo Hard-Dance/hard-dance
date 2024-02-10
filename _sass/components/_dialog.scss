@@ -44,8 +44,6 @@ dialog {
   position: sticky;
   inset: 0 0 auto 0;
   background-color: var(--color-background-backdrop);
-  outline: 10px solid red;
-  outline-offset: -10px;
 
   a,
   button {
@@ -85,8 +83,6 @@ dialog {
   padding-left: max(var(--page-padding), env(safe-area-inset-left));
   padding-right: max(var(--page-padding), env(safe-area-inset-right));
   padding-block: var(--page-padding);
-  outline: 10px solid blue;
-  outline-offset: -10px;
 }
 
 .dialog-footer {
@@ -97,6 +93,4 @@ dialog {
   padding-left: max(var(--page-padding), env(safe-area-inset-left));
   padding-right: max(var(--page-padding), env(safe-area-inset-right));
   padding-bottom: max(var(--page-padding), env(safe-area-inset-bottom));
-  outline: 10px solid green;
-  outline-offset: -10px;
 }
