@@ -1,6 +1,6 @@
 dialog {
   display: grid;
-  grid-template-rows: var(--header-height) 1fr auto;
+  grid-template-rows: auto 1fr auto;
   grid-template-areas: "header" "body" "footer";
 
   position: fixed;
@@ -34,15 +34,18 @@ dialog {
 .dialog-header {
   grid-area: header;
   z-index: 1;
+  padding-top: env(safe-area-inset-top);
   padding-left: max(var(--page-padding), env(safe-area-inset-left));
   padding-right: env(safe-area-inset-right);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: var(--header-height);
+  height: calc(4rem + env(safe-area-inset-top));
   position: sticky;
   inset: 0 0 auto 0;
   background-color: var(--color-background-backdrop);
+  outline: 10px solid red;
+  outline-offset: -10px;
 
   a,
   button {
@@ -81,8 +84,9 @@ dialog {
   overflow-y: auto;
   padding-left: max(var(--page-padding), env(safe-area-inset-left));
   padding-right: max(var(--page-padding), env(safe-area-inset-right));
-  padding-top: var(--page-padding);
-  padding-bottom: calc(var(--page-padding) + env(safe-area-inset-bottom));
+  padding-block: var(--page-padding);
+  outline: 10px solid blue;
+  outline-offset: -10px;
 }
 
 .dialog-footer {
@@ -93,4 +97,6 @@ dialog {
   padding-left: max(var(--page-padding), env(safe-area-inset-left));
   padding-right: max(var(--page-padding), env(safe-area-inset-right));
   padding-bottom: max(var(--page-padding), env(safe-area-inset-bottom));
+  outline: 10px solid green;
+  outline-offset: -10px;
 }

@@ -65,18 +65,18 @@
         <option value="other">Other</option>
       </select>
 
-      <!-- Hidden text input for custom host -->
-      <div id="otherHostDiv" style="display: none">
-        <label for="otherHost">Other Host</label>
-        <input
-          type="text"
-          name="otherHost"
-          id="otherHost"
-          placeholder="Enter custom host"
-        />
-      </div>
+      <label class="other-host" style="display: none" for="otherHost">
+        Other host
+      </label>
+      <input
+        class="other-host"
+        style="display: none"
+        type="text"
+        name="otherHost"
+        id="otherHost"
+      />
 
-      <label for="website">Event website</label>
+      <label for="website">Event website or ticket service</label>
       <input
         type="text"
         name="website"
@@ -93,23 +93,12 @@
       />
 
       <label for="fileInput">Image</label>
-      <div
-        class="input-type-file-drop"
-        id="drop-zone"
-        onclick="document.getElementById('fileInput').click();"
-      >
-        <p id="drop-zone-instructions">
-          Drag and drop your file here or click to select a file.
-        </p>
-        <img id="image-preview" style="display: none" />
-        <input
-          type="file"
-          id="fileInput"
-          name="image"
-          accept="image/png, image/jpeg"
-          style="display: none"
-        />
-      </div>
+      <input
+        type="file"
+        id="fileInput"
+        name="image"
+        accept="image/png, image/jpeg"
+      />
 
       <div data-netlify-recaptcha="true"></div>
     </form>
@@ -148,14 +137,18 @@
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const hostsSelect = document.getElementById("hosts");
-    const otherHostDiv = document.getElementById("otherHostDiv");
+    // Use .querySelectorAll to select all elements with the class
+    const otherHostDivs = document.querySelectorAll(".other-host");
 
     hostsSelect.addEventListener("change", function (e) {
-      if (e.target.value === "other") {
-        otherHostDiv.style.display = "block";
-      } else {
-        otherHostDiv.style.display = "none";
-      }
+      // Iterate over all selected elements and toggle their display
+      otherHostDivs.forEach((div) => {
+        if (e.target.value === "other") {
+          div.style.display = "block";
+        } else {
+          div.style.display = "none";
+        }
+      });
     });
   });
 </script>
@@ -191,48 +184,5 @@
         submitButton.disabled = true;
       }, 0);
     });
-  });
-</script>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const dropZone = document.getElementById("drop-zone");
-    const fileInput = document.getElementById("fileInput");
-    const dropZoneInstructions = document.getElementById(
-      "drop-zone-instructions"
-    );
-    const imagePreview = document.getElementById("image-preview");
-
-    fileInput.addEventListener("change", function () {
-      const files = fileInput.files;
-      if (files.length > 0) {
-        const file = files[0];
-        displayImagePreview(file);
-      }
-    });
-
-    dropZone.addEventListener("dragover", function (e) {
-      e.preventDefault();
-    });
-
-    dropZone.addEventListener("drop", function (e) {
-      e.preventDefault();
-      const files = e.dataTransfer.files;
-      if (files.length > 0) {
-        const file = files[0];
-        fileInput.files = files; // Assign the file to the input
-        displayImagePreview(file);
-      }
-    });
-
-    function displayImagePreview(file) {
-      const reader = new FileReader();
-      reader.onload = function (e) {
-        imagePreview.src = e.target.result;
-        imagePreview.style.display = "block";
-        dropZoneInstructions.style.display = "none";
-      };
-      reader.readAsDataURL(file);
-    }
   });
 </script>
