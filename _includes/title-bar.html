@@ -54,9 +54,9 @@
   </ul>
   {% endif %} {% endif %} {% if page.layout == 'events' %}
   <div class="page-title-drawer">
-    <label for="location">
+    <label for="filter-location">
       Location
-      <select name="location" id="location">
+      <select name="location" id="filter-location">
         <option value="all" selected>All</option>
         <option value="north-america">North America</option>
         <option value="south-america">South America</option>
@@ -65,9 +65,9 @@
       </select>
     </label>
 
-    <label for="type">
+    <label for="filter-type">
       Type
-      <select name="type" id="type">
+      <select name="type" id="filter-type">
         <option value="all" selected>All</option>
         {% for type in site.event-types %}
         <option value="{{ type | slugify }}">{{ type }}</option>
@@ -75,9 +75,9 @@
       </select>
     </label>
 
-    <label for="host">
+    <label for="filter-host">
       Host
-      <select name="host" id="host">
+      <select name="host" id="filter-host">
         <option value="all" selected>All</option>
         {% for host in site.event-hosts %}
         <option value="{{ host.name | slugify }}">{{ host.name }}</option>
