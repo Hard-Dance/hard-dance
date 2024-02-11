@@ -117,6 +117,7 @@ event-hosts:
     url: https://www.bassevents.be
     facebook: https://www.facebook.com/bassevents/
   - name: Basscon
+    url: https://www.bassconmassive.com
     facebook: https://www.facebook.com/bassconmassive/
   - name: BKJN events
     facebook: https://www.facebook.com/BKJNevents/
@@ -153,6 +154,9 @@ event-hosts:
   - name: Intents Festival
     url: https://www.intentsfestival.nl
     facebook: https://www.facebook.com/intentsfestival/
+  - name: Masters of Hardcore
+    url: https://www.mastersofhardcore.com
+    facebook: https://www.facebook.com/officialMOH/
   - name: Matrixx
     url: https://www.matrixx.nl
     facebook: https://www.facebook.com/MatrixxEvents/
@@ -170,6 +174,9 @@ event-hosts:
   - name: Shockerz
     url: https://shockerz.nl
     facebook: https://www.facebook.com/shockerzofficial/
+  - name: Thunderdome
+    url: https://www.thunderdome.com
+    facebook: https://www.facebook.com/ThunderdomeIsYou/
   - name: Tomorrowland
     url: https://www.tomorrowland.com
     facebook: https://www.facebook.com/tomorrowland/
