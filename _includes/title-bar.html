@@ -16,22 +16,36 @@
     <h1 style="view-transition-name: post-title-{{ page.title | slugify }};">
       {{ page.title }}
     </h1>
+    {% elsif page.layout == 'archives' %}
+    <h1>Past events</h1>
     {% endif %}
   </div>
 
   {% if page.layout == 'events' %}
-  <input
-    class="page-title-drawer-button"
-    type="checkbox"
-    id="filters"
-    name="filters"
-  />
-  <label class="button page-title-end" for="filters">
-    <svg alt="Filter icon" aria-hidden="true">
-      <use xlink:href="/assets/symbols.svg#options"></use>
-    </svg>
-    <span class="hide-on-mobile">Filters</span>
-  </label>
+  <div class="page-title-end">
+    <a
+      aria-label="Subscribe to RSS feed"
+      class="button"
+      href="feed:{{ '/feed.xml' | absolute_url }}"
+    >
+      <svg alt="RSS icon" aria-hidden="true">
+        <use xlink:href="/assets/symbols.svg#rss"></use>
+      </svg>
+      <span class="hide-on-mobile">Subscribe</span>
+    </a>
+    <input
+      class="page-title-drawer-button"
+      type="checkbox"
+      id="filters"
+      name="filters"
+    />
+    <label class="button" for="filters">
+      <svg alt="Filter icon" aria-hidden="true">
+        <use xlink:href="/assets/symbols.svg#options"></use>
+      </svg>
+      <span class="hide-on-mobile">Filters</span>
+    </label>
+  </div>
   {% elsif page.layout == 'event' %} {% if page.links %}
   <ul class="button-group event-button-group page-title-end">
     {% for link in page.links %}

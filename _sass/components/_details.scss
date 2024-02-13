@@ -65,6 +65,7 @@ summary {
 
   &[data-padding="false"] {
     overflow-x: auto;
+    overscroll-behavior: none;
   }
 
   &:not([data-padding="false"]) {

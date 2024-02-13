@@ -11,7 +11,9 @@ footer {
 
   // Mobile
   @media only screen and (max-width: 768px) {
-    padding-bottom: var(--header-height);
+    padding-bottom: calc(
+      var(--header-height) + env(safe-area-inset-bottom) + 1rem
+    );
     height: calc(var(--header-height) * 2 + env(safe-area-inset-bottom));
   }
 }

@@ -11,7 +11,7 @@
 
   // Mobile
   @media only screen and (max-width: 768px) {
-    padding-block-start: 2rem;
+    padding-block-start: calc(2rem + env(safe-area-inset-top));
   }
 
   &::before {

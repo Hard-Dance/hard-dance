@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+  <head>
+    {% include head.html %}
+    <link rel="stylesheet" href="/assets/css/animate-on-scroll.css" />
+    <script src="https://unpkg.com/color.js@1.2.0/dist/color.js"></script>
+    <script src="/assets/js/animate-on-scroll.js"></script>
+  </head>
+  <body>
+    {% include header.html %}
+
+    <div class="banner events-banner" id="top">
+      {% include banner-events.html %}
+    </div>
+
+    <main>
+      {% include title-bar.html %}
+
+      <div class="archives-table-container">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Date announced</th>
+              <th scope="col">Date start</th>
+              <th scope="col">Date end</th>
+              <th scope="col">Location</th>
+              <th scope="col">Type</th>
+              <th scope="col">Genre</th>
+              <th scope="col">Age</th>
+              <th scope="col">Hosts</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            {% assign today = 'now' | date: '%Y-%m-%d' %} {% assign sorted_posts
+            = site.posts | sort: 'datestart' %} {% for post in sorted_posts
+            reversed %} {% assign post_start_date = post.datestart | date:
+            '%Y-%m-%d' %} {% if post_start_date < today %}
+            <tr>
+              <th scope="row">
+                <a href="{{ post.url }}">{{ post.title | smartify }}</a>
+              </th>
+              <td>
+                <time datetime="{{ post.date | date: '%Y-%m-%d' }}">
+                  {{ post.date | date: "%B %d, %Y" }}
+                </time>
+              </td>
+              <td>
+                <time datetime="{{ post.datestart | date: '%Y-%m-%d' }}">
+                  {{ post.datestart | date: "%B %d, %Y" }}
+                </time>
+              </td>
+              <td>
+                <time datetime="{{ post.dateend | date: '%Y-%m-%d' }}">
+                  {{ post.dateend | date: "%B %d, %Y" }}
+                </time>
+              </td>
+              <td>{{ post.location }}</td>
+              <td>{{ post.type }}</td>
+              <td>{{ post.genre }}</td>
+              <td>{{ post.age }}</td>
+              <td>{{ post.hosts }}</td>
+            </tr>
+            {% endif %} {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </main>
+
+    {% include footer.html %}
+  </body>
+</html>

@@ -47,12 +47,41 @@ header {
 }
 
 .header-brand {
-  fill: currentColor;
-  width: calc(var(--icon-size) * 1.5);
-  height: calc(var(--icon-size) * 1.5);
-  margin-inline: var(--page-padding);
-  margin-block: auto;
-  cursor: none;
+  display: flex;
+  align-items: center;
+  height: 100%;
+
+  > svg {
+    fill: currentColor;
+    width: calc(var(--icon-size) * 1.5 + 2px);
+    height: calc(var(--icon-size) * 1.5 + 2px);
+    margin-inline: var(--page-padding);
+    cursor: none;
+
+    > path {
+      transform-origin: center;
+      transition: transform 1s ease-out;
+    }
+
+    #logo-left {
+      transform: translate(var(--translate), calc(var(--translate) * -0.7));
+    }
+
+    #logo-top {
+      transform: translate(0, calc(var(--translate) * 1));
+    }
+
+    #logo-right {
+      transform: translate(
+        calc(var(--translate) * -1),
+        calc(var(--translate) * -0.7)
+      );
+    }
+  }
+
+  &:hover {
+    --translate: -1px;
+  }
 
   // Mobile
   @media only screen and (max-width: 768px) {
