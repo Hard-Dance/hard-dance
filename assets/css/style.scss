@@ -1,40 +1,27 @@
 ---
 ---
 
-@layer reset, defaults, components, pages;
-
-@layer reset {
-  @import "reset";
-}
-
-@layer defaults {
-  @import "variables";
-  @import "animations";
-  @import "global";
-}
-
-@layer components {
-  @import "components/anchor";
-  @import "components/banner";
-  @import "components/button";
-  @import "components/details";
-  @import "components/dialog";
-  @import "components/footer";
-  @import "components/form";
-  @import "components/grid";
-  @import "components/header";
-  @import "components/icon";
-  @import "components/input";
-  @import "components/label";
-  @import "components/select";
-  @import "components/table";
-  @import "components/title-bar";
-}
-
-@layer pages {
-  @import "pages/about";
-  @import "pages/archives";
-  @import "pages/community";
-  @import "pages/event";
-  @import "pages/events";
-}
+@import "reset";
+@import "variables";
+@import "animations";
+@import "global";
+@import "components/anchor";
+@import "components/banner";
+@import "components/button";
+@import "components/details";
+@import "components/dialog";
+@import "components/footer";
+@import "components/form";
+@import "components/grid";
+@import "components/header";
+@import "components/icon";
+@import "components/input";
+@import "components/label";
+@import "components/select";
+@import "components/table";
+@import "components/title-bar";
+@import "pages/about";
+@import "pages/archives";
+@import "pages/community";
+@import "pages/event";
+@import "pages/events";
