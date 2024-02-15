@@ -2,6 +2,12 @@
   <div class="page-title-start">
     {% if page.layout == 'events' %}
     <h1>{{ page.title }}</h1>
+    <a aria-label="View past events" class="button" href="/events/">
+      <svg alt="Past icon" aria-hidden="true">
+        <use xlink:href="/assets/symbols.svg#past"></use>
+      </svg>
+      <span class="hide-on-mobile">Past</span>
+    </a>
     <button
       aria-label="Add event"
       class="button"

@@ -179,7 +179,8 @@
         </summary>
         <div class="details-body">
           <ul class="grid">
-            {% for friend in site.friends %}
+            {% assign sorted_friends = site.friends | sort: 'title' %} {% for
+            friend in sorted_friends %}
             <li class="grid-item">
               <img
                 class="grid-item-image"
@@ -264,8 +265,9 @@
               you see opportunities for improvement or have suggestions that
               could enhance our website, we're all ears. While we can't promise
               to implement every idea, we genuinely appreciate and consider all
-              contributions. Let's collaborate to make our site even better for
-              everyone.
+              contributions.
+              <a href="mailto:{{ site.email }}">Let's collaborate</a>
+              to make our site even better for everyone.
             </dd>
 
             <dt>Donations</dt>
@@ -275,7 +277,14 @@
               into developing new features, improving user experience, and
               covering hosting and maintenance costs. By contributing, you're
               not just donating; you're investing in a platform that grows with
-              and for its community.
+              and for its community. Currently we accept
+              <a
+                href="https://www.paypal.com/paypalme/jongraft"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                donations via PayPal </a
+              >.
             </dd>
           </dl>
         </div>

@@ -83,9 +83,9 @@
             post.datestart | date: '%Y-%m-%d' %} {% assign end_date =
             post.dateend | date: '%Y-%m-%d' %} {% if post.dateend %} {% if today
             >= start_date and today <= end_date %}
-            <div class="event-list-item-status">Happening now</div>
+            <div class="event-list-item-status">Today</div>
             {% endif %} {% else %} {% if today == start_date %}
-            <div class="event-list-item-status">Happening now</div>
+            <div class="event-list-item-status">Today</div>
             {% endif %} {% endif %}
           </div>
         </li>

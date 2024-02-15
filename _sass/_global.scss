@@ -22,6 +22,11 @@ body {
   display: flex;
   flex-direction: column;
   row-gap: 1rem;
+
+  &:has(dialog[open]) {
+    overflow: hidden;
+    user-select: none;
+  }
 }
 
 main {

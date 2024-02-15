@@ -1,34 +1,13 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-#
-# If you need help with YAML syntax, here are some quick references for you:
-# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
-# https://learnxinyminutes.com/docs/yaml/
-#
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-
 title: Hard.Dance
 email: info@hard.dance
-description: "Coming soon"
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://hard-dance.netlify.app" # the base hostname & protocol for your site, e.g. http://example.com
+description: "The #1 aggregate of all things hard dance related. Join us and become a part of our digital tribe."
+baseurl: ""
+url: "https://hard.dance"
 lang: "en-US"
-repository: "https://github.com/FlyersPh9/hard-dance"
+repository: "https://github.com/Hard-Dance/hard-dance"
 
 permalink: /:categories/:title:output_ext
 
-# Build settings
 markdown: kramdown
 plugins:
   - jekyll-feed
@@ -38,28 +17,9 @@ plugins:
 
 sass:
   sass_dir: _sass
-  style: compact # possible values: nested expanded compact compressed
+  style: compressed
 
 incremental: true
-# Exclude from processing.
-# The following items will not be processed, by default.
-# Any item listed under the `exclude:` key here will be automatically added to
-# the internal "default list".
-#
-# Excluded items can be processed by explicitly listing the directories or
-# their entries' file path in the `include:` list.
-#
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
 
 admins:
   - name: Eugene Berzin
@@ -85,7 +45,7 @@ admins:
         url: https://music.apple.com/us/artist/treachery/300126894
   - name: Jon Graft
     alias: Johnny Hardstyle
-    position: Web designer & developer
+    position: Owner
     location: 🇺🇸
     email: me@jongraft.design
     website: https://jongraft.design
@@ -199,3 +159,6 @@ friends:
   - title: Hard Dance Release Radar
     subtitle: Spotify
     url: https://www.hdrr.info
+  - title: HarderState
+    subtitle: Forum
+    url: https://harderstate.com
