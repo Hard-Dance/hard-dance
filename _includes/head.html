@@ -4,6 +4,10 @@
   name="viewport"
   content="width=device-width, initial-scale=1, viewport-fit=cover"
 />
+<title>
+  {% if page.url != '/' %}{{ page.title | escape }} - {% endif %}{{ site.title |
+  escape }}
+</title>
 <link rel="stylesheet" href="/assets/css/style.css" />
 <link
   rel="alternate"
@@ -23,4 +27,4 @@
   name="apple-mobile-web-app-status-bar-style"
   content="black-translucent"
 />
-{% seo %}
+{% seo title=false %}

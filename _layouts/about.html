@@ -179,7 +179,8 @@
         </summary>
         <div class="details-body">
           <ul class="grid">
-            {% for friend in site.friends %}
+            {% assign sorted_friends = site.friends | sort: 'title' %} {% for
+            friend in sorted_friends %}
             <li class="grid-item">
               <img
                 class="grid-item-image"
