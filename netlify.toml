@@ -1,3 +1,10 @@
 [build]
 command = "echo 'google_maps_api_key: $GOOGLE_MAPS_API_KEY' >> _config.yml && jekyll build"
 publish = "_site"
+
+[[forms]]
+  name = "add-event-form"
+  [forms.processing]
+    [forms.processing.after_submit]
+      [forms.processing.after_submit.function]
+        name = "createGitHubPR"
