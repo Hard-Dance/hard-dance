@@ -1,9 +1,36 @@
 .page-title {
   grid-column: full-width-start / full-width-end;
   display: grid;
-  column-gap: var(--page-padding);
-  grid-template-columns: 1fr auto;
-  grid-template-areas: "start end" "drawer drawer";
+  column-gap: var(--padding);
+  align-items: start;
+
+  // Desktop
+  @media only screen and (min-width: 769px) {
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas:
+      "title start end"
+      "drawer drawer drawer";
+  }
+
+  // Mobile
+  @media only screen and (max-width: 768px) {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "title title"
+      "start end"
+      "drawer drawer";
+  }
+
+  > h1 {
+    grid-area: title;
+    text-wrap: balance;
+    margin-left: max(var(--page-padding), env(safe-area-inset-left));
+
+    // Mobile
+    @media only screen and (max-width: 768px) {
+      margin-right: max(var(--page-padding), env(safe-area-inset-right));
+    }
+  }
 }
 
 .page-title-start,
@@ -15,10 +42,10 @@
 .page-title-start {
   grid-area: start;
   column-gap: var(--padding);
-  margin-left: max(var(--page-padding), env(safe-area-inset-left));
 
-  > h1 {
-    text-wrap: balance;
+  // Mobile
+  @media only screen and (max-width: 768px) {
+    margin-left: max(var(--page-padding), env(safe-area-inset-left));
   }
 }
 

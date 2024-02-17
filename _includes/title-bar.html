@@ -1,7 +1,8 @@
 <div class="page-title">
+  <h1 {% if page.layout == 'event' %}style="view-transition-name: post-title-{{ page.title | slugify }};"{% endif %}>{{ page.title }}</h1>
+
+  {% if page.layout == 'events' %}
   <div class="page-title-start">
-    {% if page.layout == 'events' %}
-    <h1>{{ page.title }}</h1>
     <a aria-label="View past events" class="button" href="/events/">
       <svg alt="Past icon" aria-hidden="true">
         <use xlink:href="/assets/symbols.svg#past"></use>
@@ -18,16 +19,8 @@
       </svg>
       <span class="hide-on-mobile">Add</span>
     </button>
-    {% elsif page.layout == 'event' %}
-    <h1 style="view-transition-name: post-title-{{ page.title | slugify }};">
-      {{ page.title }}
-    </h1>
-    {% elsif page.layout == 'archives' %}
-    <h1>Past events</h1>
-    {% endif %}
   </div>
 
-  {% if page.layout == 'events' %}
   <div class="page-title-end">
     <a
       aria-label="Subscribe to RSS feed"
@@ -52,27 +45,31 @@
       <span class="hide-on-mobile">Filters</span>
     </label>
   </div>
-  {% elsif page.layout == 'event' %} {% if page.links %}
-  <ul class="button-group event-button-group page-title-end">
-    {% for link in page.links %}
-    <li>
-      <a
-        class="button"
-        href="{{ link.url }}"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <svg alt="{{ link.title }} icon" aria-hidden="true">
-          <use
-            xlink:href="/assets/symbols.svg#{{ link.title | slugify }}"
-          ></use>
-        </svg>
-        <span class="hide-on-mobile">{{ link.title }}</span>
-      </a>
-    </li>
-    {% endfor %}
-  </ul>
-  {% endif %} {% endif %} {% if page.layout == 'events' %}
+  {% elsif page.layout == 'event' %}
+    {% if page.links %}
+    <ul class="button-group page-title-end">
+      {% for link in page.links %}
+      <li>
+        <a
+          class="button"
+          href="{{ link.url }}"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <svg alt="{{ link.title }} icon" aria-hidden="true">
+            <use
+              xlink:href="/assets/symbols.svg#{{ link.title | slugify }}"
+            ></use>
+          </svg>
+          <span class="hide-on-mobile">{{ link.title }}</span>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  {% endif %}
+  
+  {% if page.layout == 'events' %}
   <div class="page-title-drawer">
     <label for="filter-location">
       Location

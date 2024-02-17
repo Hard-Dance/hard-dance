@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: 'en' }}">
   <head>
-    {% include head.html %}
+    {% include head.html %} {% if page.featured and page.video %}
+    <meta
+      property="og:video"
+      content="{{ site.url }}/assets/video/events/{{ page.title | slugify }}.mp4"
+    />
+    {% endif %}
     <script src="https://unpkg.com/color.js@1.2.0/dist/color.js"></script>
     <script
       async

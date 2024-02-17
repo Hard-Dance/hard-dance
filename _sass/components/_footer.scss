@@ -6,8 +6,8 @@ footer {
   margin-top: auto;
   color: var(--color-text-muted);
   font-size: var(--font-size-small);
-  height: var(--header-height);
-  padding-bottom: 1rem;
+  height: calc(var(--header-height) + env(safe-area-inset-bottom));
+  padding-bottom: min(1rem, env(safe-area-inset-bottom));
 
   // Mobile
   @media only screen and (max-width: 768px) {

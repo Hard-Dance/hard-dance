@@ -51,6 +51,29 @@
           %}
           data-aos="zoom-in-up"
         >
+          {% if post.featured and post.video %}
+          <video
+            autoplay
+            muted
+            loop
+            playsinline
+            poster="{{ post.image }}"
+            class="grid-item-image"
+          >
+            <source
+              src="/assets/video/events/{{ post.title | slugify }}.mp4"
+              type="video/mp4"
+            />
+            <source
+              src="/assets/video/events/{{ post.title | slugify }}.ogv"
+              type="video/ogv"
+            />
+            <source
+              src="/assets/video/events/{{ post.title | slugify }}.webm"
+              type="video/webm"
+            />
+          </video>
+          {% endif %}
           <img
             class="grid-item-image"
             src="{{ post.image }}"

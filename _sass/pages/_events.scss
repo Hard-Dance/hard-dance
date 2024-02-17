@@ -202,6 +202,10 @@ $shadows-big: multiple-box-shadow(100);
       border: calc(var(--border-width) * 3) solid
         var(--_color-grid-item-background, transparent);
     }
+
+    video + img {
+      height: 0px;
+    }
   }
 }
 

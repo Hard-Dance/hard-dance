@@ -1,4 +1,22 @@
 <div class="banner-event-slides">
+  {% if page.featured and page.video %}
+  <div id="trailer">
+    <video autoplay muted loop playsinline poster="{{ page.image }}">
+      <source
+        src="/assets/video/events/{{ page.title | slugify }}.mp4"
+        type="video/mp4"
+      />
+      <source
+        src="/assets/video/events/{{ page.title | slugify }}.ogv"
+        type="video/ogv"
+      />
+      <source
+        src="/assets/video/events/{{ page.title | slugify }}.webm"
+        type="video/webm"
+      />
+    </video>
+  </div>
+  {% endif %}
   <div id="poster" style="--_post-image: url({{ page.image }});">
     <img
       src="{{ page.image }}"
@@ -11,6 +29,11 @@
 </div>
 
 <ul class="button-group banner-event-links" data-variant="overlay">
+  {% if page.featured and page.video %}
+  <li>
+    <a class="button" href="#trailer" tabindex="-1">Trailer</a>
+  </li>
+  {% endif %}
   <li>
     <a class="button" href="#poster" tabindex="-1">Poster</a>
   </li>
@@ -40,49 +63,6 @@
     });
   }
 </script>
-
-<!-- <script>
-  function initMap(lat, lng) {
-    const location = { lat: lat, lng: lng };
-    const map = new google.maps.Map(document.getElementById("map"), {
-      zoom: 12,
-      center: location,
-      disableDefaultUI: true,
-      zoomControl: false,
-      mapTypeControl: false,
-      scaleControl: false,
-      streetViewControl: false,
-      rotateControl: false,
-      fullscreenControl: false,
-    });
-
-    const marker = new google.maps.Marker({
-      position: location,
-      map: map,
-    });
-  }
-
-  function geocodeAddressAndInitMap(address) {
-    const geocoder = new google.maps.Geocoder();
-
-    geocoder.geocode({ address: address }, function (results, status) {
-      if (status === "OK") {
-        const lat = results[0].geometry.location.lat();
-        const lng = results[0].geometry.location.lng();
-        initMap(lat, lng);
-      } else {
-        alert("Geocode was not successful for the following reason: " + status);
-      }
-    });
-  }
-
-  document.addEventListener("DOMContentLoaded", function () {
-    const locationDataElement = document.getElementById("locationData");
-    const locationAddress = locationDataElement.getAttribute("data-location");
-
-    geocodeAddressAndInitMap(locationAddress);
-  });
-</script> -->
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {

@@ -17,4 +17,7 @@ links:
   - title: Facebook
     url: https://www.facebook.com/events/838924394232971
 image: /assets/img/events/defqon-1-weekend-festival-2024.jpg
+
+featured: true
+video: true
 ---
