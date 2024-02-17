@@ -28,7 +28,6 @@ datestart: ${formData.datestart}
 dateend: ${formData.dateend || ""}
 location: "${formData.location}"
 type: "${formData.type}"
-genre: "Hardstyle" // Assuming genre is fixed or add a field in your form
 age: "${formData.age}"
 hosts:
   - ${formData.hosts.join("\n  - ")}
