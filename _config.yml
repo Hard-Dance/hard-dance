@@ -21,6 +21,11 @@ sass:
 
 incremental: true
 
+facebook:
+  app_id: 2501572726592422
+  publisher: "https://www.facebook.com/harddotdance"
+  admins: 10161721660276983
+
 admins:
   - name: Eugene Berzin
     alias: Treachery

@@ -27,8 +27,21 @@
   }
 }
 
+#trailer,
+#poster,
+#map {
+  overflow: hidden;
+}
+
+#trailer video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
 #poster {
   isolation: isolate;
+  position: relative;
 
   &::before {
     content: "";
@@ -52,14 +65,6 @@
   }
 }
 // #endregion Banner
-
-.event-button-group {
-  align-self: center;
-
-  @media only screen and (max-width: 393px) {
-    flex-direction: column;
-  }
-}
 
 .event-data-list {
   text-align: center;
