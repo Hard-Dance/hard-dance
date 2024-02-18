@@ -65,6 +65,19 @@
         </a>
       </li>
       {% endfor %}
+      <li>
+        <button
+          class="button"
+          id="shareButton"
+        >
+          <svg alt="{{ link.title }} icon" aria-hidden="true">
+            <use
+              xlink:href="/assets/symbols.svg#share"
+            ></use>
+          </svg>
+          <span class="hide-on-mobile">Share</span>
+        </button>
+      </li>
     </ul>
     {% endif %}
   {% endif %}
