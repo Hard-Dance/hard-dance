@@ -12,10 +12,13 @@ GEM
     eventmachine (1.2.7)
     ffi (1.16.3)
     forwardable-extended (2.6.0)
-    google-protobuf (3.25.2-arm64-darwin)
+    google-protobuf (3.25.3-arm64-darwin)
     http_parser.rb (0.8.0)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
+    icalendar (2.10.1)
+      ice_cube (~> 0.16)
+    ice_cube (0.16.4)
     jekyll (4.3.3)
       addressable (~> 2.4)
       colorator (~> 1.0)
@@ -63,7 +66,7 @@ GEM
     rexml (3.2.6)
     rouge (4.2.0)
     safe_yaml (1.0.5)
-    sass-embedded (1.70.0-arm64-darwin)
+    sass-embedded (1.71.0-arm64-darwin)
       google-protobuf (~> 3.25)
     terminal-table (3.0.2)
       unicode-display_width (>= 1.1.1, < 3)
@@ -76,6 +79,7 @@ PLATFORMS
 
 DEPENDENCIES
   http_parser.rb (~> 0.6.0)
+  icalendar
   jekyll (~> 4.3.2)
   jekyll-dotenv
   jekyll-feed (~> 0.12)

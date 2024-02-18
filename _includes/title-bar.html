@@ -66,11 +66,25 @@
       </li>
       {% endfor %}
       <li>
+        <a
+          class="button"
+          href="#"
+          download="#"
+        >
+          <svg alt="Calendar icon" aria-hidden="true">
+            <use
+              xlink:href="/assets/symbols.svg#calendar"
+            ></use>
+          </svg>
+          <span class="hide-on-mobile">Calendar</span>
+        </a>
+      </li>
+      <li>
         <button
           class="button"
           id="shareButton"
         >
-          <svg alt="{{ link.title }} icon" aria-hidden="true">
+          <svg alt="Share icon" aria-hidden="true">
             <use
               xlink:href="/assets/symbols.svg#share"
             ></use>
