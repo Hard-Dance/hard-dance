@@ -24,20 +24,6 @@
       <a href="/" class="button" data-variant="call-to-action">Go home</a>
     </div>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        var messages = [
-          "Somehow you found yourself somewhere you shouldn't be!",
-          "You’ve wandered outside the festival grounds!",
-          "Too much partying, you’ve lost your way!",
-          "Dude, you're in the wrong tent!",
-          "Seems like you took too much special K, and have dissociated!",
-        ];
-        var randomIndex = Math.floor(Math.random() * messages.length);
-        var randomMessage = messages[randomIndex];
-
-        document.getElementById("error-title").innerText = randomMessage;
-      });
-    </script>
+    {% include scripts.html %}
   </body>
 </html>
