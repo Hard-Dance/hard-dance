@@ -7,11 +7,12 @@ for = "/*"
   [headers.values]
   Content-Security-Policy = '''
     default-src 'self';
-    script-src 'self' 'unsafe-inline' https://deploy-preview-*.--hard-dance.netlify.app https://hard.dance;
+    script-src 'self' 'unsafe-inline' 'unsafe-eval' https://deploy-preview-*--hard-dance.netlify.app https://hard.dance https://www.googletagmanager.com https://www.google.com https://unpkg.com https://cdn.skypack.dev;
     style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-    img-src 'self' https://*.netlify.app https://hard.dance data:;
+    img-src 'self' https://*.netlify.app https://hard.dance data: https://www.google.com;
     font-src 'self' https://fonts.gstatic.com;
-    connect-src 'self' https://*.netlify.app https://hard.dance;
-    frame-src 'self';
+    connect-src 'self' https://*.netlify.app https://hard.dance https://www.google-analytics.com;
+    frame-src 'self' https://www.google.com;
     object-src 'none';
   '''
+
