@@ -1,0 +1,31 @@
+<div class="gdpr" id="gdpr-banner">
+  <p>
+    This website uses cookies to ensure you get the best experience on our
+    website.
+    <a href="https://www.iubenda.com/privacy-policy/61434249">Learn more</a>.
+  </p>
+  <button
+    class="button"
+    data-variant="call-to-action"
+    onclick="acceptCookies()"
+  >
+    Accept
+  </button>
+</div>
+
+<script>
+  function checkCookieConsent() {
+    if (!localStorage.getItem("gdprConsent")) {
+      document.getElementById("gdpr-banner").style.display = "flex";
+    }
+  }
+
+  function acceptCookies() {
+    localStorage.setItem("gdprConsent", "true");
+    document.getElementById("gdpr-banner").style.display = "none";
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    checkCookieConsent();
+  });
+</script>
