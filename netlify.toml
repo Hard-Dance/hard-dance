@@ -1,3 +1,17 @@
 [build]
 command = "echo 'google_maps_api_key: $GOOGLE_MAPS_API_KEY' >> _config.yml && jekyll build"
 publish = "_site"
+
+[[headers]]
+for = "/*"
+  [headers.values]
+  Content-Security-Policy = '''
+    default-src 'self';
+    script-src 'self' 'unsafe-inline' https://deploy-preview-*.--hard-dance.netlify.app https://hard.dance;
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+    img-src 'self' https://*.netlify.app https://hard.dance data:;
+    font-src 'self' https://fonts.gstatic.com;
+    connect-src 'self' https://*.netlify.app https://hard.dance;
+    frame-src 'self';
+    object-src 'none';
+  '''
