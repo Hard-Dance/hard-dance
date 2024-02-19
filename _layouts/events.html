@@ -2,9 +2,7 @@
 <html lang="{{ page.lang | default: site.lang | default: 'en' }}">
   <head>
     {% include head.html %}
-    <link rel="stylesheet" href="/assets/css/animate-on-scroll.css" />
     <script src="https://unpkg.com/color.js@1.2.0/dist/color.js"></script>
-    <script src="/assets/js/animate-on-scroll.js"></script>
   </head>
   <body>
     {% include header.html %}
@@ -49,7 +47,6 @@
           {%
           endif
           %}
-          data-aos="zoom-in-up"
         >
           {% if post.featured and post.video %}
           <video

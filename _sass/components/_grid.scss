@@ -8,14 +8,14 @@
   background-color: var(--color-background);
   border-radius: var(--border-radius);
   user-select: none;
-  position: relative; // TODO: Maybe?
+  position: relative;
 
   &:has(a.grid-item-metadata-title) {
-    transition: transform var(--duration);
+    transition: transform var(--duration) ease;
 
     &:hover,
     &:focus-within {
-      transform: scale(1.05);
+      transform: scale(1.05); // TODO: This isn't working
     }
   }
 }
