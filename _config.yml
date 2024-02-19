@@ -5,6 +5,8 @@ baseurl: ""
 url: "https://hard.dance"
 lang: "en-US"
 repository: "https://github.com/Hard-Dance/hard-dance"
+privacy-policy: "https://www.iubenda.com/privacy-policy/61434249"
+cookie-policy: "https://www.iubenda.com/privacy-policy/61434249/cookie-policy"
 
 permalink: /:categories/:title:output_ext
 

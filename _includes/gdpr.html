@@ -1,0 +1,33 @@
+<div class="gdpr" id="gdpr-banner">
+  <p>
+    This website uses cookies to ensure you get the best experience on our
+    website.
+    <a href="{{ site.privacy-policy }}" rel="noopener noreferrer">
+      Read our privacy policy </a
+    >.
+  </p>
+  <button
+    class="button"
+    data-variant="call-to-action"
+    onclick="acceptCookies()"
+  >
+    Accept
+  </button>
+</div>
+
+<script>
+  function checkCookieConsent() {
+    if (!localStorage.getItem("gdprConsent")) {
+      document.getElementById("gdpr-banner").style.display = "flex";
+    }
+  }
+
+  function acceptCookies() {
+    localStorage.setItem("gdprConsent", "true");
+    document.getElementById("gdpr-banner").style.display = "none";
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    checkCookieConsent();
+  });
+</script>

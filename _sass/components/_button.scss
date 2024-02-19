@@ -72,6 +72,7 @@
 
   &[data-variant="call-to-action"] {
     background-color: var(--color-accent);
+    outline-color: var(--color-text);
 
     @media (hover: hover) {
       &:hover {
