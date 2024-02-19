@@ -1,0 +1,393 @@
+<!-- ALL PAGES -->
+<!-- GDPR banner -->
+<script>
+  function checkCookieConsent() {
+    if (!localStorage.getItem("gdprConsent")) {
+      document.getElementById("gdpr-banner").style.display = "flex";
+    }
+  }
+
+  function acceptCookies() {
+    localStorage.setItem("gdprConsent", "true");
+    document.getElementById("gdpr-banner").style.display = "none";
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    checkCookieConsent();
+  });
+</script>
+
+<!-- Register PWA service worker -->
+<script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", function () {
+      navigator.serviceWorker.register("/sw.js").then(
+        function (registration) {
+          // Registration was successful
+          console.log(
+            "Service Worker registered with scope: ",
+            registration.scope
+          );
+        },
+        function (err) {
+          // Registration failed
+          console.log("Service Worker registration failed: ", err);
+        }
+      );
+    });
+  }
+</script>
+
+<!-- PAGE: Events -->
+{% if page.layout == 'events' %}
+<!-- Pull average color from event image -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const images = document.querySelectorAll(".grid-item-image");
+
+    images.forEach((img) => {
+      const index = img.dataset.index;
+      colorjs.average(img.src).then((color) => {
+        const rgbColor = `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
+        const listItem = document.getElementById(`grid-item-${index}`);
+
+        // Determine the best text color for contrast
+        const textColor = getContrastYIQ(color);
+
+        // Set CSS custom properties for background and text color
+        listItem.style.setProperty("--_color-grid-item-background", rgbColor);
+        listItem.style.setProperty("--_color-grid-item-text-color", textColor);
+      });
+    });
+  });
+
+  function getContrastYIQ(rgbColor) {
+    var r = rgbColor[0];
+    var g = rgbColor[1];
+    var b = rgbColor[2];
+    var yiq = (r * 299 + g * 587 + b * 114) / 1000;
+    return yiq >= 128 ? "black" : "white";
+  }
+</script>
+
+<!-- Events filters -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const locationSelect = document.getElementById("filter-location");
+    const typeSelect = document.getElementById("filter-type");
+    const hostSelect = document.getElementById("filter-host");
+    const posts = document.querySelectorAll(".grid-item");
+    const postList = document.querySelector(".grid");
+    const emptyStateDiv = document.querySelector(".events-empty-state");
+
+    function checkForVisiblePosts() {
+      // Check if any posts are visible
+      const anyVisible = Array.from(posts).some(
+        (post) => post.style.display !== "none"
+      );
+      if (anyVisible) {
+        postList.style.display = ""; // Show the <ol> if there are visible posts
+        emptyStateDiv.style.display = "none"; // Hide the empty state div
+      } else {
+        postList.style.display = "none"; // Hide the <ol> if there are no visible posts
+        emptyStateDiv.style.display = "flex"; // Show the empty state div
+      }
+    }
+
+    function filterPosts() {
+      const selectedLocation = locationSelect.value;
+      const selectedType = typeSelect.value;
+      const selectedHostClass = "filter-host-" + hostSelect.value;
+
+      posts.forEach((post) => {
+        const postLocation = post.getAttribute("data-location").toLowerCase();
+        const postType = post.getAttribute("data-type").toLowerCase(); // Get the post type
+
+        // Start with checking host
+        let showPost =
+          hostSelect.value === "all" ||
+          post.classList.contains(selectedHostClass);
+
+        // If the host matches, proceed to check location
+        if (showPost) {
+          switch (selectedLocation) {
+            case "all":
+              break; // keep showPost true
+            case "north-america":
+              if (!(postLocation === "usa" || postLocation === "canada")) {
+                showPost = false;
+              }
+              break;
+            case "europe":
+              if (
+                !(postLocation === "nederland" || postLocation === "belgium")
+              ) {
+                showPost = false;
+              }
+              break;
+            // ... include other location cases as needed ...
+          }
+        }
+
+        // If the host and location match, proceed to check type
+        if (showPost && selectedType !== "all" && postType !== selectedType) {
+          showPost = false;
+        }
+
+        post.style.display = showPost ? "" : "none"; // Apply the display style
+      });
+
+      checkForVisiblePosts(); // Check if any posts are visible and update the display accordingly
+    }
+
+    typeSelect.addEventListener("change", filterPosts);
+    locationSelect.addEventListener("change", filterPosts);
+    hostSelect.addEventListener("change", filterPosts);
+
+    filterPosts(); // Run once on load to set the correct initial state
+  });
+</script>
+
+<!-- Fade in scroll -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    AOS.init();
+  });
+</script>
+
+<!-- Add event dialog: if other host selected, show extra field -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const hostsSelect = document.getElementById("hosts");
+    // Use .querySelectorAll to select all elements with the class
+    const otherHostDivs = document.querySelectorAll(".other-host");
+
+    hostsSelect.addEventListener("change", function (e) {
+      // Iterate over all selected elements and toggle their display
+      otherHostDivs.forEach((div) => {
+        if (e.target.value === "other") {
+          div.style.display = "block";
+        } else {
+          div.style.display = "none";
+        }
+      });
+    });
+  });
+</script>
+
+<!-- Add event dialog: if form is not filled out, disable submit button -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("add-event-form");
+    const submitButton = document.getElementById(
+      "add-event-form-button-submit"
+    );
+    const resetButton = document.getElementById("add-event-form-button-reset");
+
+    // Function to update the state of the submit button
+    const toggleButtonState = () => {
+      // Check if all required fields are filled (you can add more specific checks if needed)
+      const isValid = Array.from(form.elements).every((input) => {
+        return input.required ? input.value.trim() !== "" : true;
+      });
+
+      // Enable or disable the submit button based on the form validity
+      submitButton.disabled = !isValid;
+    };
+
+    // Add event listeners to each form field
+    Array.from(form.elements).forEach((input) => {
+      input.addEventListener("input", toggleButtonState);
+    });
+
+    // Add an event listener to the form reset event
+    form.addEventListener("reset", function () {
+      // Wait for the form to reset, then disable the submit button
+      setTimeout(() => {
+        submitButton.disabled = true;
+      }, 0);
+    });
+  });
+</script>
+
+<!-- 3D globe on homepage -->
+<script type="module">
+  import createGlobe from "https://cdn.skypack.dev/cobe";
+
+  const canvas = document.getElementById("globeCanvas");
+  let width = canvas.offsetWidth;
+  let globe = null;
+  let phi = 0;
+
+  const onResize = () => {
+    if (canvas) {
+      width = canvas.offsetWidth;
+      if (globe) {
+        globe.resize({
+          width: width,
+          height: width,
+        });
+      }
+    }
+  };
+
+  window.addEventListener("resize", onResize);
+  onResize();
+
+  globe = createGlobe(canvas, {
+    devicePixelRatio: 2,
+    width: width * 2,
+    height: width * 2,
+    phi: 0,
+    theta: 0,
+    dark: 1,
+    diffuse: 3,
+    mapSamples: 10000,
+    mapBrightness: 3,
+    baseColor: [1, 1, 1],
+    markerColor: [251 / 255, 100 / 255, 21 / 255],
+    glowColor: [1.2, 1.2, 1.2],
+    markers: [],
+    scale: 1,
+    offset: [0, 0],
+    onRender: (state) => {
+      state.width = width * 2;
+      state.height = width * 2;
+      state.phi = phi;
+      phi += 0.01;
+    },
+  });
+
+  function destroyGlobe() {
+    if (globe) {
+      globe.destroy();
+      window.removeEventListener("resize", onResize);
+    }
+  }
+</script>
+
+<!-- Remember if user closes toast notification -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const alertBanner = document.querySelector(".banner-events-alert");
+    const closeButton = alertBanner.querySelector(
+      '.button[aria-label="Close dialog"]'
+    );
+
+    // Function to hide the alert banner
+    function hideAlertBanner() {
+      alertBanner.style.display = "none";
+      // Record the current time as the banner close time in localStorage
+      const now = new Date().getTime();
+      localStorage.setItem("alertBannerClosedTime", now);
+    }
+
+    // Check if the alert banner was closed within the last 24 hours
+    const alertBannerClosedTime = localStorage.getItem("alertBannerClosedTime");
+    if (alertBannerClosedTime) {
+      const elapsedTime = new Date().getTime() - alertBannerClosedTime;
+      if (elapsedTime < 24 * 60 * 60 * 1000) {
+        // If it was closed less than 24 hours ago, keep it hidden
+        alertBanner.style.display = "none";
+      }
+    }
+
+    // Add event listener to the close button
+    closeButton.addEventListener("click", hideAlertBanner);
+  });
+</script>
+{% endif %}
+
+<!-- PAGE: Event -->
+{% if page.layout == 'event' %}
+<!-- Share button -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const shareButton = document.getElementById("shareButton");
+
+    if (navigator.share) {
+      // Web Share API is supported
+      shareButton.addEventListener("click", () => {
+        navigator
+          .share({
+            title: document.title,
+            url: window.location.href,
+          })
+          .then(() => {
+            console.log("Thanks for sharing!");
+          })
+          .catch(console.error);
+      });
+    } else {
+      // Fallback for browsers that do not support the Web Share API
+      shareButton.addEventListener("click", () => {
+        // Attempt to copy the current URL to the clipboard as a fallback
+        navigator.clipboard.writeText(window.location.href).then(() => {
+          alert("URL copied to clipboard");
+        });
+      });
+    }
+  });
+</script>
+
+<!-- Initialize Google Maps -->
+<script>
+  function initMap() {
+    const location = { lat: -34.397, lng: 150.644 };
+    const map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 12,
+      center: location,
+      disableDefaultUI: true,
+      zoomControl: false,
+      mapTypeControl: false,
+      scaleControl: false,
+      streetViewControl: false,
+      rotateControl: false,
+      fullscreenControl: false,
+    });
+
+    const marker = new google.maps.Marker({
+      position: location,
+      map: map,
+    });
+  }
+</script>
+
+<!-- Pull average color from event image -->
+<!-- TODO: Can we remove this? -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const bannerEventSlides = document.querySelectorAll(".banner-event-slides");
+
+    bannerEventSlides.forEach((slide) => {
+      const slideImage = slide.querySelector("img");
+      if (slideImage) {
+        colorjs.average(slideImage.src).then((color) => {
+          const rgbColor = `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
+          slide.style.backgroundColor = rgbColor;
+        });
+      }
+    });
+  });
+</script>
+{% endif %}
+
+<!-- PAGE: Error -->
+{% if page.layout == 'error' %}
+<!-- Random error message -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var messages = [
+      "Somehow you found yourself somewhere you shouldn't be!",
+      "You’ve wandered outside the festival grounds!",
+      "Too much partying, you’ve lost your way!",
+      "Dude, you're in the wrong tent!",
+      "Seems like you took too much special K, and have dissociated!",
+    ];
+    var randomIndex = Math.floor(Math.random() * messages.length);
+    var randomMessage = messages[randomIndex];
+
+    document.getElementById("error-title").innerText = randomMessage;
+  });
+</script>
+{% endif %}

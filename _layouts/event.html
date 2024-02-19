@@ -96,35 +96,6 @@
       </dl>
     </main>
 
-    {% include footer.html %}
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const shareButton = document.getElementById("shareButton");
-
-        if (navigator.share) {
-          // Web Share API is supported
-          shareButton.addEventListener("click", () => {
-            navigator
-              .share({
-                title: document.title,
-                url: window.location.href,
-              })
-              .then(() => {
-                console.log("Thanks for sharing!");
-              })
-              .catch(console.error);
-          });
-        } else {
-          // Fallback for browsers that do not support the Web Share API
-          shareButton.addEventListener("click", () => {
-            // Attempt to copy the current URL to the clipboard as a fallback
-            navigator.clipboard.writeText(window.location.href).then(() => {
-              alert("URL copied to clipboard");
-            });
-          });
-        }
-      });
-    </script>
+    {% include footer.html %} {% include scripts.html %}
   </body>
 </html>

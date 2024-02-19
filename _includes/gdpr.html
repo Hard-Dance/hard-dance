@@ -14,20 +14,3 @@
     Accept
   </button>
 </div>
-
-<script>
-  function checkCookieConsent() {
-    if (!localStorage.getItem("gdprConsent")) {
-      document.getElementById("gdpr-banner").style.display = "flex";
-    }
-  }
-
-  function acceptCookies() {
-    localStorage.setItem("gdprConsent", "true");
-    document.getElementById("gdpr-banner").style.display = "none";
-  }
-
-  document.addEventListener("DOMContentLoaded", function () {
-    checkCookieConsent();
-  });
-</script>
