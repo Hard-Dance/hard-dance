@@ -325,11 +325,14 @@
 
 <!-- Initialize Google Maps -->
 <script>
+  let map;
+
   function initMap() {
-    const location = { lat: -34.397, lng: 150.644 };
-    const map = new google.maps.Map(document.getElementById("map"), {
+    // Default location (fallback if geocoding fails)
+    const defaultLocation = { lat: -34.397, lng: 150.644 };
+    map = new google.maps.Map(document.getElementById("map"), {
       zoom: 12,
-      center: location,
+      center: defaultLocation,
       disableDefaultUI: true,
       zoomControl: false,
       mapTypeControl: false,
@@ -339,29 +342,28 @@
       fullscreenControl: false,
     });
 
-    const marker = new google.maps.Marker({
-      position: location,
-      map: map,
-    });
+    // Call the geocode function to update the map based on address
+    geocodeAddress("{{ page.location }}");
   }
-</script>
 
-<!-- Pull average color from event image -->
-<!-- TODO: Can we remove this? -->
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const bannerEventSlides = document.querySelectorAll(".banner-event-slides");
+  function geocodeAddress(address) {
+    const geocoder = new google.maps.Geocoder();
 
-    bannerEventSlides.forEach((slide) => {
-      const slideImage = slide.querySelector("img");
-      if (slideImage) {
-        colorjs.average(slideImage.src).then((color) => {
-          const rgbColor = `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
-          slide.style.backgroundColor = rgbColor;
+    geocoder.geocode({ address: address }, function (results, status) {
+      if (status === "OK") {
+        // Center the map on the address location
+        map.setCenter(results[0].geometry.location);
+
+        // Add a marker at the address location
+        new google.maps.Marker({
+          map: map,
+          position: results[0].geometry.location,
         });
+      } else {
+        alert("Geocode was not successful for the following reason: " + status);
       }
     });
-  });
+  }
 </script>
 {% endif %}
 
