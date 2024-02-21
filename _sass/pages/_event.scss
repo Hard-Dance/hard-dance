@@ -10,10 +10,12 @@
   display: flex;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   outline-offset: calc(var(--border-width) * -1);
   user-select: none;
+  @media (prefers-reduced-motion: no-preference) {
+    scroll-behavior: smooth;
+  }
 
   > div {
     scroll-snap-align: start;

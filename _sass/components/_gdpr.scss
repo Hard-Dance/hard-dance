@@ -1,15 +1,15 @@
+@import "../mixins";
+
 .gdpr {
   display: none;
   align-items: center;
   justify-content: space-between;
   gap: var(--page-padding);
   position: fixed;
-  background-color: rgba(var(--color-background-rgb), 0.5);
-  -webkit-backdrop-filter: saturate(1.8) blur(20px);
-  backdrop-filter: saturate(1.8) blur(20px);
   padding: var(--padding) var(--page-padding);
   z-index: 1000;
   border: 0px solid var(--color-background);
+  @include frosted-glass;
 
   // Desktop
   @media only screen and (min-width: 769px) {
