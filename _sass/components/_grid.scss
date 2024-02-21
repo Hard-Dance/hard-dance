@@ -10,12 +10,14 @@
   user-select: none;
   position: relative;
 
-  &:has(a.grid-item-metadata-title) {
-    transition: transform var(--duration) ease;
+  @media (prefers-reduced-motion: no-preference) {
+    &:has(a.grid-item-metadata-title) {
+      transition: transform var(--duration) ease;
 
-    &:hover,
-    &:focus-within {
-      transform: scale(1.05); // TODO: This isn't working
+      &:hover,
+      &:focus-within {
+        transform: scale(1.05);
+      }
     }
   }
 }

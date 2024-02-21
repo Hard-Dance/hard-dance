@@ -158,9 +158,13 @@ $shadows-big: multiple-box-shadow(100);
 .events-grid-item {
   background-color: var(--_color-grid-item-background);
   color: var(--_color-grid-item-text-color);
-  animation: linear reveal both;
-  animation-timeline: view();
-  animation-range: entry 0% cover 15%;
+
+  @media (prefers-reduced-motion: no-preference) {
+    animation: linear reveal both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 15%;
+    animation-fill-mode: none;
+  }
 
   .grid-item-metadata-title,
   .grid-item-metadata-subtitle {
