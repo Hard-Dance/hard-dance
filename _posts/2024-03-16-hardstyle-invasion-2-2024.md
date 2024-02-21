@@ -4,8 +4,7 @@ category: events
 title: "Hardstyle Invasion 2"
 date: 2024/02/05
 datestart: 2024/03/16
-location: San Diego, CA USA
-type: Underground
+location: San Diego, CA, USA
 age: 21+
 hosts:
   - SD Hardstylerz
