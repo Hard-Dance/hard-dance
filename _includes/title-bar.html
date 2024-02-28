@@ -32,18 +32,19 @@
       </svg>
       <span class="hide-on-mobile">Subscribe</span>
     </a>
-    <input
-      class="page-title-drawer-button"
-      type="checkbox"
-      id="filters"
-      name="filters"
-    />
-    <label class="button" for="filters">
+    <button
+      aria-label="Show filter options"
+      class="button"
+      id="expand-button"
+    >
       <svg alt="Filter icon" aria-hidden="true">
         <use xlink:href="/assets/symbols.svg#options"></use>
       </svg>
       <span class="hide-on-mobile">Filters</span>
-    </label>
+      <svg class="expand-button-icon" alt="Chevron icon" aria-hidden="true">
+        <use xlink:href="/assets/symbols.svg#chevron-down"></use>
+      </svg>
+    </button>
   </div>
   {% elsif page.layout == 'event' %}
     {% if page.links %}

@@ -96,6 +96,23 @@
   }
 </script>
 
+<!-- Open filters drawer -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const button = document.getElementById("expand-button");
+    const drawer = document.querySelector(".page-title-drawer");
+    const chevron = button.querySelector(".expand-button-icon"); // Ensure you get the chevron within this specific button
+
+    button.addEventListener("click", () => {
+      // Toggle drawer display
+      drawer.classList.toggle("is-visible");
+
+      // Rotate chevron
+      chevron.classList.toggle("rotated");
+    });
+  });
+</script>
+
 <!-- Remember if user closes toast notification -->
 <script>
   document.addEventListener("DOMContentLoaded", function () {
