@@ -85,36 +85,42 @@
   
   {% if page.layout == 'events' %}
   <div class="page-title-drawer">
-    <label for="filter-location">
-      Location
-      <select name="location" id="filter-location">
-        <option value="all" selected>All</option>
-        <option value="north-america">North America</option>
-        <option value="south-america">South America</option>
-        <option value="europe">Europe</option>
-        <option value="asia">Asia</option>
-      </select>
-    </label>
+    <div class="page-title-drawer-item">
+      <label for="filter-location">
+        Location
+        <select name="location" id="filter-location">
+          <option value="all" selected>All</option>
+          <option value="north-america">North America</option>
+          <option value="south-america">South America</option>
+          <option value="europe">Europe</option>
+          <option value="asia">Asia</option>
+        </select>
+      </label>
+    </div>
 
-    <label for="filter-type">
-      Type
-      <select name="type" id="filter-type">
-        <option value="all" selected>All</option>
-        {% for type in site.event-types %}
-        <option value="{{ type | slugify }}">{{ type }}</option>
-        {% endfor %}
-      </select>
-    </label>
+    <div class="page-title-drawer-item">
+      <label for="filter-type">
+        Type
+        <select name="type" id="filter-type">
+          <option value="all" selected>All</option>
+          {% for type in site.event-types %}
+          <option value="{{ type | slugify }}">{{ type }}</option>
+          {% endfor %}
+        </select>
+      </label>
+    </div>
 
-    <label for="filter-host">
-      Host
-      <select name="host" id="filter-host">
-        <option value="all" selected>All</option>
-        {% for host in site.event-hosts %}
-        <option value="{{ host.name | slugify }}">{{ host.name }}</option>
-        {% endfor %}
-      </select>
-    </label>
+    <div class="page-title-drawer-item">
+      <label for="filter-host">
+        Host
+        <select name="host" id="filter-host">
+          <option value="all" selected>All</option>
+          {% for host in site.event-hosts %}
+          <option value="{{ host.name | slugify }}">{{ host.name }}</option>
+          {% endfor %}
+        </select>
+      </label>
+    </div>
   </div>
   {% endif %}
 </div>
