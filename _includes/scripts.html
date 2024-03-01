@@ -98,17 +98,45 @@
 
 <!-- Open filters drawer -->
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const button = document.getElementById("expand-button");
-    const drawer = document.querySelector(".page-title-drawer");
-    const chevron = button.querySelector(".expand-button-icon"); // Ensure you get the chevron within this specific button
+  const setFilterDrawerVisibility = (button, drawer, drawerInteriorWrapper) => {
+    const isExpanded = button.getAttribute("aria-expanded") === "true";
 
+    if (isExpanded) {
+      drawer.style.maxHeight = drawerInteriorWrapper.offsetHeight + "px"; // Open drawer
+      drawerInteriorWrapper.removeAttribute("inert");
+    } else {
+      drawer.style.maxHeight = 0; // Close drawer
+      drawerInteriorWrapper.setAttribute("inert", "");
+    }
+  };
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const button = document.getElementById("events-filter-drawer-button");
+    console.log("button", button);
+
+    const drawer = document.getElementById("filters-drawer");
+    const drawerInteriorWrapper = document.querySelector(
+      "#filters-drawer > .page-title-drawer-items-wrapper"
+    );
+    const focusableElements = drawer.querySelectorAll(
+      'select, button, [href], input, textarea, [tabindex]:not([tabindex="-1"])'
+    );
+
+    function setFocusable(state) {
+      focusableElements.forEach((el) => {
+        el.tabIndex = state ? "0" : "-1";
+      });
+    }
+
+    // Initialize
+    setFilterDrawerVisibility(button, drawer, drawerInteriorWrapper);
+
+    // Update
     button.addEventListener("click", () => {
-      // Toggle drawer display
-      drawer.classList.toggle("is-visible");
+      const isExpanded = button.getAttribute("aria-expanded") === "true";
+      button.setAttribute("aria-expanded", !isExpanded);
 
-      // Rotate chevron
-      chevron.classList.toggle("rotated");
+      setFilterDrawerVisibility(button, drawer, drawerInteriorWrapper);
     });
   });
 </script>
