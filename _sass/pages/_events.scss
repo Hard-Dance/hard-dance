@@ -152,6 +152,18 @@ $shadows-big: multiple-box-shadow(100);
 }
 // #endregion Banner
 
+#events-filter-drawer-button {
+  svg:last-of-type {
+    @media (prefers-reduced-motion: no-preference) {
+      transition: transform var(--duration) ease;
+    }
+  }
+
+  &[aria-expanded="true"] svg:last-of-type {
+    transform: rotate(-180deg);
+  }
+}
+
 // #region Grid
 .events-grid {
   grid-column: content-start / content-end;

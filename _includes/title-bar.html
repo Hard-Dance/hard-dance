@@ -32,18 +32,21 @@
       </svg>
       <span class="hide-on-mobile">Subscribe</span>
     </a>
-    <input
-      class="page-title-drawer-button"
-      type="checkbox"
-      id="filters"
-      name="filters"
-    />
-    <label class="button" for="filters">
+    <button
+      class="button"
+      id="events-filter-drawer-button"
+      aria-label="Show filter options"
+      aria-controls="filters-drawer"
+      aria-expanded="false"
+    >
       <svg alt="Filter icon" aria-hidden="true">
         <use xlink:href="/assets/symbols.svg#options"></use>
       </svg>
       <span class="hide-on-mobile">Filters</span>
-    </label>
+      <svg alt="Chevron icon" aria-hidden="true">
+        <use xlink:href="/assets/symbols.svg#chevron-down"></use>
+      </svg>
+    </button>
   </div>
   {% elsif page.layout == 'event' %}
     {% if page.links %}
@@ -83,37 +86,45 @@
   {% endif %}
   
   {% if page.layout == 'events' %}
-  <div class="page-title-drawer">
-    <label for="filter-location">
-      Location
-      <select name="location" id="filter-location">
-        <option value="all" selected>All</option>
-        <option value="north-america">North America</option>
-        <option value="south-america">South America</option>
-        <option value="europe">Europe</option>
-        <option value="asia">Asia</option>
-      </select>
-    </label>
+  <div class="page-title-drawer" id="filters-drawer">
+    <div class="page-title-drawer-items-wrapper" inert>
+      <div class="page-title-drawer-item">
+        <label for="filter-location">
+          Location
+          <select name="location" id="filter-location">
+            <option value="all" selected>All</option>
+            <option value="north-america">North America</option>
+            <option value="south-america">South America</option>
+            <option value="europe">Europe</option>
+            <option value="asia">Asia</option>
+          </select>
+        </label>
+      </div>
 
-    <label for="filter-type">
-      Type
-      <select name="type" id="filter-type">
-        <option value="all" selected>All</option>
-        {% for type in site.event-types %}
-        <option value="{{ type | slugify }}">{{ type }}</option>
-        {% endfor %}
-      </select>
-    </label>
+      <div class="page-title-drawer-item">
+        <label for="filter-type">
+          Type
+          <select name="type" id="filter-type">
+            <option value="all" selected>All</option>
+            {% for type in site.event-types %}
+            <option value="{{ type | slugify }}">{{ type }}</option>
+            {% endfor %}
+          </select>
+        </label>
+      </div>
 
-    <label for="filter-host">
-      Host
-      <select name="host" id="filter-host">
-        <option value="all" selected>All</option>
-        {% for host in site.event-hosts %}
-        <option value="{{ host.name | slugify }}">{{ host.name }}</option>
-        {% endfor %}
-      </select>
-    </label>
+      <div class="page-title-drawer-item">
+        <label for="filter-host">
+          Host
+          <select name="host" id="filter-host">
+            <option value="all" selected>All</option>
+            {% for host in site.event-hosts %}
+            <option value="{{ host.name | slugify }}">{{ host.name }}</option>
+            {% endfor %}
+          </select>
+        </label>
+      </div>
+    </div>
   </div>
   {% endif %}
 </div>
