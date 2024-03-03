@@ -6,7 +6,6 @@ date: 2024/01/31
 datestart: 2024/02/15
 location: 23 Meadow Street, Brooklyn, NY, USA
 type: Club
-genre: Hardstyle
 age: 19+
 hosts:
   - Hard Dance NYC

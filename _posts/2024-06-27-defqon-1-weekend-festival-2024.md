@@ -7,7 +7,6 @@ datestart: 2024/06/27
 dateend: 2024/06/30
 location: Spijkweg 30, 8256 RJ Biddinghuizen, Nederland
 type: Festival
-genre: Hardstyle
 age: 18+
 hosts:
   - Q-dance
