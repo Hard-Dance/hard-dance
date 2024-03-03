@@ -58,9 +58,7 @@
   box-sizing: content-box;
   grid-area: drawer;
   max-height: 0;
-
   overflow-y: hidden;
-  background-color: green;
   @media (prefers-reduced-motion: no-preference) {
     transition: max-height var(--duration) ease-out;
   }
