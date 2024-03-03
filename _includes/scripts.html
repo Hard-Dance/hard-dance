@@ -103,9 +103,11 @@
 
     if (isExpanded) {
       drawer.style.maxHeight = drawerInteriorWrapper.offsetHeight + "px"; // Open drawer
+      drawer.style.opacity = 1;
       drawerInteriorWrapper.removeAttribute("inert");
     } else {
       drawer.style.maxHeight = 0; // Close drawer
+      drawer.style.opacity = 0;
       drawerInteriorWrapper.setAttribute("inert", "");
     }
   };
