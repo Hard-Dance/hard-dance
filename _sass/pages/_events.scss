@@ -153,6 +153,8 @@ $shadows-big: multiple-box-shadow(100);
 // #endregion Banner
 
 #events-filter-drawer-button {
+  position: relative;
+
   svg:last-of-type {
     @media (prefers-reduced-motion: no-preference) {
       transition: transform var(--duration) ease;
@@ -161,6 +163,18 @@ $shadows-big: multiple-box-shadow(100);
 
   &[aria-expanded="true"] svg:last-of-type {
     transform: rotate(-180deg);
+  }
+
+  &[data-filter-active="true"]::before {
+    content: "";
+    width: calc(var(--icon-size) * 0.5);
+    height: calc(var(--icon-size) * 0.5);
+    border-radius: 999px;
+    background-color: var(--color-accent);
+    outline: var(--border-width) solid var(--color-background-backdrop);
+    position: absolute;
+    top: calc(var(--icon-size) * 0.25);
+    left: calc(var(--component-padding-inline) + var(--icon-size) * 0.75);
   }
 }
 

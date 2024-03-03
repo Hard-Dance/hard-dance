@@ -225,21 +225,21 @@
     const locationSelect = document.getElementById("filter-location");
     const typeSelect = document.getElementById("filter-type");
     const hostSelect = document.getElementById("filter-host");
+    const filterButton = document.getElementById("events-filter-drawer-button"); // Get the filter button
     const posts = document.querySelectorAll(".grid-item");
     const postList = document.querySelector(".grid");
     const emptyStateDiv = document.querySelector(".events-empty-state");
 
     function checkForVisiblePosts() {
-      // Check if any posts are visible
       const anyVisible = Array.from(posts).some(
         (post) => post.style.display !== "none"
       );
       if (anyVisible) {
-        postList.style.display = ""; // Show the <ol> if there are visible posts
-        emptyStateDiv.style.display = "none"; // Hide the empty state div
+        postList.style.display = "";
+        emptyStateDiv.style.display = "none";
       } else {
-        postList.style.display = "none"; // Hide the <ol> if there are no visible posts
-        emptyStateDiv.style.display = "flex"; // Show the empty state div
+        postList.style.display = "none";
+        emptyStateDiv.style.display = "flex";
       }
     }
 
@@ -247,53 +247,54 @@
       const selectedLocation = locationSelect.value;
       const selectedType = typeSelect.value;
       const selectedHostClass = "filter-host-" + hostSelect.value;
+      let filterActive = false; // Flag to track if any filter is active
 
       posts.forEach((post) => {
         const postLocation = post.getAttribute("data-location").toLowerCase();
-        const postType = post.getAttribute("data-type").toLowerCase(); // Get the post type
-
-        // Start with checking host
+        const postType = post.getAttribute("data-type").toLowerCase();
         let showPost =
           hostSelect.value === "all" ||
           post.classList.contains(selectedHostClass);
 
-        // If the host matches, proceed to check location
-        if (showPost) {
-          switch (selectedLocation) {
-            case "all":
-              break; // keep showPost true
-            case "north-america":
-              if (!(postLocation === "usa" || postLocation === "canada")) {
-                showPost = false;
-              }
-              break;
-            case "europe":
-              if (
-                !(postLocation === "nederland" || postLocation === "belgium")
-              ) {
-                showPost = false;
-              }
-              break;
-            // ... include other location cases as needed ...
-          }
+        if (showPost && selectedLocation !== "all") {
+          showPost = checkLocation(postLocation, selectedLocation);
         }
 
-        // If the host and location match, proceed to check type
         if (showPost && selectedType !== "all" && postType !== selectedType) {
           showPost = false;
         }
 
-        post.style.display = showPost ? "" : "none"; // Apply the display style
+        post.style.display = showPost ? "" : "none";
+        if (showPost) filterActive = true; // If any post is visible, a filter is active
       });
 
-      checkForVisiblePosts(); // Check if any posts are visible and update the display accordingly
+      // Update the filter button's data attribute based on filter activity
+      filterButton.setAttribute(
+        "data-filter-active",
+        filterActive ? "true" : "false"
+      );
+
+      checkForVisiblePosts();
+    }
+
+    // Function to check location match to handle additional location cases
+    function checkLocation(postLocation, selectedLocation) {
+      switch (selectedLocation) {
+        case "north-america":
+          return postLocation === "usa" || postLocation === "canada";
+        case "europe":
+          return postLocation === "nederland" || postLocation === "belgium";
+        // Add more cases as needed
+        default:
+          return false;
+      }
     }
 
     typeSelect.addEventListener("change", filterPosts);
     locationSelect.addEventListener("change", filterPosts);
     hostSelect.addEventListener("change", filterPosts);
 
-    filterPosts(); // Run once on load to set the correct initial state
+    filterPosts(); // Initialize filters on page load
   });
 </script>
 
