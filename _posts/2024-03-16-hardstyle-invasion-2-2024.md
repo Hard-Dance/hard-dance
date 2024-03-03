@@ -5,7 +5,6 @@ title: "Hardstyle Invasion 2"
 date: 2024/02/05
 datestart: 2024/03/16
 location: San Diego, CA, USA
-is_online: true
 age: 21+
 hosts:
   - SD Hardstylerz
