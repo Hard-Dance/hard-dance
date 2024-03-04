@@ -26,11 +26,19 @@
 
         {% case country %}
           {% when 'USA' %} {% assign flag = '🇺🇸' %}
+          {% when 'Belgium' %} {% assign flag = '🇧🇪' %}
           {% when 'Canada' %} {% assign flag = '🇨🇦' %}
+          {% when 'Croatia' %} {% assign flag = '🇭🇷' %}
+          {% when 'Czech Republic' %} {% assign flag = '🇨🇿' %}
+          {% when 'Czechia' %} {% assign flag = '🇨🇿' %}
           {% when 'UK' %} {% assign flag = '🇬🇧' %}
           {% when 'Nederland' %} {% assign flag = '🇳🇱' %}
-          {% when 'Belgium' %} {% assign flag = '🇧🇪' %}
           {% when 'Germany' %} {% assign flag = '🇩🇪' %}
+          {% when 'Switzerland' %} {% assign flag = '🇨🇭' %}
+          {% when 'Poland' %} {% assign flag = '🇵🇱' %}
+          {% when 'South Korea' %} {% assign flag = '🇰🇷' %}
+          {% when 'Hungary' %} {% assign flag = '🇭🇺' %}
+          {% when 'Austria' %} {% assign flag = '🇦🇹' %}
           {%- else -%}
             {% assign flag = '' %}
         {% endcase %}

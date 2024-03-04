@@ -88,6 +88,7 @@ event-hosts:
     url: https://www.bassconmassive.com
     facebook: https://www.facebook.com/bassconmassive/
   - name: BKJN events
+    url: https://bkjn.nl
     facebook: https://www.facebook.com/BKJNevents/
   - name: Devastator Events
     url: https://devastatorevents.cz
@@ -101,11 +102,17 @@ event-hosts:
   - name: East Coast Hard Dance
     url: https://eastcoastharddance.com
     facebook: https://www.facebook.com/EastCoastHardDance/
+  - name: Electric Love
+    url: https://www.electriclove.at
+    facebook: https://www.facebook.com/electriclovefestival
   - name: Fatality
     facebook: https://www.facebook.com/fatalityevent/
   - name: Gearbox Digital
     url: https://gearboxdigital.com
     facebook: https://www.facebook.com/GearboxDigital/
+  - name: HARDFEST
+    url: https://www.hardfest.nl
+    facebook: https://www.facebook.com/hardfest.nl/
   - name: Hardice
     facebook: https://www.facebook.com/hardice.ch/
   - name: Hardstyle Arena
@@ -113,12 +120,21 @@ event-hosts:
   - name: Harmony of Hardcore
     url: https://www.harmonyofhardcore.nl
     facebook: https://www.facebook.com/HOHfestival/
+  - name: Heart of Hard
+    url: https://heartofhard.cz
+    facebook: https://www.facebook.com/heartofhard/
   - name: Hellfire
     url: https://hell-fire.co.uk
     facebook: https://www.facebook.com/Hellfireshow/
+  - name: High Energy Events
+    url: https://www.highenergyevents.nl
+    facebook: https://www.facebook.com/officialhighenergyevents
   - name: I AM HARDSTYLE
     url: https://iamhardstyle.com
     facebook: https://www.facebook.com/iamhardstyleofficial/
+  - name: Infinity Festival
+    url: https://infinity-festival.nl/
+    facebook: https://www.facebook.com/profile.php?id=100091682835269
   - name: Intents Festival
     url: https://www.intentsfestival.nl
     facebook: https://www.facebook.com/intentsfestival/
@@ -134,6 +150,17 @@ event-hosts:
   - name: Musical Madness
     url: https://www.musical-madness.de
     facebook: https://www.facebook.com/musicalmadnessofficial/
+  - name: Mysteryland
+    url: https://www.mysteryland.nl
+    facebook: https://www.facebook.com/Mysteryland
+  - name: Outlaw Events
+    url: https://www.outlawevents.nl
+    facebook: https://www.facebook.com/outlawevents.nl/
+  - name: Overloud Events
+    facebook: https://www.facebook.com/ovldevents
+  - name: Parookaville
+    url: https://www.parookaville.com
+    facebook: https://www.facebook.com/parookaville/
   - name: Project Hardstyle CH
     facebook: https://www.facebook.com/ProjectHardstyleCH/
   - name: Q-dance
@@ -142,6 +169,8 @@ event-hosts:
   - name: Shockerz
     url: https://shockerz.nl
     facebook: https://www.facebook.com/shockerzofficial/
+  - name: Supersized Kingsday
+    facebook: https://www.facebook.com/supersizedkingsdayfestival/
   - name: Thunderdome
     url: https://www.thunderdome.com
     facebook: https://www.facebook.com/ThunderdomeIsYou/
