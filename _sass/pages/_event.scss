@@ -21,9 +21,10 @@
     scroll-snap-align: start;
     flex-shrink: 0;
     width: 100%;
-    height: calc(50vh - var(--header-height));
-    height: calc(50dvh - var(--header-height));
+    height: 40vh;
+    height: 40dvh;
     min-height: 25rem;
+    max-height: 32rem;
     display: flex;
     justify-content: center;
   }
