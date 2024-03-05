@@ -81,7 +81,7 @@
           {% endif %}
           <img
             class="grid-item-image"
-            src="/.netlify/images/?url={{ post.image }}"
+            src="/.netlify/images/?url={{ post.image }}&fit=cover&h=448"
             alt="{{ post.title | smartify }} image"
             data-index="{{ forloop.index }}"
             draggable="false"
