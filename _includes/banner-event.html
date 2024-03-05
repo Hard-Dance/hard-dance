@@ -19,7 +19,7 @@
   {% endif %}
   <div id="poster" style="--_post-image: url({{ page.image }});">
     <img
-      src="{{ page.image }}"
+      src="/.netlify/images/?url={{ page.image }}&h=540"
       alt=""
       draggable="false"
       style="view-transition-name: post-image-{{ page.title | slugify }};"
