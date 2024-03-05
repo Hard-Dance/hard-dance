@@ -7,3 +7,5 @@ _site
 .vscode
 vendor
 .env*
+# Local Netlify folder
+.netlify

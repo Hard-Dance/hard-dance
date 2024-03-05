@@ -44,7 +44,8 @@
             <li class="grid-item">
               <img
                 class="grid-item-image"
-                src="/assets/img/admins/{{ admin.name | slugify }}.jpg"
+                srcset="/.netlify/images/?url=/assets/img/admins/{{ admin.name | slugify }}.jpg&fit=cover&h=600 2x /.netlify/images/?url=/assets/img/admins/{{ admin.name | slugify }}.jpg&fit=cover&h=900 3x"
+                src="/.netlify/images/?url=/assets/img/admins/{{ admin.name | slugify }}.jpg&fit=cover&h=300"
                 alt="A photo of {{ admin.name }}"
                 draggable="false"
               />
@@ -184,7 +185,8 @@
             <li class="grid-item">
               <img
                 class="grid-item-image"
-                src="/assets/img/friends/{{ friend.title | slugify }}.png"
+                srcset="/.netlify/images/?url=/assets/img/friends/{{ friend.title | slugify }}.png&fit=cover&h=600 2x /.netlify/images/?url=/assets/img/friends/{{ friend.title | slugify }}.png&fit=cover&h=900 3x"
+                src="/.netlify/images/?url=/assets/img/friends/{{ friend.title | slugify }}.png&fit=cover&h=300"
                 alt="A graphic of {{ friend.title }}"
                 draggable="false"
               />
