@@ -219,6 +219,43 @@
   }
 </script>
 
+<!-- Add `loading=lazy` to images below the fold -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Select all images
+    const images = document.querySelectorAll("img");
+
+    // Initially set all images to lazy load
+    images.forEach((img) => {
+      img.setAttribute("loading", "lazy");
+    });
+
+    if ("IntersectionObserver" in window) {
+      let observer = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            // If the image is above the fold on initial load, remove the lazy loading
+            if (entry.intersectionRatio > 0) {
+              let img = entry.target;
+              img.removeAttribute("loading");
+              observer.unobserve(img);
+            }
+          });
+        },
+        {
+          rootMargin: "0px",
+          threshold: 0.01,
+        }
+      );
+
+      // Observe each image
+      images.forEach((img) => {
+        observer.observe(img);
+      });
+    }
+  });
+</script>
+
 <!-- Events filters -->
 <script>
   document.addEventListener("DOMContentLoaded", function () {
