@@ -6,7 +6,6 @@ date: 2023/07/15
 datestart: 2024/07/19
 dateend: 2024/07/20
 location: Buivensedreef 10, 5521 RN Eersel, Nederland
-age: 18+
 hosts:
   - Art of Dance
   - Q-dance

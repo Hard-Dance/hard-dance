@@ -5,7 +5,6 @@ title: "Reverze Synergy"
 date: 2022/03/13
 datestart: 2023/03/04
 location: Schijnpoortweg 113, 2170 Antwerpen, Belgium
-age: 18+
 hosts:
   - Bass Events
 links:

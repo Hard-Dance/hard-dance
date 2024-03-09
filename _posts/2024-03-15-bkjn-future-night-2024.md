@@ -5,7 +5,6 @@ title: "BKJN Future Night"
 date: 2023/12/07
 datestart: 2024/03/15
 location: Van der hagenstraat 22, Zoetermeer, Nederland
-age: 18+
 hosts:
   - BKJN Events
 links:

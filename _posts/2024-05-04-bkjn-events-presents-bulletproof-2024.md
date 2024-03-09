@@ -5,7 +5,6 @@ title: "BKJN Events presents: Bulletproof"
 date: 2023/09/07
 datestart: 2024/05/04
 location: Veemarktstraat 38C, 5038 CV Tilburg, Nederland
-age: 18+
 hosts:
   - BKJN Events
 links:
