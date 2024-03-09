@@ -5,7 +5,6 @@ title: "Q-dance Take Over at Balaton Sound 2024"
 date: 2024/02/14
 datestart: 2024/07/06
 location: Lake Balaton, Hungary
-type: Festival
 hosts:
   - Q-dance
 links:

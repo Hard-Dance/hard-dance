@@ -5,7 +5,6 @@ title: "Kill the Noise Festival 2024"
 date: 2023/10/03
 datestart: 2024/03/09
 location: Güterbahnhofstrasse 4, 9000 St. Gallen, Switzerland
-type: Festival
 hosts:
   - Project Hardstyle CH
 links:

@@ -5,7 +5,6 @@ title: "Welcome to the Gang"
 date: 2023/11/21
 datestart: 2024/03/16
 location: Bavelseparklaan 13, 4817 ZX Breda, Nederland
-type: Club
 hosts:
   - Outlaw Events
 links:

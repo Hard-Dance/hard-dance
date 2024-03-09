@@ -210,12 +210,6 @@ event-hosts:
   - name: WhiteNorat.
     facebook: https://www.facebook.com/Whitenoratevents
 
-event-types:
-  - Festival
-  - Arena
-  - Club
-  - Underground
-
 friends:
   - title: /r/hardstyle
     subtitle: Reddit

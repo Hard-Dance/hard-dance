@@ -5,7 +5,6 @@ title: "Captain Hardstyle 2024"
 date: 2023/09/26
 datestart: 2024/09/21
 location: Romanshorn, 8590, Switzerland
-type: Festival
 hosts:
   - Project Hardstyle CH
 links:

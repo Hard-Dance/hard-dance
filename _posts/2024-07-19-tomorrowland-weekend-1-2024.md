@@ -6,7 +6,6 @@ date: 2023/11/15
 datestart: 2024/07/19
 dateend: 2024/07/21
 location: Schommelei 1, 2850 Boom, Belgium
-type: Festival
 genre: Multigenre
 age: 18+
 hosts:

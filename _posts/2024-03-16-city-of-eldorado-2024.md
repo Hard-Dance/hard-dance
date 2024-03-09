@@ -5,7 +5,6 @@ title: "City of Eldorado"
 date: 2023/11/27
 datestart: 2024/03/16
 location: 1 Chemin de la Terrière, 51510 Fagnières, France
-type: Club
 hosts:
   - Ravingz Bass
 links:

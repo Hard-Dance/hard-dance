@@ -5,7 +5,6 @@ title: "Angerfist @ Docks Hamburg"
 date: 2023/10/16
 datestart: 2024/04/13
 location: Spielbudenpl. 19, 20359 Hamburg, Germany
-type: Club
 hosts:
   - Airbeat One
 links:

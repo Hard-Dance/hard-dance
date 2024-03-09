@@ -5,7 +5,6 @@ title: "Rebelion: The Final Dose"
 date: 2024/01/11
 datestart: 2024/03/31
 location: Siegburger Str. 15 40591 Düsseldorf, Germany
-type: Arena
 hosts:
   - Musical Madness
 links:

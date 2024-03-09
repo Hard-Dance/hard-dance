@@ -6,7 +6,6 @@ date: 2023/07/16
 datestart: 2024/07/10
 dateend: 2024/07/14
 location: Neustadt-Glewe, Germany
-type: Festival
 hosts:
   - Airbeat One
 links:

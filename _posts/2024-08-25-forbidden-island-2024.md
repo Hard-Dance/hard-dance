@@ -6,7 +6,6 @@ date: 2023/09/01
 datestart: 2024/08/25
 dateend: 2024/08/29
 location: Slatinska ul. 89, 53291, Novalja, Croatia
-type: Festival
 hosts:
   - BKJN Events
 links:

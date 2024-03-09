@@ -5,7 +5,6 @@ title: "Thyron album release night"
 date: 2024/01/30
 datestart: 2024/03/15
 location: Heuvelring 39-05, 5038 CJ Tilburg, Nederland
-type: Club
 hosts:
   - Chemistry Event
 links:

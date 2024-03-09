@@ -46,14 +46,6 @@
         placeholder="Spijkweg 30, 8256 RJ Biddinghuizen, Nederland"
       />
 
-      <label for="type">Event type</label>
-      <select name="type" id="type" required>
-        <option disabled selected value></option>
-        {% for type in site.event-types %}
-        <option value="{{ type | slugify }}">{{ type }}</option>
-        {% endfor %}
-      </select>
-
       <label for="age">Event age limit</label>
       <input type="text" name="age" id="age" placeholder="18+" />
 

@@ -5,7 +5,6 @@ title: "Madness presents: Sub Zero Project"
 date: 2024/01/23
 datestart: 2024/03/08
 location: Königstraße 49, 70173 Stuttgart, Germany
-type: Club
 hosts:
   - Musical Madness
 links:

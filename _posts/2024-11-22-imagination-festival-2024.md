@@ -5,7 +5,6 @@ title: "Imagination Festival 2024"
 date: 2023/02/01
 datestart: 2024/11/22
 location: Beranových 667 199 00 Prague, Czech Republic
-type: Arena
 hosts:
   - Beatworx
   - Devastator Events

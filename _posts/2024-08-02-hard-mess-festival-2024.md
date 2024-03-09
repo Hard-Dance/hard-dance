@@ -6,7 +6,6 @@ date: 2024/02/26
 datestart: 2024/08/02
 dateend: 2024/08/04
 location: France
-type: Festival
 hosts:
   -
 links:

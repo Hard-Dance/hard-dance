@@ -5,7 +5,6 @@ title: "Hardice presents: Imperatorz"
 date: 2023/02/23
 datestart: 2024/03/28
 location: Rue de l'Etang 19, 1630 Bulle, Switzerland
-type: Club
 hosts:
   - Hardice
 links:

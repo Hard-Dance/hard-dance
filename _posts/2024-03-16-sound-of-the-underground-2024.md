@@ -5,7 +5,6 @@ title: "Sound of the Underground"
 date: 2023/07/31
 datestart: 2024/03/16
 location: Hemkade 48, 1506 PS Zaandam, Nederland
-type: Club
 hosts:
   - Reminder
 links:

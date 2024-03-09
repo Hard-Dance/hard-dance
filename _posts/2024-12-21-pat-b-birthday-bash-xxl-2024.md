@@ -5,7 +5,6 @@ title: "Pat B Birthday Bash XXL 2024"
 date: 2024/02/29
 datestart: 2024/12/21
 location: Lotto Arena, Schijnpoortweg 119, 2170 Antwerpen, Belgium
-type: Arena
 age: 16+
 hosts:
   - Bass Events

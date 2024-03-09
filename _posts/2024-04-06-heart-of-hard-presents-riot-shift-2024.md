@@ -5,7 +5,6 @@ title: "Heart of Hard presents: Riot Shift"
 date: 2024/02/04
 datestart: 2024/04/06
 location: Tachovské náměstí 5 13000 Prague, Czech Republic
-type: Club
 hosts:
   - Heart of Hard
 links:

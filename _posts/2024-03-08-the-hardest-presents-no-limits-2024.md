@@ -5,7 +5,6 @@ title: "The Hardest presents: No Limits"
 date: 2023/11/15
 datestart: 2024/03/08
 location: Ruiterskwartier 41, Leeuwarden, Nederland
-type: Club
 hosts:
   - The Hardest
 links:

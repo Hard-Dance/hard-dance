@@ -5,7 +5,6 @@ title: "The Hardest presents: The Ultimate Battles"
 date: 2024/02/07
 datestart: 2024/09/07
 location: Ruiterskwartier 41, Leeuwarden, Nederland
-type: Club
 hosts:
   - The Hardest
 links:

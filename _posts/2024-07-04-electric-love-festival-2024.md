@@ -6,7 +6,6 @@ date: 2023/07/14
 datestart: 2024/07/04
 dateend: 2024/07/07
 location: Kurvenstandl, Salzburgring, 5321 Koppl, Austria
-type: Festival
 hosts:
   - Electric Love
 links:
