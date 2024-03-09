@@ -53,15 +53,6 @@
             page.location }}
           </a>
         </dd>
-        {% endif %} {% if page.type %}
-        <dt>Type</dt>
-        <dd>{{ page.type }}</dd>
-        {% endif %} {% if page.genre %}
-        <dt>Genre</dt>
-        <dd>{{ page.genre }}</dd>
-        {% endif %} {% if page.age %}
-        <dt>Age</dt>
-        <dd>{{ page.age }}</dd>
         {% endif %} {% if page.hosts %}
         <dt>Host{% if page.hosts.size > 1 %}s{% endif %}</dt>
         <dd>

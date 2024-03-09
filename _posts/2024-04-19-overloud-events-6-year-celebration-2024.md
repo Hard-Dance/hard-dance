@@ -5,7 +5,6 @@ title: "Overloud Events: 6 Years Celebration"
 date: 2024/02/20
 datestart: 2024/04/19
 location: 2031 Rue St-Denis, Montréal, QC H2X 3K8, Canada
-type: Club
 hosts:
   - Overloud Events
 links:

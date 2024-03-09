@@ -5,8 +5,6 @@ title: "Emporium Festival 2024"
 date: 2023/05/03
 datestart: 2024/05/25
 location: Thermen Berendonck, Oude Teersdijk 15, 6603 KJ Wijchen, Nederland
-type: Festival
-age: 18+
 hosts:
   - Matrixx
 links:

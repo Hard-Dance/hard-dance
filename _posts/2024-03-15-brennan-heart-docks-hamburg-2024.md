@@ -5,7 +5,6 @@ title: "Brennan Heart @ Docks Hamburg"
 date: 2023/11/14
 datestart: 2024/03/15
 location: Spielbudenpl. 19, 20359 Hamburg, Germany
-type: Club
 hosts:
   - Airbeat One
 links:

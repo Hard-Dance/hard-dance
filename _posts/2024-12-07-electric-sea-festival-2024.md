@@ -6,7 +6,6 @@ date: 2023/12/11
 datestart: 2024/12/07
 dateend: 2024/12/08
 location: Zur Hansemesse 1, 18106 Rostock, Deutschland, Germany
-type: Arena
 hosts:
   - Airbeat One
 links:

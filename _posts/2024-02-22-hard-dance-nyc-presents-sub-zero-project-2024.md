@@ -5,9 +5,6 @@ title: "Hard Dance NYC presents: Sub Zero Project"
 date: 2023/10/04
 datestart: 2024/02/22
 location: 23 Meadow Street, Brooklyn, NY, USA
-type: Club
-genre: Hardstyle
-age: 19+
 hosts:
   - Hard Dance NYC
 links:

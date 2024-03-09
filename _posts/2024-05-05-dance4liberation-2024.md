@@ -5,7 +5,6 @@ title: "Dance4Liberation 2024"
 date: 2023/05/07
 datestart: 2024/05/05
 location: Lakeside Zwolle, 8026 Zwolle, Nederland
-type: Festival
 hosts:
   - High Energy Events
 links:

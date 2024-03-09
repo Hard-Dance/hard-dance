@@ -5,7 +5,6 @@ title: "Bassquake Festival 2024"
 date: 2024/01/23
 datestart: 2024/04/20
 location: Zur Winterwelt 1, 19243 Wittenburg, Germany
-type: Festival
 hosts:
   - Airbeat One
 links:

@@ -5,7 +5,6 @@ title: "I AM HARDSTYLE Poland"
 date: 2024/02/20
 datestart: 2024/05/24
 location: Łazienkowska 6A, 00-449 Warszawa, Poland
-type: Club
 hosts:
   - I AM HARDSTYLE
 links:

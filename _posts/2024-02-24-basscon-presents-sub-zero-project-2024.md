@@ -5,9 +5,6 @@ title: "Basscon Presents: Sub Zero Project"
 date: 2023/11/15
 datestart: 2024/02/24
 location: 645 NW 45th St, Seattle, WA 98107-4440, USA
-type: Arena
-genre: Hardstyle
-age: 21+
 hosts:
   - Basscon
 links:

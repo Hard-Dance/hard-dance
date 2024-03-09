@@ -5,7 +5,6 @@ title: "Q-dance Take Over at World DJ Festival 2024"
 date: 2024/02/19
 datestart: 2024/06/15
 location: 505-5 Banpo-dong, Seocho-gu, Seoul, South Korea
-type: Festival
 hosts:
   - Q-dance
 links:

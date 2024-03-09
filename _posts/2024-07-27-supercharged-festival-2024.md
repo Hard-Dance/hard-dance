@@ -5,7 +5,6 @@ title: "Supercharged Festival 2024"
 date: 2024/01/19
 datestart: 2024/07/27
 location: Smaakexplosies, Middenweg, 1505 RK Zaandam, Nederland
-type: Festival
 hosts:
   - Gearbox Digital
   - Outlaw Events

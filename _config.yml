@@ -90,6 +90,8 @@ event-hosts:
   - name: BKJN events
     url: https://bkjn.nl
     facebook: https://www.facebook.com/BKJNevents
+  - name: Chemistry Event
+    facebook: https://www.facebook.com/profile.php?id=100088066611103
   - name: Devastator Events
     url: https://devastatorevents.cz
     facebook: https://www.facebook.com/Devastator.events
@@ -110,6 +112,8 @@ event-hosts:
   - name: Gearbox Digital
     url: https://gearboxdigital.com
     facebook: https://www.facebook.com/GearboxDigital
+  - name: Hard Dance NYC
+    facebook: https://www.facebook.com/hard.dance.nyc
   - name: HARDFEST
     url: https://www.hardfest.nl
     facebook: https://www.facebook.com/hardfest.nl
@@ -138,6 +142,8 @@ event-hosts:
   - name: Intents Festival
     url: https://www.intentsfestival.nl
     facebook: https://www.facebook.com/intentsfestival
+  - name: Let it out events
+    facebook: https://www.facebook.com/profile.php?id=100089362122143
   - name: Masters of Hardcore
     url: https://www.mastersofhardcore.com
     facebook: https://www.facebook.com/officialMOH
@@ -166,11 +172,33 @@ event-hosts:
   - name: Q-dance
     url: https://www.q-dance.com
     facebook: https://www.facebook.com/Qdance
+  - name: Ravefield
+    url: https://ravefield.com
+    facebook: https://www.facebook.com/ravefield.official
+  - name: Ravingz Bass
+    facebook: https://www.facebook.com/ravingzbass
+  - name: Rawfare
+    url: https://www.rawfare.nl
+    facebook: https://www.facebook.com/RawfareOfficial
+  - name: Recharged
+    facebook: https://www.facebook.com/rechargedevent
+  - name: Reminder
+    url: https://reminderhardstyleclassics.com
+    facebook: https://www.facebook.com/hardstyleclassics2006till2011
+  - name: Ruggengraatjes
+    facebook: https://www.facebook.com/profile.php?id=100089611314203
+  - name: MYK Events
+    url: https://www.myk-events.nl
+    facebook: https://www.facebook.com/RevengeWHMH
   - name: Shockerz
     url: https://shockerz.nl
     facebook: https://www.facebook.com/shockerzofficial
+  - name: State of Bass
+    facebook: https://www.facebook.com/profile.php?id=100063544059838
   - name: Supersized Kingsday
     facebook: https://www.facebook.com/supersizedkingsdayfestival
+  - name: The Hardest
+    facebook: https://www.facebook.com/profile.php?id=100089439726875
   - name: Thunderdome
     url: https://www.thunderdome.com
     facebook: https://www.facebook.com/ThunderdomeIsYou
@@ -181,12 +209,6 @@ event-hosts:
     facebook: https://www.facebook.com/twisted.events.official
   - name: WhiteNorat.
     facebook: https://www.facebook.com/Whitenoratevents
-
-event-types:
-  - Festival
-  - Arena
-  - Club
-  - Underground
 
 friends:
   - title: /r/hardstyle

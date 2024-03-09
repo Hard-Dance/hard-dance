@@ -5,7 +5,6 @@ title: "King of the Pieps"
 date: 2024/02/09
 datestart: 2024/10/25
 location: Güterbahnhofstrasse 4 9000 Saint Gallen, Switzerland
-type: Club
 hosts:
   - Project Hardstyle CH
 links:

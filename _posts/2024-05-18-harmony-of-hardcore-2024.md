@@ -5,7 +5,6 @@ title: "Harmony of Hardcore 2024"
 date: 2023/05/28
 datestart: 2024/05/18
 location: Keldonkseweg 8, 5469 EP Erp, Nederland
-type: Festival
 hosts:
   - Harmony of Hardcore
 links:

@@ -6,7 +6,6 @@ date: 2024/02/22
 datestart: 2024/07/13
 dateend: 2024/07/14
 location: Busselsteeg 22, 5258 VG Berlicum, Nederland
-type: Festival
 hosts:
   - Infinity Festival
 links:

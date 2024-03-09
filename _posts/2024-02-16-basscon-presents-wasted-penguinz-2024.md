@@ -5,9 +5,6 @@ title: "Basscon Presents: Wasted Penguinz"
 date: 2024/01/25
 datestart: 2024/02/16
 location: Suite 100 - 919 Fourth Ave, San Diego, CA 92101, USA
-type: Arena
-genre: Hardstyle
-age: 21+
 hosts:
   - Basscon
 links:

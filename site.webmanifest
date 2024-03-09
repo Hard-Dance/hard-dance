@@ -23,5 +23,16 @@
   "theme_color": "#000000",
   "background_color": "#000000",
   "display": "standalone",
-  "start_url": "https://hard.dance"
+  "start_url": "https://hard.dance",
+  "shortcuts": [
+    {
+      "name": "Events",
+      "url": "/",
+      "description": "Upcoming events"
+    },
+    {
+      "name": "Past events",
+      "url": "/events/"
+    }
+  ]
 }
