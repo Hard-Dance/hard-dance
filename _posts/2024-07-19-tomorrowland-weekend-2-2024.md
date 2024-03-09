@@ -6,7 +6,6 @@ date: 2023/11/15
 datestart: 2024/07/26
 dateend: 2024/07/28
 location: Schommelei 1, 2850 Boom, Belgium
-genre: Multigenre
 age: 18+
 hosts:
   - Tomorrowland
