@@ -6,4 +6,6 @@ label {
   column-gap: 1ch;
   color: var(--color-text-muted);
   width: fit-content;
+  text-align: end;
+  white-space: nowrap;
 }
