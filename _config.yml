@@ -141,6 +141,9 @@ event-hosts:
   - name: High Energy Events
     url: https://www.highenergyevents.nl
     facebook: https://www.facebook.com/officialhighenergyevents
+  - name: HSU Events
+    url: https://www.hsuevents.com
+    facebook: https://www.facebook.com/EventsHSU
   - name: I AM HARDSTYLE
     url: https://iamhardstyle.com
     facebook: https://www.facebook.com/iamhardstyleofficial
