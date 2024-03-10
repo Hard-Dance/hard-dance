@@ -103,9 +103,11 @@
 
     if (isExpanded) {
       drawer.style.maxHeight = drawerInteriorWrapper.offsetHeight + "px"; // Open drawer
+      drawer.style.opacity = 1;
       drawerInteriorWrapper.removeAttribute("inert");
     } else {
       drawer.style.maxHeight = 0; // Close drawer
+      drawer.style.opacity = 0;
       drawerInteriorWrapper.setAttribute("inert", "");
     }
   };
@@ -259,7 +261,7 @@
 <!-- Events filters -->
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    const locationSelect = document.getElementById("filter-location");
+    const locationSelect = document.getElementById("filter-continent");
     const hostSelect = document.getElementById("filter-host");
     const posts = document.querySelectorAll(".grid-item");
     const postList = document.querySelector(".grid");
@@ -304,12 +306,29 @@
               break;
             case "europe":
               if (
-                !(postLocation === "nederland" || postLocation === "belgium")
+                !(
+                  postLocation === "nederland" ||
+                  postLocation === "belgium" ||
+                  postLocation === "croatia" ||
+                  postLocation === "czech republic" ||
+                  postLocation === "czechia" ||
+                  postLocation === "uk" ||
+                  postLocation === "germany" ||
+                  postLocation === "switzerland" ||
+                  postLocation === "poland" ||
+                  postLocation === "hungary" ||
+                  postLocation === "austria" ||
+                  postLocation === "france"
+                )
               ) {
                 showPost = false;
               }
               break;
-            // ... include other location cases as needed ...
+            case "asia":
+              if (!(postLocation === "south korea")) {
+                showPost = false;
+              }
+              break;
             default:
               // If a post is from a continent not included in the filters, hide it
               showPost = false;
@@ -326,6 +345,62 @@
     hostSelect.addEventListener("change", filterPosts);
 
     filterPosts(); // Run once on load to set the correct initial state
+  });
+</script>
+
+<!-- If continent is selected, show countries -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const continentSelect = document.getElementById("filter-continent");
+    const countrySelect = document.getElementById("filter-country");
+    const countryWrapper = document.getElementById("filter-country-wrapper");
+
+    // Initially hide the Country select
+    countryWrapper.style.display = "none";
+
+    const countriesByContinent = {
+      asia: ["China", "Japan", "South Korea"],
+      europe: [
+        "Nederland",
+        "Belgium",
+        "Croatia",
+        "Czech Republic",
+        "Germany",
+        "Switzerland",
+        "Poland",
+        "Hungary",
+        "Austria",
+        "France",
+      ],
+      "north-america": ["United States", "Canada", "Mexico"],
+      "south-america": ["Brazil", "Argentina", "Colombia"],
+    };
+
+    continentSelect.addEventListener("change", function () {
+      const selectedContinent = continentSelect.value;
+
+      // Reset and hide Country select if "All" is selected
+      if (selectedContinent === "all") {
+        countrySelect.innerHTML = '<option value="all" selected>All</option>';
+        countryWrapper.style.display = "none";
+        return;
+      }
+
+      // Show the Country select and its label
+      countryWrapper.style.display = "flex";
+
+      // Populate Country select with countries from the selected continent
+      const countries = countriesByContinent[selectedContinent] || [];
+      countrySelect.innerHTML = '<option value="all">All</option><hr />'; // Add default "All" option
+
+      countries.forEach((country) => {
+        const option = new Option(
+          country,
+          country.toLowerCase().replace(/\s+/g, "-")
+        );
+        countrySelect.add(option);
+      });
+    });
   });
 </script>
 

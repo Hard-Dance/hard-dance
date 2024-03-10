@@ -17,4 +17,5 @@ image: /assets/img/events/defqon-1-weekend-festival-2024.jpg
 
 featured: true
 video: true
+is_online: true
 ---

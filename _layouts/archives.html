@@ -21,6 +21,7 @@
               <th scope="col">Date announced</th>
               <th scope="col">Date start</th>
               <th scope="col">Date end</th>
+              <th scope="col">Live stream</th>
               <th scope="col">Location</th>
               <th scope="col">Hosts</th>
             </tr>
@@ -50,6 +51,7 @@
                   {{ post.dateend | date: "%B %d, %Y" }}
                 </time>
               </td>
+              <td>{% if post.is_online %} Yes {% else %} No {% endif %}</td>
               <td>{{ post.location }}</td>
               <td>{{ post.hosts }}</td>
             </tr>

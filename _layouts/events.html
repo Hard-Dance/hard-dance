@@ -107,7 +107,9 @@
               </time>
               {% endif %}
             </div>
-            <div class="grid-item-metadata-symbol">{{ flag }}</div>
+            <div class="grid-item-metadata-symbol">
+              {% if post.is_online %}🛰️{% endif %} {{ flag }}
+            </div>
             {% assign today = 'now' | date: '%Y-%m-%d' %} {% assign start_date =
             post.datestart | date: '%Y-%m-%d' %} {% assign end_date =
             post.dateend | date: '%Y-%m-%d' %} {% if post.dateend %} {% if today

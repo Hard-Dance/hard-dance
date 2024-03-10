@@ -10,5 +10,7 @@ hosts:
 links:
   - title: Website
     url: https://link.dice.fm/Dr1AsGeCVGb
+  - title: Facebook
+    url: https://www.facebook.com/events/3671702379752896
 image: /assets/img/events/hard-dance-nyc-presents-warface-2024.jpg
 ---
