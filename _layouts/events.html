@@ -47,7 +47,9 @@
           class="grid-item events-grid-item {% for host in post.hosts %}filter-host-{{ host | slugify }} {% endfor %}"
           id="grid-item-{{ forloop.index }}"
           data-location="{{ country_part | downcase }}"
-          data-type="{{ post.type | downcase }}"
+          {% if post.is_online == true %}
+          data-virtual
+          {% endif %}
           {%
           if
           post.featured
