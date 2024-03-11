@@ -127,6 +127,9 @@ event-hosts:
     facebook: https://www.facebook.com/hardfest.nl
   - name: Hardice
     facebook: https://www.facebook.com/hardice.ch
+  - name: Hardmission
+    url: https://hardmissionfestival.com
+    facebook: https://www.facebook.com/HardmissionFestival
   - name: Hardstyle Arena
     facebook: https://www.facebook.com/FreshHardstyleArena
   - name: Harmony of Hardcore
@@ -218,6 +221,9 @@ event-hosts:
     facebook: https://www.facebook.com/tomorrowland
   - name: Twisted Events
     facebook: https://www.facebook.com/twisted.events.official
+  - name: Ultra Worldwide
+    url: https://umfworldwide.com
+    facebook: https://www.facebook.com/Ultra/
   - name: WhiteNorat.
     facebook: https://www.facebook.com/Whitenoratevents
 
