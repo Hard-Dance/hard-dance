@@ -170,6 +170,9 @@ event-hosts:
   - name: Musical Madness
     url: https://www.musical-madness.de
     facebook: https://www.facebook.com/musicalmadnessofficial
+  - name: MYK Events
+    url: https://www.myk-events.nl
+    facebook: https://www.facebook.com/RevengeWHMH
   - name: Mysteryland
     url: https://www.mysteryland.nl
     facebook: https://www.facebook.com/Mysteryland
@@ -201,9 +204,6 @@ event-hosts:
     facebook: https://www.facebook.com/hardstyleclassics2006till2011
   - name: Ruggengraatjes
     facebook: https://www.facebook.com/profile.php?id=100089611314203
-  - name: MYK Events
-    url: https://www.myk-events.nl
-    facebook: https://www.facebook.com/RevengeWHMH
   - name: Shockerz
     url: https://shockerz.nl
     facebook: https://www.facebook.com/shockerzofficial
