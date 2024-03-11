@@ -4,7 +4,7 @@ category: events
 title: "Heart of Hard presents: Angerfist"
 date: 2024/02/22
 datestart: 2024/04/26
-location: Storm Club, Tachovské nám. 290, 130 00 Praha 3-Žižkov, Czechia
+location: Storm Club, Tachovské nám. 290, 130 00 Praha 3-Žižkov, Czech Republic
 hosts:
   - Heart of Hard
 links:

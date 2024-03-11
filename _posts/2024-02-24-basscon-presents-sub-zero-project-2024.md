@@ -4,7 +4,7 @@ category: events
 title: "Basscon Presents: Sub Zero Project"
 date: 2023/11/15
 datestart: 2024/02/24
-location: 645 NW 45th St, Seattle, WA 98107-4440, USA
+location: 645 NW 45th St, Seattle, WA 98107-4440, United States
 hosts:
   - Basscon
 links:

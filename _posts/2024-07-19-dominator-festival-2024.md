@@ -5,7 +5,7 @@ title: "Dominator Festival 2024"
 date: 2023/07/15
 datestart: 2024/07/19
 dateend: 2024/07/20
-location: Buivensedreef 10, 5521 RN Eersel, Nederland
+location: Buivensedreef 10, 5521 RN Eersel, Netherlands
 hosts:
   - Art of Dance
   - Q-dance

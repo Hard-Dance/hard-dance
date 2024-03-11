@@ -25,30 +25,49 @@
         {% assign country = country_part %} 
 
         {% case country %}
-          {% when 'USA' %} {% assign flag = '🇺🇸' %}
+          {% when 'Algeria' %} {% assign flag = '🇩🇿' %}
+          {% when 'Argentina' %} {% assign flag = '🇦🇷' %}
+          {% when 'Australia' %} {% assign flag = '🇦🇺' %}
+          {% when 'Austria' %} {% assign flag = '🇦🇹' %}
           {% when 'Belgium' %} {% assign flag = '🇧🇪' %}
+          {% when 'Brazil' %} {% assign flag = '🇧🇷' %}
           {% when 'Canada' %} {% assign flag = '🇨🇦' %}
+          {% when 'Chile' %} {% assign flag = '🇨🇱' %}
+          {% when 'China' %} {% assign flag = '🇨🇳' %}
           {% when 'Croatia' %} {% assign flag = '🇭🇷' %}
           {% when 'Czech Republic' %} {% assign flag = '🇨🇿' %}
-          {% when 'Czechia' %} {% assign flag = '🇨🇿' %}
-          {% when 'UK' %} {% assign flag = '🇬🇧' %}
-          {% when 'Nederland' %} {% assign flag = '🇳🇱' %}
-          {% when 'Germany' %} {% assign flag = '🇩🇪' %}
-          {% when 'Switzerland' %} {% assign flag = '🇨🇭' %}
-          {% when 'Poland' %} {% assign flag = '🇵🇱' %}
-          {% when 'South Korea' %} {% assign flag = '🇰🇷' %}
-          {% when 'Hungary' %} {% assign flag = '🇭🇺' %}
-          {% when 'Austria' %} {% assign flag = '🇦🇹' %}
+          {% when 'Denmark' %} {% assign flag = '🇩🇰' %}
+          {% when 'Egypt' %} {% assign flag = '🇪🇬' %}
+          {% when 'Finland' %} {% assign flag = '🇫🇮' %}
           {% when 'France' %} {% assign flag = '🇫🇷' %}
-          {% when 'Australia' %} {% assign flag = '🇦🇺' %}
-          {% when 'Chile' %} {% assign flag = '🇨🇱' %}
-          {%- else -%}
-            {% assign flag = '' %}
+          {% when 'Germany' %} {% assign flag = '🇩🇪' %}
+          {% when 'Greece' %} {% assign flag = '🇬🇷' %}
+          {% when 'Hungary' %} {% assign flag = '🇭🇺' %}
+          {% when 'India' %} {% assign flag = '🇮🇳' %}
+          {% when 'Italy' %} {% assign flag = '🇮🇹' %}
+          {% when 'Japan' %} {% assign flag = '🇯🇵' %}
+          {% when 'Mexico' %} {% assign flag = '🇲🇽' %}
+          {% when 'Netherlands' %} {% assign flag = '🇳🇱' %}
+          {% when 'Norway' %} {% assign flag = '🇳🇴' %}
+          {% when 'Poland' %} {% assign flag = '🇵🇱' %}
+          {% when 'Portugal' %} {% assign flag = '🇵🇹' %}
+          {% when 'Russia' %} {% assign flag = '🇷🇺' %}
+          {% when 'South Africa' %} {% assign flag = '🇿🇦' %}
+          {% when 'South Korea' %} {% assign flag = '🇰🇷' %}
+          {% when 'Spain' %} {% assign flag = '🇪🇸' %}
+          {% when 'Sweden' %} {% assign flag = '🇸🇪' %}
+          {% when 'Switzerland' %} {% assign flag = '🇨🇭' %}
+          {% when 'United Kingdom' %} {% assign flag = '🇬🇧' %}
+          {% when 'United States' %} {% assign flag = '🇺🇸' %}
+          {% when 'Venezuela' %} {% assign flag = '🇻🇪' %}
+        {%- else -%}
+          {% assign flag = '' %}
         {% endcase %}
+      
         <li
           class="grid-item events-grid-item {% for host in post.hosts %}filter-host-{{ host | slugify }} {% endfor %}"
           id="grid-item-{{ forloop.index }}"
-          data-location="{{ country_part | downcase }}"
+          data-location="{{ country_part | slugify }}"
           {% if post.is_online == true %}
           data-virtual
           {% endif %}

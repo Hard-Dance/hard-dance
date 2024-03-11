@@ -4,7 +4,7 @@ category: events
 title: "Hard Dance NYC presents: Wasted Penguinz"
 date: 2024/01/31
 datestart: 2024/02/15
-location: 23 Meadow Street, Brooklyn, NY, USA
+location: 23 Meadow Street, Brooklyn, NY, United States
 hosts:
   - Hard Dance NYC
 links:

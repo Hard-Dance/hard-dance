@@ -4,7 +4,7 @@ category: events
 title: "Basscon Presents: TNT, Wasted Penguinz"
 date: 2024/02/08
 datestart: 2024/03/23
-location: 900 Marin St, San Francisco, CA, USA
+location: 900 Marin St, San Francisco, CA, United States
 hosts:
   - Basscon
 links:

@@ -4,7 +4,7 @@ category: events
 title: "Multigroove Festival 2024"
 date: 2024/02/01
 datestart: 2024/06/08
-location: Hemkade 48, 1506 PS Zaandam, Nederland
+location: Hemkade 48, 1506 PS Zaandam, Netherlands
 hosts:
   - Multigroove
 links:

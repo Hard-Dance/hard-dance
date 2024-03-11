@@ -4,7 +4,7 @@ category: events
 title: "Darkraver All Night Long"
 date: 2024/01/11
 datestart: 2024/04/06
-location: Basisweg 63, 1043 AN Amsterdam, Nederland
+location: Basisweg 63, 1043 AN Amsterdam, Netherlands
 hosts:
   - Multigroove
 links:

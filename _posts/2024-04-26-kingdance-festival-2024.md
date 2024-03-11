@@ -5,7 +5,7 @@ title: "Kingdance Festival 2024"
 date: 2023/05/07
 datestart: 2024/04/26
 dateend: 2024/04/27
-location: Lakeside Zwolle, 8026 Zwolle, Nederland
+location: Lakeside Zwolle, 8026 Zwolle, Netherlands
 hosts:
   - High Energy Events
 links:

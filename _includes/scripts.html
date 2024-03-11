@@ -303,15 +303,15 @@
             case "all":
               break;
             case "north-america":
-              showPost = postLocation === "usa" || postLocation === "canada";
+              showPost =
+                postLocation === "united-states" || postLocation === "canada";
               break;
             case "europe":
               showPost =
-                postLocation === "nederland" ||
+                postLocation === "netherlands" ||
                 postLocation === "belgium" ||
                 postLocation === "croatia" ||
-                postLocation === "czech republic" ||
-                postLocation === "czechia" ||
+                postLocation === "czech-republic" ||
                 postLocation === "uk" ||
                 postLocation === "germany" ||
                 postLocation === "switzerland" ||
@@ -321,7 +321,7 @@
                 postLocation === "france";
               break;
             case "asia":
-              showPost = postLocation === "south korea";
+              showPost = postLocation === "south-korea";
               break;
             case "oceania":
               showPost = postLocation === "australia";

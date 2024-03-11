@@ -4,7 +4,7 @@ category: events
 title: "Recharged: City of Lights"
 date: 2024/02/26
 datestart: 2024/03/23
-location: Trivium 170, 4873 LP Etten-Leur, Nederland
+location: Trivium 170, 4873 LP Etten-Leur, Netherlands
 hosts:
   - Recharged
 links:
