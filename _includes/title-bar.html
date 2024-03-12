@@ -49,28 +49,8 @@
     </button>
   </div>
   {% elsif page.layout == 'event' %}
-    {% if page.links %}
-    <ul class="button-group page-title-end">
-      {% for link in page.links %}
-      <li>
-        <a
-          class="button"
-          href="{{ link.url }}"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <svg alt="{{ link.title }} icon" aria-hidden="true">
-            <use
-              xlink:href="/assets/symbols.svg#{{ link.title | slugify }}"
-            ></use>
-          </svg>
-          <span class="hide-on-mobile">{{ link.title }}</span>
-        </a>
-      </li>
-      {% endfor %}
-      <li>
         <button
-          class="button"
+          class="button page-title-end"
           id="shareButton"
         >
           <svg alt="{{ link.title }} icon" aria-hidden="true">
@@ -80,9 +60,6 @@
           </svg>
           <span class="hide-on-mobile">Share</span>
         </button>
-      </li>
-    </ul>
-    {% endif %}
   {% endif %}
   
   {% if page.layout == 'events' %}

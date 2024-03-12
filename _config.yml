@@ -17,6 +17,9 @@ plugins:
   - jekyll-sitemap
   - jekyll-dotenv
 
+exclude:
+  - _data/average_colors.json
+
 sass:
   sass_dir: _sass
   style: compressed

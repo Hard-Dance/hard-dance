@@ -189,36 +189,6 @@
 
 <!-- PAGE: Events -->
 {% if page.layout == 'events' %}
-<!-- Pull average color from event image -->
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const images = document.querySelectorAll(".grid-item-image");
-
-    images.forEach((img) => {
-      const index = img.dataset.index;
-      colorjs.average(img.src).then((color) => {
-        const rgbColor = `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
-        const listItem = document.getElementById(`grid-item-${index}`);
-
-        // Determine the best text color for contrast
-        const textColor = getContrastYIQ(color);
-
-        // Set CSS custom properties for background and text color
-        listItem.style.setProperty("--_color-grid-item-background", rgbColor);
-        listItem.style.setProperty("--_color-grid-item-text-color", textColor);
-      });
-    });
-  });
-
-  function getContrastYIQ(rgbColor) {
-    var r = rgbColor[0];
-    var g = rgbColor[1];
-    var b = rgbColor[2];
-    var yiq = (r * 299 + g * 587 + b * 114) / 1000;
-    return yiq >= 128 ? "black" : "white";
-  }
-</script>
-
 <!-- Add `loading=lazy` to images below the fold -->
 <script>
   document.addEventListener("DOMContentLoaded", function () {

@@ -13,7 +13,8 @@
       src="https://maps.googleapis.com/maps/api/js?key={{ site.env.GOOGLE_MAPS_API_KEY }}&callback=initMap"
     ></script>
   </head>
-  <body>
+  {% assign average_color = site.data.average_colors[page.slug] %}
+  <body style="background-color: {{ average_color }};">
     {% include header.html %}
 
     <div class="banner" id="top">{% include banner-event.html %}</div>
@@ -21,67 +22,103 @@
     <main>
       {% include title-bar.html %}
 
-      <dl class="event-data-list">
-        <dt>Date announced</dt>
-        <dd>
-          <time datetime="{{ page.date | date: '%Y-%m-%d' }}">
-            {{ page.date | date: "%B %d, %Y" }}
-          </time>
-        </dd>
+      <dl class="grid event-data-list">
+        <div class="event-data-list-item">
+          <svg alt="Social media icon" aria-hidden="true">
+            <use xlink:href="/assets/symbols.svg#facebook"></use>
+          </svg>
+          <dt>Social media</dt>
+          <dd>Facebook</dd>
+        </div>
 
-        <dt>Date{% if page.dateend %}s{% endif %}</dt>
-        <dd>
-          <time datetime="{{ page.datestart | date: '%Y-%m-%d' }}">
-            {{ page.datestart | date: "%B %d, %Y" }}
-          </time>
-          {% if page.dateend %}&nbsp;–&nbsp;
-          <time datetime="{{ page.dateend | date: '%Y-%m-%d' }}">
-            {{ page.dateend | date: "%B %d, %Y" }}
-          </time>
-          {% endif %}
-        </dd>
+        <div class="event-data-list-item">
+          <svg alt="Date announced icon" aria-hidden="true">
+            <use xlink:href="/assets/symbols.svg#new"></use>
+          </svg>
+          <dt>Tickets</dt>
+          <dd>Paylogic</dd>
+        </div>
+
+        <div class="event-data-list-item">
+          <svg alt="Date announced icon" aria-hidden="true">
+            <use xlink:href="/assets/symbols.svg#new"></use>
+          </svg>
+          <dt>Date announced</dt>
+          <dd>
+            <time datetime="{{ page.date | date: '%Y-%m-%d' }}">
+              {{ page.date | date: "%B %d, %Y" }}
+            </time>
+          </dd>
+        </div>
+
+        <div class="event-data-list-item">
+          <svg
+            alt="Date{% if page.dateend %}s{% endif %} icon"
+            aria-hidden="true"
+          >
+            <use xlink:href="/assets/symbols.svg#calendar"></use>
+          </svg>
+          <dt>Date{% if page.dateend %}s{% endif %}</dt>
+          <dd>
+            <time datetime="{{ page.datestart | date: '%Y-%m-%d' }}">
+              {{ page.datestart | date: "%B %d, %Y" }}
+            </time>
+            {% if page.dateend %}&nbsp;–&nbsp;
+            <time datetime="{{ page.dateend | date: '%Y-%m-%d' }}">
+              {{ page.dateend | date: "%B %d, %Y" }}
+            </time>
+            {% endif %}
+          </dd>
+        </div>
 
         {% if page.location %}
-        <dt>Location</dt>
-        <dd>
-          <a
-            href="http://maps.apple.com/?q={{ page.location | uri_escape }}"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {% include icon.html id="location" name="Location" %} {{
-            page.location }}
-          </a>
-        </dd>
+        <div class="event-data-list-item">
+          <div id="map" data-location="{{ page.location | uri_escape }}"></div>
+          <svg alt="Location icon" aria-hidden="true">
+            <use xlink:href="/assets/symbols.svg#location"></use>
+          </svg>
+          <dt>Location</dt>
+          <dd>
+            <a
+              href="http://maps.apple.com/?q={{ page.location | uri_escape }}"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {{ page.location }}
+            </a>
+          </dd>
+        </div>
         {% endif %} {% if page.hosts %}
-        <dt>Host{% if page.hosts.size > 1 %}s{% endif %}</dt>
-        <dd>
-          <ul class="event-data-list-host-list">
-            {% for postHost in page.hosts %} {% assign hostMatchFound = false
-            %}{% for eventHost in site.event-hosts %} {% if eventHost.name ==
-            postHost %} {% assign hostMatchFound = true %} {% assign
-            matchedHostFB = eventHost.facebook %} {% assign matchedHostName =
-            eventHost.name %} {% break %} {% endif %} {% endfor %}{% if
-            hostMatchFound %}
-            <li>
-              <a
-                href="{{ matchedHostFB }}"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div class="icon">
-                  <svg alt="{{ matchedHostName }} icon" aria-hidden="true">
-                    <use
-                      xlink:href="/assets/hosts.svg#{{ matchedHostName | slugify }}"
-                    ></use>
-                  </svg>
-                </div>
-                {{ matchedHostName }}
-              </a>
-            </li>
-            {% else %} {{ postHost }} {% endif %} {% endfor %}
-          </ul>
-        </dd>
+        <div class="event-data-list-item">
+          <dt>Host{% if page.hosts.size > 1 %}s{% endif %}</dt>
+          <dd>
+            <ul class="event-data-list-host-list">
+              {% for postHost in page.hosts %} {% assign hostMatchFound = false
+              %}{% for eventHost in site.event-hosts %} {% if eventHost.name ==
+              postHost %} {% assign hostMatchFound = true %} {% assign
+              matchedHostFB = eventHost.facebook %} {% assign matchedHostName =
+              eventHost.name %} {% break %} {% endif %} {% endfor %}{% if
+              hostMatchFound %}
+              <li>
+                <a
+                  href="{{ matchedHostFB }}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div class="icon">
+                    <svg alt="{{ matchedHostName }} icon" aria-hidden="true">
+                      <use
+                        xlink:href="/assets/hosts.svg#{{ matchedHostName | slugify }}"
+                      ></use>
+                    </svg>
+                  </div>
+                  {{ matchedHostName }}
+                </a>
+              </li>
+              {% else %} {{ postHost }} {% endif %} {% endfor %}
+            </ul>
+          </dd>
+        </div>
         {% endif %}
       </dl>
     </main>

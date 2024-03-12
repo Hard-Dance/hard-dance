@@ -1,3 +1,5 @@
+@import "../mixins";
+
 // #region Banner
 .banner-event-links {
   position: absolute;
@@ -13,6 +15,7 @@
   -webkit-overflow-scrolling: touch;
   outline-offset: calc(var(--border-width) * -1);
   user-select: none;
+  mask-image: linear-gradient(#000 90%, transparent 100%);
   @media (prefers-reduced-motion: no-preference) {
     scroll-behavior: smooth;
   }
@@ -31,8 +34,7 @@
 }
 
 #trailer,
-#poster,
-#map {
+#poster {
   overflow: hidden;
 }
 
@@ -70,24 +72,45 @@
 // #endregion Banner
 
 .event-data-list {
-  text-align: center;
   grid-column: padded-start / padded-end;
+  font-size: var(--font-size-large);
 
-  > dt {
+  svg {
+    grid-area: icon;
+    fill: currentColor;
+    width: 1.5lh;
+    height: 1.5lh;
+    align-self: center;
+  }
+
+  dt {
+    grid-area: title;
+    align-self: end;
     color: var(--color-text-muted);
-    font-size: var(--font-size-large);
-
-    &::after {
-      content: ":";
-    }
   }
 
-  > dd {
-    font-size: var(--font-size-larger);
+  dd {
+    grid-area: value;
+    align-self: start;
     font-weight: var(--font-weight-bold);
-
-    &:not(:last-child) {
-      margin-block-end: var(--page-padding);
-    }
   }
+}
+
+.event-data-list-item {
+  display: grid;
+  grid-template-areas: "map map" "icon title" "icon value";
+  grid-template-columns: auto 1fr;
+  column-gap: var(--padding);
+  padding: var(--padding);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  // border: var(--border-width) solid var(--color-background);
+  @include frosted-glass;
+}
+
+#map {
+  grid-area: map;
+  aspect-ratio: 16/10;
+  margin-block: calc(var(--padding) * -1) var(--padding);
+  margin-inline: calc(var(--padding) * -1);
 }
