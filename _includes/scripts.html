@@ -259,94 +259,11 @@
 </script>
 
 <!-- Events filters -->
-<script>
+<!-- <script>
   document.addEventListener("DOMContentLoaded", function () {
-    const locationSelect = document.getElementById("filter-continent");
-    const hostSelect = document.getElementById("filter-host");
-    const virtualCheckbox = document.getElementById("filter-virtual");
-    const posts = document.querySelectorAll(".grid-item");
-    const postList = document.querySelector(".grid");
-    const emptyStateDiv = document.querySelector(".events-empty-state");
-
-    function checkForVisiblePosts() {
-      const anyVisible = Array.from(posts).some(
-        (post) => post.style.display !== "none"
-      );
-      if (anyVisible) {
-        postList.style.display = ""; // Show the <ol> if there are visible posts
-        emptyStateDiv.style.display = "none"; // Hide the empty state div
-      } else {
-        postList.style.display = "none"; // Hide the <ol> if there are no visible posts
-        emptyStateDiv.style.display = "flex"; // Show the empty state div
-      }
-    }
-
-    function filterPosts() {
-      const selectedLocation = locationSelect.value;
-      const selectedHostClass = "filter-host-" + hostSelect.value;
-      const isVirtualChecked = virtualCheckbox.checked;
-
-      posts.forEach((post) => {
-        const postLocation = post.getAttribute("data-location").toLowerCase();
-        let showPost =
-          hostSelect.value === "all" ||
-          post.classList.contains(selectedHostClass);
-
-        // Check for virtual events if the checkbox is checked
-        if (isVirtualChecked && !post.hasAttribute("data-virtual")) {
-          showPost = false;
-        }
-
-        // Continue with the rest of the filter logic only if the post is still eligible for display
-        if (showPost) {
-          switch (selectedLocation) {
-            case "all":
-              break;
-            case "north-america":
-              showPost =
-                postLocation === "united-states" || postLocation === "canada";
-              break;
-            case "europe":
-              showPost =
-                postLocation === "netherlands" ||
-                postLocation === "belgium" ||
-                postLocation === "croatia" ||
-                postLocation === "czech-republic" ||
-                postLocation === "uk" ||
-                postLocation === "germany" ||
-                postLocation === "switzerland" ||
-                postLocation === "poland" ||
-                postLocation === "hungary" ||
-                postLocation === "austria" ||
-                postLocation === "france";
-              break;
-            case "asia":
-              showPost = postLocation === "south-korea";
-              break;
-            case "oceania":
-              showPost = postLocation === "australia";
-              break;
-            case "south-america":
-              showPost = postLocation === "chile";
-              break;
-            default:
-              showPost = false;
-          }
-        }
-
-        post.style.display = showPost ? "" : "none";
-      });
-
-      checkForVisiblePosts();
-    }
-
-    locationSelect.addEventListener("change", filterPosts);
-    hostSelect.addEventListener("change", filterPosts);
-    virtualCheckbox.addEventListener("change", filterPosts);
-
-    filterPosts(); // Initial filter on load
+    
   });
-</script>
+</script> -->
 
 <!-- If continent is selected, show countries -->
 <script>
@@ -602,6 +519,131 @@
       });
     });
   });
+
+  const continentSelect = document.getElementById("filter-continent");
+  const countrySelect = document.getElementById("filter-country");
+  const hostSelect = document.getElementById("filter-host");
+  const virtualCheckbox = document.getElementById("filter-virtual");
+  const posts = document.querySelectorAll(".grid-item");
+  const postList = document.querySelector(".grid");
+  const emptyStateDiv = document.querySelector(".events-empty-state");
+
+  function checkForVisiblePosts() {
+    const anyVisible = Array.from(posts).some(
+      (post) => post.style.display !== "none"
+    );
+    if (anyVisible) {
+      postList.style.display = ""; // Show the <ol> if there are visible posts
+      emptyStateDiv.style.display = "none"; // Hide the empty state div
+    } else {
+      postList.style.display = "none"; // Hide the <ol> if there are no visible posts
+      emptyStateDiv.style.display = "flex"; // Show the empty state div
+    }
+  }
+
+  function filterPosts() {
+    const selectedContinent = continentSelect.value;
+    const selectedCountry = countrySelect.value;
+    const selectedHostClass = "filter-host-" + hostSelect.value;
+    const isVirtualChecked = virtualCheckbox.checked;
+
+    // console.log("three values", {
+    //   selectedContinent,
+    //   selectedCountry,
+    //   hostSelect.value,
+    // });
+
+    const button = document.getElementById("events-filter-drawer-button");
+    button.setAttribute(
+      "data-filter-active",
+      !(
+        selectedContinent === "all" &&
+        selectedCountry === "" &&
+        hostSelect.value === "all"
+      )
+    );
+
+    posts.forEach((post) => {
+      const postLocation = post.getAttribute("data-location").toLowerCase();
+      let showPost =
+        hostSelect.value === "all" ||
+        post.classList.contains(selectedHostClass);
+
+      // Check for virtual events if the checkbox is checked
+      if (isVirtualChecked && !post.hasAttribute("data-virtual")) {
+        showPost = false;
+      }
+
+      /**
+       * united-states -> United States
+       */
+      const postLocationToCountriesByContinent = (postLocation) => {
+        function toTitleCase(str) {
+          return str.replace(/\w\S*/g, function (txt) {
+            return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+          });
+        }
+
+        return toTitleCase(postLocation.replace("-", " "));
+      };
+
+      // Continue with the rest of the filter logic only if the post is still eligible for display
+      if (showPost) {
+        switch (selectedContinent) {
+          case "all":
+            break;
+          case "north-america":
+            showPost = countriesByContinent["north-america"].includes(
+              postLocationToCountriesByContinent(postLocation)
+            );
+            break;
+          case "europe":
+            showPost = countriesByContinent["europe"].includes(
+              postLocationToCountriesByContinent(postLocation)
+            );
+            // postLocation === "netherlands" ||
+            // postLocation === "belgium" ||
+            // postLocation === "croatia" ||
+            // postLocation === "czech-republic" ||
+            // postLocation === "uk" ||
+            // postLocation === "germany" ||
+            // postLocation === "switzerland" ||
+            // postLocation === "poland" ||
+            // postLocation === "hungary" ||
+            // postLocation === "austria" ||
+            // postLocation === "france";
+            break;
+          case "asia":
+            showPost = countriesByContinent["asia"].includes(
+              postLocationToCountriesByContinent(postLocation)
+            );
+            break;
+          case "oceania":
+            showPost = countriesByContinent["oceania"].includes(
+              postLocationToCountriesByContinent(postLocation)
+            );
+            break;
+          case "south-america":
+            showPost = countriesByContinent["south-america"].includes(
+              postLocationToCountriesByContinent(postLocation)
+            );
+            break;
+          default:
+            showPost = false;
+        }
+      }
+
+      post.style.display = showPost ? "" : "none";
+    });
+
+    checkForVisiblePosts();
+  }
+
+  continentSelect.addEventListener("change", filterPosts);
+  hostSelect.addEventListener("change", filterPosts);
+  virtualCheckbox.addEventListener("change", filterPosts);
+
+  filterPosts(); // Initial filter on load
 </script>
 
 <!-- Add event dialog: if other host selected, show extra field -->
