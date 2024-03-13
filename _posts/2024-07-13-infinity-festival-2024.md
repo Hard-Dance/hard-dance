@@ -9,7 +9,6 @@ location: Busselsteeg 22, 5258 VG Berlicum, Nederland
 hosts:
   - Infinity Festival
 links:
-  - title: Facebook
-    url: https://www.facebook.com/events/1063252441556266
+facebook: https://www.facebook.com/events/1063252441556266
 image: /assets/img/events/infinity-festival-2024.jpg
 ---

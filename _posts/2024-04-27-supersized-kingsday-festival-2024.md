@@ -8,7 +8,6 @@ location: Ekkersweijer 12, 5681 RZ Best, Nederland
 hosts:
   - Supersized Kingsday
 links:
-  - title: Facebook
-    url: https://www.facebook.com/events/270619311985671
+facebook: https://www.facebook.com/events/270619311985671
 image: /assets/img/events/supersized-kingsday-festival-2024.jpg
 ---

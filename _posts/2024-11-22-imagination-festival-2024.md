@@ -8,10 +8,7 @@ location: Beranových 667 199 00 Prague, Czech Republic
 hosts:
   - Beatworx
   - Devastator Events
-links:
-  - title: Website
-    url: https://imaginationfestival.cz/imagination-festival-2024/
-  - title: Facebook
-    url: https://www.facebook.com/events/718490373190199
+tickets: https://imaginationfestival.cz/imagination-festival-2024/
+facebook: https://www.facebook.com/events/718490373190199
 image: /assets/img/events/imagination-festival-2024.jpg
 ---

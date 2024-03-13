@@ -7,10 +7,7 @@ datestart: 2024/02/16
 location: Suite 100 - 919 Fourth Ave, San Diego, CA 92101, USA
 hosts:
   - Basscon
-links:
-  - title: Website
-    url: https://www.ticketweb.com/event/wasted-penguinz-bloom-tickets/13468973
-  - title: Facebook
-    url: https://www.facebook.com/events/365393946437345/
+tickets: https://www.ticketweb.com/event/wasted-penguinz-bloom-tickets/13468973
+facebook: https://www.facebook.com/events/365393946437345/
 image: /assets/img/events/basscon-presents-wasted-penguinz-2024.jpg
 ---

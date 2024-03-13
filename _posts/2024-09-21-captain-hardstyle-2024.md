@@ -7,10 +7,7 @@ datestart: 2024/09/21
 location: Romanshorn, 8590, Switzerland
 hosts:
   - Project Hardstyle CH
-links:
-  - title: Website
-    url: https://eventfrog.ch/de/p/party/electro/captain-hardstyle-2024-bodensee-ch-euregia-faehre-7112766737628517634.html
-  - title: Facebook
-    url: https://www.facebook.com/events/845640380573785
+tickets: https://eventfrog.ch/de/p/party/electro/captain-hardstyle-2024-bodensee-ch-euregia-faehre-7112766737628517634.html
+facebook: https://www.facebook.com/events/845640380573785
 image: /assets/img/events/captain-hardstyle-2024.jpg
 ---

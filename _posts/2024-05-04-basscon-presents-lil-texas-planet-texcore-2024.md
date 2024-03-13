@@ -7,10 +7,7 @@ datestart: 2024/05/04
 location: 645 NW 45th St, Seattle, WA 98107-4440, USA
 hosts:
   - Basscon
-links:
-  - title: Website
-    url: https://www.eventbrite.com/e/basscon-presents-lil-texas-planet-texcore-tickets-761314461047
-  - title: Facebook
-    url: https://www.facebook.com/events/276605698667279/
+tickets: https://www.eventbrite.com/e/basscon-presents-lil-texas-planet-texcore-tickets-761314461047
+facebook: https://www.facebook.com/events/276605698667279/
 image: /assets/img/events/basscon-presents-lil-texas-planet-texcore-2024.jpg
 ---

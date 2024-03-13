@@ -7,10 +7,7 @@ datestart: 2024/02/22
 location: 23 Meadow Street, Brooklyn, NY, USA
 hosts:
   - Hard Dance NYC
-links:
-  - title: Website
-    url: https://link.dice.fm/AOYylJYwVGb
-  - title: Facebook
-    url: https://www.facebook.com/events/895102885541828/
+tickets: https://link.dice.fm/AOYylJYwVGb
+facebook: https://www.facebook.com/events/895102885541828/
 image: /assets/img/events/hard-dance-nyc-presents-sub-zero-project-2024.jpg
 ---

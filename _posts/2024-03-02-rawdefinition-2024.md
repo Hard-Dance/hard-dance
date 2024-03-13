@@ -7,8 +7,6 @@ datestart: 2024/03/02
 location: Burgemeester Drijbersingel 7, 8021 DA Zwolle, Nederland
 hosts:
   - High Energy Events
-links:
-  - title: Website
-    url: https://www.rawdefinition.com/
+tickets: https://www.rawdefinition.com/
 image: /assets/img/events/rawdefinition-2024.jpg
 ---

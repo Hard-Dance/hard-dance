@@ -74,6 +74,7 @@
 .event-data-list {
   grid-column: padded-start / padded-end;
   font-size: var(--font-size-large);
+  container: event-data-list / inline-size;
 
   svg {
     grid-area: icon;
@@ -81,6 +82,11 @@
     width: 1.5lh;
     height: 1.5lh;
     align-self: center;
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--color-text);
   }
 
   dt {
@@ -100,17 +106,23 @@
   display: grid;
   grid-template-areas: "map map" "icon title" "icon value";
   grid-template-columns: auto 1fr;
+  grid-template-rows: 1fr auto;
   column-gap: var(--padding);
   padding: var(--padding);
-  border-radius: var(--border-radius);
-  overflow: hidden;
-  // border: var(--border-width) solid var(--color-background);
   @include frosted-glass;
 }
 
 #map {
   grid-area: map;
-  aspect-ratio: 16/10;
   margin-block: calc(var(--padding) * -1) var(--padding);
   margin-inline: calc(var(--padding) * -1);
+  // mask-image: linear-gradient(#000 90%, transparent 100%);
+  border-start-start-radius: var(--border-radius);
+  border-start-end-radius: var(--border-radius);
+}
+
+@container event-data-list (min-width: 41rem) {
+  #location {
+    grid-area: 1/2/4/3;
+  }
 }
