@@ -31,7 +31,7 @@ body {
 
 main {
   display: grid;
-  row-gap: 1rem;
+  row-gap: var(--page-padding);
   /* prettier-ignore */
   grid-template-columns:
     [full-width-start]

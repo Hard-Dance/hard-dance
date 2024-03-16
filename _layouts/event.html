@@ -45,7 +45,6 @@
 
         {% if page.location %}
         <div class="grid-item event-data-list-item" id="location">
-          <div id="map" data-location="{{ page.location | uri_escape }}"></div>
           <svg alt="Location icon" aria-hidden="true">
             <use xlink:href="/assets/symbols.svg#location"></use>
           </svg>
@@ -57,7 +56,7 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-              {{ page.location-name }}
+              {{ page.location }}
             </a>
           </dd>
         </div>
@@ -140,6 +139,8 @@
           </dd>
         </div>
       </dl>
+
+      <div id="map" data-location="{{ page.location | uri_escape }}"></div>
 
       <div style="grid-column: padded-start / padded-end">
         <h2>Description</h2>

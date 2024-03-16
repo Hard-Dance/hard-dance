@@ -113,25 +113,16 @@
 
 .event-data-list-item {
   display: grid;
-  grid-template-areas: "map map" "icon title" "icon value";
+  grid-template-areas: "icon title" "icon value";
   grid-template-columns: auto 1fr;
-  grid-template-rows: 1fr auto;
+  // grid-template-rows: 1fr auto;
   column-gap: var(--padding);
   padding: var(--padding);
   @include frosted-glass;
 }
 
 #map {
-  grid-area: map;
-  margin-block: calc(var(--padding) * -1) var(--padding);
-  margin-inline: calc(var(--padding) * -1);
-  // mask-image: linear-gradient(#000 90%, transparent 100%);
-  border-start-start-radius: var(--border-radius);
-  border-start-end-radius: var(--border-radius);
-}
-
-@container event-data-list (min-width: 41rem) {
-  #location {
-    grid-area: 1/2/4/3;
-  }
+  grid-column: padded-start / padded-end;
+  border-radius: var(--border-radius);
+  aspect-ratio: 16/9;
 }
