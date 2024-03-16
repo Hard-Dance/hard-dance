@@ -189,6 +189,10 @@ $shadows-big: multiple-box-shadow(100);
     opacity: 0.9;
   }
 
+  .grid-item-metadata-symbol {
+    color: unset;
+  }
+
   @media (prefers-contrast: no-preference) {
     .grid-item-metadata-subtitle {
       opacity: 0.5;
