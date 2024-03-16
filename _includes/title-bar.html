@@ -1,4 +1,4 @@
-<div class="page-title">
+<div class="page-title {% if page.layout == 'event' %}event-page-title{% endif %}">
   <h1 {% if page.layout == 'event' %}style="view-transition-name: post-title-{{ page.title | slugify }};"{% endif %}>{{ page.title }}</h1>
 
   {% if page.layout == 'events' %}

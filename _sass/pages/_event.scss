@@ -71,6 +71,15 @@
 }
 // #endregion Banner
 
+.event-page-title {
+  grid-column: padded-start / padded-end;
+
+  > h1,
+  .page-title-end {
+    margin: 0;
+  }
+}
+
 .event-data-list {
   grid-column: padded-start / padded-end;
   font-size: var(--font-size-large);
