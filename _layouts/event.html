@@ -20,131 +20,137 @@
     <div class="banner" id="top">{% include banner-event.html %}</div>
 
     <main>
-      {% include title-bar.html %}
+      <div class="xyz" style="grid-column: padded-start / padded-end">
+        {% include title-bar.html %}
 
-      <dl class="grid event-data-list">
-        <div class="grid-item event-data-list-item">
-          <svg
-            alt="Date{% if page.dateend %}s{% endif %} icon"
-            aria-hidden="true"
-          >
-            <use xlink:href="/assets/symbols.svg#calendar"></use>
-          </svg>
-          <dt>Date{% if page.dateend %}s{% endif %}</dt>
-          <dd>
-            <time datetime="{{ page.datestart | date: '%Y-%m-%d %H:%M' }}">
-              {{ page.datestart | date: "%B %d, %Y %-I:%M%p" }}
-            </time>
-            {% if page.dateend %}<br />
-            <time datetime="{{ page.dateend | date: '%Y-%m-%d %H:%M' }}">
-              {{ page.dateend | date: "%B %d, %Y %-I:%M%p" }}
-            </time>
-            {% endif %}
-          </dd>
-        </div>
+        <dl class="grid event-data-list">
+          <!-- <div class="grid-item event-data-list-item">
+            <svg
+              alt="Date{% if page.dateend %}s{% endif %} icon"
+              aria-hidden="true"
+            >
+              <use xlink:href="/assets/symbols.svg#calendar"></use>
+            </svg>
+            <dt>Date{% if page.dateend %}s{% endif %}</dt>
+            <dd>
+              <time datetime="{{ page.datestart | date: '%Y-%m-%d %H:%M' }}">
+                {{ page.datestart | date: "%B %d, %Y %-I:%M%p" }}
+              </time>
+              {% if page.dateend %}<br />
+              <time datetime="{{ page.dateend | date: '%Y-%m-%d %H:%M' }}">
+                {{ page.dateend | date: "%B %d, %Y %-I:%M%p" }}
+              </time>
+              {% endif %}
+            </dd>
+          </div> -->
 
-        {% if page.location %}
-        <div class="grid-item event-data-list-item" id="location">
-          <svg alt="Location icon" aria-hidden="true">
-            <use xlink:href="/assets/symbols.svg#location"></use>
-          </svg>
-          <dt>Location</dt>
-          <dd>
-            <a
-              class="grid-item-anchor"
-              href="http://maps.apple.com/?q={{ page.location | uri_escape }}"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {{ page.location }}
-            </a>
-          </dd>
-        </div>
-        {% endif %} {% if page.tickets %}
-        <div class="grid-item event-data-list-item">
-          <svg alt="Ticket icon" aria-hidden="true">
-            <use xlink:href="/assets/symbols.svg#ticket"></use>
-          </svg>
-          <dt>Tickets</dt>
-          <dd>
-            <a
-              class="grid-item-anchor"
-              href="{{ page.tickets }}"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Purchase
-            </a>
-          </dd>
-        </div>
-        {% endif %} {% if page.facebook %}
-        <div class="grid-item event-data-list-item">
-          <svg alt="Social media icon" aria-hidden="true">
-            <use xlink:href="/assets/symbols.svg#facebook"></use>
-          </svg>
-          <dt>Social media</dt>
-          <dd>
-            <a
-              class="grid-item-anchor"
-              href="{{ page.facebook }}"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Facebook
-            </a>
-          </dd>
-        </div>
-        {% endif %} {% if page.hosts %}
-        <div class="grid-item event-data-list-item">
-          <dt>Host{% if page.hosts.size > 1 %}s{% endif %}</dt>
-          <dd>
-            <ul class="event-data-list-host-list">
-              {% for postHost in page.hosts %} {% assign hostMatchFound = false
-              %}{% for eventHost in site.event-hosts %} {% if eventHost.name ==
-              postHost %} {% assign hostMatchFound = true %} {% assign
-              matchedHostFB = eventHost.facebook %} {% assign matchedHostName =
-              eventHost.name %} {% break %} {% endif %} {% endfor %}{% if
-              hostMatchFound %}
-              <li>
-                <a
-                  href="{{ matchedHostFB }}"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <!-- <div class="icon">
+          <!-- {% if page.location %}
+          <div class="grid-item event-data-list-item" id="location">
+            <svg alt="Location icon" aria-hidden="true">
+              <use xlink:href="/assets/symbols.svg#location"></use>
+            </svg>
+            <dt>Location</dt>
+            <dd>
+              <a
+                class="grid-item-anchor"
+                href="http://maps.apple.com/?q={{ page.location | uri_escape }}"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {{ page.location }}
+              </a>
+            </dd>
+          </div>
+          {% endif %} -->
+          {% if page.tickets %}
+          <div class="grid-item event-data-list-item">
+            <svg alt="Ticket icon" aria-hidden="true">
+              <use xlink:href="/assets/symbols.svg#ticket"></use>
+            </svg>
+            <dt>Tickets</dt>
+            <dd>
+              <a
+                class="grid-item-anchor"
+                href="{{ page.tickets }}"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Purchase
+              </a>
+            </dd>
+          </div>
+          {% endif %} {% if page.facebook %}
+          <div class="grid-item event-data-list-item">
+            <svg alt="Social media icon" aria-hidden="true">
+              <use xlink:href="/assets/symbols.svg#facebook"></use>
+            </svg>
+            <dt>Social media</dt>
+            <dd>
+              <a
+                class="grid-item-anchor"
+                href="{{ page.facebook }}"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Facebook
+              </a>
+            </dd>
+          </div>
+          {% endif %}
+
+          <!-- {% if page.hosts %}
+          <div class="grid-item event-data-list-item">
+            <dt>Host{% if page.hosts.size > 1 %}s{% endif %}</dt>
+            <dd>
+              <ul class="event-data-list-host-list">
+                {% for postHost in page.hosts %} {% assign hostMatchFound =
+                false %}{% for eventHost in site.event-hosts %} {% if
+                eventHost.name == postHost %} {% assign hostMatchFound = true %}
+                {% assign matchedHostFB = eventHost.facebook %} {% assign
+                matchedHostName = eventHost.name %} {% break %} {% endif %} {%
+                endfor %}{% if hostMatchFound %}
+                <li>
+                  <a
+                    href="{{ matchedHostFB }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  > -->
+          <!-- <div class="icon">
                     <svg alt="{{ matchedHostName }} icon" aria-hidden="true">
                       <use
                         xlink:href="/assets/hosts.svg#{{ matchedHostName | slugify }}"
                       ></use>
                     </svg>
                   </div> -->
-                  {{ matchedHostName }}
-                </a>
-              </li>
-              {% else %} {{ postHost }} {% endif %} {% endfor %}
-            </ul>
-          </dd>
+          <!-- {{ matchedHostName }}
+                  </a>
+                </li>
+                {% else %} {{ postHost }} {% endif %} {% endfor %}
+              </ul>
+            </dd>
+          </div>
+          {% endif %} -->
+
+          <!-- <div class="grid-item event-data-list-item">
+            <svg alt="Date announced icon" aria-hidden="true">
+              <use xlink:href="/assets/symbols.svg#new"></use>
+            </svg>
+            <dt>Date announced</dt>
+            <dd>
+              <time datetime="{{ page.date | date: '%Y-%m-%d' }}">
+                {{ page.date | date: "%B %d, %Y" }}
+              </time>
+            </dd>
+          </div> -->
+        </dl>
+
+        <!-- TODO: Show Apple Maps for apple users, else Google Maps -->
+        <div id="map" data-location="{{ page.location | uri_escape }}"></div>
+
+        <div>
+          <h2>Description</h2>
+          {{ content }}
         </div>
-        {% endif %}
-
-        <div class="grid-item event-data-list-item">
-          <svg alt="Date announced icon" aria-hidden="true">
-            <use xlink:href="/assets/symbols.svg#new"></use>
-          </svg>
-          <dt>Date announced</dt>
-          <dd>
-            <time datetime="{{ page.date | date: '%Y-%m-%d' }}">
-              {{ page.date | date: "%B %d, %Y" }}
-            </time>
-          </dd>
-        </div>
-      </dl>
-
-      <div id="map" data-location="{{ page.location | uri_escape }}"></div>
-
-      <div style="grid-column: padded-start / padded-end">
-        <h2>Description</h2>
-        {{ content }}
       </div>
     </main>
 
