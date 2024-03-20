@@ -357,6 +357,15 @@
 
 <!-- PAGE: Event -->
 {% if page.layout == 'event' %}
+<!-- H2-H6 are anchors -->
+<script>
+  anchors.options = {
+    placement: "right",
+    icon: "#",
+  };
+  anchors.add();
+</script>
+
 <!-- Share button -->
 <script>
   document.addEventListener("DOMContentLoaded", function () {
@@ -395,15 +404,15 @@
     // Default location (fallback if geocoding fails)
     const defaultLocation = { lat: -34.397, lng: 150.644 };
     map = new google.maps.Map(document.getElementById("map"), {
+      backgroundColor: "{{ average_color }}",
       zoom: 12,
       center: defaultLocation,
-      disableDefaultUI: true,
-      zoomControl: false,
+      zoomControl: true,
       mapTypeControl: false,
-      scaleControl: false,
+      scaleControl: true,
       streetViewControl: false,
-      rotateControl: false,
-      fullscreenControl: false,
+      rotateControl: true,
+      fullscreenControl: true,
     });
 
     // Call the geocode function to update the map based on address

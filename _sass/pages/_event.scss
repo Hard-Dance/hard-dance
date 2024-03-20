@@ -103,6 +103,7 @@
     grid-area: title;
     align-self: end;
     color: var(--color-text-muted);
+    font-size: var(--font-size);
   }
 
   dd {
@@ -114,16 +115,28 @@
 
 .event-data-list-item {
   display: grid;
-  grid-template-areas: "icon title" "icon value";
-  grid-template-columns: auto 1fr;
-  // grid-template-rows: 1fr auto;
+  grid-template-areas: "icon title metadata" "icon value metadata";
+  grid-template-columns: auto 1fr auto;
   column-gap: var(--padding);
   padding: var(--padding);
   @include frosted-glass;
 }
 
+.event-data-list-item-metadata {
+  grid-area: metadata;
+  align-self: center;
+
+  &[data-variant="price"] {
+    &::before {
+      content: "$";
+    }
+    &::after {
+      content: "+";
+    }
+  }
+}
+
 #map {
-  margin-block-start: var(--page-padding);
   grid-column: padded-start / padded-end;
   border-radius: var(--border-radius);
   aspect-ratio: 16/9;

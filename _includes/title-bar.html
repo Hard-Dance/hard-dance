@@ -14,9 +14,9 @@
       "
     >
       <!-- TODO: Have a {{ page.daterange }} variable -->
-      {{ page.datestart | date: "%B %d, %Y" }} - {{ page.dateend | date: "%B %d,
-      %Y" }}</span
-    >
+      {{ page.datestart | date: "%B %d, %Y" }} {% if page.dateend %} - {{
+      page.dateend | date: "%B %d, %Y" }} {% endif %}
+    </span>
     <!-- </div> -->
     <h1 style="view-transition-name: post-title-{{ page.title | slugify }};">
       {{ page.title }}

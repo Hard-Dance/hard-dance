@@ -5,7 +5,7 @@
 }
 
 .grid-item {
-  background-color: var(--color-background);
+  @include frosted-glass;
   border-radius: var(--border-radius);
   position: relative;
 
