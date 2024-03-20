@@ -8,10 +8,7 @@ dateend: 2024/07/14
 location: Neustadt-Glewe, Germany
 hosts:
   - Airbeat One
-links:
-  - title: Website
-    url: https://airbeat-one.myticket.de/content
-  - title: Facebook
-    url: https://www.facebook.com/events/995809308512395/
+tickets: https://airbeat-one.myticket.de/content
+facebook: https://www.facebook.com/events/995809308512395/
 image: /assets/img/events/airbeat-one-festival-2024.jpg
 ---

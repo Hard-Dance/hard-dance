@@ -7,10 +7,7 @@ datestart: 2024/06/08
 location: Hemkade 48, 1506 PS Zaandam, Nederland
 hosts:
   - Multigroove
-links:
-  - title: Website
-    url: https://tibbaa.com/order/xucxawtlm8?lang=en
-  - title: Facebook
-    url: https://www.facebook.com/events/769318648587759
+tickets: https://tibbaa.com/order/xucxawtlm8?lang=en
+facebook: https://www.facebook.com/events/769318648587759
 image: /assets/img/events/multigroove-festival-2024.jpg
 ---

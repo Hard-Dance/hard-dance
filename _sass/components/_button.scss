@@ -7,15 +7,17 @@
   border: var(--border-width) solid var(--_button-group-background-color);
   border-radius: var(--border-radius);
   transition: background-color var(--duration) ease,
-    border-color var(--duration) ease;
+    border-color var(--duration) ease, backdrop-filter var(--duration) ease,
+    -webkit-backdrop-filter var(--duration) ease;
 
   &:not([data-variant]) {
-    --_button-group-background-color: var(--color-background-backdrop);
+    --_button-group-background-color: transparent;
 
     @media (hover: hover) {
       &:hover,
       &:focus-within {
-        --_button-group-background-color: var(--color-background);
+        // --_button-group-background-color: var(--color-background);
+        @include frosted-glass;
       }
     }
   }
@@ -31,8 +33,13 @@
     justify-content: center;
   }
 
-  > li > .button {
-    border-radius: calc(var(--border-radius) - var(--border-width));
+  > li {
+    flex: 1;
+
+    > .button {
+      border-radius: calc(var(--border-radius) - var(--border-width));
+      width: 100%;
+    }
   }
 }
 

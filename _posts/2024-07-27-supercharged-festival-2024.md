@@ -8,10 +8,7 @@ location: Smaakexplosies, Middenweg, 1505 RK Zaandam, Nederland
 hosts:
   - Gearbox Digital
   - Outlaw Events
-links:
-  - title: Website
-    url: https://gearboxdigital.com/supercharged/
-  - title: Facebook
-    url: https://www.facebook.com/events/236838662766397
+tickets: https://gearboxdigital.com/supercharged/
+facebook: https://www.facebook.com/events/236838662766397
 image: /assets/img/events/supercharged-festival-2024.jpg
 ---

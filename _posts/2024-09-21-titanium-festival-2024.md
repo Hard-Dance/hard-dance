@@ -7,10 +7,7 @@ datestart: 2024/09/21
 location: Middelwaard 2, 4133 LB Vianen, Nederland
 hosts:
   - BKJN Events
-links:
-  - title: Website
-    url: https://lp.form-seetickets.com/bs/YnVfdGl0YW5pdW0=/Titanium-2024-pre-registration
-  - title: Facebook
-    url: https://www.facebook.com/events/7033583880050913
+tickets: https://lp.form-seetickets.com/bs/YnVfdGl0YW5pdW0=/Titanium-2024-pre-registration
+facebook: https://www.facebook.com/events/7033583880050913
 image: /assets/img/events/titanium-festival-2024.jpg
 ---

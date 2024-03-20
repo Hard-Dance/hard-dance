@@ -1,3 +1,5 @@
+@import "../mixins";
+
 // #region Banner
 .banner-event-links {
   position: absolute;
@@ -13,6 +15,7 @@
   -webkit-overflow-scrolling: touch;
   outline-offset: calc(var(--border-width) * -1);
   user-select: none;
+  mask-image: linear-gradient(#000 90%, transparent 100%);
   @media (prefers-reduced-motion: no-preference) {
     scroll-behavior: smooth;
   }
@@ -31,8 +34,7 @@
 }
 
 #trailer,
-#poster,
-#map {
+#poster {
   overflow: hidden;
 }
 
@@ -69,25 +71,79 @@
 }
 // #endregion Banner
 
-.event-data-list {
-  text-align: center;
+.event-page-title {
   grid-column: padded-start / padded-end;
 
-  > dt {
+  > h1,
+  .page-title-end {
+    margin: 0;
+  }
+}
+
+.event-data-list {
+  gap: calc(var(--page-padding) / 2);
+  grid-column: padded-start / padded-end;
+  font-size: var(--font-size-large);
+  container: event-data-list / inline-size;
+
+  svg {
+    grid-area: icon;
+    fill: currentColor;
+    width: 1.5lh;
+    height: 1.5lh;
+    align-self: center;
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--color-text);
+  }
+
+  dt {
+    grid-area: title;
+    align-self: end;
     color: var(--color-text-muted);
-    font-size: var(--font-size-large);
-
-    &::after {
-      content: ":";
-    }
+    font-size: var(--font-size);
   }
 
-  > dd {
-    font-size: var(--font-size-larger);
+  dd {
+    grid-area: value;
+    align-self: start;
     font-weight: var(--font-weight-bold);
+  }
+}
 
-    &:not(:last-child) {
-      margin-block-end: var(--page-padding);
+.event-data-list-item {
+  display: grid;
+  grid-template-areas: "icon title metadata" "icon value metadata";
+  grid-template-columns: auto 1fr auto;
+  column-gap: var(--padding);
+  padding: var(--padding);
+  @include frosted-glass;
+}
+
+.event-data-list-item-metadata {
+  grid-area: metadata;
+  align-self: center;
+
+  &[data-variant="price"] {
+    &::before {
+      content: "$";
+    }
+    &::after {
+      content: "+";
     }
   }
+}
+
+#map {
+  grid-column: padded-start / padded-end;
+  border-radius: var(--border-radius);
+  aspect-ratio: 16/9;
+}
+
+.xyz {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--page-padding);
 }

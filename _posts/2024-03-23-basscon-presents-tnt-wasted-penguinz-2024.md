@@ -7,10 +7,7 @@ datestart: 2024/03/23
 location: 900 Marin St, San Francisco, CA, USA
 hosts:
   - Basscon
-links:
-  - title: Website
-    url: https://www.tixr.com/groups/midwaysf/events/basscon-presents-tnt-wasted-penguinz-94618
-  - title: Facebook
-    url: https://www.facebook.com/events/3572041326444429
+tickets: https://www.tixr.com/groups/midwaysf/events/basscon-presents-tnt-wasted-penguinz-94618
+facebook: https://www.facebook.com/events/3572041326444429
 image: /assets/img/events/basscon-presents-tnt-wasted-penguinz-2024.jpg
 ---

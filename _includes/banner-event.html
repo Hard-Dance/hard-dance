@@ -26,19 +26,15 @@
       style="view-transition-name: post-image-{{ page.title | slugify }};"
     />
   </div>
-  <div id="map" data-location="{{ page.location | uri_escape }}"></div>
 </div>
 
+{% if page.featured and page.video %}
 <ul class="button-group banner-event-links" data-variant="overlay">
-  {% if page.featured and page.video %}
   <li>
     <a class="button" href="#trailer" tabindex="-1">Trailer</a>
   </li>
-  {% endif %}
   <li>
     <a class="button" href="#poster" tabindex="-1">Poster</a>
   </li>
-  <li>
-    <a class="button" href="#map" tabindex="-1">Map</a>
-  </li>
 </ul>
+{% endif %}

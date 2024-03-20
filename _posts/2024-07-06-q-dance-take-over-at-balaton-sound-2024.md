@@ -8,7 +8,6 @@ location: Lake Balaton, Hungary
 hosts:
   - Q-dance
 links:
-  - title: Facebook
-    url: https://www.facebook.com/events/943829836759917
+facebook: https://www.facebook.com/events/943829836759917
 image: /assets/img/events/q-dance-take-over-at-balaton-sound-2024.jpg
 ---

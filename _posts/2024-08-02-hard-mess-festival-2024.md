@@ -8,9 +8,7 @@ dateend: 2024/08/04
 location: France
 hosts:
   -
-links:
-  - title: Website
-    url: https://www.hardmessfestival.com
+tickets: https://www.hardmessfestival.com
 image: /assets/img/events/hard-mess-festival-2024.jpg
 
 published: false

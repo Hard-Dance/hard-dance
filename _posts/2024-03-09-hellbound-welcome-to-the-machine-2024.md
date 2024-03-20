@@ -7,10 +7,7 @@ datestart: 2024/03/09
 location: Hemkade 48, 1506 PS Zaandam, Nederland
 hosts:
   - Multigroove
-links:
-  - title: Website
-    url: https://multigroove.com/events/hellbound-hard-as-hell/
-  - title: Facebook
-    url: https://www.facebook.com/events/444776601146601
+tickets: https://multigroove.com/events/hellbound-hard-as-hell/
+facebook: https://www.facebook.com/events/444776601146601
 image: /assets/img/events/hellbound-welcome-to-the-machine-2024.jpg
 ---

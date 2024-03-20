@@ -31,7 +31,7 @@ body {
 
 main {
   display: grid;
-  row-gap: 1rem;
+  row-gap: var(--page-padding);
   /* prettier-ignore */
   grid-template-columns:
     [full-width-start]
@@ -48,8 +48,34 @@ main {
     [full-width-end];
 }
 
+section {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--padding);
+}
+
 @media only screen and (max-width: 768px) {
   .hide-on-mobile {
     display: none;
+  }
+}
+
+.anchorjs-link {
+  color: var(--color-text-muted);
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  // Desktop
+  @media only screen and (min-width: 769px) {
+    scroll-margin-block-start: calc(var(--header-height) + var(--page-padding));
+  }
+
+  // Mobile
+  @media only screen and (max-width: 768px) {
+    scroll-margin-block-start: var(--page-padding);
   }
 }

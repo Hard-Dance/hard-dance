@@ -17,6 +17,9 @@ plugins:
   - jekyll-sitemap
   - jekyll-dotenv
 
+exclude:
+  - _data/average_colors.json
+
 sass:
   sass_dir: _sass
   style: compressed
@@ -65,6 +68,15 @@ admins:
         url: https://github.com/FlyersPh9
       - service: Discord
         url: https://discordapp.com/users/flyersph9
+  - name: Rohan Kadkol
+    position: Web developer
+    location: 🇺🇸
+    email: kadkol_rohan@hotmail.com
+    socials:
+      - service: GitHub
+        url: https://github.com/rohan-kadkol
+      - service: Discord
+        url: https://discordapp.com/users/rohan_kadkol
 
 event-hosts:
   - name: A.L.E.X. Events

@@ -7,8 +7,6 @@ datestart: 2024/04/14
 location: 23 Meadow Street, Brooklyn, NY, USA
 hosts:
   - Hard Dance NYC
-links:
-  - title: Website
-    url: https://link.dice.fm/SdZ34RmCVGb
+tickets: https://link.dice.fm/SdZ34RmCVGb
 image: /assets/img/events/hard-dance-nyc-presents-radical-redemption-2024.jpg
 ---

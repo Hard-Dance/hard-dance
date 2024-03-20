@@ -2,7 +2,6 @@
 <html lang="{{ page.lang | default: site.lang | default: 'en' }}">
   <head>
     {% include head.html %}
-    <script src="https://unpkg.com/color.js@1.2.0/dist/color.js"></script>
   </head>
   <body>
     {% include header.html %}
@@ -43,8 +42,11 @@
           {%- else -%}
             {% assign flag = '' %}
         {% endcase %}
+
+        {% assign average_color = site.data.average_colors[post.slug] %}
         <li
           class="grid-item events-grid-item {% for host in post.hosts %}filter-host-{{ host | slugify }} {% endfor %}"
+          style="--_color-grid-item-background: {{ average_color }};"
           id="grid-item-{{ forloop.index }}"
           data-location="{{ country_part | downcase }}"
           data-type="{{ post.type | downcase }}"
@@ -91,7 +93,7 @@
           />
           <div class="grid-item-metadata">
             <a
-              class="grid-item-metadata-title"
+              class="grid-item-metadata-title grid-item-anchor"
               href="{{ post.url }}"
               style="view-transition-name: post-title-{{ post.title | slugify }};"
               >{{ post.title | smartify }}</a

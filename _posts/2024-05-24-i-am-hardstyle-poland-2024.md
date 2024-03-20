@@ -8,7 +8,6 @@ location: Łazienkowska 6A, 00-449 Warszawa, Poland
 hosts:
   - I AM HARDSTYLE
 links:
-  - title: Facebook
-    url: https://www.facebook.com/events/164014106578435
+facebook: https://www.facebook.com/events/164014106578435
 image: /assets/img/events/i-am-hardstyle-poland-2024.jpg
 ---
