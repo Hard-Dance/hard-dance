@@ -15,7 +15,7 @@
 
     <main>
       <section class="about-banner" id="top">
-        <h2 class="handwritten">Welcome to our digital tribe!</h2>
+        <h1 class="handwritten">Welcome to our digital tribe!</h1>
         <blockquote>{{ content }}</blockquote>
         <figcaption>Your <span>{{ site.title }}</span> crew</figcaption>
 
@@ -34,7 +34,16 @@
       </section>
 
       <details class="about-details">
-        <summary class="about-details-summary">
+        <summary>
+          <span class="details-summary-expander">
+            <svg
+              class="details-summary-expander-icon"
+              alt="Chevron icon"
+              aria-hidden="true"
+            >
+              <use xlink:href="/assets/symbols.svg#chevron-down"></use>
+            </svg>
+          </span>
           The crew
           <span class="details-summary-badge">{{ site.admins | size }}</span>
         </summary>
@@ -58,7 +67,7 @@
                 <div class="grid-item-metadata-subtitle">
                   {{ admin.position }}
                 </div>
-                <div class="grid-item-metadata-symbol">
+                <div class="grid-item-metadata-symbol" style="color: unset">
                   {{ admin.location }}
                 </div>
                 <ul
@@ -118,6 +127,15 @@
 
       <details class="about-details">
         <summary class="about-details-summary">
+          <span class="details-summary-expander">
+            <svg
+              class="details-summary-expander-icon"
+              alt="Chevron icon"
+              aria-hidden="true"
+            >
+              <use xlink:href="/assets/symbols.svg#chevron-down"></use>
+            </svg>
+          </span>
           The hosts we check
           <span class="details-summary-badge">
             {{ site.event-hosts | size }}
@@ -175,6 +193,15 @@
 
       <details class="about-details">
         <summary class="about-details-summary">
+          <span class="details-summary-expander">
+            <svg
+              class="details-summary-expander-icon"
+              alt="Chevron icon"
+              aria-hidden="true"
+            >
+              <use xlink:href="/assets/symbols.svg#chevron-down"></use>
+            </svg>
+          </span>
           Our friends
           <span class="details-summary-badge">{{ site.friends | size }}</span>
         </summary>
@@ -220,7 +247,18 @@
       </details>
 
       <details class="about-details">
-        <summary class="about-details-summary">How to help us</summary>
+        <summary class="about-details-summary">
+          <span class="details-summary-expander">
+            <svg
+              class="details-summary-expander-icon"
+              alt="Chevron icon"
+              aria-hidden="true"
+            >
+              <use xlink:href="/assets/symbols.svg#chevron-down"></use>
+            </svg>
+          </span>
+          How to help us
+        </summary>
         <div class="details-body">
           <p>
             We are an open source platform, meaning anyone can contribute to the
@@ -294,6 +332,15 @@
 
       <details class="about-details" id="app">
         <summary class="about-details-summary">
+          <span class="details-summary-expander">
+            <svg
+              class="details-summary-expander-icon"
+              alt="Chevron icon"
+              aria-hidden="true"
+            >
+              <use xlink:href="/assets/symbols.svg#chevron-down"></use>
+            </svg>
+          </span>
           How to get the Hard.Dance app
         </summary>
         <div class="details-body">

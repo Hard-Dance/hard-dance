@@ -10,4 +10,6 @@ hosts:
 links:
 facebook: https://www.facebook.com/events/270619311985671
 image: /assets/img/events/supersized-kingsday-festival-2024.jpg
+
+foreground: black
 ---

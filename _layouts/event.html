@@ -15,7 +15,23 @@
     <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
   </head>
   {% assign average_color = site.data.average_colors[page.slug] %}
-  <body style="background-color: {{ average_color }};">
+  <body
+    style="
+      --xxx-color-background-backdrop: {{ average_color }};
+
+      {% if page.foreground %}
+      --xxx-color-text: color-mix(in srgb, {{ average_color }}, black 80%);
+      --xxx-color-text-muted: color-mix(in srgb, {{ average_color }} 50%, black 50%);
+      --xxx-color-background-transparent-hover: color-mix(in srgb, {{ average_color }} 95%, black 5%);
+      --xxx-color-accent: color-mix(in srgb, {{ average_color }} 100%, black 25%);
+      {% else %}
+      --xxx-color-text: color-mix(in srgb, {{ average_color }}, white 80%);
+      --xxx-color-text-muted: color-mix(in srgb, {{ average_color }} 50%, white 50%);
+      --xxx-color-background-transparent-hover: color-mix(in srgb, {{ average_color }} 95%, white 5%);
+      --xxx-color-accent: color-mix(in srgb, {{ average_color }} 100%, white 25%);
+      {% endif %}
+      "
+  >
     {% include header.html %}
 
     <div class="banner" id="top">{% include banner-event.html %}</div>
@@ -98,8 +114,13 @@
             {% endif %}
           {% endfor %}
 
-          <details class="about-details">
-            <summary class="about-details-summary">
+          <details>
+            <summary>
+              <span class="details-summary-expander">
+                <svg class="details-summary-expander-icon" alt="Chevron icon" aria-hidden="true">
+                  <use xlink:href="/assets/symbols.svg#chevron-down"></use>
+                </svg>
+              </span>
               <div class="icon">
                 <svg alt="{{ host }} icon" aria-hidden="true">
                   <use xlink:href="/assets/hosts.svg#{{ host | slugify }}"></use>
@@ -119,7 +140,6 @@
 
                 <li
                   class="grid-item {% for host in post.hosts %}filter-host-{{ host | slugify }} {% endfor %}"
-                  style="--_color-grid-item-background: #000000"
                   id="grid-item-{{ forloop.index }}"
                   data-location="{{ country_part | downcase }}"
                   data-type="{{ post.type | downcase }}"
@@ -198,7 +218,19 @@
               {% endfor %}
               </ol>
               {% else %}
-              <p>No upcoming events found.</p>
+              <div class="events-empty-state">
+                <div class="events-empty-state-emoji">🔇</div>
+                <h3>No events found.</h3>
+                <p>Do you know of an event that should be listed here?</p>
+                <button
+                  aria-label="Add event"
+                  class="button"
+                  data-variant="call-to-action"
+                  onclick="document.getElementById('add-event').show()"
+                >
+                  Add an event
+                </button>
+              </div>
               {% endif %}
             </div>
           </details>
@@ -207,6 +239,6 @@
       </div>
     </main>
 
-    {% include footer.html %} {% include scripts.html %}
+    {% include footer.html %} {% include dialog.html %} {% include scripts.html %}
   </body>
 </html>
