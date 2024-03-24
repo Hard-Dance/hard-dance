@@ -46,7 +46,18 @@
         {% assign average_color = site.data.average_colors[post.slug] %}
         <li
           class="grid-item events-grid-item {% for host in post.hosts %}filter-host-{{ host | slugify }} {% endfor %}"
-          style="--_color-grid-item-background: {{ average_color }};"
+          style="
+            --xxx-color-background: {{ average_color }};
+            {% if post.foreground %}
+            --xxx-color-text: color-mix(in srgb, {{ average_color }}, black 80%);
+            --xxx-color-text-muted: color-mix(in srgb, {{ average_color }} 50%, black 50%);
+            --xxx-color-accent: color-mix(in srgb, {{ average_color }} 100%, black 25%);
+            {% else %}
+            --xxx-color-text: color-mix(in srgb, {{ average_color }}, white 80%);
+            --xxx-color-text-muted: color-mix(in srgb, {{ average_color }} 50%, white 50%);
+            --xxx-color-accent: color-mix(in srgb, {{ average_color }} 100%, white 25%);
+            {% endif %}
+          "
           id="grid-item-{{ forloop.index }}"
           data-location="{{ country_part | downcase }}"
           data-type="{{ post.type | downcase }}"

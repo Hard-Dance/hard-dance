@@ -16,7 +16,6 @@
     @media (hover: hover) {
       &:hover,
       &:focus-within {
-        // --_button-group-background-color: var(--color-background);
         @include frosted-glass;
       }
     }
@@ -48,7 +47,7 @@
   padding-inline: var(--component-padding-inline);
   text-decoration: none;
   background-color: transparent;
-  color: var(--color-text);
+  color: var(--xxx-color-text);
   border: 1px solid transparent;
   font-weight: var(--font-weight-bold);
   display: inline-flex;
@@ -63,7 +62,7 @@
 
   @media (hover: hover) {
     &:hover {
-      background-color: var(--color-background-transparent-hover);
+      background-color: var(--xxx-color-background-transparent-hover);
     }
   }
 
@@ -75,8 +74,8 @@
   }
 
   &[data-variant="call-to-action"] {
+    color: var(--color-text);
     background-color: var(--color-accent);
-    outline-color: var(--color-text);
 
     @media (hover: hover) {
       &:hover {

@@ -48,3 +48,15 @@
     --page-padding: var(--padding);
   }
 }
+
+body {
+  --xxx-color-background: var(--color-background);
+  --xxx-color-background-backdrop: var(--color-background-backdrop);
+  --xxx-color-background-hover: var(--color-background-hover);
+  --xxx-color-background-transparent-hover: var(
+    --color-background-transparent-hover
+  );
+  --xxx-color-text: var(--color-text);
+  --xxx-color-text-muted: var(--color-text-muted);
+  --xxx-color-accent: var(--color-accent);
+}

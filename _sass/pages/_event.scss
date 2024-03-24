@@ -80,6 +80,17 @@
   }
 }
 
+.event-page-title-stacked {
+  display: flex;
+  flex-direction: column-reverse;
+
+  > span {
+    color: var(--xxx-color-text-muted);
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+  }
+}
+
 .event-data-list {
   gap: calc(var(--page-padding) / 2);
   grid-column: padded-start / padded-end;
@@ -88,7 +99,7 @@
 
   svg {
     grid-area: icon;
-    fill: currentColor;
+    fill: var(--color-text-muted);
     width: 1.5lh;
     height: 1.5lh;
     align-self: center;

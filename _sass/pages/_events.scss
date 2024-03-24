@@ -170,8 +170,8 @@ $shadows-big: multiple-box-shadow(100);
 }
 
 .events-grid-item {
-  background-color: var(--_color-grid-item-background);
-  color: var(--_color-grid-item-text-color);
+  background-color: var(--xxx-color-background);
+  color: var(--xxx-color-text);
 
   @media (prefers-reduced-motion: no-preference) {
     animation: linear reveal both;
@@ -180,67 +180,16 @@ $shadows-big: multiple-box-shadow(100);
     animation-fill-mode: none;
   }
 
-  .grid-item-metadata-title,
-  .grid-item-metadata-subtitle {
+  .grid-item-metadata-title {
     color: inherit;
   }
 
-  .grid-item-metadata-title {
-    opacity: 0.9;
+  .grid-item-metadata-subtitle {
+    color: var(--xxx-color-text-muted);
   }
 
   .grid-item-metadata-symbol {
     color: unset;
-  }
-
-  @media (prefers-contrast: no-preference) {
-    .grid-item-metadata-subtitle {
-      opacity: 0.5;
-    }
-  }
-
-  &[data-featured="true"] {
-    box-shadow: 0 0 4rem 0 var(--_color-grid-item-background);
-
-    &::before {
-      content: "⭐️";
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: absolute;
-      inset: 0 auto auto 0;
-      border-top-left-radius: inherit;
-      border-bottom-right-radius: inherit;
-      width: calc(var(--border-width) * 20);
-      height: calc(var(--border-width) * 20);
-      background-color: inherit;
-      z-index: 1;
-      @media (forced-colors: active) {
-        border: calc(var(--border-width) * 3) solid CanvasText;
-      }
-    }
-
-    &::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      pointer-events: none;
-      border: calc(var(--border-width) * 3) solid
-        var(--_color-grid-item-background, transparent);
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      video {
-        display: none;
-      }
-    }
-
-    @media (prefers-reduced-motion: no-preference) {
-      video + img {
-        height: 0px;
-      }
-    }
   }
 }
 

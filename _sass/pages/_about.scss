@@ -48,10 +48,6 @@
   grid-column: padded-start / padded-end;
 }
 
-.about-details-summary {
-  font-size: var(--font-size-large);
-}
-
 .about-the-crew-button-group {
   background-color: transparent;
   border-color: transparent;
@@ -67,6 +63,7 @@
 blockquote {
   grid-column: content-start / content-end;
   font-size: var(--font-size-large);
+  font-weight: var(--font-weight-bold);
   text-align: center;
   position: relative;
   margin-inline: auto;

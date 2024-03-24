@@ -2,26 +2,15 @@
   class="page-title {% if page.layout == 'event' %}event-page-title{% endif %}"
 >
   {% if page.layout == 'event' %}
-  <div style="display: flex; flex-direction: column">
-    <!-- <div> -->
-    <!-- <span>Q</span> -->
-    <!-- Icon for date anounced -->
-    <span
-      style="
-        color: var(--color-text-muted);
-        font-weight: var(--font-weight-bold);
-        text-transform: uppercase;
-      "
-    >
+  <div class="event-page-title-stacked">
+    <h1 style="view-transition-name: post-title-{{ page.title | slugify }};">
+      {{ page.title }}
+    </h1>
+    <span>
       <!-- TODO: Have a {{ page.daterange }} variable -->
       {{ page.datestart | date: "%B %d, %Y" }} {% if page.dateend %} - {{
       page.dateend | date: "%B %d, %Y" }} {% endif %}
     </span>
-    <!-- </div> -->
-    <h1 style="view-transition-name: post-title-{{ page.title | slugify }};">
-      {{ page.title }}
-    </h1>
-    <!-- <p></p> -->
   </div>
   {% else %}
   <h1>{{ page.title }}</h1>
