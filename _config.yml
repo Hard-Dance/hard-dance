@@ -129,8 +129,14 @@ event-hosts:
   - name: HARDFEST
     url: https://www.hardfest.nl
     facebook: https://www.facebook.com/hardfest.nl
+  - name: HARDGATE
+    url: https://hardgate.jp
+    facebook: https://www.facebook.com/hardgatejp
   - name: Hardice
     facebook: https://www.facebook.com/hardice.ch
+  - name: Hardmission
+    url: https://hardmissionfestival.com
+    facebook: https://www.facebook.com/HardmissionFestival
   - name: Hardstyle Arena
     facebook: https://www.facebook.com/FreshHardstyleArena
   - name: Harmony of Hardcore
@@ -145,6 +151,9 @@ event-hosts:
   - name: High Energy Events
     url: https://www.highenergyevents.nl
     facebook: https://www.facebook.com/officialhighenergyevents
+  - name: HSU Events
+    url: https://www.hsuevents.com
+    facebook: https://www.facebook.com/EventsHSU
   - name: I AM HARDSTYLE
     url: https://iamhardstyle.com
     facebook: https://www.facebook.com/iamhardstyleofficial
@@ -168,6 +177,9 @@ event-hosts:
   - name: Musical Madness
     url: https://www.musical-madness.de
     facebook: https://www.facebook.com/musicalmadnessofficial
+  - name: MYK Events
+    url: https://www.myk-events.nl
+    facebook: https://www.facebook.com/RevengeWHMH
   - name: Mysteryland
     url: https://www.mysteryland.nl
     facebook: https://www.facebook.com/Mysteryland
@@ -199,9 +211,6 @@ event-hosts:
     facebook: https://www.facebook.com/hardstyleclassics2006till2011
   - name: Ruggengraatjes
     facebook: https://www.facebook.com/profile.php?id=100089611314203
-  - name: MYK Events
-    url: https://www.myk-events.nl
-    facebook: https://www.facebook.com/RevengeWHMH
   - name: Shockerz
     url: https://shockerz.nl
     facebook: https://www.facebook.com/shockerzofficial
@@ -219,6 +228,9 @@ event-hosts:
     facebook: https://www.facebook.com/tomorrowland
   - name: Twisted Events
     facebook: https://www.facebook.com/twisted.events.official
+  - name: Ultra Worldwide
+    url: https://umfworldwide.com
+    facebook: https://www.facebook.com/Ultra/
   - name: WhiteNorat.
     facebook: https://www.facebook.com/Whitenoratevents
 
