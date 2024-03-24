@@ -11,3 +11,11 @@ tickets: https://link.dice.fm/Dr1AsGeCVGb
 facebook: https://www.facebook.com/events/3671702379752896
 image: /assets/img/events/hard-dance-nyc-presents-warface-2024.jpg
 ---
+
+HARD DANCE NYC presents: WARFACE
+
+SPECIAL GUEST: DEATH CODE, STM, ABSTRUCTA, WINK-E, BASS OF SPADES B2B THE RIPPER
+
+LOCATION: THE MEADOWS
+
+17 MEADOW STREET BROOKLYN NY

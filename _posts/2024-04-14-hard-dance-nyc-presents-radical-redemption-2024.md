@@ -8,5 +8,6 @@ location: 23 Meadow Street, Brooklyn, NY, USA
 hosts:
   - Hard Dance NYC
 tickets: https://link.dice.fm/SdZ34RmCVGb
+facebook: https://www.facebook.com/events/960530195592462/
 image: /assets/img/events/hard-dance-nyc-presents-radical-redemption-2024.jpg
 ---
