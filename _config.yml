@@ -104,6 +104,9 @@ event-hosts:
     facebook: https://www.facebook.com/BKJNevents
   - name: Chemistry Event
     facebook: https://www.facebook.com/profile.php?id=100088066611103
+  - name: DediKted
+    url: https://linktr.ee/dedikted
+    facebook: https://www.facebook.com/dediktedk1
   - name: Devastator Events
     url: https://devastatorevents.cz
     facebook: https://www.facebook.com/Devastator.events
@@ -191,6 +194,9 @@ event-hosts:
   - name: Parookaville
     url: https://www.parookaville.com
     facebook: https://www.facebook.com/parookaville
+  - name: PKHS Hard
+    url: https://pkhs013.nl
+    facebook: https://www.facebook.com/PKHSHARD
   - name: Project Hardstyle CH
     facebook: https://www.facebook.com/ProjectHardstyleCH
   - name: Q-dance
@@ -223,6 +229,9 @@ event-hosts:
   - name: Thunderdome
     url: https://www.thunderdome.com
     facebook: https://www.facebook.com/ThunderdomeIsYou
+  - name: Timeless Festival
+    url: https://www.timelessfestival.com
+    facebook: https://www.facebook.com/TimelessFestivalOfficial
   - name: Tomorrowland
     url: https://www.tomorrowland.com
     facebook: https://www.facebook.com/tomorrowland

@@ -268,7 +268,13 @@
             case "all":
               break; // keep showPost true
             case "north-america":
-              if (!(postLocation === "usa" || postLocation === "canada")) {
+              if (
+                !(
+                  postLocation === "usa" ||
+                  postLocation === "canada" ||
+                  postLocation === "mexico"
+                )
+              ) {
                 showPost = false;
               }
               break;
