@@ -159,14 +159,5 @@ details {
       width: var(--border-width);
       background-color: var(--color-background-hover);
     }
-
-    > ol,
-    > ul {
-      list-style: revert;
-
-      > li {
-        margin-inline-start: 1rem;
-      }
-    }
   }
 }

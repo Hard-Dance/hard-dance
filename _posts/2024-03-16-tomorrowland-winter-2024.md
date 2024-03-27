@@ -11,6 +11,9 @@ hosts:
 tickets: https://www.tomorrowland.com/home/
 facebook: https://www.facebook.com/events/2179621302235182
 image: /assets/img/events/tomorrowland-winter-2024.jpg
+
+foreground: black
+is_online: true
 ---
 
 The story of Tomorrowland Winter continues! Tomorrowland will be returning to the breathtaking French ski resort and mountains of Alpe d’Huez in 2024 for the fourth edition of Tomorrowland Winter.

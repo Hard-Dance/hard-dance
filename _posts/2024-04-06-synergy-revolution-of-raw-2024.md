@@ -4,7 +4,7 @@ category: events
 title: "SYNERGY: Revolution of Raw"
 date: 2024/01/16
 datestart: 2024/04/06
-location: Ahoyweg 10, 3084 BA Rotterdam, Nederland
+location: Ahoyweg 10, 3084 BA Rotterdam, Netherlands
 hosts:
   - b2s
 tickets: https://www.b2s.nl/en/events/synergy/synergy-2024/

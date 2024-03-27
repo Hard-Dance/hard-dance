@@ -88,6 +88,7 @@
     color: var(--xxx-color-text-muted);
     font-weight: var(--font-weight-bold);
     text-transform: uppercase;
+    filter: saturate(3);
   }
 }
 
@@ -103,6 +104,7 @@
     width: 1.5lh;
     height: 1.5lh;
     align-self: center;
+    filter: saturate(3);
   }
 
   a {
@@ -115,6 +117,7 @@
     align-self: end;
     color: var(--color-text-muted);
     font-size: var(--font-size);
+    filter: saturate(3);
   }
 
   dd {

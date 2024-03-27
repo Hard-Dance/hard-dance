@@ -78,6 +78,14 @@ admins:
       - service: Discord
         url: https://discordapp.com/users/rohan_kadkol
 
+continents:
+  - Asia
+  - Africa
+  - Europe
+  - North America
+  - Oceania
+  - South America
+
 event-hosts:
   - name: A.L.E.X. Events
     url: https://www.alex-events.net
@@ -104,6 +112,9 @@ event-hosts:
     facebook: https://www.facebook.com/BKJNevents
   - name: Chemistry Event
     facebook: https://www.facebook.com/profile.php?id=100088066611103
+  - name: DediKted
+    url: https://linktr.ee/dedikted
+    facebook: https://www.facebook.com/dediktedk1
   - name: Devastator Events
     url: https://devastatorevents.cz
     facebook: https://www.facebook.com/Devastator.events
@@ -119,6 +130,9 @@ event-hosts:
   - name: Electric Love
     url: https://www.electriclove.at
     facebook: https://www.facebook.com/electriclovefestival
+  - name: Extinction
+    url: https://www.elationlv.com
+    facebook: https://www.facebook.com/extinctionusa
   - name: Fatality
     facebook: https://www.facebook.com/fatalityevent
   - name: Gearbox Digital
@@ -129,8 +143,14 @@ event-hosts:
   - name: HARDFEST
     url: https://www.hardfest.nl
     facebook: https://www.facebook.com/hardfest.nl
+  - name: HARDGATE
+    url: https://hardgate.jp
+    facebook: https://www.facebook.com/hardgatejp
   - name: Hardice
     facebook: https://www.facebook.com/hardice.ch
+  - name: Hardmission
+    url: https://hardmissionfestival.com
+    facebook: https://www.facebook.com/HardmissionFestival
   - name: Hardstyle Arena
     facebook: https://www.facebook.com/FreshHardstyleArena
   - name: Harmony of Hardcore
@@ -145,6 +165,9 @@ event-hosts:
   - name: High Energy Events
     url: https://www.highenergyevents.nl
     facebook: https://www.facebook.com/officialhighenergyevents
+  - name: HSU Events
+    url: https://www.hsuevents.com
+    facebook: https://www.facebook.com/EventsHSU
   - name: I AM HARDSTYLE
     url: https://iamhardstyle.com
     facebook: https://www.facebook.com/iamhardstyleofficial
@@ -168,6 +191,9 @@ event-hosts:
   - name: Musical Madness
     url: https://www.musical-madness.de
     facebook: https://www.facebook.com/musicalmadnessofficial
+  - name: MYK Events
+    url: https://www.myk-events.nl
+    facebook: https://www.facebook.com/RevengeWHMH
   - name: Mysteryland
     url: https://www.mysteryland.nl
     facebook: https://www.facebook.com/Mysteryland
@@ -179,6 +205,9 @@ event-hosts:
   - name: Parookaville
     url: https://www.parookaville.com
     facebook: https://www.facebook.com/parookaville
+  - name: PKHS Hard
+    url: https://pkhs013.nl
+    facebook: https://www.facebook.com/PKHSHARD
   - name: Project Hardstyle CH
     facebook: https://www.facebook.com/ProjectHardstyleCH
   - name: Q-dance
@@ -199,9 +228,6 @@ event-hosts:
     facebook: https://www.facebook.com/hardstyleclassics2006till2011
   - name: Ruggengraatjes
     facebook: https://www.facebook.com/profile.php?id=100089611314203
-  - name: MYK Events
-    url: https://www.myk-events.nl
-    facebook: https://www.facebook.com/RevengeWHMH
   - name: Shockerz
     url: https://shockerz.nl
     facebook: https://www.facebook.com/shockerzofficial
@@ -214,11 +240,17 @@ event-hosts:
   - name: Thunderdome
     url: https://www.thunderdome.com
     facebook: https://www.facebook.com/ThunderdomeIsYou
+  - name: Timeless Festival
+    url: https://www.timelessfestival.com
+    facebook: https://www.facebook.com/TimelessFestivalOfficial
   - name: Tomorrowland
     url: https://www.tomorrowland.com
     facebook: https://www.facebook.com/tomorrowland
   - name: Twisted Events
     facebook: https://www.facebook.com/twisted.events.official
+  - name: Ultra Worldwide
+    url: https://umfworldwide.com
+    facebook: https://www.facebook.com/Ultra/
   - name: WhiteNorat.
     facebook: https://www.facebook.com/Whitenoratevents
 

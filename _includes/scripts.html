@@ -103,9 +103,11 @@
 
     if (isExpanded) {
       drawer.style.maxHeight = drawerInteriorWrapper.offsetHeight + "px"; // Open drawer
+      drawer.style.opacity = 1;
       drawerInteriorWrapper.removeAttribute("inert");
     } else {
       drawer.style.maxHeight = 0; // Close drawer
+      drawer.style.opacity = 0;
       drawerInteriorWrapper.setAttribute("inert", "");
     }
   };
@@ -227,76 +229,385 @@
 </script>
 
 <!-- Events filters -->
+<!-- If continent is selected, show countries -->
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    const locationSelect = document.getElementById("filter-location");
-    const hostSelect = document.getElementById("filter-host");
-    const posts = document.querySelectorAll(".grid-item");
-    const postList = document.querySelector(".grid");
-    const emptyStateDiv = document.querySelector(".events-empty-state");
+    const continentSelect = document.getElementById("filter-continent");
+    const countrySelect = document.getElementById("filter-country");
+    const countryWrapper = document.getElementById("filter-country-wrapper");
 
-    function checkForVisiblePosts() {
-      // Check if any posts are visible
-      const anyVisible = Array.from(posts).some(
-        (post) => post.style.display !== "none"
-      );
-      if (anyVisible) {
-        postList.style.display = ""; // Show the <ol> if there are visible posts
-        emptyStateDiv.style.display = "none"; // Hide the empty state div
-      } else {
-        postList.style.display = "none"; // Hide the <ol> if there are no visible posts
-        emptyStateDiv.style.display = "flex"; // Show the empty state div
+    // Initially hide the Country select
+    countryWrapper.style.display = "none";
+
+    const countriesByContinent = {
+      africa: [
+        "Algeria",
+        "Angola",
+        "Benin",
+        "Botswana",
+        "Burkina Faso",
+        "Burundi",
+        "Cabo Verde",
+        "Cameroon",
+        "Central African Republic",
+        "Chad",
+        "Comoros",
+        "Congo (Brazzaville)",
+        "Congo (Kinshasa)",
+        "Djibouti",
+        "Egypt",
+        "Equatorial Guinea",
+        "Eritrea",
+        "Eswatini",
+        "Ethiopia",
+        "Gabon",
+        "Gambia",
+        "Ghana",
+        "Guinea",
+        "Guinea-Bissau",
+        "Ivory Coast",
+        "Kenya",
+        "Lesotho",
+        "Liberia",
+        "Libya",
+        "Madagascar",
+        "Malawi",
+        "Mali",
+        "Mauritania",
+        "Mauritius",
+        "Morocco",
+        "Mozambique",
+        "Namibia",
+        "Niger",
+        "Nigeria",
+        "Rwanda",
+        "Sao Tome and Principe",
+        "Senegal",
+        "Seychelles",
+        "Sierra Leone",
+        "Somalia",
+        "South Africa",
+        "South Sudan",
+        "Sudan",
+        "Tanzania",
+        "Togo",
+        "Tunisia",
+        "Uganda",
+        "Zambia",
+        "Zimbabwe",
+      ],
+      asia: [
+        "Afghanistan",
+        "Armenia",
+        "Azerbaijan",
+        "Bahrain",
+        "Bangladesh",
+        "Bhutan",
+        "Brunei",
+        "Cambodia",
+        "China",
+        "Cyprus",
+        "Georgia",
+        "India",
+        "Indonesia",
+        "Iran",
+        "Iraq",
+        "Israel",
+        "Japan",
+        "Jordan",
+        "Kazakhstan",
+        "Kuwait",
+        "Kyrgyzstan",
+        "Laos",
+        "Lebanon",
+        "Malaysia",
+        "Maldives",
+        "Mongolia",
+        "Myanmar (Burma)",
+        "Nepal",
+        "North Korea",
+        "Oman",
+        "Pakistan",
+        "Palestine",
+        "Philippines",
+        "Qatar",
+        "Saudi Arabia",
+        "Singapore",
+        "South Korea",
+        "Sri Lanka",
+        "Syria",
+        "Taiwan",
+        "Tajikistan",
+        "Thailand",
+        "Timor-Leste",
+        "Turkey",
+        "Turkmenistan",
+        "United Arab Emirates",
+        "Uzbekistan",
+        "Vietnam",
+        "Yemen",
+      ],
+      europe: [
+        "Albania",
+        "Andorra",
+        "Armenia",
+        "Austria",
+        "Azerbaijan",
+        "Belarus",
+        "Belgium",
+        "Bosnia and Herzegovina",
+        "Bulgaria",
+        "Croatia",
+        "Cyprus",
+        "Czech Republic",
+        "Denmark",
+        "Estonia",
+        "Finland",
+        "France",
+        "Georgia",
+        "Germany",
+        "Greece",
+        "Hungary",
+        "Iceland",
+        "Ireland",
+        "Italy",
+        "Kazakhstan",
+        "Kosovo",
+        "Latvia",
+        "Liechtenstein",
+        "Lithuania",
+        "Luxembourg",
+        "Malta",
+        "Moldova",
+        "Monaco",
+        "Montenegro",
+        "Netherlands",
+        "North Macedonia",
+        "Norway",
+        "Poland",
+        "Portugal",
+        "Romania",
+        "Russia",
+        "San Marino",
+        "Serbia",
+        "Slovakia",
+        "Slovenia",
+        "Spain",
+        "Sweden",
+        "Switzerland",
+        "Turkey",
+        "Ukraine",
+        "United Kingdom",
+        "Vatican City",
+      ],
+      "north-america": [
+        "Antigua and Barbuda",
+        "Bahamas",
+        "Barbados",
+        "Belize",
+        "Canada",
+        "Costa Rica",
+        "Cuba",
+        "Dominica",
+        "Dominican Republic",
+        "El Salvador",
+        "Grenada",
+        "Guatemala",
+        "Haiti",
+        "Honduras",
+        "Jamaica",
+        "Mexico",
+        "Nicaragua",
+        "Panama",
+        "Saint Kitts and Nevis",
+        "Saint Lucia",
+        "Saint Vincent and the Grenadines",
+        "Trinidad and Tobago",
+        "United States",
+      ],
+      oceania: [
+        "Australia",
+        "Fiji",
+        "Kiribati",
+        "Marshall Islands",
+        "Micronesia",
+        "Nauru",
+        "New Zealand",
+        "Palau",
+        "Papua New Guinea",
+        "Samoa",
+        "Solomon Islands",
+        "Tonga",
+        "Tuvalu",
+        "Vanuatu",
+      ],
+      "south-america": [
+        "Argentina",
+        "Bolivia",
+        "Brazil",
+        "Chile",
+        "Colombia",
+        "Ecuador",
+        "Guyana",
+        "Paraguay",
+        "Peru",
+        "Suriname",
+        "Uruguay",
+        "Venezuela",
+      ],
+    };
+
+    continentSelect.addEventListener("change", function () {
+      const selectedContinent = continentSelect.value;
+
+      // Reset and hide Country select if "All" is selected
+      if (selectedContinent === "all") {
+        countrySelect.innerHTML = '<option value="all" selected>All</option>';
+        countryWrapper.style.display = "none";
+        return;
       }
+
+      // Show the Country select and its label
+      countryWrapper.style.display = "flex";
+
+      // Populate Country select with countries from the selected continent
+      const countries = countriesByContinent[selectedContinent] || [];
+      countrySelect.innerHTML = '<option value="all">All</option><hr />'; // Add default "All" option
+
+      countries.forEach((country) => {
+        const option = new Option(
+          country,
+          country.toLowerCase().replace(/\s+/g, "-")
+        );
+        countrySelect.add(option);
+      });
+    });
+  });
+
+  const continentSelect = document.getElementById("filter-continent");
+  const countrySelect = document.getElementById("filter-country");
+  const hostSelect = document.getElementById("filter-host");
+  const virtualCheckbox = document.getElementById("filter-virtual");
+  const posts = document.querySelectorAll(".grid-item");
+  const postList = document.querySelector(".grid");
+  const emptyStateDiv = document.querySelector(".events-empty-state");
+
+  function checkForVisiblePosts() {
+    const anyVisible = Array.from(posts).some(
+      (post) => post.style.display !== "none"
+    );
+    if (anyVisible) {
+      postList.style.display = ""; // Show the <ol> if there are visible posts
+      emptyStateDiv.style.display = "none"; // Hide the empty state div
+    } else {
+      postList.style.display = "none"; // Hide the <ol> if there are no visible posts
+      emptyStateDiv.style.display = "flex"; // Show the empty state div
     }
+  }
 
-    function filterPosts() {
-      const selectedLocation = locationSelect.value;
-      const selectedHostClass = "filter-host-" + hostSelect.value;
+  function filterPosts() {
+    const selectedContinent = continentSelect.value;
+    const selectedCountry = countrySelect.value;
+    const selectedHostClass = "filter-host-" + hostSelect.value;
+    const isVirtualChecked = virtualCheckbox.checked;
 
-      posts.forEach((post) => {
-        const postLocation = post.getAttribute("data-location").toLowerCase();
-        const postType = post.getAttribute("data-type").toLowerCase(); // Get the post type
+    // console.log("three values", {
+    //   selectedContinent,
+    //   selectedCountry,
+    //   hostSelect.value,
+    // });
 
-        // Start with checking host
-        let showPost =
-          hostSelect.value === "all" ||
-          post.classList.contains(selectedHostClass);
+    const button = document.getElementById("events-filter-drawer-button");
+    button.setAttribute(
+      "data-filter-active",
+      !(
+        selectedContinent === "all" &&
+        selectedCountry === "" &&
+        hostSelect.value === "all"
+      )
+    );
 
-        // If the host matches, proceed to check location
-        if (showPost) {
-          switch (selectedLocation) {
-            case "all":
-              break; // keep showPost true
-            case "north-america":
-              if (!(postLocation === "usa" || postLocation === "canada")) {
-                showPost = false;
-              }
-              break;
-            case "europe":
-              if (
-                !(postLocation === "nederland" || postLocation === "belgium")
-              ) {
-                showPost = false;
-              }
-              break;
-            // ... include other location cases as needed ...
-            default:
-              // If a post is from a continent not included in the filters, hide it
-              showPost = false;
-          }
+    posts.forEach((post) => {
+      const postLocation = post.getAttribute("data-location").toLowerCase();
+      let showPost =
+        hostSelect.value === "all" ||
+        post.classList.contains(selectedHostClass);
+
+      // Check for virtual events if the checkbox is checked
+      if (isVirtualChecked && !post.hasAttribute("data-virtual")) {
+        showPost = false;
+      }
+
+      /**
+       * united-states -> United States
+       */
+      const postLocationToCountriesByContinent = (postLocation) => {
+        function toTitleCase(str) {
+          return str.replace(/\w\S*/g, function (txt) {
+            return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+          });
         }
 
-        post.style.display = showPost ? "" : "none"; // Apply the display style
-      });
+        return toTitleCase(postLocation.replace("-", " "));
+      };
 
-      checkForVisiblePosts(); // Check if any posts are visible and update the display accordingly
-    }
+      // Continue with the rest of the filter logic only if the post is still eligible for display
+      if (showPost) {
+        switch (selectedContinent) {
+          case "all":
+            break;
+          case "north-america":
+            showPost = countriesByContinent["north-america"].includes(
+              postLocationToCountriesByContinent(postLocation)
+            );
+            break;
+          case "europe":
+            showPost = countriesByContinent["europe"].includes(
+              postLocationToCountriesByContinent(postLocation)
+            );
+            // postLocation === "netherlands" ||
+            // postLocation === "belgium" ||
+            // postLocation === "croatia" ||
+            // postLocation === "czech-republic" ||
+            // postLocation === "uk" ||
+            // postLocation === "germany" ||
+            // postLocation === "switzerland" ||
+            // postLocation === "poland" ||
+            // postLocation === "hungary" ||
+            // postLocation === "austria" ||
+            // postLocation === "france";
+            break;
+          case "asia":
+            showPost = countriesByContinent["asia"].includes(
+              postLocationToCountriesByContinent(postLocation)
+            );
+            break;
+          case "oceania":
+            showPost = countriesByContinent["oceania"].includes(
+              postLocationToCountriesByContinent(postLocation)
+            );
+            break;
+          case "south-america":
+            showPost = countriesByContinent["south-america"].includes(
+              postLocationToCountriesByContinent(postLocation)
+            );
+            break;
+          default:
+            showPost = false;
+        }
+      }
 
-    locationSelect.addEventListener("change", filterPosts);
-    hostSelect.addEventListener("change", filterPosts);
+      post.style.display = showPost ? "" : "none";
+    });
 
-    filterPosts(); // Run once on load to set the correct initial state
-  });
+    checkForVisiblePosts();
+  }
+
+  continentSelect.addEventListener("change", filterPosts);
+  hostSelect.addEventListener("change", filterPosts);
+  virtualCheckbox.addEventListener("change", filterPosts);
+
+  filterPosts(); // Initial filter on load
 </script>
 
 <!-- Add event dialog: if other host selected, show extra field -->

@@ -1,19 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: 'en' }}">
-  <head>
-    {% include head.html %} {% if page.featured and page.video %}
-    <meta
-      property="og:video"
-      content="{{ site.url }}/assets/video/events/{{ page.title | slugify }}.mp4"
-    />
-    {% endif %}
-    <script
-      async
-      defer
-      src="https://maps.googleapis.com/maps/api/js?key={{ site.env.GOOGLE_MAPS_API_KEY }}&callback=initMap"
-    ></script>
-    <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
-  </head>
+  {% include head.html %}
   {% assign average_color = site.data.average_colors[page.slug] %}
   <body
     style="
@@ -128,7 +115,7 @@
               </div>
               {{ host }}
               <span class="details-summary-badge">
-                {{ event_count }}
+                {{ event_count }}<span class="hide-on-mobile"> upcoming</span>
               </span>
             </summary>
             <div class="details-body">
@@ -220,7 +207,7 @@
               {% else %}
               <div class="events-empty-state">
                 <div class="events-empty-state-emoji">🔇</div>
-                <h3>No events found.</h3>
+                <h3>No upcoming events found.</h3>
                 <p>Do you know of an event that should be listed here?</p>
                 <button
                   aria-label="Add event"

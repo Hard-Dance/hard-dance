@@ -1,30 +1,76 @@
-<meta charset="utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta
-  name="viewport"
-  content="width=device-width, initial-scale=1, viewport-fit=cover"
-/>
-<title>
-  {% if page.url != '/' %}{{ page.title | escape }} - {% endif %}{{ site.title |
-  escape }}
-</title>
-<link rel="stylesheet" href="/assets/css/style.css" />
-<link
-  rel="alternate"
-  type="application/rss+xml"
-  title="All of {{ site.title }}'s posts"
-  href="/feed.xml"
-/>
-<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
-<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
-<link rel="manifest" href="/site.webmanifest" />
-<meta name="view-transition" content="same-origin" />
-<meta name="theme-color" content="#000000" />
-<meta name="rating" content="General" />
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-title" content="{{ site.title }}" />
-<meta
-  name="apple-mobile-web-app-status-bar-style"
-  content="black-translucent"
-/>
-{% seo title=false %}
+<head>
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  />
+  <title>
+    {% if page.url != '/' %}{{ page.title | escape }} - {% endif %}{{ site.title
+    | escape }}
+  </title>
+
+  {% if page.layout == 'event' %}
+  <script
+    async
+    defer
+    src="https://maps.googleapis.com/maps/api/js?key={{ site.env.GOOGLE_MAPS_API_KEY }}&callback=initMap"
+  ></script>
+  {% elsif page.layout == 'about' %}
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  {% endif %} {% if CONTEXT == 'production' %}
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-BJ6HC10MYS"
+  ></script>
+  {% endif %} {% if page.layout == 'event' %}
+  <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
+  {% elsif page.layout == 'community' %}
+  <script src="https://cdn.jsdelivr.net/npm/@widgetbot/html-embed"></script>
+  {% endif %} {% if CONTEXT == 'production' %}
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-BJ6HC10MYS");
+  </script>
+  {% endif %}
+
+  <link rel="stylesheet" href="/assets/css/style.css" />
+
+  {% if page.layout == 'about' %}
+  <link
+    href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap"
+    rel="stylesheet"
+  />
+  {% endif %}
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="All of {{ site.title }}'s posts"
+    href="/feed.xml"
+  />
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="view-transition" content="same-origin" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="rating" content="General" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="{{ site.title }}" />
+  <meta
+    name="apple-mobile-web-app-status-bar-style"
+    content="black-translucent"
+  />
+  {% seo title=false %} {% if page.layout == 'event' and page.video %}
+  <meta
+    property="og:video"
+    content="{{ site.url }}/assets/video/events/{{ page.title | slugify }}.mp4"
+  />
+  {% endif %}
+</head>

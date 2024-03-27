@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: 'en' }}">
-  <head>
-    {% include head.html %}
-  </head>
+  {% include head.html %}
   <body>
     {% include header.html %}
 
@@ -24,23 +22,43 @@
         {% assign country = country_part %} 
 
         {% case country %}
-          {% when 'USA' %} {% assign flag = '🇺🇸' %}
+          {% when 'Algeria' %} {% assign flag = '🇩🇿' %}
+          {% when 'Argentina' %} {% assign flag = '🇦🇷' %}
+          {% when 'Australia' %} {% assign flag = '🇦🇺' %}
+          {% when 'Austria' %} {% assign flag = '🇦🇹' %}
           {% when 'Belgium' %} {% assign flag = '🇧🇪' %}
+          {% when 'Brazil' %} {% assign flag = '🇧🇷' %}
           {% when 'Canada' %} {% assign flag = '🇨🇦' %}
+          {% when 'Chile' %} {% assign flag = '🇨🇱' %}
+          {% when 'China' %} {% assign flag = '🇨🇳' %}
           {% when 'Croatia' %} {% assign flag = '🇭🇷' %}
           {% when 'Czech Republic' %} {% assign flag = '🇨🇿' %}
-          {% when 'Czechia' %} {% assign flag = '🇨🇿' %}
-          {% when 'UK' %} {% assign flag = '🇬🇧' %}
-          {% when 'Nederland' %} {% assign flag = '🇳🇱' %}
-          {% when 'Germany' %} {% assign flag = '🇩🇪' %}
-          {% when 'Switzerland' %} {% assign flag = '🇨🇭' %}
-          {% when 'Poland' %} {% assign flag = '🇵🇱' %}
-          {% when 'South Korea' %} {% assign flag = '🇰🇷' %}
-          {% when 'Hungary' %} {% assign flag = '🇭🇺' %}
-          {% when 'Austria' %} {% assign flag = '🇦🇹' %}
+          {% when 'Denmark' %} {% assign flag = '🇩🇰' %}
+          {% when 'Egypt' %} {% assign flag = '🇪🇬' %}
+          {% when 'Finland' %} {% assign flag = '🇫🇮' %}
           {% when 'France' %} {% assign flag = '🇫🇷' %}
-          {%- else -%}
-            {% assign flag = '' %}
+          {% when 'Germany' %} {% assign flag = '🇩🇪' %}
+          {% when 'Greece' %} {% assign flag = '🇬🇷' %}
+          {% when 'Hungary' %} {% assign flag = '🇭🇺' %}
+          {% when 'India' %} {% assign flag = '🇮🇳' %}
+          {% when 'Italy' %} {% assign flag = '🇮🇹' %}
+          {% when 'Japan' %} {% assign flag = '🇯🇵' %}
+          {% when 'Mexico' %} {% assign flag = '🇲🇽' %}
+          {% when 'Netherlands' %} {% assign flag = '🇳🇱' %}
+          {% when 'Norway' %} {% assign flag = '🇳🇴' %}
+          {% when 'Poland' %} {% assign flag = '🇵🇱' %}
+          {% when 'Portugal' %} {% assign flag = '🇵🇹' %}
+          {% when 'Russia' %} {% assign flag = '🇷🇺' %}
+          {% when 'South Africa' %} {% assign flag = '🇿🇦' %}
+          {% when 'South Korea' %} {% assign flag = '🇰🇷' %}
+          {% when 'Spain' %} {% assign flag = '🇪🇸' %}
+          {% when 'Sweden' %} {% assign flag = '🇸🇪' %}
+          {% when 'Switzerland' %} {% assign flag = '🇨🇭' %}
+          {% when 'United Kingdom' %} {% assign flag = '🇬🇧' %}
+          {% when 'United States' %} {% assign flag = '🇺🇸' %}
+          {% when 'Venezuela' %} {% assign flag = '🇻🇪' %}
+        {%- else -%}
+          {% assign flag = '' %}
         {% endcase %}
 
         {% assign average_color = site.data.average_colors[post.slug] %}
@@ -59,8 +77,10 @@
             {% endif %}
           "
           id="grid-item-{{ forloop.index }}"
-          data-location="{{ country_part | downcase }}"
-          data-type="{{ post.type | downcase }}"
+          data-location="{{ country_part | slugify }}"
+          {% if post.is_online == true %}
+            data-virtual
+          {% endif %}
           {%
           if
           post.featured
@@ -120,7 +140,9 @@
               </time>
               {% endif %}
             </div>
-            <div class="grid-item-metadata-symbol">{{ flag }}</div>
+            <div class="grid-item-metadata-symbol">
+              {% if post.is_online %}🛰️{% endif %} {{ flag }}
+            </div>
             {% assign today = 'now' | date: '%Y-%m-%d' %} {% assign start_date =
             post.datestart | date: '%Y-%m-%d' %} {% assign end_date =
             post.dateend | date: '%Y-%m-%d' %} {% if post.dateend %} {% if today
@@ -135,7 +157,7 @@
       </ol>
       <div class="events-empty-state" style="display: none">
         <div class="events-empty-state-emoji">🔇</div>
-        <h2>No events found.</h2>
+        <h2>No upcoming events found.</h2>
         <p>Do you know of an event that should be listed here?</p>
         <button
           aria-label="Add event"

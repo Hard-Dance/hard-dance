@@ -11,4 +11,6 @@ hosts:
 tickets: https://www.tomorrowland.com/home/
 facebook: https://www.facebook.com/events/6749346075117818
 image: /assets/img/events/tomorrowland-2024.jpg
+
+is_online: true
 ---
