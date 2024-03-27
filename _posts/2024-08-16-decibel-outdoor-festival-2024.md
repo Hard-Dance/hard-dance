@@ -5,7 +5,7 @@ title: "Decibel Outdoor Festival 2024"
 date: 2023/08/20
 datestart: 2024/08/16
 dateend: 2024/08/18
-location: Hilvarenbeek, Safaripark, 5081 NJ Hilvarenbeek, Nederland
+location: Hilvarenbeek, Safaripark, 5081 NJ Hilvarenbeek, Netherlands
 hosts:
   - b2s
 tickets: https://www.b2s.nl/en/events/decibel/decibel-outdoor-2024/

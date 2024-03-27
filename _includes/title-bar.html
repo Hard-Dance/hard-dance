@@ -81,15 +81,30 @@
   <div class="page-title-drawer" id="filters-drawer">
     <div class="page-title-drawer-items-wrapper" inert>
       <div class="page-title-drawer-item">
-        <label for="filter-location">
-          Location
-          <select name="location" id="filter-location">
+        <label for="filter-virtual">
+          Live streams only
+          <input type="checkbox" switch name="virtual" id="filter-virtual">
+          </input>
+        </label>
+      </div>
+
+      <div class="page-title-drawer-item">
+        <label for="filter-continent">
+          Continent
+          <select name="continent" id="filter-continent">
             <option value="all" selected>All</option>
-            <option value="north-america">North America</option>
-            <option value="south-america">South America</option>
-            <option value="europe">Europe</option>
-            <option value="asia">Asia</option>
+            <hr />
+            {% for continent in site.continents %}
+            <option value="{{ continent | slugify }}">{{ continent }}</option>
+            {% endfor %}
           </select>
+        </label>
+      </div>
+
+      <div class="page-title-drawer-item" id="filter-country-wrapper">
+        <label for="filter-country">
+          Country
+          <select name="country" id="filter-country"></select>
         </label>
       </div>
 
@@ -98,6 +113,7 @@
           Host
           <select name="host" id="filter-host">
             <option value="all" selected>All</option>
+            <hr />
             {% for host in site.event-hosts %}
             <option value="{{ host.name | slugify }}">{{ host.name }}</option>
             {% endfor %}

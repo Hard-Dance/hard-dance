@@ -4,7 +4,7 @@ category: events
 title: "Rawfair: A New Chapter"
 date: 2024/03/14
 datestart: 2024/03/31
-location: Heuvelring 94, 5038 CL Tilburg, Nederland
+location: Heuvelring 94, 5038 CL Tilburg, Netherlands
 hosts:
   - PKHS Hard
 tickets: https://shop.eventix.io/e25432d4-9380-44df-9dbd-8d5aa81b7038/tickets

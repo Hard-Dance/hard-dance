@@ -4,7 +4,7 @@ category: events
 title: "Hard is King: Austin"
 date: 2024/02/28
 datestart: 2024/05/18
-location: 6910 Shirley Ave, Austin, TX 78752, USA
+location: 6910 Shirley Ave, Austin, TX 78752, United States
 hosts:
   - Underground Syndicate
 facebook: https://www.facebook.com/events/1413107935973856

@@ -4,7 +4,7 @@ category: events
 title: "Hardstyle Invasion 2"
 date: 2024/02/05
 datestart: 2024/03/16
-location: San Diego, CA, USA
+location: San Diego, CA, United States
 hosts:
   - SD Hardstylerz
 tickets: https://www.instagram.com/p/C2tU0TJrpsm/?igsh=ZWI2YzEzYmMxYg==

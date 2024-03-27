@@ -4,7 +4,7 @@ category: events
 title: "A New Era of Up The Tempo"
 date: 2024/03/05
 datestart: 2024/03/29
-location: Heuvelring 94, 5038 CL Tilburg, Nederland
+location: Heuvelring 94, 5038 CL Tilburg, Netherlands
 hosts:
   - PKHS Hard
 tickets: https://shop.eventix.io/544aef97-c8e2-41a1-a254-b6f66b7528d9/tickets

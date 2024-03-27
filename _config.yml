@@ -78,6 +78,14 @@ admins:
       - service: Discord
         url: https://discordapp.com/users/rohan_kadkol
 
+continents:
+  - Asia
+  - Africa
+  - Europe
+  - North America
+  - Oceania
+  - South America
+
 event-hosts:
   - name: A.L.E.X. Events
     url: https://www.alex-events.net

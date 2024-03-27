@@ -60,7 +60,8 @@
   max-height: 0;
   overflow-y: hidden;
   @media (prefers-reduced-motion: no-preference) {
-    transition: max-height var(--duration) ease-out;
+    transition: max-height var(--duration) ease-out,
+      opacity var(--duration) ease-out;
   }
 }
 

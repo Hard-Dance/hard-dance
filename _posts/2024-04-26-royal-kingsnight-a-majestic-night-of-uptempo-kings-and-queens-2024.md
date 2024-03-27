@@ -4,7 +4,7 @@ category: events
 title: "Royal Kingsnight: A Majestic Night of Uptempo Kings and Queens"
 date: 2024/03/15
 datestart: 2024/04/26
-location: Heuvelring 94, 5038 CL Tilburg, Nederland
+location: Heuvelring 94, 5038 CL Tilburg, Netherlands
 hosts:
   - PKHS Hard
 tickets: https://shop.eventix.io/bde7aa99-5638-4e13-9f7a-72839464fc02/tickets

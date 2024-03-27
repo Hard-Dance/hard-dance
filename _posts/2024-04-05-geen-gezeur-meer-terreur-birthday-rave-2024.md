@@ -4,7 +4,7 @@ category: events
 title: "Geen Gezeur Meer Terreur: Birthday Rave"
 date: 2024/01/25
 datestart: 2024/04/05
-location: Now&Wow Fest., Maashaven Z.z, 3081 AE Rotterdam, Nederland
+location: Now&Wow Fest., Maashaven Z.z, 3081 AE Rotterdam, Netherlands
 hosts:
   - MYK Events
 tickets: https://www.myk-events.nl

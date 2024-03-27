@@ -4,7 +4,7 @@ category: events
 title: "Gatekeepers: Unlocking New Possibilities"
 date: 2024/03/14
 datestart: 2024/04/19
-location: Heuvelring 94, 5038 CL Tilburg, Nederland
+location: Heuvelring 94, 5038 CL Tilburg, Netherlands
 hosts:
   - PKHS Hard
 tickets: https://shop.eventix.io/5ea4e9cf-e12e-4bca-be6c-66f0a521519a/tickets

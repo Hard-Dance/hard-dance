@@ -4,7 +4,7 @@ category: events
 title: "Extinction featuring Frontliner"
 date: 2024/03/26
 datestart: 2024/04/18
-location: 517 Fremont St, Las Vegas, NV 89101, USA
+location: 517 Fremont St, Las Vegas, NV 89101, United States
 hosts:
   - Extinction
 tickets: https://www.seetickets.us/event/Extinction-ft-Frontliner-21/595843

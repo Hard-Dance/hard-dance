@@ -4,7 +4,7 @@ category: events
 title: "Hellbound: Welcome to the Machine"
 date: 2023/03/12
 datestart: 2024/03/09
-location: Hemkade 48, 1506 PS Zaandam, Nederland
+location: Hemkade 48, 1506 PS Zaandam, Netherlands
 hosts:
   - Multigroove
 tickets: https://multigroove.com/events/hellbound-hard-as-hell/
