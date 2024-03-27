@@ -82,3 +82,8 @@ h2 {
     );
   }
 }
+
+ol:not([class]),
+ul:not([class]) {
+  margin-inline-start: var(--padding);
+}
