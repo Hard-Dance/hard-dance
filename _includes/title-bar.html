@@ -61,6 +61,15 @@
       </svg>
     </button>
   </div>
+  {% elsif page.layout == 'archives' %}
+  <div class="page-title-start">
+    <a aria-label="View upcoming events" class="button" href="/">
+      <svg alt="Upcoming icon" aria-hidden="true" style="transform: scaleX(-1)">
+        <use xlink:href="/assets/symbols.svg#past"></use>
+      </svg>
+      <span class="hide-on-mobile">Upcoming</span>
+    </a>
+  </div>
   {% elsif page.layout == 'event' %}
   <button class="button page-title-end" id="shareButton">
     <svg alt="{{ link.title }} icon" aria-hidden="true">
