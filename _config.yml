@@ -122,6 +122,9 @@ event-hosts:
   - name: Electric Love
     url: https://www.electriclove.at
     facebook: https://www.facebook.com/electriclovefestival
+  - name: Extinction
+    url: https://www.elationlv.com
+    facebook: https://www.facebook.com/extinctionusa
   - name: Fatality
     facebook: https://www.facebook.com/fatalityevent
   - name: Gearbox Digital
