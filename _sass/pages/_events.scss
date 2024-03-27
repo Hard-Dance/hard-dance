@@ -186,6 +186,7 @@ $shadows-big: multiple-box-shadow(100);
 
   .grid-item-metadata-subtitle {
     color: var(--xxx-color-text-muted);
+    filter: saturate(3);
   }
 
   .grid-item-metadata-symbol {
