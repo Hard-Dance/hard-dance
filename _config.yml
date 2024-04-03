@@ -130,6 +130,11 @@ event-hosts:
   - name: Electric Love
     url: https://www.electriclove.at
     facebook: https://www.facebook.com/electriclovefestival
+  - name: Epic Entertainment
+    facebook: https://www.facebook.com/epicentertainmentnyc1
+  - name: F2D
+    url: https://travel.f2d.se
+    facebook: https://www.facebook.com/forced2dance
   - name: Extinction
     url: https://www.elationlv.com
     facebook: https://www.facebook.com/extinctionusa
@@ -179,6 +184,9 @@ event-hosts:
     facebook: https://www.facebook.com/intentsfestival
   - name: Let it out events
     facebook: https://www.facebook.com/profile.php?id=100089362122143
+  - name: Masif Events
+    url: https://masifsaturdays.com.au
+    facebook: https://www.facebook.com/masifevents
   - name: Masters of Hardcore
     url: https://www.mastersofhardcore.com
     facebook: https://www.facebook.com/officialMOH
@@ -202,6 +210,9 @@ event-hosts:
     facebook: https://www.facebook.com/outlawevents.nl
   - name: Overloud Events
     facebook: https://www.facebook.com/ovldevents
+  - name: Paaspop
+    url: https://www.paaspop.nl
+    facebook: https://www.facebook.com/Paaspop
   - name: Parookaville
     url: https://www.parookaville.com
     facebook: https://www.facebook.com/parookaville

@@ -174,7 +174,7 @@ $shadows-big: multiple-box-shadow(100);
   color: var(--xxx-color-text);
 
   @media (prefers-reduced-motion: no-preference) {
-    animation: linear reveal both;
+    animation: reveal linear both;
     animation-timeline: view();
     animation-range: entry 0% cover 15%;
     animation-fill-mode: none;
