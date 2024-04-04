@@ -1,9 +1,9 @@
 *:focus-visible {
-  outline: var(--border-width) solid var(--color-accent);
+  outline: var(--border-width) solid var(--xxx-color-accent);
 }
 
 *::selection {
-  background-color: var(--color-accent);
+  background-color: var(--xxx-color-accent);
 }
 
 html {
@@ -15,8 +15,8 @@ html {
 body {
   font-family: var(--font-family);
   line-height: 1.5;
-  color: var(--color-text);
-  background-color: var(--color-background-backdrop);
+  color: var(--xxx-color-text);
+  background-color: var(--xxx-color-background-backdrop);
   min-height: 100vh;
   min-height: 100dvh;
   display: flex;
@@ -31,7 +31,7 @@ body {
 
 main {
   display: grid;
-  row-gap: 1rem;
+  row-gap: var(--page-padding);
   /* prettier-ignore */
   grid-template-columns:
     [full-width-start]
@@ -48,8 +48,42 @@ main {
     [full-width-end];
 }
 
+section {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--padding);
+}
+
 @media only screen and (max-width: 768px) {
   .hide-on-mobile {
     display: none;
   }
+}
+
+.anchorjs-link {
+  color: var(--xxx-color-text-muted);
+  border-radius: var(--border-radius);
+}
+
+h2 {
+  width: fit-content;
+
+  // Desktop
+  @media only screen and (min-width: 769px) {
+    scroll-margin-block-start: calc(
+      var(--header-height) + var(--page-padding) + env(safe-area-inset-top)
+    );
+  }
+
+  // Mobile
+  @media only screen and (max-width: 768px) {
+    scroll-margin-block-start: calc(
+      var(--page-padding) + env(safe-area-inset-top)
+    );
+  }
+}
+
+ol:not([class]),
+ul:not([class]) {
+  margin-inline-start: var(--padding);
 }

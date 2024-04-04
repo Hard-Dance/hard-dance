@@ -28,4 +28,9 @@ input {
   &[type="file"] {
     color: var(--color-text-muted);
   }
+
+  &[type="checkbox"] {
+    accent-color: var(--color-accent);
+    cursor: pointer;
+  }
 }

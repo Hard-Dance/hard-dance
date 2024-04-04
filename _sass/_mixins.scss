@@ -1,0 +1,11 @@
+@mixin frosted-glass {
+  background-color: rgba(var(--color-background-rgb), 0.5);
+  -webkit-backdrop-filter: saturate(1.8) blur(20px);
+  backdrop-filter: saturate(1.8) blur(20px);
+
+  @media (prefers-reduced-transparency: reduce) or (prefers-contrast: more) {
+    background-color: var(--color-background);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}

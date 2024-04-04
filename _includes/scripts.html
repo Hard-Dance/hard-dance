@@ -1,0 +1,772 @@
+<!-- ALL PAGES -->
+<!-- GDPR banner -->
+<script>
+  function checkCookieConsent() {
+    if (!localStorage.getItem("gdprConsent")) {
+      document.getElementById("gdpr-banner").style.display = "flex";
+    }
+  }
+
+  function acceptCookies() {
+    localStorage.setItem("gdprConsent", "true");
+    document.getElementById("gdpr-banner").style.display = "none";
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    checkCookieConsent();
+  });
+</script>
+
+<!-- Register PWA service worker -->
+<script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", function () {
+      navigator.serviceWorker.register("/sw.js").then(
+        function (registration) {
+          // Registration was successful
+          console.log(
+            "Service Worker registered with scope: ",
+            registration.scope
+          );
+        },
+        function (err) {
+          // Registration failed
+          console.log("Service Worker registration failed: ", err);
+        }
+      );
+    });
+  }
+</script>
+
+<!-- PAGE: Events -->
+{% if page.layout == 'events' or page.layout == 'archives' %}
+<!-- 3D globe on homepage -->
+<script type="module">
+  import createGlobe from "https://cdn.skypack.dev/cobe";
+
+  const canvas = document.getElementById("globeCanvas");
+  let width = canvas.offsetWidth;
+  let globe = null;
+  let phi = 0;
+
+  const onResize = () => {
+    if (canvas) {
+      width = canvas.offsetWidth;
+      if (globe) {
+        globe.resize({
+          width: width,
+          height: width,
+        });
+      }
+    }
+  };
+
+  window.addEventListener("resize", onResize);
+  onResize();
+
+  globe = createGlobe(canvas, {
+    devicePixelRatio: 2,
+    width: width * 2,
+    height: width * 2,
+    phi: 0,
+    theta: 0,
+    dark: 1,
+    diffuse: 3,
+    mapSamples: 10000,
+    mapBrightness: 3,
+    baseColor: [1, 1, 1],
+    markerColor: [251 / 255, 100 / 255, 21 / 255],
+    glowColor: [1.2, 1.2, 1.2],
+    markers: [],
+    scale: 1,
+    offset: [0, 0],
+    onRender: (state) => {
+      state.width = width * 2;
+      state.height = width * 2;
+      state.phi = phi;
+      phi += 0.01;
+    },
+  });
+
+  function destroyGlobe() {
+    if (globe) {
+      globe.destroy();
+      window.removeEventListener("resize", onResize);
+    }
+  }
+</script>
+
+<!-- Open filters drawer -->
+<script>
+  const setFilterDrawerVisibility = (button, drawer, drawerInteriorWrapper) => {
+    const isExpanded = button.getAttribute("aria-expanded") === "true";
+
+    if (isExpanded) {
+      drawer.style.maxHeight = drawerInteriorWrapper.offsetHeight + "px"; // Open drawer
+      drawer.style.opacity = 1;
+      drawerInteriorWrapper.removeAttribute("inert");
+    } else {
+      drawer.style.maxHeight = 0; // Close drawer
+      drawer.style.opacity = 0;
+      drawerInteriorWrapper.setAttribute("inert", "");
+    }
+  };
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const button = document.getElementById("events-filter-drawer-button");
+    console.log("button", button);
+
+    const drawer = document.getElementById("filters-drawer");
+    const drawerInteriorWrapper = document.querySelector(
+      "#filters-drawer > .page-title-drawer-items-wrapper"
+    );
+    const focusableElements = drawer.querySelectorAll(
+      'select, button, [href], input, textarea, [tabindex]:not([tabindex="-1"])'
+    );
+
+    function setFocusable(state) {
+      focusableElements.forEach((el) => {
+        el.tabIndex = state ? "0" : "-1";
+      });
+    }
+
+    // Initialize
+    setFilterDrawerVisibility(button, drawer, drawerInteriorWrapper);
+
+    // Update
+    button.addEventListener("click", () => {
+      const isExpanded = button.getAttribute("aria-expanded") === "true";
+      button.setAttribute("aria-expanded", !isExpanded);
+
+      setFilterDrawerVisibility(button, drawer, drawerInteriorWrapper);
+    });
+  });
+</script>
+
+<!-- Remember if user closes toast notification -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const alertBanner = document.querySelector(".banner-events-alert");
+    const closeButton = alertBanner.querySelector(
+      '.button[aria-label="Close dialog"]'
+    );
+
+    // Function to hide the alert banner
+    function hideAlertBanner() {
+      alertBanner.style.display = "none";
+      // Record the current time as the banner close time in localStorage
+      const now = new Date().getTime();
+      localStorage.setItem("alertBannerClosedTime", now);
+    }
+
+    // Check if the alert banner was closed within the last 24 hours
+    const alertBannerClosedTime = localStorage.getItem("alertBannerClosedTime");
+    if (alertBannerClosedTime) {
+      const elapsedTime = new Date().getTime() - alertBannerClosedTime;
+      if (elapsedTime < 24 * 60 * 60 * 1000) {
+        // If it was closed less than 24 hours ago, keep it hidden
+        alertBanner.style.display = "none";
+      }
+    }
+
+    // Add event listener to the close button
+    closeButton.addEventListener("click", hideAlertBanner);
+  });
+</script>
+
+<!-- If page loaded as PWA, don't show toast notification -->
+<!-- TODO: This should only apply when toast tells to install app! -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var isPWA =
+      window.navigator.standalone ||
+      window.matchMedia("(display-mode: standalone)").matches;
+
+    if (isPWA) {
+      document.querySelector(".banner-events-alert").style.display = "none";
+    }
+  });
+</script>
+{% endif %}
+
+<!-- PAGE: Events -->
+{% if page.layout == 'events' %}
+<!-- Add `loading=lazy` to images below the fold -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Select all images
+    const images = document.querySelectorAll("img");
+
+    // Initially set all images to lazy load
+    images.forEach((img) => {
+      img.setAttribute("loading", "lazy");
+    });
+
+    if ("IntersectionObserver" in window) {
+      let observer = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            // If the image is above the fold on initial load, remove the lazy loading
+            if (entry.intersectionRatio > 0) {
+              let img = entry.target;
+              img.removeAttribute("loading");
+              observer.unobserve(img);
+            }
+          });
+        },
+        {
+          rootMargin: "0px",
+          threshold: 0.01,
+        }
+      );
+
+      // Observe each image
+      images.forEach((img) => {
+        observer.observe(img);
+      });
+    }
+  });
+</script>
+
+<!-- Events filters -->
+<!-- If continent is selected, show countries -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const continentSelect = document.getElementById("filter-continent");
+    const countrySelect = document.getElementById("filter-country");
+    const countryWrapper = document.getElementById("filter-country-wrapper");
+
+    // Initially hide the Country select
+    countryWrapper.style.display = "none";
+
+    const countriesByContinent = {
+      africa: [
+        "Algeria",
+        "Angola",
+        "Benin",
+        "Botswana",
+        "Burkina Faso",
+        "Burundi",
+        "Cabo Verde",
+        "Cameroon",
+        "Central African Republic",
+        "Chad",
+        "Comoros",
+        "Congo (Brazzaville)",
+        "Congo (Kinshasa)",
+        "Djibouti",
+        "Egypt",
+        "Equatorial Guinea",
+        "Eritrea",
+        "Eswatini",
+        "Ethiopia",
+        "Gabon",
+        "Gambia",
+        "Ghana",
+        "Guinea",
+        "Guinea-Bissau",
+        "Ivory Coast",
+        "Kenya",
+        "Lesotho",
+        "Liberia",
+        "Libya",
+        "Madagascar",
+        "Malawi",
+        "Mali",
+        "Mauritania",
+        "Mauritius",
+        "Morocco",
+        "Mozambique",
+        "Namibia",
+        "Niger",
+        "Nigeria",
+        "Rwanda",
+        "Sao Tome and Principe",
+        "Senegal",
+        "Seychelles",
+        "Sierra Leone",
+        "Somalia",
+        "South Africa",
+        "South Sudan",
+        "Sudan",
+        "Tanzania",
+        "Togo",
+        "Tunisia",
+        "Uganda",
+        "Zambia",
+        "Zimbabwe",
+      ],
+      asia: [
+        "Afghanistan",
+        "Armenia",
+        "Azerbaijan",
+        "Bahrain",
+        "Bangladesh",
+        "Bhutan",
+        "Brunei",
+        "Cambodia",
+        "China",
+        "Cyprus",
+        "Georgia",
+        "India",
+        "Indonesia",
+        "Iran",
+        "Iraq",
+        "Israel",
+        "Japan",
+        "Jordan",
+        "Kazakhstan",
+        "Kuwait",
+        "Kyrgyzstan",
+        "Laos",
+        "Lebanon",
+        "Malaysia",
+        "Maldives",
+        "Mongolia",
+        "Myanmar (Burma)",
+        "Nepal",
+        "North Korea",
+        "Oman",
+        "Pakistan",
+        "Palestine",
+        "Philippines",
+        "Qatar",
+        "Saudi Arabia",
+        "Singapore",
+        "South Korea",
+        "Sri Lanka",
+        "Syria",
+        "Taiwan",
+        "Tajikistan",
+        "Thailand",
+        "Timor-Leste",
+        "Turkey",
+        "Turkmenistan",
+        "United Arab Emirates",
+        "Uzbekistan",
+        "Vietnam",
+        "Yemen",
+      ],
+      europe: [
+        "Albania",
+        "Andorra",
+        "Armenia",
+        "Austria",
+        "Azerbaijan",
+        "Belarus",
+        "Belgium",
+        "Bosnia and Herzegovina",
+        "Bulgaria",
+        "Croatia",
+        "Cyprus",
+        "Czech Republic",
+        "Denmark",
+        "Estonia",
+        "Finland",
+        "France",
+        "Georgia",
+        "Germany",
+        "Greece",
+        "Hungary",
+        "Iceland",
+        "Ireland",
+        "Italy",
+        "Kazakhstan",
+        "Kosovo",
+        "Latvia",
+        "Liechtenstein",
+        "Lithuania",
+        "Luxembourg",
+        "Malta",
+        "Moldova",
+        "Monaco",
+        "Montenegro",
+        "Netherlands",
+        "North Macedonia",
+        "Norway",
+        "Poland",
+        "Portugal",
+        "Romania",
+        "Russia",
+        "San Marino",
+        "Serbia",
+        "Slovakia",
+        "Slovenia",
+        "Spain",
+        "Sweden",
+        "Switzerland",
+        "Turkey",
+        "Ukraine",
+        "United Kingdom",
+        "Vatican City",
+      ],
+      "north-america": [
+        "Antigua and Barbuda",
+        "Bahamas",
+        "Barbados",
+        "Belize",
+        "Canada",
+        "Costa Rica",
+        "Cuba",
+        "Dominica",
+        "Dominican Republic",
+        "El Salvador",
+        "Grenada",
+        "Guatemala",
+        "Haiti",
+        "Honduras",
+        "Jamaica",
+        "Mexico",
+        "Nicaragua",
+        "Panama",
+        "Saint Kitts and Nevis",
+        "Saint Lucia",
+        "Saint Vincent and the Grenadines",
+        "Trinidad and Tobago",
+        "United States",
+      ],
+      oceania: [
+        "Australia",
+        "Fiji",
+        "Kiribati",
+        "Marshall Islands",
+        "Micronesia",
+        "Nauru",
+        "New Zealand",
+        "Palau",
+        "Papua New Guinea",
+        "Samoa",
+        "Solomon Islands",
+        "Tonga",
+        "Tuvalu",
+        "Vanuatu",
+      ],
+      "south-america": [
+        "Argentina",
+        "Bolivia",
+        "Brazil",
+        "Chile",
+        "Colombia",
+        "Ecuador",
+        "Guyana",
+        "Paraguay",
+        "Peru",
+        "Suriname",
+        "Uruguay",
+        "Venezuela",
+      ],
+    };
+
+    continentSelect.addEventListener("change", function () {
+      const selectedContinent = continentSelect.value;
+
+      // Reset and hide Country select if "All" is selected
+      if (selectedContinent === "all") {
+        countrySelect.innerHTML = '<option value="all" selected>All</option>';
+        countryWrapper.style.display = "none";
+        return;
+      }
+
+      // Show the Country select and its label
+      countryWrapper.style.display = "flex";
+
+      // Populate Country select with countries from the selected continent
+      const countries = countriesByContinent[selectedContinent] || [];
+      countrySelect.innerHTML = '<option value="all">All</option><hr />'; // Add default "All" option
+
+      countries.forEach((country) => {
+        const option = new Option(
+          country,
+          country.toLowerCase().replace(/\s+/g, "-")
+        );
+        countrySelect.add(option);
+      });
+    });
+  });
+
+  const continentSelect = document.getElementById("filter-continent");
+  const countrySelect = document.getElementById("filter-country");
+  const hostSelect = document.getElementById("filter-host");
+  const virtualCheckbox = document.getElementById("filter-virtual");
+  const posts = document.querySelectorAll(".grid-item");
+  const postList = document.querySelector(".grid");
+  const emptyStateDiv = document.querySelector(".events-empty-state");
+
+  function checkForVisiblePosts() {
+    const anyVisible = Array.from(posts).some(
+      (post) => post.style.display !== "none"
+    );
+    if (anyVisible) {
+      postList.style.display = ""; // Show the <ol> if there are visible posts
+      emptyStateDiv.style.display = "none"; // Hide the empty state div
+    } else {
+      postList.style.display = "none"; // Hide the <ol> if there are no visible posts
+      emptyStateDiv.style.display = "flex"; // Show the empty state div
+    }
+  }
+
+  function filterPosts() {
+    const selectedContinent = continentSelect.value;
+    const selectedCountry = countrySelect.value;
+    const selectedHostClass = "filter-host-" + hostSelect.value;
+    const isVirtualChecked = virtualCheckbox.checked;
+
+    // console.log("three values", {
+    //   selectedContinent,
+    //   selectedCountry,
+    //   hostSelect.value,
+    // });
+
+    const button = document.getElementById("events-filter-drawer-button");
+    button.setAttribute(
+      "data-filter-active",
+      !(
+        selectedContinent === "all" &&
+        selectedCountry === "" &&
+        hostSelect.value === "all"
+      )
+    );
+
+    posts.forEach((post) => {
+      const postLocation = post.getAttribute("data-location").toLowerCase();
+      let showPost =
+        hostSelect.value === "all" ||
+        post.classList.contains(selectedHostClass);
+
+      // Check for virtual events if the checkbox is checked
+      if (isVirtualChecked && !post.hasAttribute("data-virtual")) {
+        showPost = false;
+      }
+
+      /**
+       * united-states -> United States
+       */
+      const postLocationToCountriesByContinent = (postLocation) => {
+        function toTitleCase(str) {
+          return str.replace(/\w\S*/g, function (txt) {
+            return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+          });
+        }
+
+        return toTitleCase(postLocation.replace("-", " "));
+      };
+
+      // Continue with the rest of the filter logic only if the post is still eligible for display
+      if (showPost) {
+        switch (selectedContinent) {
+          case "all":
+            break;
+          case "north-america":
+            showPost = countriesByContinent["north-america"].includes(
+              postLocationToCountriesByContinent(postLocation)
+            );
+            break;
+          case "europe":
+            showPost = countriesByContinent["europe"].includes(
+              postLocationToCountriesByContinent(postLocation)
+            );
+            // postLocation === "netherlands" ||
+            // postLocation === "belgium" ||
+            // postLocation === "croatia" ||
+            // postLocation === "czech-republic" ||
+            // postLocation === "uk" ||
+            // postLocation === "germany" ||
+            // postLocation === "switzerland" ||
+            // postLocation === "poland" ||
+            // postLocation === "hungary" ||
+            // postLocation === "austria" ||
+            // postLocation === "france";
+            break;
+          case "asia":
+            showPost = countriesByContinent["asia"].includes(
+              postLocationToCountriesByContinent(postLocation)
+            );
+            break;
+          case "oceania":
+            showPost = countriesByContinent["oceania"].includes(
+              postLocationToCountriesByContinent(postLocation)
+            );
+            break;
+          case "south-america":
+            showPost = countriesByContinent["south-america"].includes(
+              postLocationToCountriesByContinent(postLocation)
+            );
+            break;
+          default:
+            showPost = false;
+        }
+      }
+
+      post.style.display = showPost ? "" : "none";
+    });
+
+    checkForVisiblePosts();
+  }
+
+  continentSelect.addEventListener("change", filterPosts);
+  hostSelect.addEventListener("change", filterPosts);
+  virtualCheckbox.addEventListener("change", filterPosts);
+
+  filterPosts(); // Initial filter on load
+</script>
+
+<!-- Add event dialog: if other host selected, show extra field -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const hostsSelect = document.getElementById("hosts");
+    // Use .querySelectorAll to select all elements with the class
+    const otherHostDivs = document.querySelectorAll(".other-host");
+
+    hostsSelect.addEventListener("change", function (e) {
+      // Iterate over all selected elements and toggle their display
+      otherHostDivs.forEach((div) => {
+        if (e.target.value === "other") {
+          div.style.display = "block";
+        } else {
+          div.style.display = "none";
+        }
+      });
+    });
+  });
+</script>
+
+<!-- Add event dialog: if form is not filled out, disable submit button -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("add-event-form");
+    const submitButton = document.getElementById(
+      "add-event-form-button-submit"
+    );
+    const resetButton = document.getElementById("add-event-form-button-reset");
+
+    // Function to update the state of the submit button
+    const toggleButtonState = () => {
+      // Check if all required fields are filled (you can add more specific checks if needed)
+      const isValid = Array.from(form.elements).every((input) => {
+        return input.required ? input.value.trim() !== "" : true;
+      });
+
+      // Enable or disable the submit button based on the form validity
+      submitButton.disabled = !isValid;
+    };
+
+    // Add event listeners to each form field
+    Array.from(form.elements).forEach((input) => {
+      input.addEventListener("input", toggleButtonState);
+    });
+
+    // Add an event listener to the form reset event
+    form.addEventListener("reset", function () {
+      // Wait for the form to reset, then disable the submit button
+      setTimeout(() => {
+        submitButton.disabled = true;
+      }, 0);
+    });
+  });
+</script>
+{% endif %}
+
+<!-- PAGE: Event -->
+{% if page.layout == 'event' %}
+<!-- H2-H6 are anchors -->
+<script>
+  anchors.options = {
+    placement: "right",
+    icon: "#",
+  };
+  anchors.add("h2");
+</script>
+
+<!-- Share button -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const shareButton = document.getElementById("shareButton");
+
+    if (navigator.share) {
+      // Web Share API is supported
+      shareButton.addEventListener("click", () => {
+        navigator
+          .share({
+            title: document.title,
+            url: window.location.href,
+          })
+          .then(() => {
+            console.log("Thanks for sharing!");
+          })
+          .catch(console.error);
+      });
+    } else {
+      // Fallback for browsers that do not support the Web Share API
+      shareButton.addEventListener("click", () => {
+        // Attempt to copy the current URL to the clipboard as a fallback
+        navigator.clipboard.writeText(window.location.href).then(() => {
+          alert("URL copied to clipboard");
+        });
+      });
+    }
+  });
+</script>
+
+<!-- Initialize Google Maps -->
+<script>
+  let map;
+
+  function initMap() {
+    // Default location (fallback if geocoding fails)
+    const defaultLocation = { lat: -34.397, lng: 150.644 };
+    map = new google.maps.Map(document.getElementById("map"), {
+      backgroundColor: "{{ average_color }}",
+      zoom: 12,
+      center: defaultLocation,
+      zoomControl: true,
+      mapTypeControl: false,
+      scaleControl: true,
+      streetViewControl: false,
+      rotateControl: true,
+      fullscreenControl: true,
+    });
+
+    // Call the geocode function to update the map based on address
+    geocodeAddress("{{ page.location }}");
+  }
+
+  function geocodeAddress(address) {
+    const geocoder = new google.maps.Geocoder();
+
+    geocoder.geocode({ address: address }, function (results, status) {
+      if (status === "OK") {
+        // Center the map on the address location
+        map.setCenter(results[0].geometry.location);
+
+        // Add a marker at the address location
+        new google.maps.Marker({
+          map: map,
+          position: results[0].geometry.location,
+        });
+      } else {
+        alert("Geocode was not successful for the following reason: " + status);
+      }
+    });
+  }
+</script>
+{% endif %}
+
+<!-- PAGE: Error -->
+{% if page.layout == 'error' %}
+<!-- Random error message -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var messages = [
+      "Somehow you found yourself somewhere you shouldn't be!",
+      "You’ve wandered outside the festival grounds!",
+      "Too much partying, you’ve lost your way!",
+      "Dude, you're in the wrong tent!",
+      "Seems like you took too much special K, and have dissociated!",
+    ];
+    var randomIndex = Math.floor(Math.random() * messages.length);
+    var randomMessage = messages[randomIndex];
+
+    document.getElementById("error-title").innerText = randomMessage;
+  });
+</script>
+{% endif %}

@@ -23,49 +23,43 @@
       data-netlify="true"
       data-netlify-recaptcha="true"
     >
-      <label for="event-name">Event name</label>
+      <label for="form-event-name">Event name</label>
       <input
         type="text"
         name="event-name"
-        id="event-name"
+        id="form-event-name"
         required
         placeholder="Defqon.1 Weekend Festival {{ 'now' | date: '%Y' }}"
       />
 
-      <label for="datestart">Event start date & time</label>
-      <input type="datetime-local" name="datestart" id="datestart" required />
+      <label for="form-datestart">Event start date & time</label>
+      <input
+        type="datetime-local"
+        name="datestart"
+        id="form-datestart"
+        required
+      />
 
-      <label for="dateend">Event end date & time</label>
-      <input type="datetime-local" name="dateend" id="dateend" />
+      <label for="form-dateend">Event end date & time</label>
+      <input type="datetime-local" name="dateend" id="form-dateend" />
 
-      <label for="location">Event address</label>
+      <label for="form-location">Event address</label>
       <input
         type="text"
         name="location"
-        id="location"
-        placeholder="Spijkweg 30, 8256 RJ Biddinghuizen, Nederland"
+        id="form-location"
+        placeholder="Spijkweg 30, 8256 RJ Biddinghuizen, Netherlands"
       />
 
-      <label for="type">Event type</label>
-      <select name="type" id="type" required>
-        <option disabled selected value></option>
-        {% for type in site.event-types %}
-        <option value="{{ type | slugify }}">{{ type }}</option>
-        {% endfor %}
-      </select>
-
-      <label for="age">Event age limit</label>
-      <input type="text" name="age" id="age" placeholder="18+" />
-
-      <label for="hosts">Event host(s)</label>
-      <select name="hosts" id="hosts" multiple required>
+      <label for="form-hosts">Event host(s)</label>
+      <select name="hosts" id="form-hosts" multiple required>
         {% for host in site.event-hosts %}
         <option value="{{ host.name | slugify }}">{{ host.name }}</option>
         {% endfor %}
         <option value="other">Other</option>
       </select>
 
-      <label class="other-host" style="display: none" for="otherHost">
+      <label class="other-host" style="display: none" for="form-otherHost">
         Other host
       </label>
       <input
@@ -73,29 +67,29 @@
         style="display: none"
         type="text"
         name="otherHost"
-        id="otherHost"
+        id="form-otherHost"
       />
 
-      <label for="website">Event website or ticket service</label>
+      <label for="form-website">Event website or ticket service</label>
       <input
         type="text"
         name="website"
-        id="website"
+        id="form-website"
         placeholder="https://defqon1.com"
       />
 
-      <label for="facebook">Event Facebook page</label>
+      <label for="form-facebook">Event Facebook page</label>
       <input
         type="text"
         name="facebook"
-        id="facebook"
+        id="form-facebook"
         placeholder="https://www.facebook.com/events/838924394232971"
       />
 
-      <label for="fileInput">Image</label>
+      <label for="form-fileInput">Image</label>
       <input
         type="file"
-        id="fileInput"
+        id="form-fileInput"
         name="image"
         accept="image/png, image/jpeg"
       />
@@ -133,56 +127,3 @@
     </ul>
   </div>
 </dialog>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const hostsSelect = document.getElementById("hosts");
-    // Use .querySelectorAll to select all elements with the class
-    const otherHostDivs = document.querySelectorAll(".other-host");
-
-    hostsSelect.addEventListener("change", function (e) {
-      // Iterate over all selected elements and toggle their display
-      otherHostDivs.forEach((div) => {
-        if (e.target.value === "other") {
-          div.style.display = "block";
-        } else {
-          div.style.display = "none";
-        }
-      });
-    });
-  });
-</script>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("add-event-form");
-    const submitButton = document.getElementById(
-      "add-event-form-button-submit"
-    );
-    const resetButton = document.getElementById("add-event-form-button-reset");
-
-    // Function to update the state of the submit button
-    const toggleButtonState = () => {
-      // Check if all required fields are filled (you can add more specific checks if needed)
-      const isValid = Array.from(form.elements).every((input) => {
-        return input.required ? input.value.trim() !== "" : true;
-      });
-
-      // Enable or disable the submit button based on the form validity
-      submitButton.disabled = !isValid;
-    };
-
-    // Add event listeners to each form field
-    Array.from(form.elements).forEach((input) => {
-      input.addEventListener("input", toggleButtonState);
-    });
-
-    // Add an event listener to the form reset event
-    form.addEventListener("reset", function () {
-      // Wait for the form to reset, then disable the submit button
-      setTimeout(() => {
-        submitButton.disabled = true;
-      }, 0);
-    });
-  });
-</script>

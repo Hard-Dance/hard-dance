@@ -1,101 +1,231 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: 'en' }}">
-  <head>
-    {% include head.html %} {% if page.featured and page.video %}
-    <meta
-      property="og:video"
-      content="{{ site.url }}/assets/video/events/{{ page.title | slugify }}.mp4"
-    />
-    {% endif %}
-    <script src="https://unpkg.com/color.js@1.2.0/dist/color.js"></script>
-    <script
-      async
-      defer
-      src="https://maps.googleapis.com/maps/api/js?key={{ site.env.GOOGLE_MAPS_API_KEY }}&callback=initMap"
-    ></script>
-  </head>
-  <body>
+  {% include head.html %}
+  {% assign average_color = site.data.average_colors[page.slug] %}
+  <body
+    style="
+      --xxx-color-background-backdrop: {{ average_color }};
+
+      {% if page.foreground %}
+      --xxx-color-text: color-mix(in srgb, {{ average_color }}, black 80%);
+      --xxx-color-text-muted: color-mix(in srgb, {{ average_color }} 50%, black 50%);
+      --xxx-color-background-transparent-hover: color-mix(in srgb, {{ average_color }} 95%, black 5%);
+      --xxx-color-accent: color-mix(in srgb, {{ average_color }} 100%, black 25%);
+      {% else %}
+      --xxx-color-text: color-mix(in srgb, {{ average_color }}, white 80%);
+      --xxx-color-text-muted: color-mix(in srgb, {{ average_color }} 50%, white 50%);
+      --xxx-color-background-transparent-hover: color-mix(in srgb, {{ average_color }} 95%, white 5%);
+      --xxx-color-accent: color-mix(in srgb, {{ average_color }} 100%, white 25%);
+      {% endif %}
+      "
+  >
     {% include header.html %}
 
     <div class="banner" id="top">{% include banner-event.html %}</div>
 
     <main>
-      {% include title-bar.html %}
+      <div class="xyz" style="grid-column: padded-start / padded-end">
+        {% include title-bar.html %}
 
-      <dl class="event-data-list">
-        <dt>Date announced</dt>
-        <dd>
-          <time datetime="{{ page.date | date: '%Y-%m-%d' }}">
-            {{ page.date | date: "%B %d, %Y" }}
-          </time>
-        </dd>
-
-        <dt>Date{% if page.dateend %}s{% endif %}</dt>
-        <dd>
-          <time datetime="{{ page.datestart | date: '%Y-%m-%d' }}">
-            {{ page.datestart | date: "%B %d, %Y" }}
-          </time>
-          {% if page.dateend %}&nbsp;–&nbsp;
-          <time datetime="{{ page.dateend | date: '%Y-%m-%d' }}">
-            {{ page.dateend | date: "%B %d, %Y" }}
-          </time>
-          {% endif %}
-        </dd>
-
-        {% if page.location %}
-        <dt>Location</dt>
-        <dd>
-          <a
-            href="http://maps.apple.com/?q={{ page.location | uri_escape }}"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {% include icon.html id="location" name="Location" %} {{
-            page.location }}
-          </a>
-        </dd>
-        {% endif %} {% if page.type %}
-        <dt>Type</dt>
-        <dd>{{ page.type }}</dd>
-        {% endif %} {% if page.genre %}
-        <dt>Genre</dt>
-        <dd>{{ page.genre }}</dd>
-        {% endif %} {% if page.age %}
-        <dt>Age</dt>
-        <dd>{{ page.age }}</dd>
-        {% endif %} {% if page.hosts %}
-        <dt>Host{% if page.hosts.size > 1 %}s{% endif %}</dt>
-        <dd>
-          <ul class="event-data-list-host-list">
-            {% for postHost in page.hosts %} {% assign hostMatchFound = false
-            %}{% for eventHost in site.event-hosts %} {% if eventHost.name ==
-            postHost %} {% assign hostMatchFound = true %} {% assign
-            matchedHostFB = eventHost.facebook %} {% assign matchedHostName =
-            eventHost.name %} {% break %} {% endif %} {% endfor %}{% if
-            hostMatchFound %}
-            <li>
+        <dl class="grid event-data-list">
+          {% if page.tickets %}
+          <div class="grid-item event-data-list-item">
+            <svg alt="Ticket icon" aria-hidden="true">
+              <use xlink:href="/assets/symbols.svg#ticket"></use>
+            </svg>
+            <dt>Tickets</dt>
+            <dd>
               <a
-                href="{{ matchedHostFB }}"
+                class="grid-item-anchor"
+                href="{{ page.tickets }}"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <div class="icon">
-                  <svg alt="{{ matchedHostName }} icon" aria-hidden="true">
-                    <use
-                      xlink:href="/assets/hosts.svg#{{ matchedHostName | slugify }}"
-                    ></use>
-                  </svg>
-                </div>
-                {{ matchedHostName }}
+                {% if page.tickets contains "dice.fm" %} DICE {% elsif
+                page.tickets contains "ticketweb.com" %} TicketWeb {% elsif
+                page.tickets contains "tixr.com" %} Tixr {% elsif page.tickets
+                contains "ticketmaster" %} Ticketmaster {% elsif page.tickets
+                contains "eventbrite" %} Eventbrite {% else %} Purchase {% endif
+                %}
               </a>
-            </li>
-            {% else %} {{ postHost }} {% endif %} {% endfor %}
-          </ul>
-        </dd>
-        {% endif %}
-      </dl>
+            </dd>
+            {% if page.starting-price %}
+            <div class="event-data-list-item-metadata" data-variant="price">
+              {{ page.starting-price }}
+            </div>
+            {% endif %}
+          </div>
+          {% endif %} {% if page.facebook %}
+          <div class="grid-item event-data-list-item">
+            <svg alt="Social media icon" aria-hidden="true">
+              <use xlink:href="/assets/symbols.svg#facebook"></use>
+            </svg>
+            <dt>RSVP</dt>
+            <dd>
+              <a
+                class="grid-item-anchor"
+                href="{{ page.facebook }}"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Facebook
+              </a>
+            </dd>
+            <!-- <div class="event-data-list-item-metadata">1.2k</div> -->
+          </div>
+          {% endif %}
+        </dl>
+
+        <section>
+          <h2>Location</h2>
+          <div id="map" data-location="{{ page.location | uri_escape }}"></div>
+        </section>
+
+        <section>
+          <h2>Description</h2>
+          {{ content | hashtag_links }}
+        </section>
+
+        <section>
+          <h2>Host{% if page.hosts.size > 1 %}s{% endif %}</h2>
+
+          {% for host in page.hosts %}
+          {% assign event_count = 0 %}
+          {% assign today = 'now' | date: '%Y-%m-%d' %}
+          {% assign sorted_posts = site.posts | sort: 'datestart' %}
+
+          {% for post in sorted_posts %}
+            {% assign post_start_date = post.datestart | date: '%Y-%m-%d' %}
+            {% if post_start_date >= today and post.hosts contains host and post.title != page.title %}
+              {% assign event_count = event_count | plus: 1 %}
+            {% endif %}
+          {% endfor %}
+
+          <details>
+            <summary>
+              <span class="details-summary-expander">
+                <svg class="details-summary-expander-icon" alt="Chevron icon" aria-hidden="true">
+                  <use xlink:href="/assets/symbols.svg#chevron-down"></use>
+                </svg>
+              </span>
+              <div class="icon">
+                <svg alt="{{ host }} icon" aria-hidden="true">
+                  <use xlink:href="/assets/hosts.svg#{{ host | slugify }}"></use>
+                </svg>
+              </div>
+              {{ host }}
+              <span class="details-summary-badge">
+                {{ event_count }}<span class="hide-on-mobile"> upcoming</span>
+              </span>
+            </summary>
+            <div class="details-body">
+              {% if event_count > 0 %}
+              <ol class="grid">
+                {% for post in sorted_posts %}
+                {% assign post_start_date = post.datestart | date: '%Y-%m-%d' %}
+                {% if post_start_date >= today and post.hosts contains host and post.title != page.title %}
+
+                <li
+                  class="grid-item {% for host in post.hosts %}filter-host-{{ host | slugify }} {% endfor %}"
+                  id="grid-item-{{ forloop.index }}"
+                  data-location="{{ country_part | downcase }}"
+                  data-type="{{ post.type | downcase }}"
+                  {%
+                  if
+                  post.featured
+                  %}
+                  data-featured="true"
+                  {%
+                  endif
+                  %}
+                >
+                  {% if post.featured and post.video %}
+                  <video
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    poster="/.netlify/images/?url={{ post.image }}&fit=cover&h=300"
+                    class="grid-item-image"
+                  >
+                    <source
+                      src="/assets/video/events/{{ post.title | slugify }}.mp4"
+                      type="video/mp4"
+                    />
+                    <source
+                      src="/assets/video/events/{{ post.title | slugify }}.ogv"
+                      type="video/ogv"
+                    />
+                    <source
+                      src="/assets/video/events/{{ post.title | slugify }}.webm"
+                      type="video/webm"
+                    />
+                  </video>
+                  {% endif %}
+                  <img
+                    class="grid-item-image"
+                    srcset="/.netlify/images/?url={{ post.image }}&fit=cover&h=600 2x, /.netlify/images/?url={{ post.image }}&fit=cover&h=900 3x"
+                    src="/.netlify/images/?url={{ post.image }}&fit=cover&h=300"
+                    alt="{{ post.title | smartify }} image"
+                    data-index="{{ forloop.index }}"
+                    draggable="false"
+                    style="view-transition-name: post-image-{{ post.title | slugify }};"
+                  />
+                  <div class="grid-item-metadata">
+                    <a
+                      class="grid-item-metadata-title grid-item-anchor"
+                      href="{{ post.url }}"
+                      style="view-transition-name: post-title-{{ post.title | slugify }};"
+                      >{{ post.title | smartify }}</a
+                    >
+                    <div class="grid-item-metadata-subtitle">
+                      <time datetime="{{ post.datestart | date: '%Y-%m-%d' }}">
+                        {{ post.datestart | date: "%b %d" }}
+                      </time>
+
+                      {% if post.dateend %} &nbsp;–&nbsp;
+                      <time datetime="{{ post.dateend | date: '%Y-%m-%d' }}">
+                        {{ post.dateend | date: "%b %d" }}
+                      </time>
+                      {% endif %}
+                    </div>
+                    <div class="grid-item-metadata-symbol">{{ flag }}</div>
+                    {% assign today = 'now' | date: '%Y-%m-%d' %} {% assign
+                    start_date = post.datestart | date: '%Y-%m-%d' %} {% assign
+                    end_date = post.dateend | date: '%Y-%m-%d' %} {% if
+                    post.dateend %} {% if today >= start_date and today <=
+                    end_date %}
+                    <div class="event-list-item-status">Today</div>
+                    {% endif %} {% else %} {% if today == start_date %}
+                    <div class="event-list-item-status">Today</div>
+                    {% endif %} {% endif %}
+                  </div>
+                </li>
+                {% endif %}
+              {% endfor %}
+              </ol>
+              {% else %}
+              <div class="events-empty-state">
+                <div class="events-empty-state-emoji">🔇</div>
+                <h3>No upcoming events found.</h3>
+                <p>Do you know of an event that should be listed here?</p>
+                <button
+                  aria-label="Add event"
+                  class="button"
+                  data-variant="call-to-action"
+                  onclick="document.getElementById('add-event').show()"
+                >
+                  Add an event
+                </button>
+              </div>
+              {% endif %}
+            </div>
+          </details>
+        {% endfor %}
+        </div>
+      </div>
     </main>
 
-    {% include footer.html %}
+    {% include footer.html %} {% include dialog.html %} {% include scripts.html %}
   </body>
 </html>

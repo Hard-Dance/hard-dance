@@ -5,17 +5,48 @@
 }
 
 .grid-item {
-  background-color: var(--color-background);
+  @include frosted-glass;
   border-radius: var(--border-radius);
-  user-select: none;
-  position: relative; // TODO: Maybe?
+  position: relative;
 
-  &:has(a.grid-item-metadata-title) {
-    transition: transform var(--duration);
+  &:has(a.grid-item-anchor) {
+    user-select: none;
+    @media (prefers-reduced-motion: no-preference) {
+      transition: transform var(--duration) ease;
+    }
 
     &:hover,
     &:focus-within {
       transform: scale(1.05);
+    }
+  }
+
+  &[data-featured="true"] {
+    &::before {
+      content: "⭐️";
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      inset: 0 auto auto 0;
+      border-top-left-radius: inherit;
+      border-bottom-right-radius: inherit;
+      width: calc(var(--border-width) * 20);
+      height: calc(var(--border-width) * 20);
+      background-color: inherit;
+      z-index: 1;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      video {
+        display: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      video + img {
+        height: 0px;
+      }
     }
   }
 }
@@ -48,22 +79,22 @@
   text-wrap: balance;
   font-size: var(--font-size-large);
   font-weight: var(--font-weight-bold);
+}
 
-  &:is(a) {
-    outline: none;
-    -webkit-tap-highlight-color: transparent;
+.grid-item-anchor {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
 
-    &::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: var(--border-radius);
-    }
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: var(--border-radius);
+  }
 
-    &:focus::after {
-      outline: var(--border-width) solid var(--color-accent);
-      outline-offset: var(--border-width);
-    }
+  &:focus::after {
+    outline: var(--border-width) solid var(--xxx-color-accent);
+    outline-offset: var(--border-width);
   }
 }
 
@@ -86,6 +117,5 @@
 }
 
 .grid-item-metadata-body {
-  // margin-top: var(--padding);
   grid-area: body;
 }

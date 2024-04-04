@@ -19,63 +19,22 @@
   {% endif %}
   <div id="poster" style="--_post-image: url({{ page.image }});">
     <img
-      src="{{ page.image }}"
-      alt=""
+      srcset="/.netlify/images/?url={{ page.image }}&h=1024 2x, /.netlify/images/?url={{ page.image }}&h=1536 3x"
+      src="/.netlify/images/?url={{ page.image }}&h=512"
+      alt="{{ page.title | smartify }} image"
       draggable="false"
       style="view-transition-name: post-image-{{ page.title | slugify }};"
     />
   </div>
-  <div id="map" data-location="{{ page.location | uri_escape }}"></div>
 </div>
 
+{% if page.featured and page.video %}
 <ul class="button-group banner-event-links" data-variant="overlay">
-  {% if page.featured and page.video %}
   <li>
     <a class="button" href="#trailer" tabindex="-1">Trailer</a>
   </li>
-  {% endif %}
   <li>
     <a class="button" href="#poster" tabindex="-1">Poster</a>
   </li>
-  <li>
-    <a class="button" href="#map" tabindex="-1">Map</a>
-  </li>
 </ul>
-
-<script>
-  function initMap() {
-    const location = { lat: -34.397, lng: 150.644 };
-    const map = new google.maps.Map(document.getElementById("map"), {
-      zoom: 12,
-      center: location,
-      disableDefaultUI: true,
-      zoomControl: false,
-      mapTypeControl: false,
-      scaleControl: false,
-      streetViewControl: false,
-      rotateControl: false,
-      fullscreenControl: false,
-    });
-
-    const marker = new google.maps.Marker({
-      position: location,
-      map: map,
-    });
-  }
-</script>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const bannerEventSlides = document.querySelectorAll(".banner-event-slides");
-
-    bannerEventSlides.forEach((slide) => {
-      const slideImage = slide.querySelector("img");
-      if (slideImage) {
-        colorjs.average(slideImage.src).then((color) => {
-          const rgbColor = `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
-          slide.style.backgroundColor = rgbColor;
-        });
-      }
-    });
-  });
-</script>
+{% endif %}

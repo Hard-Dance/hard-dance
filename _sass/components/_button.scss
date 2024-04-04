@@ -1,3 +1,5 @@
+@import "../mixins";
+
 .button-group {
   display: flex;
   gap: var(--border-width);
@@ -5,28 +7,24 @@
   border: var(--border-width) solid var(--_button-group-background-color);
   border-radius: var(--border-radius);
   transition: background-color var(--duration) ease,
-    border-color var(--duration) ease;
+    border-color var(--duration) ease, backdrop-filter var(--duration) ease,
+    -webkit-backdrop-filter var(--duration) ease;
 
   &:not([data-variant]) {
-    --_button-group-background-color: var(--color-background-backdrop);
+    --_button-group-background-color: transparent;
 
     @media (hover: hover) {
       &:hover,
       &:focus-within {
-        --_button-group-background-color: var(--color-background);
+        @include frosted-glass;
       }
     }
   }
 
   &[data-variant="overlay"] {
     --_button-group-background-color: var(--color-background);
-
-    @supports (backdrop-filter: blur(20px)) {
-      background-color: rgba(var(--color-background-rgb), 0.5);
-      backdrop-filter: blur(20px);
-      border-color: transparent;
-      text-shadow: 0 1px 0 var(--color-background-backdrop);
-    }
+    border-color: transparent;
+    @include frosted-glass;
   }
 
   &[data-wrap] {
@@ -34,8 +32,13 @@
     justify-content: center;
   }
 
-  > li > .button {
-    border-radius: calc(var(--border-radius) - var(--border-width));
+  > li {
+    flex: 1;
+
+    > .button {
+      border-radius: calc(var(--border-radius) - var(--border-width));
+      width: 100%;
+    }
   }
 }
 
@@ -44,7 +47,7 @@
   padding-inline: var(--component-padding-inline);
   text-decoration: none;
   background-color: transparent;
-  color: var(--color-text);
+  color: var(--xxx-color-text);
   border: 1px solid transparent;
   font-weight: var(--font-weight-bold);
   display: inline-flex;
@@ -59,7 +62,7 @@
 
   @media (hover: hover) {
     &:hover {
-      background-color: var(--color-background-transparent-hover);
+      background-color: var(--xxx-color-background-transparent-hover);
     }
   }
 
@@ -71,6 +74,7 @@
   }
 
   &[data-variant="call-to-action"] {
+    color: var(--color-text);
     background-color: var(--color-accent);
 
     @media (hover: hover) {

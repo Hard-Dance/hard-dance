@@ -1,21 +1,12 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: 'en' }}">
-  <head>
-    {% include head.html %}
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap"
-      rel="stylesheet"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/@widgetbot/html-embed"></script>
-  </head>
+  {% include head.html %}
   <body>
     {% include header.html %}
 
     <main>
       <section class="about-banner" id="top">
-        <h2 class="handwritten">Welcome to our digital tribe!</h2>
+        <h1 class="handwritten">Welcome to our digital tribe!</h1>
         <blockquote>{{ content }}</blockquote>
         <figcaption>Your <span>{{ site.title }}</span> crew</figcaption>
 
@@ -34,7 +25,16 @@
       </section>
 
       <details class="about-details">
-        <summary class="about-details-summary">
+        <summary>
+          <span class="details-summary-expander">
+            <svg
+              class="details-summary-expander-icon"
+              alt="Chevron icon"
+              aria-hidden="true"
+            >
+              <use xlink:href="/assets/symbols.svg#chevron-down"></use>
+            </svg>
+          </span>
           The crew
           <span class="details-summary-badge">{{ site.admins | size }}</span>
         </summary>
@@ -44,7 +44,8 @@
             <li class="grid-item">
               <img
                 class="grid-item-image"
-                src="/assets/img/admins/{{ admin.name | slugify }}.jpg"
+                srcset="/.netlify/images/?url=/assets/img/admins/{{ admin.name | slugify }}.jpg&fit=cover&h=600 2x, /.netlify/images/?url=/assets/img/admins/{{ admin.name | slugify }}.jpg&fit=cover&h=900 3x"
+                src="/.netlify/images/?url=/assets/img/admins/{{ admin.name | slugify }}.jpg&fit=cover&h=300"
                 alt="A photo of {{ admin.name }}"
                 draggable="false"
               />
@@ -57,7 +58,7 @@
                 <div class="grid-item-metadata-subtitle">
                   {{ admin.position }}
                 </div>
-                <div class="grid-item-metadata-symbol">
+                <div class="grid-item-metadata-symbol" style="color: unset">
                   {{ admin.location }}
                 </div>
                 <ul
@@ -117,6 +118,15 @@
 
       <details class="about-details">
         <summary class="about-details-summary">
+          <span class="details-summary-expander">
+            <svg
+              class="details-summary-expander-icon"
+              alt="Chevron icon"
+              aria-hidden="true"
+            >
+              <use xlink:href="/assets/symbols.svg#chevron-down"></use>
+            </svg>
+          </span>
           The hosts we check
           <span class="details-summary-badge">
             {{ site.event-hosts | size }}
@@ -174,6 +184,15 @@
 
       <details class="about-details">
         <summary class="about-details-summary">
+          <span class="details-summary-expander">
+            <svg
+              class="details-summary-expander-icon"
+              alt="Chevron icon"
+              aria-hidden="true"
+            >
+              <use xlink:href="/assets/symbols.svg#chevron-down"></use>
+            </svg>
+          </span>
           Our friends
           <span class="details-summary-badge">{{ site.friends | size }}</span>
         </summary>
@@ -184,14 +203,15 @@
             <li class="grid-item">
               <img
                 class="grid-item-image"
-                src="/assets/img/friends/{{ friend.title | slugify }}.png"
+                srcset="/.netlify/images/?url=/assets/img/friends/{{ friend.title | slugify }}.png&fit=cover&h=600 2x, /.netlify/images/?url=/assets/img/friends/{{ friend.title | slugify }}.png&fit=cover&h=900 3x"
+                src="/.netlify/images/?url=/assets/img/friends/{{ friend.title | slugify }}.png&fit=cover&h=300"
                 alt="A graphic of {{ friend.title }}"
                 draggable="false"
               />
 
               <div class="grid-item-metadata">
                 <a
-                  class="grid-item-metadata-title"
+                  class="grid-item-metadata-title grid-item-anchor"
                   href="{{ friend.url }}"
                   aria-label="Visit {{ friend.title }}'s website"
                   target="_blank"
@@ -218,7 +238,18 @@
       </details>
 
       <details class="about-details">
-        <summary class="about-details-summary">How to help us</summary>
+        <summary class="about-details-summary">
+          <span class="details-summary-expander">
+            <svg
+              class="details-summary-expander-icon"
+              alt="Chevron icon"
+              aria-hidden="true"
+            >
+              <use xlink:href="/assets/symbols.svg#chevron-down"></use>
+            </svg>
+          </span>
+          How to help us
+        </summary>
         <div class="details-body">
           <p>
             We are an open source platform, meaning anyone can contribute to the
@@ -292,6 +323,15 @@
 
       <details class="about-details" id="app">
         <summary class="about-details-summary">
+          <span class="details-summary-expander">
+            <svg
+              class="details-summary-expander-icon"
+              alt="Chevron icon"
+              aria-hidden="true"
+            >
+              <use xlink:href="/assets/symbols.svg#chevron-down"></use>
+            </svg>
+          </span>
           How to get the Hard.Dance app
         </summary>
         <div class="details-body">
@@ -379,6 +419,6 @@
         </div>
       </details>
     </main>
-    {% include footer.html %}
+    {% include footer.html %} {% include scripts.html %}
   </body>
 </html>

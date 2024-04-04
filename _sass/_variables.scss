@@ -17,7 +17,6 @@
   --color-background-backdrop-rgb: 000, 000, 000;
   --color-background-hover-rgb: 049, 048, 053;
   --color-text-rgb: 255, 255, 255;
-  --color-text-muted-rgb: 151, 150, 156;
   --color-accent-rgb: 226, 006, 019;
 
   --color-background: rgb(var(--color-background-rgb));
@@ -25,7 +24,7 @@
   --color-background-hover: rgb(var(--color-background-hover-rgb));
   --color-background-transparent-hover: rgba(var(--color-text-rgb), 0.1);
   --color-text: rgb(var(--color-text-rgb));
-  --color-text-muted: rgb(var(--color-text-muted-rgb));
+  --color-text-muted: rgba(var(--color-text-rgb), 0.6);
   --color-accent: rgb(var(--color-accent-rgb));
   // #endregion Colors
 
@@ -48,4 +47,16 @@
     --header-height: 5rem;
     --page-padding: var(--padding);
   }
+}
+
+body {
+  --xxx-color-background: var(--color-background);
+  --xxx-color-background-backdrop: var(--color-background-backdrop);
+  --xxx-color-background-hover: var(--color-background-hover);
+  --xxx-color-background-transparent-hover: var(
+    --color-background-transparent-hover
+  );
+  --xxx-color-text: var(--color-text);
+  --xxx-color-text-muted: var(--color-text-muted);
+  --xxx-color-accent: var(--color-accent);
 }

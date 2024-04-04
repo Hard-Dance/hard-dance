@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: 'en' }}">
-  <head>
-    {% include head.html %}
-    <link rel="stylesheet" href="/assets/css/animate-on-scroll.css" />
-    <script src="https://unpkg.com/color.js@1.2.0/dist/color.js"></script>
-    <script src="/assets/js/animate-on-scroll.js"></script>
-  </head>
+  {% include head.html %}
   <body>
     {% include header.html %}
 
@@ -27,20 +22,65 @@
         {% assign country = country_part %} 
 
         {% case country %}
-          {% when 'USA' %} {% assign flag = '🇺🇸' %}
-          {% when 'Canada' %} {% assign flag = '🇨🇦' %}
-          {% when 'UK' %} {% assign flag = '🇬🇧' %}
-          {% when 'Nederland' %} {% assign flag = '🇳🇱' %}
+          {% when 'Algeria' %} {% assign flag = '🇩🇿' %}
+          {% when 'Argentina' %} {% assign flag = '🇦🇷' %}
+          {% when 'Australia' %} {% assign flag = '🇦🇺' %}
+          {% when 'Austria' %} {% assign flag = '🇦🇹' %}
           {% when 'Belgium' %} {% assign flag = '🇧🇪' %}
+          {% when 'Brazil' %} {% assign flag = '🇧🇷' %}
+          {% when 'Canada' %} {% assign flag = '🇨🇦' %}
+          {% when 'Chile' %} {% assign flag = '🇨🇱' %}
+          {% when 'China' %} {% assign flag = '🇨🇳' %}
+          {% when 'Croatia' %} {% assign flag = '🇭🇷' %}
+          {% when 'Czech Republic' %} {% assign flag = '🇨🇿' %}
+          {% when 'Denmark' %} {% assign flag = '🇩🇰' %}
+          {% when 'Egypt' %} {% assign flag = '🇪🇬' %}
+          {% when 'Finland' %} {% assign flag = '🇫🇮' %}
+          {% when 'France' %} {% assign flag = '🇫🇷' %}
           {% when 'Germany' %} {% assign flag = '🇩🇪' %}
-          {%- else -%}
-            {% assign flag = '' %}
+          {% when 'Greece' %} {% assign flag = '🇬🇷' %}
+          {% when 'Hungary' %} {% assign flag = '🇭🇺' %}
+          {% when 'India' %} {% assign flag = '🇮🇳' %}
+          {% when 'Italy' %} {% assign flag = '🇮🇹' %}
+          {% when 'Japan' %} {% assign flag = '🇯🇵' %}
+          {% when 'Mexico' %} {% assign flag = '🇲🇽' %}
+          {% when 'Netherlands' %} {% assign flag = '🇳🇱' %}
+          {% when 'Norway' %} {% assign flag = '🇳🇴' %}
+          {% when 'Poland' %} {% assign flag = '🇵🇱' %}
+          {% when 'Portugal' %} {% assign flag = '🇵🇹' %}
+          {% when 'Russia' %} {% assign flag = '🇷🇺' %}
+          {% when 'South Africa' %} {% assign flag = '🇿🇦' %}
+          {% when 'South Korea' %} {% assign flag = '🇰🇷' %}
+          {% when 'Spain' %} {% assign flag = '🇪🇸' %}
+          {% when 'Sweden' %} {% assign flag = '🇸🇪' %}
+          {% when 'Switzerland' %} {% assign flag = '🇨🇭' %}
+          {% when 'United Kingdom' %} {% assign flag = '🇬🇧' %}
+          {% when 'United States' %} {% assign flag = '🇺🇸' %}
+          {% when 'Venezuela' %} {% assign flag = '🇻🇪' %}
+        {%- else -%}
+          {% assign flag = '' %}
         {% endcase %}
+
+        {% assign average_color = site.data.average_colors[post.slug] %}
         <li
           class="grid-item events-grid-item {% for host in post.hosts %}filter-host-{{ host | slugify }} {% endfor %}"
+          style="
+            --xxx-color-background: {{ average_color }};
+            {% if post.foreground %}
+            --xxx-color-text: color-mix(in srgb, {{ average_color }}, black 80%);
+            --xxx-color-text-muted: color-mix(in srgb, {{ average_color }} 50%, black 50%);
+            --xxx-color-accent: color-mix(in srgb, {{ average_color }} 100%, black 25%);
+            {% else %}
+            --xxx-color-text: color-mix(in srgb, {{ average_color }}, white 80%);
+            --xxx-color-text-muted: color-mix(in srgb, {{ average_color }} 50%, white 50%);
+            --xxx-color-accent: color-mix(in srgb, {{ average_color }} 100%, white 25%);
+            {% endif %}
+          "
           id="grid-item-{{ forloop.index }}"
-          data-location="{{ country_part | downcase }}"
-          data-type="{{ post.type | downcase }}"
+          data-location="{{ country_part | slugify }}"
+          {% if post.is_online == true %}
+            data-virtual
+          {% endif %}
           {%
           if
           post.featured
@@ -49,7 +89,6 @@
           {%
           endif
           %}
-          data-aos="zoom-in-up"
         >
           {% if post.featured and post.video %}
           <video
@@ -57,7 +96,7 @@
             muted
             loop
             playsinline
-            poster="{{ post.image }}"
+            poster="/.netlify/images/?url={{ post.image }}&fit=cover&h=300"
             class="grid-item-image"
           >
             <source
@@ -76,16 +115,16 @@
           {% endif %}
           <img
             class="grid-item-image"
-            src="{{ post.image }}"
+            srcset="/.netlify/images/?url={{ post.image }}&fit=cover&h=600 2x, /.netlify/images/?url={{ post.image }}&fit=cover&h=900 3x"
+            src="/.netlify/images/?url={{ post.image }}&fit=cover&h=300"
             alt="{{ post.title | smartify }} image"
             data-index="{{ forloop.index }}"
             draggable="false"
-            loading="lazy"
             style="view-transition-name: post-image-{{ post.title | slugify }};"
           />
           <div class="grid-item-metadata">
             <a
-              class="grid-item-metadata-title"
+              class="grid-item-metadata-title grid-item-anchor"
               href="{{ post.url }}"
               style="view-transition-name: post-title-{{ post.title | slugify }};"
               >{{ post.title | smartify }}</a
@@ -101,7 +140,9 @@
               </time>
               {% endif %}
             </div>
-            <div class="grid-item-metadata-symbol">{{ flag }}</div>
+            <div class="grid-item-metadata-symbol">
+              {% if post.is_online %}🛰️{% endif %} {{ flag }}
+            </div>
             {% assign today = 'now' | date: '%Y-%m-%d' %} {% assign start_date =
             post.datestart | date: '%Y-%m-%d' %} {% assign end_date =
             post.dateend | date: '%Y-%m-%d' %} {% if post.dateend %} {% if today
@@ -116,144 +157,20 @@
       </ol>
       <div class="events-empty-state" style="display: none">
         <div class="events-empty-state-emoji">🔇</div>
-        <h2>No events found.</h2>
+        <h2>No upcoming events found.</h2>
         <p>Do you know of an event that should be listed here?</p>
         <button
           aria-label="Add event"
           class="button"
           data-variant="call-to-action"
-          onclick="document.getElementById('add-event').showModal()"
+          onclick="document.getElementById('add-event').show()"
         >
           Add an event
         </button>
       </div>
     </main>
 
-    {% include footer.html %} {% include dialog.html %}
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const images = document.querySelectorAll(".grid-item-image");
-
-        images.forEach((img) => {
-          const index = img.dataset.index;
-          colorjs.average(img.src).then((color) => {
-            const rgbColor = `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
-            const listItem = document.getElementById(`grid-item-${index}`);
-
-            // Determine the best text color for contrast
-            const textColor = getContrastYIQ(color);
-
-            // Set CSS custom properties for background and text color
-            listItem.style.setProperty(
-              "--_color-grid-item-background",
-              rgbColor
-            );
-            listItem.style.setProperty(
-              "--_color-grid-item-text-color",
-              textColor
-            );
-          });
-        });
-      });
-
-      function getContrastYIQ(rgbColor) {
-        var r = rgbColor[0];
-        var g = rgbColor[1];
-        var b = rgbColor[2];
-        var yiq = (r * 299 + g * 587 + b * 114) / 1000;
-        return yiq >= 128 ? "black" : "white";
-      }
-    </script>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const locationSelect = document.getElementById("filter-location");
-        const typeSelect = document.getElementById("filter-type");
-        const hostSelect = document.getElementById("filter-host");
-        const posts = document.querySelectorAll(".grid-item");
-        const postList = document.querySelector(".grid");
-        const emptyStateDiv = document.querySelector(".events-empty-state");
-
-        function checkForVisiblePosts() {
-          // Check if any posts are visible
-          const anyVisible = Array.from(posts).some(
-            (post) => post.style.display !== "none"
-          );
-          if (anyVisible) {
-            postList.style.display = ""; // Show the <ol> if there are visible posts
-            emptyStateDiv.style.display = "none"; // Hide the empty state div
-          } else {
-            postList.style.display = "none"; // Hide the <ol> if there are no visible posts
-            emptyStateDiv.style.display = "flex"; // Show the empty state div
-          }
-        }
-
-        function filterPosts() {
-          const selectedLocation = locationSelect.value;
-          const selectedType = typeSelect.value;
-          const selectedHostClass = "filter-host-" + hostSelect.value;
-
-          posts.forEach((post) => {
-            const postLocation = post
-              .getAttribute("data-location")
-              .toLowerCase();
-            const postType = post.getAttribute("data-type").toLowerCase(); // Get the post type
-
-            // Start with checking host
-            let showPost =
-              hostSelect.value === "all" ||
-              post.classList.contains(selectedHostClass);
-
-            // If the host matches, proceed to check location
-            if (showPost) {
-              switch (selectedLocation) {
-                case "all":
-                  break; // keep showPost true
-                case "north-america":
-                  if (!(postLocation === "usa" || postLocation === "canada")) {
-                    showPost = false;
-                  }
-                  break;
-                case "europe":
-                  if (
-                    !(
-                      postLocation === "nederland" || postLocation === "belgium"
-                    )
-                  ) {
-                    showPost = false;
-                  }
-                  break;
-                // ... include other location cases as needed ...
-              }
-            }
-
-            // If the host and location match, proceed to check type
-            if (
-              showPost &&
-              selectedType !== "all" &&
-              postType !== selectedType
-            ) {
-              showPost = false;
-            }
-
-            post.style.display = showPost ? "" : "none"; // Apply the display style
-          });
-
-          checkForVisiblePosts(); // Check if any posts are visible and update the display accordingly
-        }
-
-        typeSelect.addEventListener("change", filterPosts);
-        locationSelect.addEventListener("change", filterPosts);
-        hostSelect.addEventListener("change", filterPosts);
-
-        filterPosts(); // Run once on load to set the correct initial state
-      });
-    </script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        AOS.init();
-      });
-    </script>
+    {% include footer.html %} {% include dialog.html %} {% include scripts.html
+    %}
   </body>
 </html>

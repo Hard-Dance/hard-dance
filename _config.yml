@@ -5,6 +5,8 @@ baseurl: ""
 url: "https://hard.dance"
 lang: "en-US"
 repository: "https://github.com/Hard-Dance/hard-dance"
+privacy-policy: "https://www.iubenda.com/privacy-policy/61434249"
+cookie-policy: "https://www.iubenda.com/privacy-policy/61434249/cookie-policy"
 
 permalink: /:categories/:title:output_ext
 
@@ -14,6 +16,9 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-dotenv
+
+exclude:
+  - _data/average_colors.json
 
 sass:
   sass_dir: _sass
@@ -35,9 +40,9 @@ admins:
     website: https://djtreachery.com
     socials:
       - service: Facebook
-        url: https://www.facebook.com/djtreachery/
+        url: https://www.facebook.com/djtreachery
       - service: Instagram
-        url: https://www.instagram.com/djtreachery/
+        url: https://www.instagram.com/djtreachery
       - service: Discord
         url: https://discordapp.com/users/djtreachery
       - service: Spotify
@@ -63,107 +68,212 @@ admins:
         url: https://github.com/FlyersPh9
       - service: Discord
         url: https://discordapp.com/users/flyersph9
+  - name: Rohan Kadkol
+    position: Web developer
+    location: 🇺🇸
+    email: kadkol_rohan@hotmail.com
+    socials:
+      - service: GitHub
+        url: https://github.com/rohan-kadkol
+      - service: Discord
+        url: https://discordapp.com/users/rohan_kadkol
+
+continents:
+  - Asia
+  - Africa
+  - Europe
+  - North America
+  - Oceania
+  - South America
 
 event-hosts:
   - name: A.L.E.X. Events
     url: https://www.alex-events.net
-    facebook: https://www.facebook.com/Official.alexevents/
+    facebook: https://www.facebook.com/Official.alexevents
   - name: Airbeat One
     url: https://airbeat-one.de
-    facebook: https://www.facebook.com/airbeatone/
+    facebook: https://www.facebook.com/airbeatone
   - name: Army of Hardcore USA
-    facebook: https://www.facebook.com/armyofhardcore.usa/
+    facebook: https://www.facebook.com/armyofhardcore.usa
   - name: Art of Dance
     url: https://www.artofdance.nl
-    facebook: https://www.facebook.com/artofdanceofficial/
+    facebook: https://www.facebook.com/artofdanceofficial
   - name: b2s
     url: https://www.b2s.nl
-    facebook: https://www.facebook.com/officialb2s/
+    facebook: https://www.facebook.com/officialb2s
   - name: Bass Events
     url: https://www.bassevents.be
-    facebook: https://www.facebook.com/bassevents/
+    facebook: https://www.facebook.com/bassevents
   - name: Basscon
     url: https://www.bassconmassive.com
-    facebook: https://www.facebook.com/bassconmassive/
+    facebook: https://www.facebook.com/bassconmassive
   - name: BKJN events
-    facebook: https://www.facebook.com/BKJNevents/
+    url: https://bkjn.nl
+    facebook: https://www.facebook.com/BKJNevents
+  - name: Chemistry Event
+    facebook: https://www.facebook.com/profile.php?id=100088066611103
+  - name: DediKted
+    url: https://linktr.ee/dedikted
+    facebook: https://www.facebook.com/dediktedk1
   - name: Devastator Events
     url: https://devastatorevents.cz
-    facebook: https://www.facebook.com/Devastator.events/
+    facebook: https://www.facebook.com/Devastator.events
   - name: Dreamfields Mexico
     url: https://dreamfields.mx
-    facebook: https://www.facebook.com/dreamfieldsmexico/
+    facebook: https://www.facebook.com/dreamfieldsmexico
   - name: Dropzone
     url: https://dropzonefest.com
-    facebook: https://www.facebook.com/dropzonefest/
+    facebook: https://www.facebook.com/dropzonefest
   - name: East Coast Hard Dance
     url: https://eastcoastharddance.com
-    facebook: https://www.facebook.com/EastCoastHardDance/
+    facebook: https://www.facebook.com/EastCoastHardDance
+  - name: Electric Love
+    url: https://www.electriclove.at
+    facebook: https://www.facebook.com/electriclovefestival
+  - name: Epic Entertainment
+    facebook: https://www.facebook.com/epicentertainmentnyc1
+  - name: F2D
+    url: https://travel.f2d.se
+    facebook: https://www.facebook.com/forced2dance
+  - name: Extinction
+    url: https://www.elationlv.com
+    facebook: https://www.facebook.com/extinctionusa
   - name: Fatality
-    facebook: https://www.facebook.com/fatalityevent/
+    facebook: https://www.facebook.com/fatalityevent
   - name: Gearbox Digital
     url: https://gearboxdigital.com
-    facebook: https://www.facebook.com/GearboxDigital/
+    facebook: https://www.facebook.com/GearboxDigital
+  - name: Hard Dance NYC
+    facebook: https://www.facebook.com/hard.dance.nyc
+  - name: HARDFEST
+    url: https://www.hardfest.nl
+    facebook: https://www.facebook.com/hardfest.nl
+  - name: HARDGATE
+    url: https://hardgate.jp
+    facebook: https://www.facebook.com/hardgatejp
   - name: Hardice
-    facebook: https://www.facebook.com/hardice.ch/
+    facebook: https://www.facebook.com/hardice.ch
+  - name: Hardmission
+    url: https://hardmissionfestival.com
+    facebook: https://www.facebook.com/HardmissionFestival
   - name: Hardstyle Arena
-    facebook: https://www.facebook.com/FreshHardstyleArena/
+    facebook: https://www.facebook.com/FreshHardstyleArena
   - name: Harmony of Hardcore
     url: https://www.harmonyofhardcore.nl
-    facebook: https://www.facebook.com/HOHfestival/
+    facebook: https://www.facebook.com/HOHfestival
+  - name: Heart of Hard
+    url: https://heartofhard.cz
+    facebook: https://www.facebook.com/heartofhard
   - name: Hellfire
     url: https://hell-fire.co.uk
-    facebook: https://www.facebook.com/Hellfireshow/
+    facebook: https://www.facebook.com/Hellfireshow
+  - name: High Energy Events
+    url: https://www.highenergyevents.nl
+    facebook: https://www.facebook.com/officialhighenergyevents
+  - name: HSU Events
+    url: https://www.hsuevents.com
+    facebook: https://www.facebook.com/EventsHSU
   - name: I AM HARDSTYLE
     url: https://iamhardstyle.com
-    facebook: https://www.facebook.com/iamhardstyleofficial/
+    facebook: https://www.facebook.com/iamhardstyleofficial
+  - name: Infinity Festival
+    url: https://infinity-festival.nl
+    facebook: https://www.facebook.com/profile.php?id=100091682835269
   - name: Intents Festival
     url: https://www.intentsfestival.nl
-    facebook: https://www.facebook.com/intentsfestival/
+    facebook: https://www.facebook.com/intentsfestival
+  - name: Let it out events
+    facebook: https://www.facebook.com/profile.php?id=100089362122143
+  - name: Masif Events
+    url: https://masifsaturdays.com.au
+    facebook: https://www.facebook.com/masifevents
   - name: Masters of Hardcore
     url: https://www.mastersofhardcore.com
-    facebook: https://www.facebook.com/officialMOH/
+    facebook: https://www.facebook.com/officialMOH
   - name: Matrixx
     url: https://www.matrixx.nl
-    facebook: https://www.facebook.com/MatrixxEvents/
+    facebook: https://www.facebook.com/MatrixxEvents
   - name: Multigroove
     url: https://multigroove.com
-    facebook: https://www.facebook.com/multigroove/
+    facebook: https://www.facebook.com/multigroove
   - name: Musical Madness
     url: https://www.musical-madness.de
-    facebook: https://www.facebook.com/musicalmadnessofficial/
+    facebook: https://www.facebook.com/musicalmadnessofficial
+  - name: MYK Events
+    url: https://www.myk-events.nl
+    facebook: https://www.facebook.com/RevengeWHMH
+  - name: Mysteryland
+    url: https://www.mysteryland.nl
+    facebook: https://www.facebook.com/Mysteryland
+  - name: Outlaw Events
+    url: https://www.outlawevents.nl
+    facebook: https://www.facebook.com/outlawevents.nl
+  - name: Overloud Events
+    facebook: https://www.facebook.com/ovldevents
+  - name: Paaspop
+    url: https://www.paaspop.nl
+    facebook: https://www.facebook.com/Paaspop
+  - name: Parookaville
+    url: https://www.parookaville.com
+    facebook: https://www.facebook.com/parookaville
+  - name: PKHS Hard
+    url: https://pkhs013.nl
+    facebook: https://www.facebook.com/PKHSHARD
   - name: Project Hardstyle CH
-    facebook: https://www.facebook.com/ProjectHardstyleCH/
+    facebook: https://www.facebook.com/ProjectHardstyleCH
   - name: Q-dance
     url: https://www.q-dance.com
-    facebook: https://www.facebook.com/Qdance/
+    facebook: https://www.facebook.com/Qdance
+  - name: Ravefield
+    url: https://ravefield.com
+    facebook: https://www.facebook.com/ravefield.official
+  - name: Ravingz Bass
+    facebook: https://www.facebook.com/ravingzbass
+  - name: Rawfare
+    url: https://www.rawfare.nl
+    facebook: https://www.facebook.com/RawfareOfficial
+  - name: Recharged
+    facebook: https://www.facebook.com/rechargedevent
+  - name: Reminder
+    url: https://reminderhardstyleclassics.com
+    facebook: https://www.facebook.com/hardstyleclassics2006till2011
+  - name: Ruggengraatjes
+    facebook: https://www.facebook.com/profile.php?id=100089611314203
   - name: Shockerz
     url: https://shockerz.nl
-    facebook: https://www.facebook.com/shockerzofficial/
+    facebook: https://www.facebook.com/shockerzofficial
+  - name: State of Bass
+    facebook: https://www.facebook.com/profile.php?id=100063544059838
+  - name: Supersized Kingsday
+    facebook: https://www.facebook.com/supersizedkingsdayfestival
+  - name: The Hardest
+    facebook: https://www.facebook.com/profile.php?id=100089439726875
   - name: Thunderdome
     url: https://www.thunderdome.com
-    facebook: https://www.facebook.com/ThunderdomeIsYou/
+    facebook: https://www.facebook.com/ThunderdomeIsYou
+  - name: Timeless Festival
+    url: https://www.timelessfestival.com
+    facebook: https://www.facebook.com/TimelessFestivalOfficial
   - name: Tomorrowland
     url: https://www.tomorrowland.com
-    facebook: https://www.facebook.com/tomorrowland/
+    facebook: https://www.facebook.com/tomorrowland
   - name: Twisted Events
-    facebook: https://www.facebook.com/twisted.events.official/
+    facebook: https://www.facebook.com/twisted.events.official
+  - name: Ultra Worldwide
+    url: https://umfworldwide.com
+    facebook: https://www.facebook.com/Ultra/
   - name: WhiteNorat.
-    facebook: https://www.facebook.com/Whitenoratevents/
-
-event-types:
-  - Festival
-  - Arena
-  - Club
-  - Underground
+    facebook: https://www.facebook.com/Whitenoratevents
 
 friends:
   - title: /r/hardstyle
     subtitle: Reddit
-    url: https://www.reddit.com/r/hardstyle/
+    url: https://www.reddit.com/r/hardstyle
   - title: Hard Dance Release Radar
     subtitle: Spotify
     url: https://www.hdrr.info
   - title: HarderState
     subtitle: Forum
     url: https://harderstate.com
+
+google_maps_api_key: $GOOGLE_MAPS_API_KEY
