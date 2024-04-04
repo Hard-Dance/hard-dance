@@ -8,4 +8,4 @@ _site
 vendor
 .env*
 # Local Netlify folder
-.netlify
+.netlify/plugins

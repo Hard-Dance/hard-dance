@@ -9,7 +9,8 @@ exports.handler = async (event) => {
   const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
   const repoOwner = "Hard-Dance";
   const repoName = "hard-dance";
-  const branchName = "main"; // Ensure this is the branch you want to use
+  const baseBranchName = "main";
+  const newBranchName = `new-event-${Date.now()}`; // Unique branch name
 
   const formData = JSON.parse(event.body);
   const currentDate = new Date().toISOString().split("T")[0]; // YYYY-MM-DD
@@ -43,17 +44,24 @@ image: /assets/img/events/${fileName.replace(
 ---
 `;
 
-  // GitHub API URL to create a new file
-  const githubApiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`;
-
   try {
-    // Call GitHub API to create a new file
-    const response = await axios.put(
-      githubApiUrl,
+    // Get the SHA of the latest commit on the base branch
+    const { data: { object: { sha: baseSha } } } = await axios.get(
+      `https://api.github.com/repos/${repoOwner}/${repoName}/git/refs/heads/${baseBranchName}`,
       {
-        message: `New event submission: ${formData["event-name"]}`,
-        content: Buffer.from(markdownContent).toString("base64"),
-        branch: branchName,
+        headers: {
+          Authorization: `Bearer ${GITHUB_TOKEN}`,
+          "User-Agent": "Netlify Function",
+        },
+      }
+    );
+
+    // Create a new branch from the base branch
+    await axios.post(
+      `https://api.github.com/repos/${repoOwner}/${repoName}/git/refs`,
+      {
+        ref: `refs/heads/${newBranchName}`,
+        sha: baseSha,
       },
       {
         headers: {
@@ -63,9 +71,37 @@ image: /assets/img/events/${fileName.replace(
       }
     );
 
-    // Handle image upload logic here if necessary
-    // Note: For image uploads, consider using Netlify Large Media or another storage solution,
-    // as directly uploading to GitHub via API might not be practical for binary files.
+    // Create a new file on the new branch
+    await axios.put(
+      `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`,
+      {
+        message: `New event submission: ${formData["event-name"]}`,
+        content: Buffer.from(markdownContent).toString("base64"),
+        branch: newBranchName,
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${GITHUB_TOKEN}`,
+          "User-Agent": "Netlify Function",
+        },
+      }
+    );
+
+    // Create a pull request to merge the new branch into the base branch
+    await axios.post(
+      `https://api.github.com/repos/${repoOwner}/${repoName}/pulls`,
+      {
+        title: `New event submission: ${formData["event-name"]}`,
+        head: newBranchName,
+        base: baseBranchName,
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${GITHUB_TOKEN}`,
+          "User-Agent": "Netlify Function",
+        },
+      }
+    );
 
     return { statusCode: 200, body: "Event created successfully" };
   } catch (error) {
