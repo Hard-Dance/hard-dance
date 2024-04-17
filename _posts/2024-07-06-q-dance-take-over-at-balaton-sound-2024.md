@@ -7,7 +7,6 @@ datestart: 2024/07/06
 location: Lake Balaton, Hungary
 hosts:
   - Q-dance
-links:
 facebook: https://www.facebook.com/events/943829836759917
 image: /assets/img/events/q-dance-take-over-at-balaton-sound-2024.jpg
 ---
