@@ -8,7 +8,6 @@ dateend: 2024/07/14
 location: Busselsteeg 22, 5258 VG Berlicum, Netherlands
 hosts:
   - Infinity Festival
-links:
 facebook: https://www.facebook.com/events/1063252441556266
 image: /assets/img/events/infinity-festival-2024.jpg
 ---

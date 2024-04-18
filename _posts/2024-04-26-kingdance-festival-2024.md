@@ -8,7 +8,6 @@ dateend: 2024/04/27
 location: Lakeside Zwolle, 8026 Zwolle, Netherlands
 hosts:
   - High Energy Events
-links:
 facebook: https://www.facebook.com/events/185490427742785
 image: /assets/img/events/kingdance-festival-2024.jpg
 ---

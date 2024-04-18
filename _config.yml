@@ -232,6 +232,9 @@ event-hosts:
   - name: Rawfare
     url: https://www.rawfare.nl
     facebook: https://www.facebook.com/RawfareOfficial
+  - name: REBiRTH Festival
+    url: https://www.rebirth-festival.nl
+    facebook: https://www.facebook.com/rebirthfestival
   - name: Recharged
     facebook: https://www.facebook.com/rechargedevent
   - name: Reminder
