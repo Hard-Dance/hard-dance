@@ -135,6 +135,9 @@ event-hosts:
   - name: F2D
     url: https://travel.f2d.se
     facebook: https://www.facebook.com/forced2dance
+  - name: Future of Hardstyle
+    url: https://www.futureofhardstyle.nl
+    facebook: https://www.facebook.com/futureofhardstyle
   - name: Extinction
     url: https://www.elationlv.com
     facebook: https://www.facebook.com/extinctionusa
@@ -232,6 +235,9 @@ event-hosts:
   - name: Rawfare
     url: https://www.rawfare.nl
     facebook: https://www.facebook.com/RawfareOfficial
+  - name: REBELLiON
+    url: https://www.jointherebellion.nl
+    facebook: https://www.facebook.com/jointherebellion.nl
   - name: REBiRTH Festival
     url: https://www.rebirth-festival.nl
     facebook: https://www.facebook.com/rebirthfestival
@@ -262,6 +268,9 @@ event-hosts:
     facebook: https://www.facebook.com/tomorrowland
   - name: Twisted Events
     facebook: https://www.facebook.com/twisted.events.official
+  - name: Ultimate Bassline Festival
+    url: http://ultimatebassline-festival.be
+    facebook: https://www.facebook.com/profile.php?id=61556131384684
   - name: Ultra Worldwide
     url: https://umfworldwide.com
     facebook: https://www.facebook.com/Ultra/
