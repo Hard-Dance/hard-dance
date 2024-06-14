@@ -86,6 +86,7 @@
           {{ content | hashtag_links }}
         </section>
 
+        {% if page.hosts %}
         <section>
           <h2>Host{% if page.hosts.size > 1 %}s{% endif %}</h2>
 
@@ -222,7 +223,8 @@
             </div>
           </details>
         {% endfor %}
-        </div>
+        </section>
+        {% endif %}
       </div>
     </main>
 
