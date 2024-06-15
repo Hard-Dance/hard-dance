@@ -1,6 +1,7 @@
 import type { MetaFunction } from "@remix-run/node";
 import { Header } from "../components/Header";
 import { BannerEvents } from "../components/BannerEvents";
+import { Footer } from "../components/Footer";
 
 export const meta: MetaFunction = () => {
   return [
@@ -180,10 +181,13 @@ export default function Index() {
           Add an event
         </button>
       </div>
-    </main>
+    </main> */}
 
-    {% include footer.html %} {% include dialog.html %} {% include scripts.html
-    %} */}
+      {/* {% include footer.html %} */}
+      <Footer />
+
+      {/* {% include dialog.html %} */}
+      {/* {% include scripts.html%} */}
     </>
   );
 }
