@@ -12,6 +12,9 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Index() {
+  // TODO: real data
+  const average_color = "#5F455D";
+
   return (
     <>
       {/* {% include header.html %} */}
@@ -26,17 +29,18 @@ export default function Index() {
         {/* {% include title-bar.html %} */}
         <TitleBar />
 
-        {/* <ol class="grid events-grid">
-        {% assign today = 'now' | date: '%Y-%m-%d' %} {% assign sorted_posts =
+        <ol className="grid events-grid">
+          {/* {% assign today = 'now' | date: '%Y-%m-%d' %} {% assign sorted_posts =
         site.posts | sort: 'datestart' %} {% for post in sorted_posts %} {%
         assign post_start_date = post.datestart | date: '%Y-%m-%d' %} {% if
-        post_start_date >= today %}
-        <!-- prettier-ignore -->
-        {% assign location_parts = post.location | split: ',' %}
+        post_start_date >= today %} */}
+          {/* TODO: real data */}
+          {/* <!-- prettier-ignore --> */}
+          {/* {% assign location_parts = post.location | split: ',' %}
         {% assign country_part = location_parts | last | strip %}
-        {% assign country = country_part %} 
+        {% assign country = country_part %}  */}
 
-        {% case country %}
+          {/* {% case country %}
           {% when 'Algeria' %} {% assign flag = '🇩🇿' %}
           {% when 'Argentina' %} {% assign flag = '🇦🇷' %}
           {% when 'Australia' %} {% assign flag = '🇦🇺' %}
@@ -74,45 +78,58 @@ export default function Index() {
           {% when 'Venezuela' %} {% assign flag = '🇻🇪' %}
         {%- else -%}
           {% assign flag = '' %}
-        {% endcase %}
+        {% endcase %} */}
 
-        {% assign average_color = site.data.average_colors[post.slug] %}
-        <li
-          class="grid-item events-grid-item {% for host in post.hosts %}filter-host-{{ host | slugify }} {% endfor %}"
-          style="
-            --xxx-color-background: {{ average_color }};
-            {% if post.foreground %}
-            --xxx-color-text: color-mix(in srgb, {{ average_color }}, black 80%);
-            --xxx-color-text-muted: color-mix(in srgb, {{ average_color }} 50%, black 50%);
-            --xxx-color-accent: color-mix(in srgb, {{ average_color }} 100%, black 25%);
-            {% else %}
-            --xxx-color-text: color-mix(in srgb, {{ average_color }}, white 80%);
-            --xxx-color-text-muted: color-mix(in srgb, {{ average_color }} 50%, white 50%);
-            --xxx-color-accent: color-mix(in srgb, {{ average_color }} 100%, white 25%);
-            {% endif %}
-          "
-          id="grid-item-{{ forloop.index }}"
-          data-location="{{ country_part | slugify }}"
-          {% if post.is_online == true %}
+          {/* {% assign average_color = site.data.average_colors[post.slug] %} */}
+          <li
+            className="grid-item events-grid-item {% for host in post.hosts %}filter-host-{{ host | slugify }} {% endfor %}"
+            // style="
+            //   --xxx-color-background: {{ average_color }};
+            //   {% if post.foreground %}
+            //   --xxx-color-text: color-mix(in srgb, {{ average_color }}, black 80%);
+            //   --xxx-color-text-muted: color-mix(in srgb, {{ average_color }} 50%, black 50%);
+            //   --xxx-color-accent: color-mix(in srgb, {{ average_color }} 100%, black 25%);
+            //   {% else %}
+            //   --xxx-color-text: color-mix(in srgb, {{ average_color }}, white 80%);
+            //   --xxx-color-text-muted: color-mix(in srgb, {{ average_color }} 50%, white 50%);
+            //   --xxx-color-accent: color-mix(in srgb, {{ average_color }} 100%, white 25%);
+            //   {% endif %}
+            // "
+
+            // TODO: Confirm styles
+            style={
+              {
+                "--xxx-color-background": average_color,
+                "--xxx-color-text": `color-mix(in srgb, ${average_color}, black 80%)`,
+                "--xxx-color-text-muted": `color-mix(in srgb, ${average_color} 50%, black 50%)`,
+                "--xxx-color-accent": `color-mix(in srgb, ${average_color} 100%, black 25%)`,
+              } as React.CSSProperties
+            }
+            id="grid-item-{{ forloop.index }}"
+            data-location="{{ country_part | slugify }}"
+            // TODO: Real condition
+            // {% if post.is_online == true %}
             data-virtual
-          {% endif %}
-          {%
-          if
-          post.featured
-          %}
-          data-featured="true"
-          {%
-          endif
-          %}
-        >
-          {% if post.featured and post.video %}
+            // {% endif %}
+
+            // TODO: Real condition
+            // {%
+            // if
+            // post.featured
+            // %}
+            data-featured="true"
+            // {%
+            // endif
+            // %}
+          >
+            {/* {% if post.featured and post.video %}
           <video
             autoplay
             muted
             loop
             playsinline
             poster="/.netlify/images/?url={{ post.image }}&fit=cover&h=300"
-            class="grid-item-image"
+            className="grid-item-image"
           >
             <source
               src="/assets/video/events/{{ post.title | slugify }}.mp4"
@@ -127,49 +144,82 @@ export default function Index() {
               type="video/webm"
             />
           </video>
-          {% endif %}
-          <img
-            class="grid-item-image"
-            srcset="/.netlify/images/?url={{ post.image }}&fit=cover&h=600 2x, /.netlify/images/?url={{ post.image }}&fit=cover&h=900 3x"
-            src="/.netlify/images/?url={{ post.image }}&fit=cover&h=300"
-            alt="{{ post.title | smartify }} image"
-            data-index="{{ forloop.index }}"
-            draggable="false"
-            style="view-transition-name: post-image-{{ post.title | slugify }};"
-          />
-          <div class="grid-item-metadata">
-            <a
-              class="grid-item-metadata-title grid-item-anchor"
-              href="{{ post.url }}"
-              style="view-transition-name: post-title-{{ post.title | slugify }};"
-              >{{ post.title | smartify }}</a
-            >
-            <div class="grid-item-metadata-subtitle">
-              <time datetime="{{ post.datestart | date: '%Y-%m-%d' }}">
-                {{ post.datestart | date: "%b %d" }}
-              </time>
+          {% endif %} */}
 
-              {% if post.dateend %} &nbsp;–&nbsp;
-              <time datetime="{{ post.dateend | date: '%Y-%m-%d' }}">
-                {{ post.dateend | date: "%b %d" }}
-              </time>
-              {% endif %}
-            </div>
-            <div class="grid-item-metadata-symbol">
-              {% if post.is_online %}🛰️{% endif %} {{ flag }}
-            </div>
-            {% assign today = 'now' | date: '%Y-%m-%d' %} {% assign start_date =
+            <img
+              className="grid-item-image"
+              srcSet="/.netlify/images/?url={{ post.image }}&fit=cover&h=600 2x, /.netlify/images/?url={{ post.image }}&fit=cover&h=900 3x"
+              src="/.netlify/images/?url={{ post.image }}&fit=cover&h=300"
+              // alt="{{ post.title | smartify }} image"
+              // TODO: Better/Real alt
+              alt="TODO"
+              data-index="{{ forloop.index }}"
+              draggable="false"
+              // style="view-transition-name: post-image-{{ post.title | slugify }};"
+              style={
+                {
+                  "view-transition-name": `post-image-{{ post.title | slugify }}`, // TODO: Real data
+                } as React.CSSProperties
+              }
+            />
+            <div className="grid-item-metadata">
+              <a
+                className="grid-item-metadata-title grid-item-anchor"
+                href="{{ post.url }}"
+                // style="view-transition-name: post-title-{{ post.title | slugify }};"
+                style={
+                  {
+                    "view-transition-name": `post-title-{{ post.title | slugify }}`, // TODO: Real data
+                  } as React.CSSProperties
+                }
+              >
+                {/* {{ post.title | smartify }} */}
+                {/* TODO: Real data */}
+                TODO: post.title
+              </a>
+              <div className="grid-item-metadata-subtitle">
+                <time
+                // datetime="{{ post.datestart | date: '%Y-%m-%d' }}"
+                // TODO: Real data
+                >
+                  {/* {{ post.datestart | date: "%b %d" }} */}
+                  TODO: post.datestart
+                </time>
+
+                {/* {% if post.dateend %} &nbsp;–&nbsp; */}
+                <time
+                // datetime="{{ post.dateend | date: '%Y-%m-%d' }}"
+                // TODO: Real data
+                >
+                  {/* {{ post.dateend | date: "%b %d" }} */}
+                  TODO: post.dateend
+                </time>
+                {/* {% endif %} */}
+              </div>
+              <div className="grid-item-metadata-symbol">
+                {/* {% if post.is_online %}🛰️{% endif %} */}
+                {/* Real condition */}
+                🛰️
+                {/* {{ flag }} */}
+                TODO: flag
+              </div>
+
+              {/* {% assign today = 'now' | date: '%Y-%m-%d' %} {% assign start_date =
             post.datestart | date: '%Y-%m-%d' %} {% assign end_date =
-            post.dateend | date: '%Y-%m-%d' %} {% if post.dateend %} {% if today
-            >= start_date and today <= end_date %}
-            <div class="event-list-item-status">Today</div>
-            {% endif %} {% else %} {% if today == start_date %}
-            <div class="event-list-item-status">Today</div>
-            {% endif %} {% endif %}
-          </div>
-        </li>
-        {% endif %} {% endfor %}
-      </ol> */}
+            post.dateend | date: '%Y-%m-%d' %} */}
+
+              {/* TODO: Real conditions */}
+              {/* {% if post.dateend %}
+            {% if today >= start_date and today <= end_date %} */}
+              <div className="event-list-item-status">Today</div>
+              {/* {% endif %} {% else %} {% if today == start_date %} */}
+              <div className="event-list-item-status">Today</div>
+              {/* {% endif %} {% endif %} */}
+            </div>
+          </li>
+          {/* {% endif %} {% endfor %} */}
+        </ol>
+
         <div className="events-empty-state" style={{ display: "none" }}>
           <div className="events-empty-state-emoji">🔇</div>
           <h2>No upcoming events found.</h2>
