@@ -2,6 +2,7 @@ import type { MetaFunction } from "@remix-run/node";
 import { Header } from "../components/Header";
 import { BannerEvents } from "../components/BannerEvents";
 import { Footer } from "../components/Footer";
+import { TitleBar } from "../components/TitleBar";
 
 export const meta: MetaFunction = () => {
   return [
@@ -21,10 +22,11 @@ export default function Index() {
         <BannerEvents />
       </div>
 
-      {/* <main>
-      {% include title-bar.html %}
+      <main>
+        {/* {% include title-bar.html %} */}
+        <TitleBar />
 
-      <ol class="grid events-grid">
+        {/* <ol class="grid events-grid">
         {% assign today = 'now' | date: '%Y-%m-%d' %} {% assign sorted_posts =
         site.posts | sort: 'datestart' %} {% for post in sorted_posts %} {%
         assign post_start_date = post.datestart | date: '%Y-%m-%d' %} {% if
@@ -167,21 +169,22 @@ export default function Index() {
           </div>
         </li>
         {% endif %} {% endfor %}
-      </ol>
-      <div class="events-empty-state" style="display: none">
-        <div class="events-empty-state-emoji">🔇</div>
-        <h2>No upcoming events found.</h2>
-        <p>Do you know of an event that should be listed here?</p>
-        <button
-          aria-label="Add event"
-          class="button"
-          data-variant="call-to-action"
-          onclick="document.getElementById('add-event').show()"
-        >
-          Add an event
-        </button>
-      </div>
-    </main> */}
+      </ol> */}
+        <div className="events-empty-state" style={{ display: "none" }}>
+          <div className="events-empty-state-emoji">🔇</div>
+          <h2>No upcoming events found.</h2>
+          <p>Do you know of an event that should be listed here?</p>
+          <button
+            aria-label="Add event"
+            className="button"
+            data-variant="call-to-action"
+            // onclick="document.getElementById('add-event').show()"
+            // TODO: onClick
+          >
+            Add an event
+          </button>
+        </div>
+      </main>
 
       {/* {% include footer.html %} */}
       <Footer />
