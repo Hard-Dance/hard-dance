@@ -1,5 +1,6 @@
 import type { MetaFunction } from "@remix-run/node";
 import { Header } from "../components/Header";
+import { BannerEvents } from "../components/BannerEvents";
 
 export const meta: MetaFunction = () => {
   return [
@@ -14,11 +15,12 @@ export default function Index() {
       {/* {% include header.html %} */}
       <Header />
 
-      {/* <div class="banner events-banner" id="top">
-      {% include banner-events.html %}
-    </div>
+      <div className="banner events-banner" id="top">
+        {/* {% include banner-events.html %} */}
+        <BannerEvents />
+      </div>
 
-    <main>
+      {/* <main>
       {% include title-bar.html %}
 
       <ol class="grid events-grid">
