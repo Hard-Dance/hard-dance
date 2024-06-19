@@ -4,6 +4,7 @@ category: events
 title: "Relevatez Festival 2024"
 date: 2023/08/07
 datestart: 2024/08/01
+dateend: 2024/08/03
 location: Glaubenbergstrasse, 6162 Entlebuch, Switzerland
 hosts:
   - Ravefield
