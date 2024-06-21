@@ -8,7 +8,7 @@ locationTitle: ENNI Eventhalle
 location: Filder Straße 304, 47447 Moers, Germany
 hosts:
   - Heaven & Hill Festival
-tickets: https://example.com/tickets
+tickets: https://permanent.ticket.io/96chyt7a/
 facebook: https://www.facebook.com/events/944621957387725/
 image: /assets/img/events/halloween-dancing-dead-3.jpg
 ---
