@@ -54,7 +54,7 @@ export const loader: LoaderFunction = async () => {
   //   events: [],
   // };
 
-  const allFileNames = fs.readdirSync("../jekyll/_posts");
+  const allFileNames = fs.readdirSync("../jekyll/_posts").filter(fileName => !fileName.includes("2024-01-01-template-2024.md"));
   const events: Event[] = allFileNames.map((fileName) => {
     const markdownFilePath = path.join("../jekyll/_posts", fileName);
     return markdownToEvent(markdownFilePath);
@@ -151,8 +151,8 @@ export default function Index() {
             aria-label="Add event"
             className="button"
             data-variant="call-to-action"
-            // onclick="document.getElementById('add-event').show()"
-            // TODO: onClick
+          // onclick="document.getElementById('add-event').show()"
+          // TODO: onClick
           >
             Add an event
           </button>
