@@ -41,7 +41,7 @@ export const BannerEvents = () => {
 				<p>
 					{/* Download the {{ site.title }} app and stay in the loop! */}
 					{/* TODO: Try to use site.title */}
-					Download the Hard.Dance app and stay in the loop!
+					Download the Hard.Dance app and stay in the loop!{" "}
 					<a href="/about.html#app">See instructions.</a>
 				</p>
 				<button className="button" aria-label="Close dialog" title="Close">
