@@ -1,4 +1,6 @@
 import { useLocation } from "@remix-run/react";
+import cx from "classnames";
+import * as React from "react";
 
 export const TitleBar = () => {
 	const location = useLocation();
@@ -8,10 +10,18 @@ export const TitleBar = () => {
 
 	const pageLayout = location.pathname;
 
+	const pageTitleDrawerItemsWrapper = React.useRef<HTMLDivElement>(null);
+
 	//   return <div>Hello</div>;
 
+	const [showFilters, setShowFilters] = React.useState(false);
+
 	return (
-		<div className="page-title {% if page.layout == 'event' %}event-page-title{% endif %}">
+		<div
+			className={cx("page-title", {
+				"event-page-title": pageLayout === "/event",
+			})}
+		>
 			{/* {% if page.layout == 'event' %} */}
 			{pageLayout === "/event" && (
 				<div className="event-page-title-stacked">
@@ -40,29 +50,30 @@ export const TitleBar = () => {
 				<h1>
 					{/* {{ page.title }} */}
 					{/* TODO: Use real data */}
-					page.title
+					Events
 				</h1>
 			)}
 			{/* {% endif %} */}
 
 			{/* {% if page.layout == 'events' %} */}
-			{pageLayout === "/events" ? (
+			{pageLayout === "/" ? (
 				<>
 					<div className="page-title-start">
 						<a aria-label="View past events" className="button" href="/events/">
-							<svg alt="Past icon" aria-hidden="true">
-								<use xlinkHref="/assets/symbols.svg#past"></use>
+							<svg aria-hidden="true">
+								<use xlinkHref="/assets/symbols.svg#past" />
 							</svg>
 							<span className="hide-on-mobile">Past</span>
 						</a>
 						<button
+							type="button"
 							aria-label="Add event"
 							className="button"
 							// onclick="document.getElementById('add-event').show()"
 							// TODO: Real onclick
 						>
-							<svg alt="Add icon" aria-hidden="true">
-								<use xlinkHref="/assets/symbols.svg#add"></use>
+							<svg aria-hidden="true">
+								<use xlinkHref="/assets/symbols.svg#add" />
 							</svg>
 							<span className="hide-on-mobile">Add</span>
 						</button>
@@ -70,28 +81,31 @@ export const TitleBar = () => {
 
 					<div className="page-title-end">
 						<a
+							// TODO: Is aria-label needed when the link has text?
 							aria-label="Subscribe to RSS feed"
 							className="button"
 							href="feed:{{ '/feed.xml' | absolute_url }}"
 						>
-							<svg alt="RSS icon" aria-hidden="true">
-								<use xlinkHref="/assets/symbols.svg#rss"></use>
+							<svg aria-hidden="true">
+								<use xlinkHref="/assets/symbols.svg#rss" />
 							</svg>
 							<span className="hide-on-mobile">Subscribe</span>
 						</a>
 						<button
+							type="button"
 							className="button"
 							id="events-filter-drawer-button"
 							aria-label="Show filter options"
 							aria-controls="filters-drawer"
-							aria-expanded="false"
+							aria-expanded={showFilters}
+							onClick={() => setShowFilters((prev) => !prev)}
 						>
-							<svg alt="Filter icon" aria-hidden="true">
-								<use xlinkHref="/assets/symbols.svg#options"></use>
+							<svg aria-hidden="true">
+								<use xlinkHref="/assets/symbols.svg#options" />
 							</svg>
 							<span className="hide-on-mobile">Filters</span>
-							<svg alt="Chevron icon" aria-hidden="true">
-								<use xlinkHref="/assets/symbols.svg#chevron-down"></use>
+							<svg aria-hidden="true">
+								<use xlinkHref="/assets/symbols.svg#chevron-down" />
 							</svg>
 						</button>
 					</div>
@@ -101,21 +115,21 @@ export const TitleBar = () => {
 
 				<div className="page-title-start">
 					<a aria-label="View upcoming events" className="button" href="/">
-						<svg
-							alt="Upcoming icon"
-							aria-hidden="true"
-							style={{ transform: "scaleX(-1)" }}
-						>
-							<use xlinkHref="/assets/symbols.svg#past"></use>
+						<svg aria-hidden="true" style={{ transform: "scaleX(-1)" }}>
+							<use xlinkHref="/assets/symbols.svg#past" />
 						</svg>
 						<span className="hide-on-mobile">Upcoming</span>
 					</a>
 				</div>
 			) : // {% elsif page.layout == 'event' %}
 			pageLayout === "/event" ? (
-				<button className="button page-title-end" id="shareButton">
-					<svg alt="{{ link.title }} icon" aria-hidden="true">
-						<use xlinkHref="/assets/symbols.svg#share"></use>
+				<button
+					type="button"
+					className="button page-title-end"
+					id="shareButton"
+				>
+					<svg aria-hidden="true">
+						<use xlinkHref="/assets/symbols.svg#share" />
 					</svg>
 					<span className="hide-on-mobile">Share</span>
 				</button>
@@ -123,9 +137,19 @@ export const TitleBar = () => {
 			undefined}
 
 			{/* {% if page.layout == 'events' %} */}
-			{pageLayout === "/events" && (
-				<div className="page-title-drawer" id="filters-drawer">
+			{pageLayout === "/" && (
+				<div
+					className="page-title-drawer"
+					id="filters-drawer"
+					style={{
+						maxHeight: showFilters
+							? pageTitleDrawerItemsWrapper.current?.getBoundingClientRect()
+									.height ?? 0
+							: 0,
+					}}
+				>
 					<div
+						ref={pageTitleDrawerItemsWrapper}
 						className="page-title-drawer-items-wrapper"
 						//   inert TODO: What is the JSX equivalent of this?
 					>
@@ -137,7 +161,7 @@ export const TitleBar = () => {
 									// switch TODO: What is the JSX equivalent of this?
 									name="virtual"
 									id="filter-virtual"
-								></input>
+								/>
 							</label>
 						</div>
 
@@ -162,7 +186,7 @@ export const TitleBar = () => {
 						<div className="page-title-drawer-item" id="filter-country-wrapper">
 							<label htmlFor="filter-country">
 								Country
-								<select name="country" id="filter-country"></select>
+								<select name="country" id="filter-country" />
 							</label>
 						</div>
 

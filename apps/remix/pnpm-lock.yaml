@@ -20,6 +20,9 @@ importers:
       '@remix-run/serve':
         specifier: ^2.9.2
         version: 2.9.2(typescript@5.4.5)
+      classnames:
+        specifier: ^2.5.1
+        version: 2.5.1
       cobe:
         specifier: ^0.6.3
         version: 0.6.3
