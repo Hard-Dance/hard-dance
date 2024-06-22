@@ -9,9 +9,11 @@ import {
 import type { LinksFunction } from "@remix-run/node";
 
 import appStylesHref from "./styles/style.css?url";
+import appStyles1Href from "./styles/style1.css?url";
 
 export const links: LinksFunction = () => [
 	{ rel: "stylesheet", href: appStylesHref },
+	{ rel: "stylesheet", href: appStyles1Href },
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
