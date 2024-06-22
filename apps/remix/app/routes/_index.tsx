@@ -10,91 +10,57 @@ import path from "path";
 import { useLoaderData } from "@remix-run/react";
 
 export const meta: MetaFunction = () => {
-  return [
-    { title: "New Remix App" },
-    { name: "description", content: "Welcome to Remix!" },
-  ];
+	return [
+		{ title: "New Remix App" },
+		{ name: "description", content: "Welcome to Remix!" },
+	];
 };
 
 // Loader
 export const loader: LoaderFunction = async () => {
-  // Get names of all .md files in ../../../jekyll/_posts
-  // const events = await Promise.all(
-  //   fs.readdirSync("../../../jekyll/_posts").map(async (file) => {
-  //     const filePath = path.join("../../../jekyll/_posts", file);
-  //     const fileContent = await fs.readFileSync(filePath, "utf8");
-  //     const { title, datestart, dateend, location, hosts, featured } =
-  //       matter(fileContent);
-  //     return {
-  //       id: file.replace(".md", ""),
-  //       title,
-  //       datestart,
-  //       dateend,
-  //       location,
-  //       hosts,
-  //       featured,
-  //     };
-  //   })
-  // );
+	const allFileNames = fs
+		.readdirSync("../jekyll/_posts")
+		.filter((fileName) => !fileName.includes("2024-01-01-template-2024.md"));
+	const events: Event[] = allFileNames.map((fileName) => {
+		const markdownFilePath = path.join("../jekyll/_posts", fileName);
+		return markdownToEvent(markdownFilePath);
+	});
 
-  // console.log("J'suis ici", fs.readdirSync("../jekyll/_posts")[0]);
-  // const fileName = fs.readdirSync("../jekyll/_posts")[0];
-  // const fileName = "2024-06-27-defqon-1-weekend-festival-2024.md";
-  // const filePath = path.join("../jekyll/_posts", fileName);
-  // const absoluteFilePath = path.resolve(filePath);
-  // const fileContent = fs.readFileSync(absoluteFilePath, "utf8");
-  // const parsedMarkdown = matter(fileContent);
-
-  // console.log(
-  //   // text should be green. use escape sequences
-  //   `\x1b[32m${JSON.stringify(greyMatterToEvent(parsedMarkdown))}\x1b[0m`
-  // );
-
-  // return {
-  //   events: [],
-  // };
-
-  const allFileNames = fs.readdirSync("../jekyll/_posts").filter(fileName => !fileName.includes("2024-01-01-template-2024.md"));
-  const events: Event[] = allFileNames.map((fileName) => {
-    const markdownFilePath = path.join("../jekyll/_posts", fileName);
-    return markdownToEvent(markdownFilePath);
-  });
-
-  return {
-    events,
-  };
+	return {
+		events,
+	};
 };
 
 export default function Index() {
-  const loaderData = useLoaderData<typeof loader>();
-  const events = loaderData.events as Event[];
+	const loaderData = useLoaderData<typeof loader>();
+	const events = loaderData.events as Event[];
 
-  return (
-    <>
-      {/* {% include header.html %} */}
-      <Header />
+	return (
+		<>
+			{/* {% include header.html %} */}
+			<Header />
 
-      <div className="banner events-banner" id="top">
-        {/* {% include banner-events.html %} */}
-        <BannerEvents />
-      </div>
+			<div className="banner events-banner" id="top">
+				{/* {% include banner-events.html %} */}
+				<BannerEvents />
+			</div>
 
-      <main>
-        {/* {% include title-bar.html %} */}
-        <TitleBar />
+			<main>
+				{/* {% include title-bar.html %} */}
+				<TitleBar />
 
-        <ol className="grid events-grid">
-          {/* {% assign today = 'now' | date: '%Y-%m-%d' %} {% assign sorted_posts =
+				<ol className="grid events-grid">
+					{/* {% assign today = 'now' | date: '%Y-%m-%d' %} {% assign sorted_posts =
         site.posts | sort: 'datestart' %} {% for post in sorted_posts %} {%
         assign post_start_date = post.datestart | date: '%Y-%m-%d' %} {% if
         post_start_date >= today %} */}
-          {/* TODO: real data */}
-          {/* <!-- prettier-ignore --> */}
-          {/* {% assign location_parts = post.location | split: ',' %}
+					{/* TODO: real data */}
+					{/* <!-- prettier-ignore --> */}
+					{/* {% assign location_parts = post.location | split: ',' %}
         {% assign country_part = location_parts | last | strip %}
         {% assign country = country_part %}  */}
 
-          {/* {% case country %}
+					{/* {% case country %}
           {% when 'Algeria' %} {% assign flag = '🇩🇿' %}
           {% when 'Argentina' %} {% assign flag = '🇦🇷' %}
           {% when 'Australia' %} {% assign flag = '🇦🇺' %}
@@ -134,36 +100,36 @@ export default function Index() {
           {% assign flag = '' %}
         {% endcase %} */}
 
-          {/* {% assign average_color = site.data.average_colors[post.slug] %} */}
+					{/* {% assign average_color = site.data.average_colors[post.slug] %} */}
 
-          {/* {% endif %} {% endfor %} */}
+					{/* {% endif %} {% endfor %} */}
 
-          {events.map((event, index) => (
-            <EventCardLi key={event.id} event={event} index={index} />
-          ))}
-        </ol>
+					{events.map((event, index) => (
+						<EventCardLi key={event.id} event={event} index={index} />
+					))}
+				</ol>
 
-        <div className="events-empty-state" style={{ display: "none" }}>
-          <div className="events-empty-state-emoji">🔇</div>
-          <h2>No upcoming events found.</h2>
-          <p>Do you know of an event that should be listed here?</p>
-          <button
-            aria-label="Add event"
-            className="button"
-            data-variant="call-to-action"
-          // onclick="document.getElementById('add-event').show()"
-          // TODO: onClick
-          >
-            Add an event
-          </button>
-        </div>
-      </main>
+				<div className="events-empty-state" style={{ display: "none" }}>
+					<div className="events-empty-state-emoji">🔇</div>
+					<h2>No upcoming events found.</h2>
+					<p>Do you know of an event that should be listed here?</p>
+					<button
+						aria-label="Add event"
+						className="button"
+						data-variant="call-to-action"
+						// onclick="document.getElementById('add-event').show()"
+						// TODO: onClick
+					>
+						Add an event
+					</button>
+				</div>
+			</main>
 
-      {/* {% include footer.html %} */}
-      <Footer />
+			{/* {% include footer.html %} */}
+			<Footer />
 
-      {/* {% include dialog.html %} */}
-      {/* {% include scripts.html%} */}
-    </>
-  );
+			{/* {% include dialog.html %} */}
+			{/* {% include scripts.html%} */}
+		</>
+	);
 }
