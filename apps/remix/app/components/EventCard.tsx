@@ -1,5 +1,5 @@
 import averageColors from "../data/average-colors";
-import { Event } from "../data/data";
+import type { Event } from "../data/data";
 import { format, isAfter, isSameDay } from "date-fns";
 
 export const EventCardLi = ({

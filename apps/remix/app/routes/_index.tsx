@@ -4,7 +4,7 @@ import { BannerEvents } from "../components/BannerEvents";
 import { Footer } from "../components/Footer";
 import { TitleBar } from "../components/TitleBar";
 import { EventCardLi } from "../components/EventCard";
-import { Event, markdownToEvent } from "../data/data";
+import { type Event, markdownToEvent } from "../data/data";
 import fs from "fs";
 import path from "path";
 import { useLoaderData } from "@remix-run/react";
