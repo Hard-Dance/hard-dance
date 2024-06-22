@@ -1,3 +1,8 @@
+import * as React from "react";
+import createGlobe from "cobe";
+import useResizeObserver from "use-resize-observer";
+import { mergeRefs } from "react-merge-refs";
+
 export const BannerEvents = () => {
 	return (
 		<>
@@ -15,7 +20,7 @@ export const BannerEvents = () => {
 			</svg>
 
 			<div className="banner-events-globe">
-				<canvas id="globeCanvas"></canvas>
+				<Globe />
 			</div>
 
 			<svg
@@ -47,4 +52,59 @@ export const BannerEvents = () => {
 			</div>
 		</>
 	);
+};
+
+// ----------------------------------------------------------------------------
+
+const Globe = () => {
+	const canvasRef = React.useRef<HTMLCanvasElement>(null);
+
+	const globe = React.useRef<ReturnType<typeof createGlobe> | undefined>();
+	const phi = React.useRef(0);
+
+	const { ref: resizeObserverRef, width: resizeObserverWidth = 1 } =
+		useResizeObserver<HTMLCanvasElement>();
+
+	const onRender = React.useCallback(
+		(state: Record<string, unknown>) => {
+			state.width = resizeObserverWidth * 2;
+			state.height = resizeObserverWidth * 2;
+			state.phi = phi.current;
+			phi.current += 0.01;
+		},
+		[resizeObserverWidth],
+	);
+
+	// TODO: Replace with something more performant.
+	// Because the dots go missing upon browser resizing and come back after the resizing is complete.
+	// I think this is because of re-creating the globe each time the width changes.
+	React.useEffect(() => {
+		if (canvasRef.current != null) {
+			const width = canvasRef.current.getBoundingClientRect().width; // Not using resizeObserverWidth as that causes flickering
+			globe.current = createGlobe(canvasRef.current, {
+				devicePixelRatio: 2,
+				width: width * 2,
+				height: width * 2,
+				phi: 0,
+				theta: 0,
+				dark: 1,
+				diffuse: 3,
+				mapSamples: 10000,
+				mapBrightness: 3,
+				baseColor: [1, 1, 1],
+				markerColor: [251 / 255, 100 / 255, 21 / 255],
+				glowColor: [1.2, 1.2, 1.2],
+				markers: [],
+				scale: 1,
+				offset: [0, 0],
+				onRender: onRender,
+			});
+		}
+
+		return () => {
+			globe.current?.destroy();
+		};
+	}, [onRender]);
+
+	return <canvas ref={mergeRefs([canvasRef, resizeObserverRef])} />;
 };
