@@ -8,6 +8,7 @@ import { type Event, markdownToEvent } from "../data/data";
 import fs from "node:fs";
 import path from "node:path";
 import { useLoaderData } from "@remix-run/react";
+import type { FileFilterIndexFile } from "~/data/countries";
 
 export const meta: MetaFunction = () => {
 	return [
@@ -16,14 +17,39 @@ export const meta: MetaFunction = () => {
 	];
 };
 
-export const loader: LoaderFunction = async () => {
+export const loader: LoaderFunction = async ({
+	request,
+}: LoaderFunctionArgs) => {
 	const allFileNames = fs
 		.readdirSync("../jekyll/_posts")
 		.filter((fileName) => !fileName.includes("2024-01-01-template-2024.md"));
-	const events: Event[] = allFileNames.map((fileName) => {
-		const markdownFilePath = path.join("../jekyll/_posts", fileName);
+
+	let events: Event[] = allFileNames.map((fileName) => {
+		const markdownFilePath = path.join(
+			import.meta.dirname,
+			"../../../jekyll/_posts",
+			fileName,
+		);
 		return markdownToEvent(markdownFilePath);
 	});
+
+	const fileFilterIndex = JSON.parse(
+		fs.readFileSync(
+			path.resolve(import.meta.dirname, "../data/file-filter-indexes.json"),
+			"utf-8",
+		),
+	) as FileFilterIndexFile;
+
+	const url = new URL(request.url);
+	const continentFilter = url.searchParams.get("continent");
+
+	if (continentFilter) {
+		events = events.filter((event) => {
+			const eventIndexObject = fileFilterIndex[event.id];
+			// console.log(event.id, eventIndexObject);
+			return eventIndexObject.continentCode === continentFilter;
+		});
+	}
 
 	return {
 		events,

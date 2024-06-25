@@ -1,9 +1,11 @@
-import { useLocation } from "@remix-run/react";
+import { useLocation, useSearchParams } from "@remix-run/react";
 import cx from "classnames";
 import * as React from "react";
+import { continentsDb } from "../data/countries";
 
 export const TitleBar = () => {
 	const location = useLocation();
+	const [searchParams, setSearchParams] = useSearchParams();
 
 	// Upcoming events if and only if URL = /
 	// const isShowingUpcomingEvents = window.location.pathname === "/";
@@ -155,7 +157,7 @@ export const TitleBar = () => {
 					>
 						<div className="page-title-drawer-item">
 							<label htmlFor="filter-virtual">
-								Live streams only
+								Live streams available
 								<input
 									type="checkbox"
 									// switch TODO: What is the JSX equivalent of this?
@@ -168,27 +170,54 @@ export const TitleBar = () => {
 						<div className="page-title-drawer-item">
 							<label htmlFor="filter-continent">
 								Continent
-								<select name="continent" id="filter-continent">
-									<option value="all" selected>
+								<select
+									name="continent"
+									id="filter-continent"
+									onChange={(e) => {
+										setSearchParams(
+											(prev) => {
+												if (e.target.value === "all") {
+													prev.delete("continent");
+												} else {
+													prev.set("continent", e.target.value);
+												}
+												return prev;
+											},
+											{ preventScrollReset: true },
+										);
+									}}
+								>
+									<option value="all" selected={!searchParams.get("continent")}>
 										All
 									</option>
 									<hr />
 									{/* {% for continent in site.continents %} */}
 									{/* TODO: Use real data */}
-									<option value="{{ continent | slugify }}">
-										TODO continent
-									</option>
+									{Object.entries(continentsDb).map(
+										([continentCode, continentValue]) => (
+											<option
+												key={continentCode}
+												value={continentCode}
+												selected={
+													searchParams.get("continent") === continentCode
+												}
+											>
+												{continentValue.name}
+											</option>
+										),
+									)}
+
 									{/* {% endfor %} */}
 								</select>
 							</label>
 						</div>
 
-						<div className="page-title-drawer-item" id="filter-country-wrapper">
+						{/* <div className="page-title-drawer-item" id="filter-country-wrapper">
 							<label htmlFor="filter-country">
 								Country
 								<select name="country" id="filter-country" />
 							</label>
-						</div>
+						</div> */}
 
 						<div className="page-title-drawer-item">
 							<label htmlFor="filter-host">

@@ -1,6 +1,6 @@
 import matter from "gray-matter";
-import fs from "fs";
-import path from "path";
+import fs from "node:fs";
+import path from "node:path";
 import { getFlag } from "../utils/flag";
 
 type EventMarkdown = {
@@ -58,12 +58,13 @@ export const markdownToEvent = (markdownFilePath: string): Event => {
 	} = parsedMarkdown.data as EventMarkdown;
 
 	return {
-		id: fileName.replace(".md", "").substring("yyyy-mm-dd-".length),
+		id: fileName.replace(".md", ""),
 		title,
 		datestart,
 		datestartDate: new Date(datestart),
 		dateend,
 		dateendDate: dateend ? new Date(dateend) : undefined,
+		country,
 		location,
 		hosts,
 		featured,
