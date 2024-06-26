@@ -47,15 +47,17 @@ export const loader: LoaderFunction = async ({
 	const url = new URL(request.url);
 	const continentFilter = url.searchParams.get("continent");
 	const hostFilter = url.searchParams.get("host");
+	const liveFilter = url.searchParams.get("live");
 
-	if (!!continentFilter || !!hostFilter) {
+	if (!!continentFilter || !!hostFilter || !!liveFilter) {
 		events = events.filter((event) => {
 			const eventIndexObject = fileFilterIndex[event.id];
-			// console.log(event.id, eventIndexObject);
+			console.log(event.id, eventIndexObject);
 			return (
 				(!continentFilter ||
 					eventIndexObject.continentCode === continentFilter) &&
-				(!hostFilter || event.hosts.includes(hostFilter))
+				(!hostFilter || event.hosts.includes(hostFilter)) &&
+				(!liveFilter || (liveFilter === "true" && event.is_online))
 			);
 		});
 	}

@@ -172,6 +172,20 @@ export const TitleBar = () => {
 									// switch TODO: What is the JSX equivalent of this?
 									name="virtual"
 									id="filter-virtual"
+									checked={searchParams.get("live") === "true"}
+									onChange={(e) => {
+										setSearchParams(
+											(prev) => {
+												if (e.target.checked) {
+													prev.set("live", "true");
+												} else {
+													prev.delete("live");
+												}
+												return prev;
+											},
+											{ preventScrollReset: true },
+										);
+									}}
 								/>
 							</label>
 						</div>
