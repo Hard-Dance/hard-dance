@@ -410,7 +410,7 @@
     }
   }
 
-  .button>svg {
+  .button svg {
     width: var(--icon-size);
     height: var(--icon-size);
     fill: currentColor;
@@ -1819,7 +1819,7 @@
     }
   }
 
-  #events-filter-drawer-button[aria-expanded=true] svg:last-of-type {
+  #events-filter-drawer-button[aria-expanded=true]>svg:last-of-type {
     transform: rotate(-180deg)
   }
 

@@ -3,6 +3,7 @@ import cx from "classnames";
 import * as React from "react";
 import { continentsDb } from "../data/countries";
 import hosts from "../data/hosts.json";
+import styles from "./TitleBar.module.css";
 
 export const TitleBar = () => {
 	const location = useLocation();
@@ -18,6 +19,8 @@ export const TitleBar = () => {
 	//   return <div>Hello</div>;
 
 	const [showFilters, setShowFilters] = React.useState(false);
+
+	const isAnyFilterEnabled = Array.from(searchParams.keys()).length > 0;
 
 	return (
 		<div
@@ -103,9 +106,14 @@ export const TitleBar = () => {
 							aria-expanded={showFilters}
 							onClick={() => setShowFilters((prev) => !prev)}
 						>
-							<svg aria-hidden="true">
-								<use xlinkHref="/assets/symbols.svg#options" />
-							</svg>
+							<div className={styles.filterIconWrapper}>
+								<svg aria-hidden="true">
+									<use xlinkHref="/assets/symbols.svg#options" />
+								</svg>
+								{isAnyFilterEnabled && (
+									<div aria-hidden className={styles.filterActivatedMarker} />
+								)}
+							</div>
 							<span className="hide-on-mobile">Filters</span>
 							<svg aria-hidden="true">
 								<use xlinkHref="/assets/symbols.svg#chevron-down" />
