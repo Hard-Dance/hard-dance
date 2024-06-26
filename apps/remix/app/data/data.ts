@@ -11,7 +11,7 @@ type EventMarkdown = {
 	datestart: string;
 	dateend?: string;
 	location: string;
-	hosts: string[];
+	hosts?: string[];
 	is_online?: boolean;
 	featured?: boolean;
 	image: string;
@@ -66,7 +66,7 @@ export const markdownToEvent = (markdownFilePath: string): Event => {
 		dateendDate: dateend ? new Date(dateend) : undefined,
 		country,
 		location,
-		hosts,
+		hosts: hosts ?? [],
 		featured,
 		is_online,
 		video,

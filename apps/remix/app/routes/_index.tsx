@@ -1,4 +1,8 @@
-import type { LoaderFunction, MetaFunction } from "@remix-run/node";
+import type {
+	LoaderFunction,
+	LoaderFunctionArgs,
+	MetaFunction,
+} from "@remix-run/node";
 import { Header } from "../components/Header";
 import { BannerEvents } from "../components/BannerEvents";
 import { Footer } from "../components/Footer";
@@ -8,7 +12,7 @@ import { type Event, markdownToEvent } from "../data/data";
 import fs from "node:fs";
 import path from "node:path";
 import { useLoaderData } from "@remix-run/react";
-import type { FileFilterIndexFile } from "~/data/countries";
+import type { FileFilterIndexFile } from "~/data/filter";
 
 export const meta: MetaFunction = () => {
 	return [
@@ -42,12 +46,17 @@ export const loader: LoaderFunction = async ({
 
 	const url = new URL(request.url);
 	const continentFilter = url.searchParams.get("continent");
+	const hostFilter = url.searchParams.get("host");
 
-	if (continentFilter) {
+	if (!!continentFilter || !!hostFilter) {
 		events = events.filter((event) => {
 			const eventIndexObject = fileFilterIndex[event.id];
 			// console.log(event.id, eventIndexObject);
-			return eventIndexObject.continentCode === continentFilter;
+			return (
+				(!continentFilter ||
+					eventIndexObject.continentCode === continentFilter) &&
+				(!hostFilter || event.hosts.includes(hostFilter))
+			);
 		});
 	}
 

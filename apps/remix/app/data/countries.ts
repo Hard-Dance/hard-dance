@@ -89,16 +89,3 @@ export const continentsDb = {
 
 export type ContinentCodes = keyof typeof continentsDb;
 export type CountinentValues = (typeof continentsDb)[keyof typeof continentsDb];
-
-export type FileFilterIndex = {
-	location: string | undefined;
-	countryCode?: CountryCodes;
-	continentCode?: ContinentCodes;
-	live?: boolean;
-	date: string;
-	dateStart: string;
-	dateEnd?: string;
-};
-
-// TODO: Maybe have stricter types for id with const
-export type FileFilterIndexFile = Record<string, FileFilterIndex>;

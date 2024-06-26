@@ -2,6 +2,7 @@ import { useLocation, useSearchParams } from "@remix-run/react";
 import cx from "classnames";
 import * as React from "react";
 import { continentsDb } from "../data/countries";
+import hosts from "../data/hosts.json";
 
 export const TitleBar = () => {
 	const location = useLocation();
@@ -173,12 +174,15 @@ export const TitleBar = () => {
 								<select
 									name="continent"
 									id="filter-continent"
+									// multiple
+									// style={{ resize: "none" }}
 									onChange={(e) => {
 										setSearchParams(
 											(prev) => {
 												if (e.target.value === "all") {
 													prev.delete("continent");
 												} else {
+													// const continentFilters = prev.getAll("continent");
 													prev.set("continent", e.target.value);
 												}
 												return prev;
@@ -222,17 +226,42 @@ export const TitleBar = () => {
 						<div className="page-title-drawer-item">
 							<label htmlFor="filter-host">
 								Host
-								<select name="host" id="filter-host">
-									<option value="all" selected>
+								<select
+									name="host"
+									id="filter-host"
+									onChange={(e) => {
+										setSearchParams(
+											(prev) => {
+												if (e.target.value === "all") {
+													prev.delete("host");
+												} else {
+													// const continentFilters = prev.getAll("continent");
+													prev.set("host", e.target.value);
+												}
+												return prev;
+											},
+											{ preventScrollReset: true },
+										);
+									}}
+								>
+									<option value="all" selected={!searchParams.get("host")}>
 										All
 									</option>
 									<hr />
 									{/* {% for host in site.event-hosts %} */}
 									{/* TODO: Use real data */}
-									<option value="{{ host.name | slugify }}">
-										{/* {{ host.name }} */}
-										TODO host.name
-									</option>
+
+									{(hosts as string[]).map((host) => (
+										<option
+											key={host}
+											value={host}
+											selected={searchParams.get("host") === host}
+										>
+											{/* {{ host.name }} */}
+											{host}
+										</option>
+									))}
+
 									{/* {% endfor %} */}
 								</select>
 							</label>
