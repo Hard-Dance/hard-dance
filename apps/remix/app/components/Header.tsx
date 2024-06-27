@@ -48,7 +48,7 @@ export const Header = () => {
 									: undefined
 							}
 							// href={currentUrl === "/" ? "#top" : "/"}
-							href="?"
+							href={currentUrl === "/" ? "#top" : "/"}
 						>
 							{/* TODO: Do we need <text> on icons with aria-hidden=true? */}
 							<svg aria-hidden="true">
