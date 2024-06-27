@@ -8,19 +8,23 @@ import {
 	useRouteLoaderData,
 } from "@remix-run/react";
 
-import type { LinksFunction } from "@remix-run/node";
+import type { LinksFunction, LoaderFunctionArgs } from "@remix-run/node";
 
 import appStylesHref from "./styles/style.css?url";
 import appStyles1Href from "./styles/style1.css?url";
+import averageColors from "./data/average-colors";
+import type { CSSProperties } from "react";
 
 export const links: LinksFunction = () => [
 	{ rel: "stylesheet", href: appStylesHref },
 	{ rel: "stylesheet", href: appStyles1Href },
 ];
 
-export async function loader() {
+export async function loader({ params }: LoaderFunctionArgs) {
 	return json({
 		ENV: { MK: process.env.MK },
+		averageColor:
+			averageColors[(params.eventId ?? "").slice("yyyy-mm-dd-".length)],
 	});
 }
 
@@ -42,7 +46,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
 					}}
 				/>
 			</head>
-			<body>
+			<body
+				style={
+					{
+						"--xxx-color-background-backdrop": data?.averageColor,
+					} as CSSProperties
+				}
+			>
 				{children}
 				<ScrollRestoration />
 				<Scripts />
