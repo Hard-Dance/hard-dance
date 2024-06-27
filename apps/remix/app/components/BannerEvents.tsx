@@ -48,7 +48,7 @@ export const BannerEvents = () => {
 					{/* Download the {{ site.title }} app and stay in the loop! */}
 					{/* TODO: Try to use site.title */}
 					Download the Hard.Dance app and stay in the loop!{" "}
-					<a href="/about.html#app">See instructions.</a>
+					<a href="/about#app">See instructions.</a>
 				</p>
 				<button
 					type="button"
