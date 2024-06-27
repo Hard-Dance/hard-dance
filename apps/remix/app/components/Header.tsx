@@ -10,7 +10,11 @@ export const Header = () => {
 			{/* {% include gdpr.html %} */}
 			<header>
 				<div className="header-brand">
-					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 18 18"
+						aria-hidden={true}
+					>
 						<path
 							id="logo-left"
 							d="M8.2985,8.07286l-.00049.00085L1.40731,4.09538l-.21612.35327c-.263.46099-.263.47002.052,1.01799l5.94095,10.21585c.177.19403.414.28503.76299.28503h.35137v-7.89466Z"
@@ -41,12 +45,14 @@ export const Header = () => {
 							aria-current={
 								currentUrl === "/" || currentUrl.includes("/events")
 									? "page"
-									: ""
+									: undefined
 							}
-							href={currentUrl === "/" ? "#top" : "/"}
+							// href={currentUrl === "/" ? "#top" : "/"}
+							href="?"
 						>
-							<svg alt="Calendar icon" aria-hidden="true">
-								<use xlinkHref="/assets/symbols.svg#calendar"></use>
+							{/* TODO: Do we need <text> on icons with aria-hidden=true? */}
+							<svg aria-hidden="true">
+								<use xlinkHref="/assets/symbols.svg#calendar" />
 							</svg>
 							Events
 						</a>
@@ -55,12 +61,12 @@ export const Header = () => {
 						<a
 							className="header-button"
 							role="menuitem"
-							href="/community.html"
+							href="/community"
 							//   {% if page.url == '/community.html' %}aria-current="page"{% endif %}
-							aria-current={currentUrl === "/community.html" ? "page" : ""}
+							aria-current={currentUrl === "/community" ? "page" : undefined}
 						>
-							<svg alt="Chat icon" aria-hidden="true">
-								<use xlinkHref="/assets/symbols.svg#chat"></use>
+							<svg aria-hidden="true">
+								<use xlinkHref="/assets/symbols.svg#chat" />
 							</svg>
 							Community
 						</a>
@@ -75,11 +81,11 @@ export const Header = () => {
 							//   {% else %}
 							//     href="/about.html"
 							//   {% endif %}
-							aria-current={currentUrl === "/about.html" ? "page" : undefined}
-							href={currentUrl === "/about.html" ? "#top" : "/about.html"}
+							aria-current={currentUrl === "/about" ? "page" : undefined}
+							href={currentUrl === "/about" ? "#top" : "/about"}
 						>
-							<svg alt="Information icon" aria-hidden="true">
-								<use xlinkHref="/assets/symbols.svg#info"></use>
+							<svg aria-hidden="true">
+								<use xlinkHref="/assets/symbols.svg#info" />
 							</svg>
 							About
 						</a>
