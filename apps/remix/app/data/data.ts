@@ -18,6 +18,7 @@ type EventMarkdown = {
 	isForegroundBlack?: boolean;
 	video?: boolean;
 	country?: string;
+	facebook?: string;
 };
 
 // TODO: If this type becomes big, have smaller subsets to prevent sending large amounts of data to the client.
@@ -37,6 +38,8 @@ export type Event = {
 	video?: boolean;
 	country?: string;
 	flag?: string;
+	facebook?: string;
+	description?: string;
 };
 
 export const markdownToEvent = (markdownFilePath: string): Event => {
@@ -55,6 +58,7 @@ export const markdownToEvent = (markdownFilePath: string): Event => {
 		video,
 		country,
 		image,
+		facebook,
 	} = parsedMarkdown.data as EventMarkdown;
 
 	return {
@@ -72,5 +76,7 @@ export const markdownToEvent = (markdownFilePath: string): Event => {
 		video,
 		flag: getFlag(location ?? ""),
 		image,
+		facebook,
+		description: parsedMarkdown.content,
 	};
 };

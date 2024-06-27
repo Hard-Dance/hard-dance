@@ -4,6 +4,8 @@ import {
 	Outlet,
 	Scripts,
 	ScrollRestoration,
+	json,
+	useRouteLoaderData,
 } from "@remix-run/react";
 
 import type { LinksFunction } from "@remix-run/node";
@@ -16,7 +18,16 @@ export const links: LinksFunction = () => [
 	{ rel: "stylesheet", href: appStyles1Href },
 ];
 
+export async function loader() {
+	return json({
+		ENV: { MK: process.env.MK },
+	});
+}
+
 export function Layout({ children }: { children: React.ReactNode }) {
+	// const data = useLoaderData<typeof loader>();
+	const data = useRouteLoaderData<typeof loader>("root");
+
 	return (
 		<html lang="en">
 			<head>
@@ -24,6 +35,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<Meta />
 				<Links />
+				<script
+					// biome-ignore lint/security/noDangerouslySetInnerHtml: Remix docs recommends this
+					dangerouslySetInnerHTML={{
+						__html: `window.ENV = ${JSON.stringify(data?.ENV)}`,
+					}}
+				/>
 			</head>
 			<body>
 				{children}
