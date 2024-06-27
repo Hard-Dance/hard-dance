@@ -26,7 +26,7 @@ export function getFormattedDateRange(
 
 	let formattedDateString = formattedDateStart;
 	if (formattedDateEnd) {
-		formattedDateString += `- ${formattedDateEnd}`;
+		formattedDateString += ` - ${formattedDateEnd}`;
 	}
 
 	return formattedDateString;
