@@ -87,10 +87,12 @@ export default function Index() {
 
 					<CustomMap event={event} />
 
-					<section>
-						<h2>Description</h2>
-						<Markdown>{event.description}</Markdown>
-					</section>
+					{event.description && (
+						<section>
+							<h2>Description</h2>
+							<Markdown>{event.description}</Markdown>
+						</section>
+					)}
 				</div>
 			</main>
 
