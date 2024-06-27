@@ -64,27 +64,26 @@ export default function Index() {
 				>
 					<CustomTitleBar event={event} />
 
-					{/* <dl className="grid event-data-list">
-					{event.facebook && (
-						<div className="grid-item event-data-list-item">
-							<svg aria-hidden="true">
-								<text>Social media icon</text>
-								<use xlinkHref="assets/symbols.svg#facebook" />
-							</svg>
-							<dt>RSVP</dt>
-							<dd>
-								<a
-									className="grid-item-anchor"
-									href="{{ page.facebook }}"
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									Facebook
-								</a>
-							</dd>
-						</div>
-					)}
-				</dl> */}
+					<dl className="grid event-data-list">
+						{event.facebook && (
+							<div className="grid-item event-data-list-item">
+								<svg aria-hidden="true">
+									<use xlinkHref="/assets/symbols.svg#facebook" />
+								</svg>
+								<dt>RSVP</dt>
+								<dd>
+									<a
+										className="grid-item-anchor"
+										href={event.facebook}
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										Facebook
+									</a>
+								</dd>
+							</div>
+						)}
+					</dl>
 
 					<CustomMap event={event} />
 
