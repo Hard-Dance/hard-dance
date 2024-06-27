@@ -13,6 +13,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { useLoaderData } from "@remix-run/react";
 import type { FileFilterIndexFile } from "~/data/filter";
+import { compareAsc } from "date-fns";
 
 export const meta: MetaFunction = () => {
 	return [
@@ -28,14 +29,24 @@ export const loader: LoaderFunction = async ({
 		.readdirSync("../jekyll/_posts")
 		.filter((fileName) => !fileName.includes("2024-01-01-template-2024.md"));
 
-	let events: Event[] = allFileNames.map((fileName) => {
-		const markdownFilePath = path.join(
-			import.meta.dirname,
-			"../../../jekyll/_posts",
-			fileName,
+	// TODO: Confirm if this takes into account the user's timezone
+	const today = new Date();
+
+	let events: Event[] = allFileNames
+		.map((fileName) => {
+			const markdownFilePath = path.join(
+				import.meta.dirname,
+				"../../../jekyll/_posts",
+				fileName,
+			);
+			return markdownToEvent(markdownFilePath);
+		})
+		.filter(
+			(event) =>
+				compareAsc(today, event.datestartDate) !== 1 ||
+				(event.dateendDate != null &&
+					compareAsc(today, event.dateendDate) !== 1),
 		);
-		return markdownToEvent(markdownFilePath);
-	});
 
 	const fileFilterIndex = JSON.parse(
 		fs.readFileSync(
@@ -61,6 +72,8 @@ export const loader: LoaderFunction = async ({
 			);
 		});
 	}
+
+	events.sort((e1, e2) => compareAsc(e1.datestartDate, e2.datestartDate));
 
 	return {
 		events,
