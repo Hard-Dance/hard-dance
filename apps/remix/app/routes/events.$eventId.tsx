@@ -14,6 +14,7 @@ import { Header } from "../components/Header";
 import type { CSSProperties } from "react";
 import { VisuallyHidden } from "@itwin/itwinui-react";
 import React from "react";
+import { ClientOnly } from "remix-utils/client-only";
 
 export const meta: MetaFunction = () => {
 	return [
@@ -190,15 +191,6 @@ const CustomBanner = ({ event }: { event: Event }) => {
 };
 
 const CustomMap = ({ event }: { event: Event }) => {
-	const [key, setKey] = React.useState<string>();
-
-	React.useEffect(() => {
-		/* eslint-disable @typescript-eslint/no-explicit-any */
-		// biome-ignore lint/suspicious/noExplicitAny: <explanation>
-		setKey((window as any).ENV.MK);
-		/* eslint-enable */
-	}, []);
-
 	return (
 		<section>
 			<h2 id="location">
@@ -216,17 +208,26 @@ const CustomMap = ({ event }: { event: Event }) => {
 					<VisuallyHidden>Location section anchor link</VisuallyHidden>
 				</a>
 			</h2>
-			<iframe
-				id="map"
-				// width="450"
-				// height="250"
-				frameBorder="0"
-				style={{ border: "0" }}
-				referrerPolicy="no-referrer-when-downgrade"
-				src={`https://www.google.com/maps/embed/v1/place?key=${key}&q=${encodeURIComponent(event.location)}`}
-				allowFullScreen
-				title={`${event.title} location`}
-			/>
+			<ClientOnly>
+				{() => (
+					<iframe
+						id="map"
+						// width="450"
+						// height="250"
+						frameBorder="0"
+						style={{ border: "0" }}
+						referrerPolicy="no-referrer-when-downgrade"
+						src={`https://www.google.com/maps/embed/v1/place?key=${
+							/* eslint-disable @typescript-eslint/no-explicit-any */
+							// biome-ignore lint/suspicious/noExplicitAny: Manually added properties to window
+							(window as any).ENV.MK
+							/* eslint-enable */
+						}&q=${encodeURIComponent(event.location)}`}
+						allowFullScreen
+						title={`${event.title} location`}
+					/>
+				)}
+			</ClientOnly>
 		</section>
 	);
 };

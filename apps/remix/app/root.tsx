@@ -22,7 +22,9 @@ export const links: LinksFunction = () => [
 
 export async function loader({ params }: LoaderFunctionArgs) {
 	return json({
-		ENV: { MK: process.env.MK },
+		ENV: Object.fromEntries(
+			["MK", "WSR", "WSC"].map((key) => [key, process.env[key]]),
+		),
 		averageColor:
 			averageColors[(params.eventId ?? "").slice("yyyy-mm-dd-".length)],
 	});
