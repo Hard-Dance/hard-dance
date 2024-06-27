@@ -109,34 +109,34 @@ const CustomTitleBar = ({ event }: { event: Event }) => {
 		event.dateendDate,
 	);
 
-	const onShareClick = () => {};
-	// !!navigator && navigator.share
-	// 	? // Web Share API is supported
-	// 		() => {
-	// 			navigator
-	// 				.share({
-	// 					title: document.title,
-	// 					url: window.location.href,
-	// 				})
-	// 				.then(() => {
-	// 					console.log("Thanks for sharing!");
-	// 				})
-	// 				.catch(console.error);
-	// 		}
-	// 	: // Fallback for browsers that do not support the Web Share API
-	// 		() => {
-	// 			// Attempt to copy the current URL to the clipboard as a fallback
-	// 			navigator.clipboard.writeText(window.location.href).then(() => {
-	// 				alert("URL copied to clipboard");
-	// 			});
-	// 		};
+	const onShareClick = React.useCallback(() => {
+		// Web Share API is supported
+		if (!!navigator && navigator.share) {
+			navigator
+				.share({
+					title: document.title,
+					url: window.location.href,
+				})
+				.then(() => {
+					console.log("Thanks for sharing!");
+				})
+				.catch(console.error);
+		}
+		// Fallback for browsers that do not support the Web Share API
+		// Attempt to copy the current URL to the clipboard as a fallback
+		else {
+			navigator.clipboard.writeText(window.location.href).then(() => {
+				alert("URL copied to clipboard");
+			});
+		}
+	}, []);
 
 	return (
 		<div className="page-title event-page-title">
 			<div className="event-page-title-stacked">
 				<h1
 					style={{
-						viewTransitionName: "post-title-defqon-1-weekend-festival-2024",
+						viewTransitionName: `post-title-${event.id.slice("yyyy-mm-dd-".length)}`,
 					}}
 				>
 					{event.title}
@@ -178,7 +178,7 @@ const CustomBanner = ({ event }: { event: Event }) => {
 						alt={`${event.title} poster`}
 						draggable="false"
 						style={{
-							viewTransitionName: "post-image-airbeat-one-festival-2024;",
+							viewTransitionName: `post-image-${event.id.slice("yyyy-mm-dd-".length)}`,
 						}}
 					/>
 				</div>
