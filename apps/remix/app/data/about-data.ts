@@ -384,5 +384,10 @@ export const ourFriends = [
 	{ title: "HarderState", subtitle: "Forum", url: "https://harderstate.com" },
 ].sort((a, b) => a.title.localeCompare(b.title));
 
+export const hardDanceSiteTitle = "Hard.Dance";
 export const hardDanceRepoLink = "https://github.com/Hard-Dance/hard-dance";
 export const hardDanceEmail = "info@hard.dance";
+export const hardDancePrivacyPolicyLink =
+	"https://www.iubenda.com/privacy-policy/61434249";
+export const hardDanceCookiePolicyLink =
+	"https://www.iubenda.com/privacy-policy/61434249/cookie-policy";

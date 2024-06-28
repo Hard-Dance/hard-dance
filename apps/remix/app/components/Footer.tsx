@@ -1,20 +1,30 @@
+import {
+	hardDanceCookiePolicyLink,
+	hardDanceEmail,
+	hardDancePrivacyPolicyLink,
+	hardDanceSiteTitle,
+} from "../data/about-data";
+
 export const Footer = () => {
+	const today = new Date();
+
 	return (
 		<footer>
 			<ul className="footer-list">
-				<li title="Last updated on {{ 'now' | date: '%b %d, %Y @ %H:%M %Z' }}">
-					{/* &copy; {{ "now" | date: "%Y" }} {{ site.title }} */}
-					{/* TODO: Use real data */}
-					TODO
+				<li
+				// TODO: Find better way to display last updated date
+				// title="Last updated on {{ 'now' | date: '%b %d, %Y @ %H:%M %Z' }}"
+				>
+					{`© ${today.getFullYear()} ${hardDanceSiteTitle}`}
 				</li>
 				<li>
-					<a href="mailto:{{ site.email }}" className="footer-anchor">
+					<a href={`mailto:${hardDanceEmail}`} className="footer-anchor">
 						Contact us
 					</a>
 				</li>
 				<li>
 					<a
-						href="{{ site.privacy-policy }}"
+						href={hardDancePrivacyPolicyLink}
 						className="footer-anchor"
 						rel="noopener noreferrer"
 					>
@@ -23,7 +33,7 @@ export const Footer = () => {
 				</li>
 				<li>
 					<a
-						href="{{ site.cookie-policy }}"
+						href={hardDanceCookiePolicyLink}
 						className="footer-anchor"
 						rel="noopener noreferrer"
 					>
