@@ -92,7 +92,8 @@ export const TitleBar = () => {
 							// TODO: Is aria-label needed when the link has text?
 							aria-label="Subscribe to RSS feed"
 							className="button"
-							href="feed:{{ '/feed.xml' | absolute_url }}"
+							// TODO: Confirm the link is correct and works
+							href="feed:https://hard.dance/feed.xml"
 						>
 							<svg aria-hidden="true">
 								<use xlinkHref="/assets/symbols.svg#rss" />
