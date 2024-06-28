@@ -227,39 +227,47 @@ const OurFriends = () => {
 			</summary>
 			<div className="details-body">
 				<ul className="grid">
-					{ourFriends.map((friend) => (
-						<li key={friend.title} className="grid-item">
-							<img
-								className="grid-item-image"
-								srcSet="https://hard.dance/.netlify/images/?url=/assets/img/friends/{{ friend.title | slugify }}.png&fit=cover&h=600 2x, https://hard.dance/.netlify/images/?url=/assets/img/friends/{{ friend.title | slugify }}.png&fit=cover&h=900 3x"
-								src="https://hard.dance/.netlify/images/?url=/assets/img/friends/{{ friend.title | slugify }}.png&fit=cover&h=300"
-								alt="A graphic of {{ friend.title }}"
-								draggable="false"
-							/>
+					{ourFriends.map((friend) => {
+						const slugifiedFriendTitle = getSlugifiedString(friend.title);
+						const slugifiedSubtitle = getSlugifiedString(friend.subtitle);
 
-							<div className="grid-item-metadata">
-								<a
-									className="grid-item-metadata-title grid-item-anchor"
-									href="{{ friend.url }}"
-									aria-label="Visit {{ friend.title }}'s website"
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									{friend.title}
-								</a>
-								<div className="grid-item-metadata-subtitle">
-									{friend.subtitle}
-								</div>
-								<div className="grid-item-metadata-symbol">
-									<div className="icon">
-										<svg aria-hidden="true">
-											<use xlinkHref="/assets/symbols.svg#{{ friend.subtitle | slugify }}" />
-										</svg>
+						return (
+							<li key={friend.title} className="grid-item">
+								{/* TODO: Fix images for titles with forward slash (`/`) */}
+								<img
+									className="grid-item-image"
+									srcSet={`https://hard.dance/.netlify/images/?url=/assets/img/friends/${slugifiedFriendTitle}.png&fit=cover&h=600 2x, https://hard.dance/.netlify/images/?url=/assets/img/friends/${slugifiedFriendTitle}.png&fit=cover&h=900 3x`}
+									src={`https://hard.dance/.netlify/images/?url=/assets/img/friends/${slugifiedFriendTitle}.png&fit=cover&h=300`}
+									alt={friend.title}
+									draggable="false"
+								/>
+
+								<div className="grid-item-metadata">
+									<a
+										className="grid-item-metadata-title grid-item-anchor"
+										href={friend.url}
+										aria-label={`Visit ${friend.title}'s website`}
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										{friend.title}
+									</a>
+									<div className="grid-item-metadata-subtitle">
+										{friend.subtitle}
+									</div>
+									<div className="grid-item-metadata-symbol">
+										<div className="icon">
+											<svg aria-hidden="true">
+												<use
+													xlinkHref={`/assets/symbols.svg#${slugifiedSubtitle}`}
+												/>
+											</svg>
+										</div>
 									</div>
 								</div>
-							</div>
-						</li>
-					))}
+							</li>
+						);
+					})}
 				</ul>
 			</div>
 		</details>
