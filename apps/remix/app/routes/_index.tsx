@@ -30,7 +30,11 @@ export const loader: LoaderFunction = async ({
 		.filter((fileName) => !fileName.includes("2024-01-01-template-2024.md"));
 
 	// TODO: Confirm if this takes into account the user's timezone
+	// I think it should show all user event today regardless of the timezone?
+	// Or maybe show events related to the timezone of the event?
+	// Some improvements need to be done here.
 	const today = new Date();
+	today.setHours(0, 0, 0, 0);
 
 	let events: Event[] = allFileNames
 		.map((fileName) => {
