@@ -71,7 +71,9 @@ export const TitleBar = () => {
 							</svg>
 							<span className="hide-on-mobile">Past</span>
 						</a>
-						<button
+
+						{/* TODO: Re-add the add button */}
+						{/* <button
 							type="button"
 							aria-label="Add event"
 							className="button"
@@ -82,7 +84,7 @@ export const TitleBar = () => {
 								<use xlinkHref="/assets/symbols.svg#add" />
 							</svg>
 							<span className="hide-on-mobile">Add</span>
-						</button>
+						</button> */}
 					</div>
 
 					<div className="page-title-end">
