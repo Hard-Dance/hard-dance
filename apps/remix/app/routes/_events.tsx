@@ -12,8 +12,10 @@ import { useLoaderData } from "@remix-run/react";
 import { getFormattedDate } from "../utils/date";
 
 export const loader: LoaderFunction = async () => {
+	const postsFolder = path.resolve(import.meta.dirname, "..", "data/_posts");
+
 	const allFileNames = fs
-		.readdirSync("../jekyll/_posts")
+		.readdirSync(postsFolder)
 		.filter((fileName) => !fileName.includes("2024-01-01-template-2024.md"));
 
 	// TODO: Confirm if this takes into account the user's timezone
@@ -25,11 +27,7 @@ export const loader: LoaderFunction = async () => {
 
 	const events: Event[] = allFileNames
 		.map((fileName) => {
-			const markdownFilePath = path.join(
-				import.meta.dirname,
-				"../../../jekyll/_posts",
-				fileName,
-			);
+			const markdownFilePath = path.join(postsFolder, fileName);
 			return markdownToEvent(markdownFilePath);
 		})
 		.filter(

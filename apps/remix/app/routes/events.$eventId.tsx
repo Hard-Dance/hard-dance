@@ -26,11 +26,9 @@ export const meta: MetaFunction = () => {
 export const loader: LoaderFunction = async ({
 	params,
 }: LoaderFunctionArgs) => {
-	const markdownFilePath = path.resolve(
-		import.meta.dirname,
-		"../../../jekyll/_posts",
-		`${params.eventId}.md`,
-	);
+	const postsFolder = path.resolve(import.meta.dirname, "..", "data/_posts");
+
+	const markdownFilePath = path.join(postsFolder, `${params.eventId}.md`);
 
 	if (!fs.existsSync(markdownFilePath)) {
 		throw new Response(null, {
