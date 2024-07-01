@@ -1,0 +1,129 @@
+<dialog id="add-event">
+  <div class="dialog-header">
+    <h1>Add an event</h1>
+
+    <button
+      aria-label="Close dialog"
+      title="Close"
+      autofocus
+      onclick="document.getElementById('add-event').close()"
+    >
+      <svg alt="Close" aria-hidden="true">
+        <use xlink:href="/assets/symbols.svg#close"></use>
+      </svg>
+    </button>
+  </div>
+
+  <div class="dialog-body">
+    <form
+      name="add-event-form"
+      id="add-event-form"
+      method="POST"
+      enctype="multipart/form-data"
+      data-netlify="true"
+      data-netlify-recaptcha="true"
+    >
+      <label for="form-event-name">Event name</label>
+      <input
+        type="text"
+        name="event-name"
+        id="form-event-name"
+        required
+        placeholder="Defqon.1 Weekend Festival {{ 'now' | date: '%Y' }}"
+      />
+
+      <label for="form-datestart">Event start date & time</label>
+      <input
+        type="datetime-local"
+        name="datestart"
+        id="form-datestart"
+        required
+      />
+
+      <label for="form-dateend">Event end date & time</label>
+      <input type="datetime-local" name="dateend" id="form-dateend" />
+
+      <label for="form-location">Event address</label>
+      <input
+        type="text"
+        name="location"
+        id="form-location"
+        placeholder="Spijkweg 30, 8256 RJ Biddinghuizen, Netherlands"
+      />
+
+      <label for="form-hosts">Event host(s)</label>
+      <select name="hosts" id="form-hosts" multiple required>
+        {% for host in site.event-hosts %}
+        <option value="{{ host.name | slugify }}">{{ host.name }}</option>
+        {% endfor %}
+        <option value="other">Other</option>
+      </select>
+
+      <label class="other-host" style="display: none" for="form-otherHost">
+        Other host
+      </label>
+      <input
+        class="other-host"
+        style="display: none"
+        type="text"
+        name="otherHost"
+        id="form-otherHost"
+      />
+
+      <label for="form-website">Event website or ticket service</label>
+      <input
+        type="text"
+        name="website"
+        id="form-website"
+        placeholder="https://defqon1.com"
+      />
+
+      <label for="form-facebook">Event Facebook page</label>
+      <input
+        type="text"
+        name="facebook"
+        id="form-facebook"
+        placeholder="https://www.facebook.com/events/838924394232971"
+      />
+
+      <label for="form-fileInput">Image</label>
+      <input
+        type="file"
+        id="form-fileInput"
+        name="image"
+        accept="image/png, image/jpeg"
+      />
+
+      <div data-netlify-recaptcha="true"></div>
+    </form>
+  </div>
+
+  <div class="dialog-footer">
+    <ul class="button-group">
+      <li>
+        <button
+          aria-label="Submit form"
+          class="button"
+          type="submit"
+          form="add-event-form"
+          data-variant="call-to-action"
+          id="add-event-form-button-submit"
+          disabled
+        >
+          Submit
+        </button>
+      </li>
+      <li>
+        <button
+          aria-label="Reset form"
+          class="button"
+          type="reset"
+          form="add-event-form"
+          id="add-event-form-button-reset"
+        >
+          Reset
+        </button>
+      </li>
+    </ul>
+  </div>
+</dialog>

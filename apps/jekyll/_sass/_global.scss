@@ -1,0 +1,89 @@
+*:focus-visible {
+  outline: var(--border-width) solid var(--xxx-color-accent);
+}
+
+*::selection {
+  background-color: var(--xxx-color-accent);
+}
+
+html {
+  @media (prefers-reduced-motion: no-preference) {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  font-family: var(--font-family);
+  line-height: 1.5;
+  color: var(--xxx-color-text);
+  background-color: var(--xxx-color-background-backdrop);
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+
+  &:has(dialog[open]) {
+    overflow: hidden;
+    user-select: none;
+  }
+}
+
+main {
+  display: grid;
+  row-gap: var(--page-padding);
+  /* prettier-ignore */
+  grid-template-columns:
+    [full-width-start]
+    max(var(--page-padding), env(safe-area-inset-left))
+    [content-start]
+    minmax(0, 1fr)
+    [padded-start]
+    min(calc(60rem - max(var(--page-padding), env(safe-area-inset-left)) - max(var(--page-padding), env(safe-area-inset-right))),
+    calc(100% - max(var(--page-padding), env(safe-area-inset-left)) - max(var(--page-padding), env(safe-area-inset-right))))
+    [padded-end]
+    minmax(0, 1fr)
+    [content-end]
+    max(var(--page-padding), env(safe-area-inset-right))
+    [full-width-end];
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--padding);
+}
+
+@media only screen and (max-width: 768px) {
+  .hide-on-mobile {
+    display: none;
+  }
+}
+
+.anchorjs-link {
+  color: var(--xxx-color-text-muted);
+  border-radius: var(--border-radius);
+}
+
+h2 {
+  width: fit-content;
+
+  // Desktop
+  @media only screen and (min-width: 769px) {
+    scroll-margin-block-start: calc(
+      var(--header-height) + var(--page-padding) + env(safe-area-inset-top)
+    );
+  }
+
+  // Mobile
+  @media only screen and (max-width: 768px) {
+    scroll-margin-block-start: calc(
+      var(--page-padding) + env(safe-area-inset-top)
+    );
+  }
+}
+
+ol:not([class]),
+ul:not([class]) {
+  margin-inline-start: var(--padding);
+}

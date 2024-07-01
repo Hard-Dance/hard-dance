@@ -1,0 +1,62 @@
+:root {
+  // #region Typography
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-family-cursive: "Kalam", cursive;
+  --font-size-largest: 2.0582rem;
+  --font-size-larger: 1.618rem;
+  --font-size-large: 1.272rem;
+  --font-size: 1rem;
+  --font-size-small: 0.7862rem;
+  --font-weight-normal: 400;
+  --font-weight-bold: 550;
+  // #endregion Typography
+
+  // #region Colors
+  --color-background-rgb: 28, 28, 30;
+  --color-background-backdrop-rgb: 000, 000, 000;
+  --color-background-hover-rgb: 049, 048, 053;
+  --color-text-rgb: 255, 255, 255;
+  --color-accent-rgb: 226, 006, 019;
+
+  --color-background: rgb(var(--color-background-rgb));
+  --color-background-backdrop: rgb(var(--color-background-backdrop-rgb));
+  --color-background-hover: rgb(var(--color-background-hover-rgb));
+  --color-background-transparent-hover: rgba(var(--color-text-rgb), 0.1);
+  --color-text: rgb(var(--color-text-rgb));
+  --color-text-muted: rgba(var(--color-text-rgb), 0.6);
+  --color-accent: rgb(var(--color-accent-rgb));
+  // #endregion Colors
+
+  --border-radius: 1rem;
+  --border-width: 2px;
+  --component-height: 2.75rem;
+  --component-padding-inline: 0.688rem;
+  --duration: 0.25s;
+  --icon-size: 1.25rem;
+  --padding: 1rem;
+
+  // Desktop
+  @media only screen and (min-width: 769px) {
+    --header-height: 4rem;
+    --page-padding: calc(var(--padding) * 2);
+  }
+
+  // Mobile
+  @media only screen and (max-width: 768px) {
+    --header-height: 5rem;
+    --page-padding: var(--padding);
+  }
+}
+
+body {
+  --xxx-color-background: var(--color-background);
+  --xxx-color-background-backdrop: var(--color-background-backdrop);
+  --xxx-color-background-hover: var(--color-background-hover);
+  --xxx-color-background-transparent-hover: var(
+    --color-background-transparent-hover
+  );
+  --xxx-color-text: var(--color-text);
+  --xxx-color-text-muted: var(--color-text-muted);
+  --xxx-color-accent: var(--color-accent);
+}

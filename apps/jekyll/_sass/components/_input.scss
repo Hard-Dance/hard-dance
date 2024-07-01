@@ -1,0 +1,36 @@
+input {
+  &[type="text"],
+  &[type="datetime-local"],
+  &::file-selector-button {
+    height: var(--component-height);
+    padding-inline: var(--border-radius);
+    color: var(--color-text);
+    font-weight: var(--font-weight-bold);
+    font-size: inherit;
+    border-radius: var(--border-radius);
+    background-color: var(--color-background);
+    border: 1px solid var(--color-background);
+    transition: background-color var(--duration) ease,
+      border-color var(--duration) ease;
+
+    &::placeholder {
+      color: var(--color-text-muted);
+      font-weight: var(--font-weight-normal);
+      user-select: none;
+    }
+
+    &:hover {
+      background-color: var(--color-background-hover);
+      border-color: var(--color-background-hover);
+    }
+  }
+
+  &[type="file"] {
+    color: var(--color-text-muted);
+  }
+
+  &[type="checkbox"] {
+    accent-color: var(--color-accent);
+    cursor: pointer;
+  }
+}
