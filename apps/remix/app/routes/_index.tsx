@@ -65,7 +65,6 @@ export const loader: LoaderFunction = async ({
 	if (!!continentFilter || !!hostFilter || !!liveFilter) {
 		events = events.filter((event) => {
 			const eventIndexObject = fileFilterIndex[event.id];
-			console.log(event.id, eventIndexObject);
 			return (
 				(!continentFilter ||
 					eventIndexObject.continentCode === continentFilter) &&
