@@ -99,7 +99,7 @@ export default function Index() {
 											style={{ backgroundColor: "average_color" }}
 										>
 											<a
-												href="{{ post.url }}"
+												href={`/events/${event.id}`}
 												style={{
 													outlineColor: "currentColor",
 
