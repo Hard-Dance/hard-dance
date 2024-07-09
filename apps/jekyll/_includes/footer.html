@@ -1,0 +1,28 @@
+<footer>
+  <ul class="footer-list">
+    <li title="Last updated on {{ 'now' | date: '%b %d, %Y @ %H:%M %Z' }}">
+      &copy; {{ "now" | date: "%Y" }} {{ site.title }}
+    </li>
+    <li>
+      <a href="mailto:{{ site.email }}" class="footer-anchor">Contact us</a>
+    </li>
+    <li>
+      <a
+        href="{{ site.privacy-policy }}"
+        class="footer-anchor"
+        rel="noopener noreferrer"
+      >
+        Privacy policy
+      </a>
+    </li>
+    <li>
+      <a
+        href="{{ site.cookie-policy }}"
+        class="footer-anchor"
+        rel="noopener noreferrer"
+      >
+        Cookie policy
+      </a>
+    </li>
+  </ul>
+</footer>

@@ -1,0 +1,28 @@
+.error-video,
+.error-content {
+  width: 100vw;
+  width: 100dvw;
+  height: 100vh;
+  height: 100dvh;
+}
+
+.error-video {
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+.error-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 1rem;
+  text-align: center;
+  text-wrap: balance;
+  padding-top: max(var(--page-padding), env(safe-area-inset-top));
+  padding-left: max(var(--page-padding), env(safe-area-inset-left));
+  padding-right: max(var(--page-padding), env(safe-area-inset-right));
+  padding-bottom: max(var(--page-padding), env(safe-area-inset-bottom));
+}

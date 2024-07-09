@@ -1,0 +1,10 @@
+form {
+  display: flex;
+  flex-direction: column;
+
+  > input,
+  > select,
+  > fieldset {
+    margin-block-end: var(--page-padding);
+  }
+}

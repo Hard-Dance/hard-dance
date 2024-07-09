@@ -1,0 +1,236 @@
+@import "../mixins";
+
+// #region Banner
+.events-banner {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: max(var(--page-padding), env(safe-area-inset-left));
+  padding-right: max(var(--page-padding), env(safe-area-inset-right));
+}
+
+.banner-events-logo {
+  fill: var(--color-text);
+  width: 42.5%;
+}
+
+.banner-events-globe {
+  width: 15%;
+  aspect-ratio: 1/1;
+  position: relative;
+
+  > canvas {
+    border-radius: 50%;
+    width: 120%;
+    aspect-ratio: 1/1;
+    contain: layout paint size;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+  }
+
+  // Shadow
+  &::before {
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, black 30%, transparent 70%);
+  }
+
+  // Pulse
+  &::after {
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    @media (prefers-reduced-motion: no-preference) {
+      animation: pulse 1.6s infinite;
+    }
+  }
+}
+
+@function multiple-box-shadow($n) {
+  $value: "#{random(2000)}px #{random(2000)}px #FFF"; // TODO: This doesnt work on ultrawides
+  @for $i from 2 through $n {
+    $value: "#{$value}, #{random(2000)}px #{random(2000)}px #FFF";
+  }
+  @return unquote($value);
+}
+
+$shadows-small: multiple-box-shadow(700);
+$shadows-medium: multiple-box-shadow(200);
+$shadows-big: multiple-box-shadow(100);
+
+.banner-events-stars {
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  position: absolute;
+  inset: 0;
+  @media (prefers-reduced-motion: no-preference) {
+    animation: stars 50s linear infinite;
+  }
+
+  &:after {
+    content: " ";
+    position: absolute;
+    top: 2000px;
+    width: 1px;
+    height: 1px;
+    background: transparent;
+  }
+
+  &[data-variant="1"] {
+    box-shadow: $shadows-small;
+
+    &:after {
+      box-shadow: $shadows-small;
+    }
+  }
+
+  &[data-variant="2"] {
+    width: 2px;
+    height: 2px;
+    box-shadow: $shadows-medium;
+    animation-duration: 100s;
+
+    &:after {
+      width: 2px;
+      height: 2px;
+      box-shadow: $shadows-medium;
+    }
+  }
+
+  &[data-variant="3"] {
+    width: 3px;
+    height: 3px;
+    box-shadow: $shadows-big;
+    animation-duration: 150s;
+
+    &:after {
+      width: 3px;
+      height: 3px;
+      box-shadow: $shadows-big;
+    }
+  }
+}
+
+.banner-events-alert {
+  position: absolute;
+  border-radius: var(--border-radius);
+  border: var(--border-width) solid var(--color-background);
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  animation: toast 2s 1;
+  animation-fill-mode: forwards;
+  text-wrap: pretty;
+  margin-left: max(var(--page-padding), env(safe-area-inset-left));
+  margin-right: max(var(--page-padding), env(safe-area-inset-right));
+  @include frosted-glass;
+}
+
+.banner-events-alert-icon {
+  padding-inline: var(--component-padding-inline);
+
+  > svg {
+    width: var(--icon-size);
+    height: var(--icon-size);
+    fill: var(--color-accent);
+  }
+}
+// #endregion Banner
+
+#events-filter-drawer-button {
+  svg:last-of-type {
+    @media (prefers-reduced-motion: no-preference) {
+      transition: transform var(--duration) ease;
+    }
+  }
+
+  &[aria-expanded="true"] svg:last-of-type {
+    transform: rotate(-180deg);
+  }
+}
+
+// #region Grid
+.events-grid {
+  grid-column: content-start / content-end;
+}
+
+.events-grid-item {
+  background-color: var(--xxx-color-background);
+  color: var(--xxx-color-text);
+
+  @media (prefers-reduced-motion: no-preference) {
+    animation: reveal linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 15%;
+    animation-fill-mode: none;
+  }
+
+  .grid-item-metadata-title {
+    color: inherit;
+  }
+
+  .grid-item-metadata-subtitle {
+    color: var(--xxx-color-text-muted);
+    filter: saturate(3);
+  }
+
+  .grid-item-metadata-symbol {
+    color: unset;
+  }
+}
+
+.event-list-item-status {
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 1ch;
+  position: absolute;
+  top: calc(var(--border-width) * 6);
+  right: calc(var(--border-width) * 6);
+  padding-inline: calc(var(--padding) * 0.25);
+  height: calc(var(--border-width) * 10);
+  border-color: transparent;
+  color: var(--color-text);
+  @include frosted-glass;
+
+  &::before {
+    content: "";
+    height: calc(100% - var(--border-width) * 3);
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+    background-color: var(--color-accent);
+    animation: blink 2s infinite;
+  }
+}
+
+.events-empty-state {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  grid-column: content-start / content-end;
+}
+
+.events-empty-state-emoji {
+  font-size: 6rem;
+  user-select: none;
+}
+// #endregion Grid

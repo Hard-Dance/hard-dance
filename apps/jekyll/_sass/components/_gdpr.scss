@@ -1,0 +1,31 @@
+@import "../mixins";
+
+.gdpr {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--page-padding);
+  position: fixed;
+  padding: var(--padding) var(--page-padding);
+  z-index: 1000;
+  border: 0px solid var(--color-background);
+  @include frosted-glass;
+
+  // Desktop
+  @media only screen and (min-width: 769px) {
+    inset: auto 0 0 0;
+    border-top-width: var(--border-width);
+    padding-bottom: max(var(--padding), env(safe-area-inset-bottom));
+  }
+
+  // Mobile
+  @media only screen and (max-width: 768px) {
+    inset: 0 0 auto 0;
+    border-bottom-width: var(--border-width);
+    padding-top: max(var(--padding), env(safe-area-inset-top));
+  }
+
+  > p {
+    text-wrap: pretty;
+  }
+}
