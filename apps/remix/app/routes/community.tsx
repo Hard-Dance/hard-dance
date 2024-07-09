@@ -12,9 +12,9 @@ export default function Index() {
 						className="widgetbot"
 						/* eslint-disable @typescript-eslint/no-explicit-any */
 						// biome-ignore lint/suspicious/noExplicitAny: Manually added properties to window
-						server={(window as any).ENV.WSR}
+						server={(window as any).ENV.VITE_WSR}
 						// biome-ignore lint/suspicious/noExplicitAny: Manually added properties to window
-						channel={(window as any).ENV.WSC}
+						channel={(window as any).ENV.VITE_WSC}
 						/* eslint-enable */
 					/>
 				)}

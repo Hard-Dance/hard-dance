@@ -12,8 +12,11 @@ import { type Event, markdownToEvent } from "../data/data";
 import fs from "node:fs";
 import path from "node:path";
 import { useLoaderData } from "@remix-run/react";
-import type { FileFilterIndexFile } from "~/data/filter";
+import type { FileFilterIndexFile } from "../data/filter";
+import _fileFilterIndex from "../data/file-filter-indexes.json";
 import { compareAsc } from "date-fns";
+
+const fileFilterIndex = _fileFilterIndex as FileFilterIndexFile;
 
 export const meta: MetaFunction = () => {
 	return [
@@ -25,7 +28,11 @@ export const meta: MetaFunction = () => {
 export const loader: LoaderFunction = async ({
 	request,
 }: LoaderFunctionArgs) => {
-	const postsFolder = path.resolve(import.meta.dirname, "..", "data/_posts");
+	const postsFolder = path.resolve(
+		import.meta.dirname,
+		"../..",
+		"public/_posts",
+	);
 
 	const allFileNames = fs
 		.readdirSync(postsFolder)
@@ -49,13 +56,6 @@ export const loader: LoaderFunction = async ({
 				(event.dateendDate != null &&
 					compareAsc(today, event.dateendDate) !== 1),
 		);
-
-	const fileFilterIndex = JSON.parse(
-		fs.readFileSync(
-			path.resolve(import.meta.dirname, "../data/file-filter-indexes.json"),
-			"utf-8",
-		),
-	) as FileFilterIndexFile;
 
 	const url = new URL(request.url);
 	const continentFilter = url.searchParams.get("continent");

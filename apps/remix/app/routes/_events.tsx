@@ -12,7 +12,11 @@ import { useLoaderData } from "@remix-run/react";
 import { getFormattedDate } from "../utils/date";
 
 export const loader: LoaderFunction = async () => {
-	const postsFolder = path.resolve(import.meta.dirname, "..", "data/_posts");
+	const postsFolder = path.resolve(
+		import.meta.dirname,
+		"../..",
+		"public/_posts",
+	);
 
 	const allFileNames = fs
 		.readdirSync(postsFolder)

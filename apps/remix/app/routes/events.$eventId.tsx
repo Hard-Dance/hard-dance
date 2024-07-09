@@ -26,7 +26,11 @@ export const meta: MetaFunction = () => {
 export const loader: LoaderFunction = async ({
 	params,
 }: LoaderFunctionArgs) => {
-	const postsFolder = path.resolve(import.meta.dirname, "..", "data/_posts");
+	const postsFolder = path.resolve(
+		import.meta.dirname,
+		"../..",
+		"public/_posts",
+	);
 
 	const markdownFilePath = path.join(postsFolder, `${params.eventId}.md`);
 
@@ -218,7 +222,7 @@ const CustomMap = ({ event }: { event: Event }) => {
 						src={`https://www.google.com/maps/embed/v1/place?key=${
 							/* eslint-disable @typescript-eslint/no-explicit-any */
 							// biome-ignore lint/suspicious/noExplicitAny: Manually added properties to window
-							(window as any).ENV.MK
+							(window as any).ENV.VITE_MK
 							/* eslint-enable */
 						}&q=${encodeURIComponent(event.location)}`}
 						allowFullScreen
