@@ -10,13 +10,10 @@ import { markdownToEvent } from "../data/data";
 import type { Event } from "../data/data";
 import { useLoaderData } from "@remix-run/react";
 import { getFormattedDate } from "../utils/date";
+import { getServerAssetPath } from "../utils/assets";
 
 export const loader: LoaderFunction = async () => {
-	const postsFolder = path.resolve(
-		import.meta.dirname,
-		"../..",
-		"public/_posts",
-	);
+	const postsFolder = getServerAssetPath("_posts");
 
 	const allFileNames = fs
 		.readdirSync(postsFolder)

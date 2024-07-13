@@ -15,6 +15,7 @@ import type { CSSProperties } from "react";
 import { VisuallyHidden } from "@itwin/itwinui-react";
 import React from "react";
 import { ClientOnly } from "remix-utils/client-only";
+import { getServerAssetPath } from "../utils/assets";
 
 export const meta: MetaFunction = () => {
 	return [
@@ -26,11 +27,7 @@ export const meta: MetaFunction = () => {
 export const loader: LoaderFunction = async ({
 	params,
 }: LoaderFunctionArgs) => {
-	const postsFolder = path.resolve(
-		import.meta.dirname,
-		"../..",
-		"public/_posts",
-	);
+	const postsFolder = getServerAssetPath("_posts");
 
 	const markdownFilePath = path.join(postsFolder, `${params.eventId}.md`);
 

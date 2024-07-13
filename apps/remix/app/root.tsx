@@ -5,6 +5,7 @@ import {
 	Scripts,
 	ScrollRestoration,
 	json,
+	useRouteError,
 	useRouteLoaderData,
 } from "@remix-run/react";
 
@@ -68,4 +69,23 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
 export default function App() {
 	return <Outlet />;
+}
+
+export function ErrorBoundary() {
+	const error = useRouteError();
+	console.error("ERRRRRROR:", error);
+	return (
+		<html lang="en-US">
+			<head>
+				<title>Oh no!</title>
+				<p>{`${error}`}</p>
+				<Meta />
+				<Links />
+			</head>
+			<body>
+				{/* add the UI you want your users to see */}
+				<Scripts />
+			</body>
+		</html>
+	);
 }
