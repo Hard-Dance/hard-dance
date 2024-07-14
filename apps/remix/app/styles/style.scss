@@ -1563,7 +1563,7 @@
   }
 
   .event-page-title {
-    grid-column: padded-start/padded-end
+    display: flex;
   }
 
   .event-page-title>h1,
