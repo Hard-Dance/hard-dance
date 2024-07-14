@@ -16,6 +16,16 @@ import { VisuallyHidden } from "@itwin/itwinui-react";
 import React from "react";
 import { ClientOnly } from "remix-utils/client-only";
 import { getServerAssetPath } from "../utils/assets";
+import {
+	FloatingPortal,
+	useFloating,
+	useInteractions,
+	useHover,
+	safePolygon,
+	size,
+} from "@floating-ui/react";
+import { createGoogleCalendarLink } from "../utils/event";
+import styles from "../styles/routes/events.$eventId.module.css";
 
 export const meta: MetaFunction = () => {
 	return [
@@ -147,6 +157,10 @@ const CustomTitleBar = ({ event }: { event: Event }) => {
 				<span>{formattedDateRange}</span>
 			</div>
 
+			<div style={{ flex: 9999 }} />
+
+			<AddToCalendarButton event={event} />
+
 			<button
 				type="button"
 				className="button page-title-end"
@@ -159,6 +173,77 @@ const CustomTitleBar = ({ event }: { event: Event }) => {
 				<span className="hide-on-mobile">Share</span>
 			</button>
 		</div>
+	);
+};
+
+const AddToCalendarButton = ({ event }: { event: Event }) => {
+	const [isOpen, setIsOpen] = React.useState(false);
+
+	const { refs, context, floatingStyles } = useFloating({
+		open: isOpen,
+		onOpenChange: setIsOpen,
+		placement: "bottom-start",
+		middleware: [
+			// floating content matches the size of the reference conten
+			size({
+				apply({ rects, elements }) {
+					Object.assign(elements.floating.style, {
+						width: `${rects.reference.width}px`,
+					});
+				},
+			}),
+		],
+	});
+
+	const hover = useHover(context, {
+		handleClose: safePolygon(),
+	});
+
+	// TODO: Add focus interaction and make sure menu doesn't close when focus moves inside the menu
+	// const focus = useFocus(context);
+
+	// TODO: Should be accessible. E.g. keyboard navigation
+	const { getReferenceProps, getFloatingProps } = useInteractions([
+		hover,
+		// focus,
+	]);
+
+	return (
+		<>
+			<button
+				type="button"
+				className="button"
+				ref={refs.setReference}
+				{...getReferenceProps()}
+			>
+				<svg aria-hidden="true">
+					<use xlinkHref="/assets/symbols.svg#calendar" />
+				</svg>
+				<span className="hide-on-mobile">Add to calendar</span>
+			</button>
+
+			<FloatingPortal>
+				{isOpen && (
+					<div
+						ref={refs.setFloating}
+						{...getFloatingProps({
+							role: "menu",
+							style: floatingStyles,
+						})}
+						className={styles.floatingAddToCalendarMenu}
+					>
+						<a
+							role="menuitem"
+							href={createGoogleCalendarLink(event)}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							Google
+						</a>
+					</div>
+				)}
+			</FloatingPortal>
+		</>
 	);
 };
 
