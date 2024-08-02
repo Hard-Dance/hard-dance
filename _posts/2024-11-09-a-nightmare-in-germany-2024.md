@@ -8,5 +8,9 @@ location: Mülheimer Str. 4 46049 Oberhausen, Germany
 hosts:
   - A.L.E.X. Events
 facebook: https://www.facebook.com/events/1141512946882641
+tickets: https://www.a-nightmare.de/tickets/
 image: /assets/img/events/a-nightmare-in-germany-2024.jpg
 ---
+
+Early Bird Tickets are on sale!
+more info to be announced.

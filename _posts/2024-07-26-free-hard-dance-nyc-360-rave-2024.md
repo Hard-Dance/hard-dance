@@ -8,7 +8,6 @@ locationTitle: The Brooklyn Monarch
 location: 23 Meadow Street, New York, NY, United States
 hosts:
   - Hard Dance NYC
-  - HARD DANCE NYC
 tickets: https://dice.fm/partner/dice/event/eoo87d-julia-kova-mafia-cim-lauren-valentine-26th-jul-the-wood-shop-new-york-city-tickets
 facebook: https://www.facebook.com/events/858270972875121/
 image: /assets/img/events/free-hard-dance-nyc-360-rave-2024.jpg

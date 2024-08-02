@@ -8,7 +8,6 @@ locationTitle: The Meadows
 location: 23 Meadow Street, Brooklyn, NY, United States
 hosts:
   - Hard Dance NYC
-  - HARD DANCE NYC
 tickets: https://dice.fm/partner/dice/event/avvxg7-radical-redemption-25th-aug-the-meadows-new-york-tickets
 facebook: https://www.facebook.com/events/1207140480719360/
 image: /assets/img/events/hard-dance-nyc-presents-radical-redemption-2024-2.jpg
