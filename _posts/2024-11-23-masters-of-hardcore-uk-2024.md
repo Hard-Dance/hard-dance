@@ -4,12 +4,13 @@ category: events
 title: "Masters of Hardcore UK 2024"
 date: 2024/06/20
 datestart: 2024/11/23
-locationTitle: 02 Victoria Warehouse Manchester
+locationTitle: Victoria Warehouse
 location: Victoria Warehouse WHP, Trafford Wharf Road, Manchester, M17 1, United Kingdom
 hosts:
   - Masters of Hardcore
   - Hellfire
 facebook: https://www.facebook.com/events/778209564299095/
+tickets: https://www.skiddle.com/whats-on/Manchester/O2-Victoria-Warehouse/Masters-of-Hardcore-UK-2024/39242692/
 image: /assets/img/events/masters-of-hardcore-uk-2024.jpg
 ---
 
