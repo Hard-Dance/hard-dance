@@ -12,6 +12,8 @@ hosts:
 tickets: https://store.ticketing.cm.com/LostMemories2025/step/6f586c74-4a9c-4c62-bfcb-8087d324dbfc
 facebook: https://www.facebook.com/events/1746914495717422/
 image: /assets/img/events/lost-memories-outdoor-festival-2025.jpg
+
+foreground: black
 ---
 
 ☀️ 𝐋𝐨𝐬𝐭 𝐌𝐞𝐦𝐨𝐫𝐢𝐞𝐬 𝐎𝐮𝐭𝐝𝐨𝐨𝐫 𝐅𝐞𝐬𝐭𝐢𝐯𝐚𝐥 𝐤𝐞𝐞𝐫𝐭 𝐭𝐞𝐫𝐮𝐠 𝐢𝐧 𝟐𝟎𝟐𝟓 ☀️
