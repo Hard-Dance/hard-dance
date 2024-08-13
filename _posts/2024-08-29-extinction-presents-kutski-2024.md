@@ -5,7 +5,7 @@ title: "Extinction presents: Kutski"
 date: 2024/08/09
 datestart: 2024/08/29
 locationTitle: DISCOPUSSY
-location: 512 Fremont St, Las Vegas, NV
+location: 512 Fremont St, Las Vegas, NV, United States
 hosts:
   - DISCOPUSSY
   - Elation Events
