@@ -5,6 +5,7 @@ title: "Hard Dance NYC presents: D-sturb & GEO"
 date: 2023/12/11
 datestart: 2024/01/27
 location: 23 Meadow Street, Brooklyn, NY, United States
+coordinates: 40.71098,-73.936304
 hosts:
   - Hard Dance NYC
 tickets: https://link.dice.fm/nX9LtjYkmGb

@@ -7,6 +7,7 @@ datestart: 2024/09/04
 dateend: 2024/09/08
 locationTitle: Marseille
 location: 6 Rue des Fabres, 13001 Marseille, France
+coordinates: 43.296977947924404,5.3768721982767795
 hosts:
   - DELTA Festival
 tickets: https://www.delta-festival.com/

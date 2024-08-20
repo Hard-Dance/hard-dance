@@ -6,6 +6,7 @@ date: 2024/06/20
 datestart: 2024/09/28
 locationTitle: Lotto Mons Expo
 location: Av. Thomas Edison 2, 7000 Mons, Belgium
+coordinates: 50.4583207971608,3.9375748696638366
 hosts:
   - Energy Festival
 tickets: https://shop.paylogic.com/a84ddf959f52497a9211138a0241744e/

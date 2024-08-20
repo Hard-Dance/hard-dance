@@ -11,6 +11,7 @@ type EventMarkdown = {
 	datestart: string;
 	dateend?: string;
 	location: string;
+	coordinates?: string;
 	hosts?: string[];
 	is_online?: boolean;
 	featured?: boolean;
@@ -30,6 +31,7 @@ export type Event = {
 	dateend?: string;
 	dateendDate?: Date;
 	location: string;
+	coordinates?: { lat: number; lng: number };
 	hosts: string[];
 	is_online?: boolean;
 	featured?: boolean;
@@ -52,6 +54,7 @@ export const markdownToEvent = (markdownFilePath: string): Event => {
 		datestart,
 		dateend,
 		location,
+		coordinates: coordinatesString,
 		hosts,
 		featured,
 		is_online,
@@ -60,6 +63,15 @@ export const markdownToEvent = (markdownFilePath: string): Event => {
 		image,
 		facebook,
 	} = parsedMarkdown.data as EventMarkdown;
+
+	const coordinatesStringSplit = coordinatesString?.split(",");
+	const coordinates =
+		coordinatesStringSplit != null
+			? {
+					lat: Number(coordinatesStringSplit[0]),
+					lng: Number(coordinatesStringSplit[1]),
+				}
+			: undefined;
 
 	return {
 		id: fileName.replace(".md", ""),
@@ -70,6 +82,7 @@ export const markdownToEvent = (markdownFilePath: string): Event => {
 		dateendDate: dateend ? new Date(dateend) : undefined,
 		country,
 		location,
+		coordinates,
 		hosts: hosts ?? [],
 		featured,
 		is_online,

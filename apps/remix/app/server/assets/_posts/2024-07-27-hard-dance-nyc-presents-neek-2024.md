@@ -6,6 +6,7 @@ date: 2024/06/19
 datestart: 2024/07/27
 locationTitle: The Brooklyn Monarch
 location: 23 Meadow Street, Brooklyn, NY, United States
+coordinates: 40.71098,-73.936304
 hosts:
   - Hard Dance NYC
 tickets: https://dice.fm/partner/dice/event/8eeen5-neek-27th-jul-the-wood-shop-new-york-city-tickets

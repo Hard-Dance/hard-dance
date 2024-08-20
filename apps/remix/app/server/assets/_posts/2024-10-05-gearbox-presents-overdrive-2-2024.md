@@ -6,6 +6,7 @@ date: 2024/06/20
 datestart: 2024/10/05
 locationTitle: Vibes Eindhoven
 location: Lardinoisstraat 8, 5611 ZZ Eindhoven, Netherlands
+coordinates: 51.443010,5.476010
 hosts:
   - Gearbox Digital
   - Overdrive Digital

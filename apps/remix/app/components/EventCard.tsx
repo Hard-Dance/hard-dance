@@ -1,6 +1,10 @@
 import averageColors from "../data/average-colors";
 import type { Event } from "../data/data";
 import { format, isAfter, isSameDay } from "date-fns";
+import { getDistance } from "geolib";
+import styles from "./EventCard.module.css";
+import cx from "classnames";
+import { useSearchParams } from "@remix-run/react";
 
 export const EventCardLi = ({
 	event,
@@ -9,6 +13,8 @@ export const EventCardLi = ({
 	event: Event;
 	index: number;
 }) => {
+	const [searchParams, setSearchParams] = useSearchParams();
+
 	const averageColor = averageColors[event.id];
 	const baseTextColor = event.isForegroundBlack ? "black" : "white";
 
@@ -26,14 +32,27 @@ export const EventCardLi = ({
 
 	const today = new Date();
 
+	const distanceFromUserSpecifiedLocation =
+		event.coordinates != null
+			? getDistance(event.coordinates, { lat: 40.641766, lng: -73.780968 })
+			: undefined;
+
+	if (distanceFromUserSpecifiedLocation) {
+		console.log(
+			"distanceFromUserSpecifiedLocation",
+			distanceFromUserSpecifiedLocation,
+		);
+	}
+
 	// TODO: Make sure user's timezone is taken into account since their timezone may not be equal to the event's timezone
 	const isHappeningNow = event.dateend
 		? !isAfter(dateStartDate, today) && !isAfter(today, dateEndDate)
 		: isSameDay(dateStartDate, today);
 	return (
 		<li
-			id={`grid-item-${index}`}
-			className="grid-item events-grid-item"
+			// id={`grid-item-${index}`}
+			id={`event-card-${event.id}`}
+			className={cx(styles.root, "grid-item", "events-grid-item")}
 			style={
 				{
 					"--xxx-color-background": averageColor,
@@ -75,6 +94,34 @@ export const EventCardLi = ({
 				}
 			/>
 
+			{event.coordinates != null && (
+				<button
+					type="button"
+					onClick={(e) => {
+						e.stopPropagation();
+
+						console.log("CALLED");
+						setSearchParams(
+							(prev) => {
+								if (!prev.has("mapLocation")) {
+									prev.set(
+										"mapLocation",
+										`${event.coordinates?.lat},${event.coordinates?.lng}`,
+									);
+								}
+								//  else {
+								// 	prev.delete("mapLocation");
+								// }
+								return prev;
+							},
+							{ preventScrollReset: true },
+						);
+					}}
+				>
+					Show on map
+				</button>
+			)}
+
 			<div className="grid-item-metadata">
 				<a
 					className="grid-item-metadata-title grid-item-anchor"
@@ -87,6 +134,13 @@ export const EventCardLi = ({
 				>
 					{event.title}
 				</a>
+
+				{distanceFromUserSpecifiedLocation != null && (
+					<div className="">
+						{Math.floor(distanceFromUserSpecifiedLocation / 1000)}km away from
+						you
+					</div>
+				)}
 
 				<div className="grid-item-metadata-subtitle">
 					<time dateTime={event.datestart}>{formattedDateStart}</time>

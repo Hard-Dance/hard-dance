@@ -1,0 +1,33 @@
+.map {
+  // width: 100vw;
+  // height: clamp(100px, 50vh, 500px);
+  // padding: var(--component-padding-inline);
+  border-radius: var(--border-radius);
+  grid-column: 1/3;
+  overflow: hidden;
+}
+
+.mapGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+// .eventCards {
+//   // display: ;
+// }
+
+.header {
+  min-height: var(--header-height);
+}
+
+.main {
+  flex: 1;
+  height: 100%;
+}
+
+.eventCards {
+  overflow-y: auto;
+  overflow-x: hidden;
+}

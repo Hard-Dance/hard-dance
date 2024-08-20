@@ -6,6 +6,7 @@ date: 2024/06/20
 datestart: 2024/09/07
 locationTitle: N201 Aalsmeer
 location: Zwarteweg 90, 1431 VM Aalsmeer, Netherlands
+coordinates: 52.25952300859112,4.767717569723956
 hosts:
   - EARLY GABBERS Events
 tickets: https://eg-hardcoreunitedevents.avayo.nl/transactions/new/92869-hakkuh-4-kids

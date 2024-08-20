@@ -6,6 +6,7 @@ date: 2024/06/13
 datestart: 2024/07/26
 locationTitle:
 location: Puschendorfer Str. 2, 91074 Herzogenaurach, Germany
+coordinates: 49.539294,10.835542
 hosts:
   - Open Beatz Festival
 tickets: https://shop.ticketpay.de/5JKLQ7IT

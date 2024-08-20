@@ -1,6 +1,6 @@
 import { useLocation } from "@remix-run/react";
 
-export const Header = () => {
+export const Header = ({ className }: { className?: string }) => {
 	// Inside your component:
 	const location = useLocation();
 	const currentUrl = location.pathname;
@@ -8,7 +8,7 @@ export const Header = () => {
 	return (
 		<>
 			{/* {% include gdpr.html %} */}
-			<header>
+			<header className={className}>
 				<div className="header-brand">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"

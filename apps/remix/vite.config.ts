@@ -40,4 +40,7 @@ export default defineConfig({
 		tsconfigPaths(),
 		copyServerAssetsPlugin(),
 	],
+	ssr: {
+		noExternal: ["@googlemaps/js-api-loader", "@googlemaps/markerclusterer"],
+	},
 });

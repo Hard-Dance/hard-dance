@@ -6,6 +6,7 @@ date: 2024/06/19
 datestart: 2024/09/20
 locationTitle: August Hall
 location: 420 Mason St, San Francisco, CA 94102, United States
+coordinates: 37.78761716619953,-122.4098188442038
 hosts:
   - August Hall
 tickets: https://www.ticketweb.com/event/da-tweekaz-august-hall-tickets/13693033

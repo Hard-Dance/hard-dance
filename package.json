@@ -1,0 +1,7 @@
+{
+	"name": "hard-dance-monorepo",
+	"version": "0.0.0",
+	"scripts": {
+		"remix:dev": "pnpm --filter remix run dev"
+	}
+}

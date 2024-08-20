@@ -9,12 +9,36 @@ export const TitleBar = () => {
 	const location = useLocation();
 	const [searchParams, setSearchParams] = useSearchParams();
 
+	const viewMode = (searchParams.get("viewMode") ?? "gallery") as
+		| "gallery"
+		| "withMap";
+
 	const pageLayout = location.pathname;
 
 	const pageTitleDrawerItemsWrapper = React.useRef<HTMLDivElement>(null);
 	const [showFilters, setShowFilters] = React.useState(false);
 
-	const isAnyFilterEnabled = Array.from(searchParams.keys()).length > 0;
+	const isAnyFilterEnabled =
+		Array.from(searchParams.keys()).filter((v) =>
+			["live", "continent", "host"].includes(v),
+		).length > 0;
+
+	const onViewModeChanged = React.useCallback(
+		(e: React.ChangeEvent<HTMLInputElement>) => {
+			setSearchParams(
+				(prev) => {
+					if (e.target.checked) {
+						prev.set("viewMode", "withMap");
+					} else {
+						prev.delete("viewMode");
+					}
+					return prev;
+				},
+				{ preventScrollReset: true },
+			);
+		},
+		[setSearchParams],
+	);
 
 	return (
 		<div
@@ -48,6 +72,14 @@ export const TitleBar = () => {
 			</div>
 
 			<div className="page-title-end">
+				<label>
+					View map?
+					<input
+						type="checkbox"
+						checked={viewMode === "withMap"}
+						onChange={onViewModeChanged}
+					/>
+				</label>
 				<a
 					// TODO: Is aria-label needed when the link has text?
 					aria-label="Subscribe to RSS feed"

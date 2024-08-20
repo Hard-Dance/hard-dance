@@ -6,6 +6,7 @@ date: 2024/06/14
 datestart: 2024/09/07
 locationTitle: Centro De Espectáculos El Jefe
 location: Avenida Ferronales Poniente 8, Cuautitlán, Mexico
+coordinates: 19.6718805055188,-99.18346280224713
 hosts:
   - DediKted
 facebook: https://www.facebook.com/events/2192371224463964/

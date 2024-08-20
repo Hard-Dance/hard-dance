@@ -6,6 +6,7 @@ date: 2024/06/13
 datestart: 2024/10/05
 locationTitle: Giants Stadium
 location: SKODA Stadium, Grand Pde, Sydney Olympic Park NSW 2127, Australia
+coordinates: -33.844300,151.067550
 hosts:
   - HSU
 tickets: https://arep.co/p/knockoutoutdoor2024gamesofdestiny/finished

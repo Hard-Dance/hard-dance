@@ -6,6 +6,7 @@ date: 2024/06/20
 datestart: 2024/12/28
 locationTitle: Maassilo
 location: Rodesk B.V., Maashaven Z.z 5, 3081 AE Rotterdam, Netherlands
+coordinates: 51.898030,4.494890
 hosts:
   - Megarave
   - Hardtunes

@@ -15,6 +15,8 @@ import appStylesHref from "./styles/style.css?url";
 import appStyles1Href from "./styles/style1.css?url";
 import averageColors from "./data/average-colors";
 import type { CSSProperties } from "react";
+import "@itwin/itwinui-react/styles.css";
+import styles from "./styles/routes/root.module.css";
 
 export const links: LinksFunction = () => [
 	{ rel: "stylesheet", href: appStylesHref },
@@ -53,6 +55,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 				/>
 			</head>
 			<body
+				className={styles.body}
 				style={
 					{
 						"--xxx-color-background-backdrop": data?.averageColor,

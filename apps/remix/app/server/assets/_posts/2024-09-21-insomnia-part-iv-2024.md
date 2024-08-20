@@ -6,6 +6,7 @@ date: 2024/06/20
 datestart: 2024/09/21
 locationTitle: Poppodium MAX
 location: Olympiaweg 2A, Alphen aan den Rijn, Netherlands
+coordinates: 52.12948293047245,4.674716498555862
 hosts:
   - Team Gabber Events
 tickets: https://shops.link2ticket.nl/12Jvf7
