@@ -1,7 +1,7 @@
 ---
 layout: event
 category: events
-title: "Coone at Sound-Bar"
+title: "Coone at Sound Bar"
 date: 2024/08/27
 datestart: 2024/11/22
 locationTitle: Sound Bar
