@@ -14,6 +14,8 @@ hosts:
 tickets: https://billetto.se/e/effekt-outdoor-2024-biljetter-936455
 facebook: https://www.facebook.com/events/337157548982557/
 image: /assets/img/events/effekt-outdoor-2024.jpg
+
+foreground: black
 ---
 
 Get ready for an electrifying experience like no other! 𝗘𝗙𝗙𝗘𝗞𝗧 𝗢𝗨𝗧𝗗𝗢𝗢𝗥 is bringing you the ultimate harderstyles extravaganza in the heart of Stockholm on September 7th 𝟮𝟬𝟮𝟰!
