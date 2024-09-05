@@ -7,6 +7,10 @@ datestart: 2024/10/05
 location: 4847 Newport Ave, San Diego, CA 92107-3110, United States
 hosts:
   - San Diego Hardstylerz
+  - Bass of Spades
+  - DJ Kygore
+  - Marcus Garcia
+tickets: https://www.purplepass.com/events/297662-hardstyle-invasion-3-oct-5th-2024
 facebook: https://www.facebook.com/events/304660546068451/
 image: /assets/img/events/hardstyle-invasion-3-2024.jpg
 ---
