@@ -8,7 +8,7 @@ location: 446 W Lake St, Addison, IL 60101-2305, United States
 hosts:
   - Adnilreh Vee
 tickets: https://theticketing.co/e/masquerade-of-shadows
-facebook: https://www.facebook.com/events/1023763882747970/
+facebook: https://www.facebook.com/events/486492244289648
 image: /assets/img/events/masquerade-of-shadows-2024.jpg
 ---
 
