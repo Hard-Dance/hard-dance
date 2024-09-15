@@ -1,12 +1,13 @@
-import { useLocation, useSearchParams } from "@remix-run/react";
+import { useFetcher, useLocation, useSearchParams } from "@remix-run/react";
 import cx from "classnames";
 import * as React from "react";
 import { continentsDb } from "../data/countries";
 import hosts from "../data/hosts.json";
 import styles from "./TitleBar.module.css";
 
-export const TitleBar = () => {
+export const TitleBar = ({ userLocation }: { userLocation: string | null }) => {
 	const location = useLocation();
+	const fetcher = useFetcher();
 	const [searchParams, setSearchParams] = useSearchParams();
 
 	const viewMode = (searchParams.get("viewMode") ?? "gallery") as
@@ -40,6 +41,24 @@ export const TitleBar = () => {
 		[setSearchParams],
 	);
 
+	const onGetLocationClicked = React.useCallback(() => {
+		navigator.geolocation.getCurrentPosition((position) => {
+			const formData = new FormData();
+			formData.append("_action", "use-current-location-clicked");
+			formData.append(
+				"location",
+				`${position.coords.latitude},${position.coords.longitude}`,
+			);
+			fetcher.submit(formData, { method: "POST" });
+		});
+	}, [fetcher]);
+
+	const onStopUsingCurrentLocationClicked = React.useCallback(() => {
+		const formData = new FormData();
+		formData.append("_action", "stop-using-current-location-clicked");
+		fetcher.submit(formData, { method: "POST" });
+	}, [fetcher]);
+
 	return (
 		<div
 			className={cx("page-title", {
@@ -72,6 +91,19 @@ export const TitleBar = () => {
 			</div>
 
 			<div className="page-title-end">
+				<button
+					type="button"
+					onClick={
+						userLocation != null
+							? onStopUsingCurrentLocationClicked
+							: onGetLocationClicked
+					}
+				>
+					{userLocation != null
+						? "Stop showing distance from me"
+						: "Show distance from me"}
+				</button>
+
 				<label>
 					View map?
 					<input
@@ -165,6 +197,7 @@ export const TitleBar = () => {
 								id="filter-continent"
 								// multiple
 								// style={{ resize: "none" }}
+								value={searchParams.get("continent") ?? undefined}
 								onChange={(e) => {
 									setSearchParams(
 										(prev) => {
@@ -180,17 +213,11 @@ export const TitleBar = () => {
 									);
 								}}
 							>
-								<option value="all" selected={!searchParams.get("continent")}>
-									All
-								</option>
+								<option value="all">All</option>
 								<hr />
 								{Object.entries(continentsDb).map(
 									([continentCode, continentValue]) => (
-										<option
-											key={continentCode}
-											value={continentCode}
-											selected={searchParams.get("continent") === continentCode}
-										>
+										<option key={continentCode} value={continentCode}>
 											{continentValue.name}
 										</option>
 									),
@@ -212,6 +239,7 @@ export const TitleBar = () => {
 							<select
 								name="host"
 								id="filter-host"
+								value={searchParams.get("host") ?? undefined}
 								onChange={(e) => {
 									setSearchParams(
 										(prev) => {
@@ -226,17 +254,11 @@ export const TitleBar = () => {
 									);
 								}}
 							>
-								<option value="all" selected={!searchParams.get("host")}>
-									All
-								</option>
+								<option value="all">All</option>
 								<hr />
 
 								{(hosts as string[]).map((host) => (
-									<option
-										key={host}
-										value={host}
-										selected={searchParams.get("host") === host}
-									>
+									<option key={host} value={host}>
 										{host}
 									</option>
 								))}

@@ -9,11 +9,15 @@ import { useSearchParams } from "@remix-run/react";
 export const EventCardLi = ({
 	event,
 	index,
+	location,
 }: {
 	event: Event;
 	index: number;
+	location: string | null;
 }) => {
-	const [searchParams, setSearchParams] = useSearchParams();
+	const [, setSearchParams] = useSearchParams();
+
+	const userLocation = location ? location.split(",") : null;
 
 	const averageColor = averageColors[event.id];
 	const baseTextColor = event.isForegroundBlack ? "black" : "white";
@@ -33,16 +37,18 @@ export const EventCardLi = ({
 	const today = new Date();
 
 	const distanceFromUserSpecifiedLocation =
-		event.coordinates != null
-			? getDistance(event.coordinates, { lat: 40.641766, lng: -73.780968 })
+		event.coordinates != null && userLocation != null
+			? getDistance(
+					{
+						latitude: event.coordinates.lat,
+						longitude: event.coordinates.lng,
+					},
+					{
+						latitude: Number(userLocation[0]),
+						longitude: Number(userLocation[1]),
+					},
+				)
 			: undefined;
-
-	if (distanceFromUserSpecifiedLocation) {
-		console.log(
-			"distanceFromUserSpecifiedLocation",
-			distanceFromUserSpecifiedLocation,
-		);
-	}
 
 	// TODO: Make sure user's timezone is taken into account since their timezone may not be equal to the event's timezone
 	const isHappeningNow = event.dateend
@@ -89,7 +95,7 @@ export const EventCardLi = ({
 				draggable="false"
 				style={
 					{
-						"view-transition-name": `post-image-${event.id}`,
+						viewTransitionName: `post-image-${event.id}`,
 					} as React.CSSProperties
 				}
 			/>

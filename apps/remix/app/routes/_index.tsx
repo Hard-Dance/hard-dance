@@ -1,4 +1,5 @@
 import type {
+	ActionFunctionArgs,
 	LoaderFunction,
 	LoaderFunctionArgs,
 	MetaFunction,
@@ -10,7 +11,7 @@ import { EventCardLi } from "../components/EventCard";
 import { type Event, markdownToEvent } from "../data/data";
 import fs from "node:fs";
 import path from "node:path";
-import { useLoaderData, useLocation, useSearchParams } from "@remix-run/react";
+import { json, useLoaderData, useSearchParams } from "@remix-run/react";
 import type { FileFilterIndexFile } from "../data/filter";
 import _fileFilterIndex from "../data/file-filter-indexes.json";
 import { compareAsc } from "date-fns";
@@ -33,6 +34,7 @@ import { MarkerClusterer } from "@googlemaps/markerclusterer";
 // const { MarkerClusterer } = pkg;
 
 import type { Marker as GMarker } from "@googlemaps/markerclusterer";
+import { locationCookie } from "../state/location-cookie";
 
 const fileFilterIndex = _fileFilterIndex as FileFilterIndexFile;
 
@@ -46,6 +48,9 @@ export const meta: MetaFunction = () => {
 export const loader: LoaderFunction = async ({
 	request,
 }: LoaderFunctionArgs) => {
+	const cookieHeader = request.headers.get("Cookie");
+	const cookie = (await locationCookie.parse(cookieHeader)) || null;
+
 	const postsFolder = getServerAssetPath("_posts");
 
 	const allFileNames = fs
@@ -97,9 +102,40 @@ export const loader: LoaderFunction = async ({
 	return {
 		events,
 		viewMode,
+		location: cookie?.location,
 	};
 };
 
+export async function action({ request }: ActionFunctionArgs) {
+	const formData = await request.formData();
+	const { _action, ...values } = Object.fromEntries(formData);
+
+	if (_action === "use-current-location-clicked") {
+		const cookieHeader = request.headers.get("Cookie");
+		const cookie = (await locationCookie.parse(cookieHeader)) || {};
+
+		const { location } = values;
+		cookie.location = location;
+
+		return json(location, {
+			headers: {
+				"Set-Cookie": await locationCookie.serialize(cookie),
+			},
+		});
+	}
+	if (_action === "stop-using-current-location-clicked") {
+		// Delete the location cookie
+		return json(null, {
+			headers: {
+				"Set-Cookie": await locationCookie.serialize("", {
+					maxAge: 1,
+				}),
+			},
+		});
+	}
+
+	return null;
+}
 export default function Index() {
 	const loaderData = useLoaderData<typeof loader>();
 	const events = loaderData.events as Event[];
@@ -122,14 +158,14 @@ export default function Index() {
 					flexDirection: "column",
 				}}
 			>
-				<TitleBar />
+				<TitleBar userLocation={loaderData.location} />
 
 				{viewMode === "gallery" ? (
-					<EventCards events={events} />
+					<EventCards events={events} location={loaderData.location} />
 				) : (
 					<div className={styles.mapGrid}>
 						<MapView events={events} />
-						<EventCards events={events} />
+						<EventCards events={events} location={loaderData.location} />
 					</div>
 				)}
 			</main>
@@ -309,11 +345,19 @@ const InsideMap = ({ events }: { events: Event[] }) => {
 	];
 };
 
-const EventCards = ({ events }: { events: Event[] }) => {
+const EventCards = ({
+	events,
+	location,
+}: { events: Event[]; location: string | null }) => {
 	return events.length > 0 ? (
 		<ol className={cx("grid", "events-grid", styles.eventCards)}>
 			{events.map((event, index) => (
-				<EventCardLi key={event.id} event={event} index={index} />
+				<EventCardLi
+					key={event.id}
+					event={event}
+					index={index}
+					location={location}
+				/>
 			))}
 		</ol>
 	) : (
