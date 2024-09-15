@@ -4,20 +4,17 @@ import { format, isAfter, isSameDay } from "date-fns";
 import { getDistance } from "geolib";
 import styles from "./EventCard.module.css";
 import cx from "classnames";
-import { useSearchParams } from "@remix-run/react";
 
 export const EventCardLi = ({
 	event,
 	index,
-	location,
+	userLocation: userLocationProp,
 }: {
 	event: Event;
 	index: number;
-	location: string | null;
+	userLocation: string | null;
 }) => {
-	const [, setSearchParams] = useSearchParams();
-
-	const userLocation = location ? location.split(",") : null;
+	const userLocation = userLocationProp ? userLocationProp.split(",") : null;
 
 	const averageColor = averageColors[event.id];
 	const baseTextColor = event.isForegroundBlack ? "black" : "white";
@@ -107,7 +104,7 @@ export const EventCardLi = ({
 					href={`/events/${event.id}`}
 					style={
 						{
-							"view-transition-name": `post-title-${event.id}}`,
+							viewTransitionName: `post-title-${event.id}}`,
 						} as React.CSSProperties
 					}
 				>
@@ -149,21 +146,7 @@ export const EventCardLi = ({
 					onClick={(e) => {
 						e.stopPropagation();
 
-						setSearchParams(
-							(prev) => {
-								if (!prev.has("mapLocation")) {
-									prev.set(
-										"mapLocation",
-										`${event.coordinates?.lat},${event.coordinates?.lng}`,
-									);
-								}
-								//  else {
-								// 	prev.delete("mapLocation");
-								// }
-								return prev;
-							},
-							{ preventScrollReset: true },
-						);
+						window.location.replace(`#event-card-${event.id}`);
 					}}
 				>
 					Show on map

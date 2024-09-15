@@ -11,7 +11,7 @@ import { EventCardLi } from "../components/EventCard";
 import { type Event, markdownToEvent } from "../data/data";
 import fs from "node:fs";
 import path from "node:path";
-import { json, useLoaderData, useSearchParams } from "@remix-run/react";
+import { json, useLoaderData } from "@remix-run/react";
 import type { FileFilterIndexFile } from "../data/filter";
 import _fileFilterIndex from "../data/file-filter-indexes.json";
 import { compareAsc } from "date-fns";
@@ -74,7 +74,9 @@ export const loader: LoaderFunction = async ({
 				compareAsc(today, event.datestartDate) !== 1 ||
 				(event.dateendDate != null &&
 					compareAsc(today, event.dateendDate) !== 1),
-		);
+		)
+		// TODO: Remove slice
+		.slice(0, 10);
 
 	const url = new URL(request.url);
 	const continentFilter = url.searchParams.get("continent");
@@ -133,6 +135,15 @@ export async function action({ request }: ActionFunctionArgs) {
 			},
 		});
 	}
+	// if (_action === "update-hash") {
+	// 	// return null;
+
+	// 	const hash = values.hash;
+	// 	console.log("update-hash", hash);
+	// 	const newUrl = new URL(request.url);
+	// 	newUrl.hash = hash.toString();
+	// 	return redirect(newUrl.toString());
+	// }
 
 	return null;
 }
@@ -158,7 +169,9 @@ export default function Index() {
 					<EventCards events={events} location={loaderData.location} />
 				) : (
 					<div className={styles.mapGrid}>
-						<MapView events={events} />
+						{/* <GMapProvider> */}
+						<MapView events={events} userLocation={loaderData.location} />
+						{/* </GMapProvider> */}
 						<EventCards events={events} location={loaderData.location} />
 					</div>
 				)}
@@ -171,7 +184,22 @@ export default function Index() {
 
 // ----------------------------------------------------------------------------
 
-const MapView = ({ events }: { events: Event[] }) => {
+const MapView = ({
+	events,
+	userLocation: userLocationProp,
+}: { events: Event[]; userLocation: string | null }) => {
+	// TODO: Properly get userlocation in all places, even the cookie, so that no need to split() each time
+	const userLocation =
+		userLocationProp != null ? userLocationProp.split(",") : null;
+
+	// TODO: I think defaultCenter is required. So need to have a fallback. Or maybe just the bounds are enough?
+	const defaultCenter =
+		userLocation != null
+			? { lat: Number(userLocation[0]), lng: Number(userLocation[1]) }
+			: { lat: 0, lng: 0 };
+
+	// const { zoom, setZoom } = React.useContext(GMapProviderContext) || {};
+
 	return (
 		<ClientOnly>
 			{() => (
@@ -184,12 +212,16 @@ const MapView = ({ events }: { events: Event[] }) => {
 					<GMap
 						mapId={"map123"}
 						className={styles.map}
-						defaultCenter={{ lat: 22.54992, lng: 0 }}
-						defaultZoom={3}
+						defaultCenter={defaultCenter}
+						defaultZoom={12}
 						gestureHandling={"greedy"}
-						disableDefaultUI={true}
+						// disableDefaultUI={true}
+						// zoom={zoom}
+						// onZoomChanged={(e) => {
+						// 	setZoom?.(e.detail.zoom);
+						// }}
 					>
-						<InsideMap events={events} />
+						<InsideMap events={events} userLocation={userLocation} />
 					</GMap>
 				</APIProvider>
 			)}
@@ -197,42 +229,57 @@ const MapView = ({ events }: { events: Event[] }) => {
 	);
 };
 
-const InsideMap = ({ events }: { events: Event[] }) => {
+// const GMapProvider = ({ children }: { children: React.ReactNode }) => {
+// 	const [zoom, setZoom] = React.useState(12);
+
+// 	return (
+// 		<GMapProviderContext.Provider value={{ zoom, setZoom }}>
+// 			{children}
+// 		</GMapProviderContext.Provider>
+// 	);
+// };
+
+// const GMapProviderContext = React.createContext<{
+// 	zoom: number;
+// 	setZoom: React.Dispatch<React.SetStateAction<number>>;
+// } | null>(null);
+
+const InsideMap = ({
+	events,
+	userLocation,
+}: { events: Event[]; userLocation: string[] | null }) => {
 	const map = useMap();
 	const [markers, setMarkers] = React.useState<{ [key: string]: GMarker }>({});
-	const [userLocation, setUserLocation] = React.useState<{
-		lat: number;
-		lng: number;
-	} | null>(null);
 	const clusterer = React.useRef<MarkerClusterer | null>(null);
 
-	const [searchParams] = useSearchParams();
+	// Listen to change in the hash of the URL. When changed, go to the marker with the same ID.
+	const goToMarkerFromUrlHash = React.useCallback(
+		(hash: string) => {
+			console.log("hash", hash);
+			if (hash.startsWith("#event-card-")) {
+				const eventId = hash.slice("#event-card-".length);
+				console.log("eventId", eventId);
+				const event = events.find((e) => e.id === eventId);
+				const mapLocation = event?.coordinates;
+				if (mapLocation) {
+					// map?.setCenter(
+					// 	new google.maps.LatLng(mapLocation.lat, mapLocation.lng),
+					// );
+					map?.panTo(new google.maps.LatLng(mapLocation.lat, mapLocation.lng));
+				}
+				// console.log("event", event);
+			}
+		},
+		[events, map],
+	);
 
-	React.useEffect(() => {
-		const mapLocationString = searchParams.get("mapLocation");
-
-		if (mapLocationString != null) {
-			const mapLocationSplit = mapLocationString.split(",");
-			const mapLocation = {
-				lat: Number(mapLocationSplit[0]),
-				lng: Number(mapLocationSplit[1]),
-			};
-			map?.setCenter(new google.maps.LatLng(mapLocation.lat, mapLocation.lng));
-			map?.setZoom(12);
-		}
-	}, [map, searchParams]);
-
-	React.useEffect(() => {
-		console.log("IN EFFECT");
-		navigator.geolocation.getCurrentPosition((e) => {
-			console.log("SUCCESS", e);
-
-			setUserLocation({
-				lat: 48.40584458285166,
-				lng: -2.6377447457479866,
-			});
-		});
-	}, []);
+	const [previousLocationHash, setPreviousLocationHash] = React.useState(
+		location.hash,
+	);
+	if (previousLocationHash !== location.hash) {
+		goToMarkerFromUrlHash(location.hash);
+		setPreviousLocationHash(location.hash);
+	}
 
 	React.useEffect(() => {
 		if (!map) return;
@@ -261,25 +308,27 @@ const InsideMap = ({ events }: { events: Event[] }) => {
 		});
 	};
 
-	const latlng = events
-		.map((e) =>
-			e.coordinates != null
-				? new google.maps.LatLng(e.coordinates.lat, e.coordinates.lng)
-				: null,
-		)
-		.filter(Boolean) as google.maps.LatLng[];
+	React.useEffect(() => {
+		const latlng = events
+			.map((e) =>
+				e.coordinates != null
+					? new google.maps.LatLng(e.coordinates.lat, e.coordinates.lng)
+					: null,
+			)
+			.filter(Boolean) as google.maps.LatLng[];
 
-	// [
-	// 	new google.maps.LatLng(1.23, 4.56),
-	// 	new google.maps.LatLng(7.89, 1.01),
-	// 	// ...
-	// ];
-	const latlngbounds = new google.maps.LatLngBounds();
-	for (let i = 0; i < latlng.length; i++) {
-		latlngbounds.extend(latlng[i]);
-	}
+		// [
+		// 	new google.maps.LatLng(1.23, 4.56),
+		// 	new google.maps.LatLng(7.89, 1.01),
+		// 	// ...
+		// ];
+		const latlngbounds = new google.maps.LatLngBounds();
+		for (let i = 0; i < latlng.length; i++) {
+			latlngbounds.extend(latlng[i]);
+		}
 
-	map?.fitBounds(latlngbounds);
+		map?.fitBounds(latlngbounds);
+	}, [events, map]);
 
 	return [
 		...events
@@ -320,7 +369,12 @@ const InsideMap = ({ events }: { events: Event[] }) => {
 		userLocation != null ? (
 			<AdvancedMarker
 				key={"userLocation"}
-				position={new google.maps.LatLng(userLocation.lat, userLocation.lng)}
+				position={
+					new google.maps.LatLng(
+						Number(userLocation[0]),
+						Number(userLocation[1]),
+					)
+				}
 				// ref={(marker) => setMarkerRef(marker, "userLocation")}
 			>
 				{/* <p style={{ color: "red", fontWeight: "bold" }}>ABC</p> */}
@@ -344,13 +398,13 @@ const EventCards = ({
 	location,
 }: { events: Event[]; location: string | null }) => {
 	return events.length > 0 ? (
-		<ol className={cx("grid", "events-grid")}>
+		<ol className={cx("grid", "events-grid", styles.eventCards)}>
 			{events.map((event, index) => (
 				<EventCardLi
 					key={event.id}
 					event={event}
 					index={index}
-					location={location}
+					userLocation={location}
 				/>
 			))}
 		</ol>
