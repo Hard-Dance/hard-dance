@@ -59,6 +59,7 @@ export const EventCardLi = ({
 			// id={`grid-item-${index}`}
 			id={`event-card-${event.id}`}
 			className={cx(styles.root, "grid-item", "events-grid-item")}
+			// TODO: Get this working.
 			style={
 				{
 					"--xxx-color-background": averageColor,
@@ -100,35 +101,6 @@ export const EventCardLi = ({
 				}
 			/>
 
-			{event.coordinates != null && (
-				<button
-					type="button"
-					className={styles.showOnMapButton}
-					onClick={(e) => {
-						e.stopPropagation();
-
-						console.log("CALLED");
-						setSearchParams(
-							(prev) => {
-								if (!prev.has("mapLocation")) {
-									prev.set(
-										"mapLocation",
-										`${event.coordinates?.lat},${event.coordinates?.lng}`,
-									);
-								}
-								//  else {
-								// 	prev.delete("mapLocation");
-								// }
-								return prev;
-							},
-							{ preventScrollReset: true },
-						);
-					}}
-				>
-					Show on map
-				</button>
-			)}
-
 			<div className="grid-item-metadata">
 				<a
 					className="grid-item-metadata-title grid-item-anchor"
@@ -167,6 +139,36 @@ export const EventCardLi = ({
 
 				{isHappeningNow && <div className="event-list-item-status">Today</div>}
 			</div>
+
+			{/* TODO: How AT users will know that "Show on map" refers to which event?
+			i.e. with a callout like "Show on map, button", how to know which event will be shown on the map? */}
+			{event.coordinates != null && (
+				<button
+					type="button"
+					className={styles.showOnMapButton}
+					onClick={(e) => {
+						e.stopPropagation();
+
+						setSearchParams(
+							(prev) => {
+								if (!prev.has("mapLocation")) {
+									prev.set(
+										"mapLocation",
+										`${event.coordinates?.lat},${event.coordinates?.lng}`,
+									);
+								}
+								//  else {
+								// 	prev.delete("mapLocation");
+								// }
+								return prev;
+							},
+							{ preventScrollReset: true },
+						);
+					}}
+				>
+					Show on map
+				</button>
+			)}
 		</li>
 	);
 };
