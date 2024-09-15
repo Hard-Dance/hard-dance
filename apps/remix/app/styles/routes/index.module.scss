@@ -13,11 +13,12 @@
   overflow-y: auto;
   overflow-x: hidden;
   width: 100vw;
+  padding: var(--padding);
 }
 
-// .eventCards {
-//   // display: ;
-// }
+.eventCards {
+  padding: var(--padding);
+}
 
 .header {
   min-height: var(--header-height);
