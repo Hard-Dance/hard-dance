@@ -1,3 +1,16 @@
+.root {
+  position: sticky;
+  inset-block-start: 0;
+  z-index: 30;
+  background-color: var(--xxx-color-background-backdrop);
+  padding: var(--padding);
+}
+
+.pageTitleEnd {
+  display: flex;
+  column-gap: 0.5rem;
+}
+
 .filterIconWrapper {
   position: relative;
 }

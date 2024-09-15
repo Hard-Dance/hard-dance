@@ -61,7 +61,7 @@ export const TitleBar = ({ userLocation }: { userLocation: string | null }) => {
 
 	return (
 		<div
-			className={cx("page-title", {
+			className={cx(styles.root, "page-title", {
 				"event-page-title": pageLayout === "/event",
 			})}
 		>
@@ -90,7 +90,7 @@ export const TitleBar = ({ userLocation }: { userLocation: string | null }) => {
 						</button> */}
 			</div>
 
-			<div className="page-title-end">
+			<div className={cx(styles.pageTitleEnd, "page-title-end")}>
 				<button
 					type="button"
 					onClick={

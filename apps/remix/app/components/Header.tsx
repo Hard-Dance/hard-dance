@@ -1,4 +1,6 @@
 import { useLocation } from "@remix-run/react";
+import styles from "./Header.module.scss";
+import cx from "classnames";
 
 export const Header = ({ className }: { className?: string }) => {
 	// Inside your component:
@@ -8,7 +10,7 @@ export const Header = ({ className }: { className?: string }) => {
 	return (
 		<>
 			{/* {% include gdpr.html %} */}
-			<header className={className}>
+			<header className={cx(styles.root, className)}>
 				<div className="header-brand">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"

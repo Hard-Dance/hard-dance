@@ -151,13 +151,7 @@ export default function Index() {
 			</div> */}
 			{/* )} */}
 
-			<main
-				className={styles.main}
-				style={{
-					display: "flex",
-					flexDirection: "column",
-				}}
-			>
+			<main className={styles.main}>
 				<TitleBar userLocation={loaderData.location} />
 
 				{viewMode === "gallery" ? (
@@ -350,7 +344,7 @@ const EventCards = ({
 	location,
 }: { events: Event[]; location: string | null }) => {
 	return events.length > 0 ? (
-		<ol className={cx("grid", "events-grid", styles.eventCards)}>
+		<ol className={cx("grid", "events-grid")}>
 			{events.map((event, index) => (
 				<EventCardLi
 					key={event.id}
