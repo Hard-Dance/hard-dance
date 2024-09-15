@@ -103,6 +103,7 @@ export const EventCardLi = ({
 			{event.coordinates != null && (
 				<button
 					type="button"
+					className={styles.showOnMapButton}
 					onClick={(e) => {
 						e.stopPropagation();
 

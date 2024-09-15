@@ -1,3 +1,8 @@
 .root:target {
   border: 1px solid red;
 }
+
+.showOnMapButton {
+  position: relative;
+  z-index: 20;
+}
