@@ -1,0 +1,22 @@
+.eventPageTitle {
+    display: flex;
+
+    // TODO: This needs to target a class name
+    > h1,
+    .pageTitleEnd {
+        margin: 0;
+    }
+
+    .eventPageTitleStacked {
+        display: flex;
+        flex-direction: column-reverse;
+
+        // TODO: This needs to target a class name
+        > span {
+            color: var(--xxx-color-text-muted);
+            font-weight: var(--font-weight-bold);
+            text-transform: uppercase;
+            filter: saturate(3);
+        }
+    }
+}

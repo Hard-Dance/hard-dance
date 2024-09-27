@@ -152,7 +152,7 @@ export async function action({ request }: ActionFunctionArgs) {
 export default function Index() {
 	const loaderData = useLoaderData<typeof loader>();
 	const events = loaderData.events as Event[];
-	// const viewMode = loaderData.viewMode as "gallery" | "withMap";
+	const viewMode = loaderData.viewMode as "gallery" | "withMap";
 
 	return (
 		<>
@@ -166,7 +166,7 @@ export default function Index() {
 
 			<TitleBar userLocation={loaderData.location} />
 
-			<EventsMap events={events} userLocation={loaderData.location} />
+			{viewMode === "withMap" && <EventsMap events={events} userLocation={loaderData.location} />}
 
 			<div className={styles.jonLookHere}>
 				<EventCards events={events} location={loaderData.location} />
