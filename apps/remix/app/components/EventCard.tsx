@@ -86,8 +86,8 @@ export const EventCardLi = ({
 
 			<img
 				className="grid-item-image"
-				srcSet={`https://hard.dance/.netlify/images/?url=${event.image}&fit=cover&h=600 2x, https://hard.dance/.netlify/images/?url=${event.image}&fit=cover&h=900 3x`}
-				src={`https://hard.dance/.netlify/images/?url=${event.image}&fit=cover&h=300`}
+				srcSet={`https://hard.dance/.netlify/images/?url=${event.image}&fit=cover&h=600&w=600 2x, https://hard.dance/.netlify/images/?url=${event.image}&fit=cover&h=900&w=900 3x`}
+				src={`https://hard.dance/.netlify/images/?url=${event.image}&fit=cover&h=300&w=300`}
 				alt={event.title}
 				data-index={index}
 				draggable="false"

@@ -148,6 +148,7 @@ export const TitleBar = ({ userLocation }: { userLocation: string | null }) => {
 				</button>
 			</div>
 
+			{/* TODO: Confirm that all the filter drawer items are inerted when not in view. Not tabbable. */}
 			<div
 				className={cx(styles.pageTitleDrawer, "page-title-drawer")}
 				id="filters-drawer"
