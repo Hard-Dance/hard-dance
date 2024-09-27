@@ -1,0 +1,10 @@
+.map {
+    // width: 100vw;
+    // height: clamp(100px, 50vh, 500px);
+    // padding: var(--component-padding-inline);
+    border-radius: var(--border-radius);
+    // grid-column: 1/3;
+    overflow: hidden;
+    margin: var(--page-padding);
+    margin-inline-end: 0;
+}

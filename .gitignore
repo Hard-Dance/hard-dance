@@ -1,2 +1,6 @@
 .vercel
 node_modules
+.DS_Store
+.env*
+# Local Netlify folder
+.netlify

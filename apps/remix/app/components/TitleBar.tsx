@@ -67,7 +67,7 @@ export const TitleBar = ({ userLocation }: { userLocation: string | null }) => {
 		>
 			<h1>Events</h1>
 
-			<div className="page-title-start">
+			<div className={cx(styles.pageTitleStart, "page-title-start")}>
 				<a aria-label="View past events" className="button" href="/events/">
 					<svg aria-hidden="true">
 						<use xlinkHref="/assets/symbols.svg#past" />
@@ -149,7 +149,7 @@ export const TitleBar = ({ userLocation }: { userLocation: string | null }) => {
 			</div>
 
 			<div
-				className="page-title-drawer"
+				className={cx(styles.pageTitleDrawer, "page-title-drawer")}
 				id="filters-drawer"
 				style={{
 					maxHeight: showFilters

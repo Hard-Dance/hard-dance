@@ -1,15 +1,73 @@
 .root {
-  position: sticky;
-  inset-block-start: 0;
-  z-index: 30;
-  background-color: var(--xxx-color-background-backdrop);
-  padding: var(--padding);
+  display: grid;
+  column-gap: var(--padding);
+  align-items: start;
+  grid-area: title-bar;
+  margin-block-start: var(--padding);
+
+  @media only screen and (min-width: 769px) {
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas: "title start end" "drawer drawer drawer"
+  }
+
+  @media only screen and (max-width: 768px) {
+    grid-template-columns: 1fr auto;
+    grid-template-areas: "title title" "start end" "drawer drawer"
+  }
+
+  > h1 {
+    grid-area: title;
+    text-wrap: balance;
+    margin-left: max(var(--page-padding), env(safe-area-inset-left));
+
+    @media only screen and (max-width: 768px) {
+      margin-right: max(var(--page-padding), env(safe-area-inset-right))
+    }
+  }
+}
+
+.pageTitleStart {
+  grid-area: start;
+  column-gap: var(--padding);
+
+  @media only screen and (max-width: 768px) {
+    margin-left: max(var(--page-padding), env(safe-area-inset-left));
+  }
 }
 
 .pageTitleEnd {
   display: flex;
   column-gap: 0.5rem;
+  grid-area: end;
+  margin-right: max(var(--page-padding), env(safe-area-inset-right));
 }
+
+.pageTitleStart,
+.pageTitleDrawer {
+  display: flex;
+  align-items: center;
+}
+
+.pageTitleDrawer {
+  box-sizing: content-box;
+  grid-area: drawer;
+  max-height: 0;
+  overflow-y: hidden;
+
+  @media(prefers-reduced-motion: no-preference) {
+      transition: max-height var(--duration) ease-out, opacity var(--duration) ease-out
+  }
+}
+
+
+
+
+
+
+
+
+
+
 
 .filterIconWrapper {
   position: relative;

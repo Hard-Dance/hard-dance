@@ -11,7 +11,7 @@ export const Header = ({ className }: { className?: string }) => {
 		<>
 			{/* {% include gdpr.html %} */}
 			<header className={cx(styles.root, className)}>
-				<div className="header-brand">
+				<div className={cx(styles.brand, className)}>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 18 18"
@@ -31,25 +31,17 @@ export const Header = ({ className }: { className?: string }) => {
 						/>
 					</svg>
 				</div>
-				<ul className="header-menu-list" role="menu">
+
+				<ul className={cx(styles.menu, className)} role="menu">
 					<li role="presentation">
 						<a
-							className="header-button"
+							className={cx(styles.button, className)}
 							role="menuitem"
-							// {% if page.url == '/' or page.url contains '/events' %}
-							//   aria-current="page"
-							// {% endif %}
-							// {% if page.url == '/' %}
-							//   href="#top"
-							// {% else %}
-							//   href="/"
-							// {% endif %}
 							aria-current={
 								currentUrl === "/" || currentUrl.includes("/events")
 									? "page"
 									: undefined
 							}
-							// href={currentUrl === "/" ? "#top" : "/"}
 							href={currentUrl === "/" ? "#top" : "/"}
 						>
 							{/* TODO: Do we need <text> on icons with aria-hidden=true? */}
@@ -61,10 +53,9 @@ export const Header = ({ className }: { className?: string }) => {
 					</li>
 					<li role="presentation">
 						<a
-							className="header-button"
+							className={cx(styles.button, className)}
 							role="menuitem"
 							href="/community"
-							//   {% if page.url == '/community.html' %}aria-current="page"{% endif %}
 							aria-current={currentUrl === "/community" ? "page" : undefined}
 						>
 							<svg aria-hidden="true">
@@ -75,14 +66,8 @@ export const Header = ({ className }: { className?: string }) => {
 					</li>
 					<li role="presentation">
 						<a
-							className="header-button"
+							className={cx(styles.button, className)}
 							role="menuitem"
-							//   {% if page.url == '/about.html' %}
-							//     aria-current="page"
-							//     href="#top"
-							//   {% else %}
-							//     href="/about.html"
-							//   {% endif %}
 							aria-current={currentUrl === "/about" ? "page" : undefined}
 							href={currentUrl === "/about" ? "#top" : "/about"}
 						>
@@ -93,8 +78,6 @@ export const Header = ({ className }: { className?: string }) => {
 						</a>
 					</li>
 				</ul>
-
-				{/* <!-- <a class="header-button" href="#" data-variant="live">Live stream</a> --> */}
 			</header>
 		</>
 	);
