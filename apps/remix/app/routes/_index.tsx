@@ -4,6 +4,7 @@ import type {
 	LoaderFunctionArgs,
 	MetaFunction,
 } from "@remix-run/node";
+import { Gdpr } from "../components/Gdpr";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import { TitleBar } from "../components/TitleBar";
@@ -156,6 +157,7 @@ export default function Index() {
 
 	return (
 		<>
+			<Gdpr className={styles.gdpr} />
 			<Header className={styles.header} />
 
 			{/* {viewMode === "gallery" && ( */}

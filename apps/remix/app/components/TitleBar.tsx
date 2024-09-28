@@ -61,18 +61,31 @@ export const TitleBar = ({ userLocation }: { userLocation: string | null }) => {
 
 	return (
 		<div
-			className={cx(styles.root, "page-title", {
+			className={cx(styles.titleBar, {
 				"event-page-title": pageLayout === "/event",
 			})}
 		>
-			<h1>Events</h1>
+			<h1 className={cx(styles.title)}>Events</h1>
 
-			<div className={cx(styles.pageTitleStart, "page-title-start")}>
+			<div className={cx(styles.start)}>
 				<a aria-label="View past events" className="button" href="/events/">
 					<svg aria-hidden="true">
 						<use xlinkHref="/assets/symbols.svg#past" />
 					</svg>
 					<span className="hide-on-mobile">Past</span>
+				</a>
+
+				<a
+					// TODO: Is aria-label needed when the link has text?
+					aria-label="Subscribe to RSS feed"
+					className="button"
+					// TODO: Confirm the link is correct and works
+					href="feed:https://hard.dance/feed.xml"
+				>
+					<svg aria-hidden="true">
+						<use xlinkHref="/assets/symbols.svg#rss" />
+					</svg>
+					<span className="hide-on-mobile">Subscribe</span>
 				</a>
 
 				{/* TODO: Re-add the add button */}
@@ -90,40 +103,28 @@ export const TitleBar = ({ userLocation }: { userLocation: string | null }) => {
 						</button> */}
 			</div>
 
-			<div className={cx(styles.pageTitleEnd, "page-title-end")}>
-				<button
-					type="button"
-					onClick={
+			<div className={cx(styles.end)}>
+				<label>
+					Distance
+					<input
+						type="checkbox"
+						checked={userLocation != null}
+						onChange={
 						userLocation != null
 							? onStopUsingCurrentLocationClicked
 							: onGetLocationClicked
-					}
-				>
-					{userLocation != null
-						? "Stop showing distance from me"
-						: "Show distance from me"}
-				</button>
+						}
+					/>
+				</label>
 
 				<label>
-					View map?
+					Map
 					<input
 						type="checkbox"
 						checked={viewMode === "withMap"}
 						onChange={onViewModeChanged}
 					/>
 				</label>
-				<a
-					// TODO: Is aria-label needed when the link has text?
-					aria-label="Subscribe to RSS feed"
-					className="button"
-					// TODO: Confirm the link is correct and works
-					href="feed:https://hard.dance/feed.xml"
-				>
-					<svg aria-hidden="true">
-						<use xlinkHref="/assets/symbols.svg#rss" />
-					</svg>
-					<span className="hide-on-mobile">Subscribe</span>
-				</a>
 				<button
 					type="button"
 					className="button"
@@ -150,7 +151,7 @@ export const TitleBar = ({ userLocation }: { userLocation: string | null }) => {
 
 			{/* TODO: Confirm that all the filter drawer items are inerted when not in view. Not tabbable. */}
 			<div
-				className={cx(styles.pageTitleDrawer, "page-title-drawer")}
+				className={cx(styles.drawer)}
 				id="filters-drawer"
 				style={{
 					maxHeight: showFilters
@@ -161,15 +162,16 @@ export const TitleBar = ({ userLocation }: { userLocation: string | null }) => {
 			>
 				<div
 					ref={pageTitleDrawerItemsWrapper}
-					className="page-title-drawer-items-wrapper"
+					className={cx(styles.itemsWrapper)}
 					//   inert TODO: What is the JSX equivalent of this?
 				>
-					<div className="page-title-drawer-item">
+					<div className={cx(styles.item)}>
+						{/* TODO: What is the JSX equivalent of `switch`? */}
 						<label htmlFor="filter-virtual">
-							Live streams available
+							Online broadcast
 							<input
 								type="checkbox"
-								// switch TODO: What is the JSX equivalent of this?
+								switch
 								name="virtual"
 								id="filter-virtual"
 								checked={searchParams.get("live") === "true"}
@@ -190,7 +192,7 @@ export const TitleBar = ({ userLocation }: { userLocation: string | null }) => {
 						</label>
 					</div>
 
-					<div className="page-title-drawer-item">
+					<div className={cx(styles.item)}>
 						<label htmlFor="filter-continent">
 							Continent
 							<select
@@ -227,14 +229,14 @@ export const TitleBar = ({ userLocation }: { userLocation: string | null }) => {
 						</label>
 					</div>
 
-					{/* <div className="page-title-drawer-item" id="filter-country-wrapper">
+					{/* <div className={cx(styles.item)} id="filter-country-wrapper">
 							<label htmlFor="filter-country">
 								Country
 								<select name="country" id="filter-country" />
 							</label>
 						</div> */}
 
-					<div className="page-title-drawer-item">
+					<div className={cx(styles.item)}>
 						<label htmlFor="filter-host">
 							Host
 							<select

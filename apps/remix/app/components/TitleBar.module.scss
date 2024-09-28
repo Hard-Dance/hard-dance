@@ -1,4 +1,4 @@
-.root {
+.titleBar {
   display: grid;
   column-gap: var(--padding);
   align-items: start;
@@ -14,19 +14,19 @@
     grid-template-columns: 1fr auto;
     grid-template-areas: "title title" "start end" "drawer drawer"
   }
+}
 
-  > h1 {
-    grid-area: title;
-    text-wrap: balance;
-    margin-left: max(var(--page-padding), env(safe-area-inset-left));
+.title {
+  grid-area: title;
+  text-wrap: balance;
+  margin-left: max(var(--page-padding), env(safe-area-inset-left));
 
-    @media only screen and (max-width: 768px) {
-      margin-right: max(var(--page-padding), env(safe-area-inset-right))
-    }
+  @media only screen and (max-width: 768px) {
+    margin-right: max(var(--page-padding), env(safe-area-inset-right))
   }
 }
 
-.pageTitleStart {
+.start {
   grid-area: start;
   column-gap: var(--padding);
 
@@ -35,20 +35,20 @@
   }
 }
 
-.pageTitleEnd {
+.end {
   display: flex;
-  column-gap: 0.5rem;
+  column-gap: var(--padding);
   grid-area: end;
   margin-right: max(var(--page-padding), env(safe-area-inset-right));
 }
 
-.pageTitleStart,
-.pageTitleDrawer {
+.start,
+.drawer {
   display: flex;
   align-items: center;
 }
 
-.pageTitleDrawer {
+.drawer {
   box-sizing: content-box;
   grid-area: drawer;
   max-height: 0;
@@ -56,6 +56,31 @@
 
   @media(prefers-reduced-motion: no-preference) {
       transition: max-height var(--duration) ease-out, opacity var(--duration) ease-out
+  }
+}
+
+.itemsWrapper {
+  display: flex;
+  flex: 1;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: calc(var(--border-width) * 2);
+  padding-right: max(var(--page-padding), env(safe-area-inset-right));
+}
+
+.item {
+  scroll-snap-align: start;
+  display: flex;
+  column-gap: 1ch;
+
+  &::before {
+    content: "";
+    width: calc(max(var(--page-padding), env(safe-area-inset-left)) - 0.5rem);
+  }
+
+  &:first-child {
+    margin-inline-start: auto;
   }
 }
 
@@ -76,10 +101,10 @@
 .filterActivatedMarker {
   width: 0.5rem;
   height: 0.5rem;
-  background-color: red;
+  background-color: var(--color-accent);
   position: absolute;
-  right: 0;
-  top: 0;
+  inset: 0 0 auto auto;
   border-radius: 50%;
   transform: translate(50%, -50%);
+  outline: var(--border-width) solid var(--color-background-backdrop);
 }

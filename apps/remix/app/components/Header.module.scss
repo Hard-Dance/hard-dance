@@ -12,17 +12,17 @@
     display: flex;
     align-items: stretch;
     block-size: var(--header-height);
-    border-block-end-width: var(--border-width)
+    border-block-end-width: var(--border-width);
   }
 
   @media only screen and (max-width: 768px) {
-    border-block-start-width: var(--border-width)
+    border-block-start-width: var(--border-width);
   }
 
   @media (prefers-reduced-transparency: reduce) or (prefers-contrast: more) {
     background-color: var(--color-background);
     -webkit-backdrop-filter: none;
-    backdrop-filter: none
+    backdrop-filter: none;
   }
 }
 
@@ -30,34 +30,9 @@
   display: flex;
   align-items: center;
   height: 100%;
+  gap: var(--padding);
+  padding-inline: var(--page-padding);
 
-  > svg {
-    fill: currentColor;
-    width: calc(var(--icon-size)*1.5 + 2px);
-    height: calc(var(--icon-size)*1.5 + 2px);
-    margin-inline: var(--page-padding);
-    cursor: none;
-
-    > path {
-      transform-origin: center;
-
-      @media(prefers-reduced-motion: no-preference) {
-          transition: transform 1s ease-out;
-      }
-    }
-
-    #logo-left {
-      transform: translate(var(--translate), calc(var(--translate) * -0.7));
-    }
-  
-    #logo-top {
-      transform: translate(0, calc(var(--translate) * 1));
-    }
-  
-    #logo-right {
-      transform: translate(calc(var(--translate) * -1), calc(var(--translate) * -0.7));
-    }
-  }
 
   &:hover {
     --translate: -1px;
@@ -66,6 +41,37 @@
   @media only screen and (max-width: 768px) {
     display: none;
   }
+}
+
+.icon {
+  fill: currentColor;
+  inline-size: calc(var(--icon-size)*1.5 + 2px);
+  block-size: calc(var(--icon-size)*1.5 + 2px);
+
+  #logo-left {
+    transform: translate(var(--translate), calc(var(--translate) * -0.7));
+  }
+
+  #logo-top {
+    transform: translate(0, calc(var(--translate) * 1));
+  }
+
+  #logo-right {
+    transform: translate(calc(var(--translate) * -1), calc(var(--translate) * -0.7));
+  }
+}
+
+.iconPart {
+  transform-origin: center;
+
+  @media(prefers-reduced-motion: no-preference) {
+      transition: transform 1s ease-out;
+  }
+}
+
+.logo {
+  fill: currentColor;
+  height: 33%;
 }
 
 .menu {

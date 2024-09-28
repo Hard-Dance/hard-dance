@@ -1,3 +1,5 @@
+import styles from "./Footer.module.scss";
+import cx from "classnames";
 import {
 	hardDanceCookiePolicyLink,
 	hardDanceEmail,
@@ -5,12 +7,12 @@ import {
 	hardDanceSiteTitle,
 } from "../data/about-data";
 
-export const Footer = () => {
+export const Footer = ({ className }: { className?: string }) => {
 	const today = new Date();
 
 	return (
-		<footer>
-			<ul className="footer-list">
+		<footer className={cx(styles.root, className)}>
+			<ul className={cx(styles.list, className)}>
 				<li
 				// TODO: Find better way to display last updated date
 				// title="Last updated on {{ 'now' | date: '%b %d, %Y @ %H:%M %Z' }}"
@@ -18,14 +20,14 @@ export const Footer = () => {
 					{`© ${today.getFullYear()} ${hardDanceSiteTitle}`}
 				</li>
 				<li>
-					<a href={`mailto:${hardDanceEmail}`} className="footer-anchor">
+					<a href={`mailto:${hardDanceEmail}`} className={cx(styles.anchor, className)}>
 						Contact us
 					</a>
 				</li>
 				<li>
 					<a
 						href={hardDancePrivacyPolicyLink}
-						className="footer-anchor"
+						className={cx(styles.anchor, className)}
 						rel="noopener noreferrer"
 					>
 						Privacy policy
@@ -34,7 +36,7 @@ export const Footer = () => {
 				<li>
 					<a
 						href={hardDanceCookiePolicyLink}
-						className="footer-anchor"
+						className={cx(styles.anchor, className)}
 						rel="noopener noreferrer"
 					>
 						Cookie policy

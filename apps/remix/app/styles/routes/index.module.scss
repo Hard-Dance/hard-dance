@@ -8,5 +8,11 @@
 .jonLookHere {
   grid-area: main;
   overflow-y: auto;
-  mask-image: linear-gradient(to top, black calc(100% - var(--page-padding)), transparent 100%);
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black calc(0% + var(--page-padding)),
+    black calc(100% - var(--page-padding)),
+    transparent 100%
+  );
 }

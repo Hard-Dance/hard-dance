@@ -53,27 +53,31 @@ export const EventsMap = ({
 	return (
 		<ClientOnly>
 			{() => (
-				<APIProvider
-					/* eslint-disable @typescript-eslint/no-explicit-any */
-					// biome-ignore lint/suspicious/noExplicitAny: Manually added properties to window
-					apiKey={(window as any).ENV.VITE_MK}
-					/* eslint-enable */
-				>
-					<GMap
-						mapId={"map123"}
-						className={styles.map}
-						defaultCenter={defaultCenter}
-						defaultZoom={12}
-						gestureHandling={"greedy"}
-						// disableDefaultUI={true}
-						// zoom={zoom}
-						// onZoomChanged={(e) => {
-						// 	setZoom?.(e.detail.zoom);
-						// }}
+				<aside className={styles.aside}>
+					<APIProvider
+						/* eslint-disable @typescript-eslint/no-explicit-any */
+						// biome-ignore lint/suspicious/noExplicitAny: Manually added properties to window
+						apiKey={(window as any).ENV.VITE_MK}
+						/* eslint-enable */
 					>
-						<InsideMap events={events} userLocation={userLocation} />
-					</GMap>
-				</APIProvider>
+						<GMap
+							mapId={"map123"}
+							className={styles.map}
+							defaultCenter={defaultCenter}
+							defaultZoom={12}
+							gestureHandling={"greedy"}
+							// disableDefaultUI={true}
+							// zoom={zoom}
+							// onZoomChanged={(e) => {
+							// 	setZoom?.(e.detail.zoom);
+							// }}
+						>
+							<InsideMap events={events} userLocation={userLocation} />
+						</GMap>
+					</APIProvider>
+
+					<div className={styles.drag} role="separator" draggable={false} tabIndex={0} />
+				</aside>
 			)}
 		</ClientOnly>
 	);

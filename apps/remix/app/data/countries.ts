@@ -32,17 +32,13 @@ export type CountryCodes = keyof typeof countriesDb;
 export type CountryNames = (typeof countriesDb)[keyof typeof countriesDb];
 
 export const continentsDb = {
-	AS: {
-		name: "Asia",
-		countries: ["JP", "KR", "MY", "TH"],
-	},
 	AF: {
 		name: "Africa",
 		countries: [],
 	},
-	AN: {
-		name: "Antarctica",
-		countries: [],
+	AS: {
+		name: "Asia",
+		countries: ["JP", "KR", "MY", "TH"],
 	},
 	EU: {
 		name: "Europe",
@@ -71,13 +67,13 @@ export const continentsDb = {
 		name: "North America",
 		countries: ["US", "MX", "CA"],
 	},
+	OC: {
+		name: "Oceania",
+		countries: ["AU"],
+	},
 	SA: {
 		name: "South America",
 		countries: ["CL"],
-	},
-	OC: {
-		name: "Australia (Oceania)",
-		countries: ["AU"],
 	},
 } as const satisfies Record<
 	string,

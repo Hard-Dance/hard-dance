@@ -6,8 +6,7 @@
     // background-color: purple;
     // outline: 2px solid pink;
     // outline-offset: -2px;
-    padding-inline: var(--page-padding);
-    padding-block-start: var(--page-padding);
+    padding: var(--page-padding);
     mask-image: linear-gradient(to top, black calc(100% - var(--page-padding)), transparent 100%);
 }
 
