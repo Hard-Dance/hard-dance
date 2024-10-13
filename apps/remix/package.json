@@ -4,6 +4,7 @@
 	"sideEffects": false,
 	"type": "module",
 	"scripts": {
+		"setup": "tsx scripts/setupRemix.ts",
 		"build": "pnpm run build:remix",
 		"build:remix": "remix vite:build",
 		"dev": "concurrently \"pnpm run dev:css\" \"pnpm run dev:remix\"",
@@ -57,7 +58,8 @@
 		"typescript": "^5.1.6",
 		"vite": "^5.1.0",
 		"vite-plugin-static-copy": "^1.0.6",
-		"vite-tsconfig-paths": "^4.2.1"
+		"vite-tsconfig-paths": "^4.2.1",
+		"tsx": "^4.19.1"
 	},
 	"engines": {
 		"node": ">=20.0.0"
