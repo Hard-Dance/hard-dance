@@ -5,6 +5,7 @@ title: "HARDSTYLEMANIA presents: Ran-D, Imperatorz, & Unicorn on Ketamine"
 date: 2024/06/19
 datestart: 2024/09/20
 location: Zur Fuchsfarm 1, 29227 Celle, Germany
+coordinates: 52.59194773070381,10.062733969735207
 hosts:
   - Inkognito Celle
 tickets: https://www.inkognito-celle.de/events/fr-26-04-hardstylemania-pres-ran-d-imperatorz-unicorn-on-ketamine-26-04-2024-1

@@ -7,6 +7,7 @@ datestart: 2024/07/27
 dateend: 2024/07/28
 locationTitle: Complex Festival
 location: Vattenfall InCharge, Marathonweg, 6225 Maastricht, Netherlands
+coordinates: 50.860937,5.719702
 hosts:
   - Complex Maastricht
   - Doomslayer

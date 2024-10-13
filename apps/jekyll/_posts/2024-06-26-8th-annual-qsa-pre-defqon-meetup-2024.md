@@ -6,6 +6,7 @@ date: 2024/06/11
 datestart: 2024/06/26
 locationTitle: Bar Twenty Two
 location: Leidseplein 22 Amsterdam, Netherlands
+country: NL
 facebook: https://www.facebook.com/events/3943761422519278/
 image: /assets/img/events/8th-annual-qsa-pre-defqon-meetup-2024.jpg
 ---

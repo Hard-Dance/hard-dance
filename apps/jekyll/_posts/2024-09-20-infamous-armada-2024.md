@@ -6,7 +6,8 @@ date: 2024/06/20
 datestart: 2024/09/20
 dateend: 2024/09/22
 locationTitle: Chateau de Bogard
-location: Air Nature Ballon, 22120 Quessoy, France
+location: Bogard, 22120 Quessoy, France
+coordinates: 48.40584458285166,-2.6377447457479866
 hosts:
   - Infamous Armada
   - Collectif Interface

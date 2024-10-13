@@ -1,0 +1,11 @@
+// TODO: Differentiate focus and mapLocation states. Both look the same atm.
+.root:is(:has(a:focus-visible), :target),
+.showOnMapButton:focus-visible {
+  outline: var(--border-width) solid var(--color-accent); // TODO: Should we try to use `xxx-color-accent` instead?
+  outline-offset: var(--border-width);
+}
+
+.showOnMapButton {
+  position: relative;
+  z-index: 20;
+}

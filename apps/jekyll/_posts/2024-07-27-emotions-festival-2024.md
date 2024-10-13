@@ -5,6 +5,7 @@ title: "Emotions Festival 2024"
 date: 2024/06/19
 datestart: 2024/07/27
 location: Str. Montichiari, 18, 25016 Villaggio Belvedere BS, Italy
+coordinates: 45.400202,10.317932
 hosts:
   - Florida
   - INSOUND

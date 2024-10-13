@@ -6,6 +6,7 @@ date: 2024/06/14
 datestart: 2024/07/27
 locationTitle: Poppodium 013
 location: Veemarktstraat 38C, 5038 CV Tilburg, Netherlands
+coordinates: 51.558364,5.09244
 hosts:
   - BKJN Events
   - Major Conspiracy

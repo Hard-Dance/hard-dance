@@ -1,0 +1,31 @@
+.body {
+  font-family: var(--font-family);
+  line-height: 1.5;
+  color: var(--xxx-color-text);
+  background-color: var(--xxx-color-background-backdrop);
+
+  display: grid;
+  min-block-size: 100vh;
+  min-block-size: 100dvh;
+  max-block-size: 100vh;
+  max-block-size: 100dvh;
+  overflow: hidden;
+
+  @media only screen and (min-width: 769px) {
+    grid-template-areas:
+      "header header"
+      "title-bar  title-bar"
+      "aside  main";
+    grid-template-rows: auto auto 1fr;
+    grid-template-columns: 1fr 2fr;
+  }
+
+  @media only screen and (max-width: 768px) {
+    grid-template-areas:
+      "title-bar"
+      "aside"
+      "main"
+      "header";
+    grid-template-rows: auto 1fr 2fr auto;
+  }
+}

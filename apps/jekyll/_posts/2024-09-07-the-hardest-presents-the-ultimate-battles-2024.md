@@ -5,6 +5,7 @@ title: "The Hardest presents: The Ultimate Battles"
 date: 2024/02/07
 datestart: 2024/09/07
 location: Ruiterskwartier 41, Leeuwarden, Netherlands
+coordinates: 53.200412493369065,5.790314898592245
 hosts:
   - The Hardest
 tickets: https://prereg.eventix.tech/3Uwpa

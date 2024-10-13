@@ -1,0 +1,24 @@
+.pageTitleDrawerItemsWrapper {
+    display: flex;
+    flex: 1;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: calc(var(--border-width)*2);
+    padding-right: max(var(--page-padding), env(safe-area-inset-right));
+}
+
+.pageTitleDrawerItem {
+    scroll-snap-align: start;
+    display: flex;
+    column-gap: 1ch;
+
+    &::before {
+        content: "";
+        width: calc(max(var(--page-padding), env(safe-area-inset-left)) - .5rem);
+    }
+
+    &:first-child {
+        margin-inline-start: auto;
+    }
+}

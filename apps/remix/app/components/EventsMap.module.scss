@@ -1,0 +1,58 @@
+.aside {
+    // background-color: red;
+
+    display: flex;
+    gap: calc(var(--page-padding) - 8px);
+    padding: var(--page-padding);
+
+    @media only screen and (min-width: 769px) {
+        padding-inline-end: 0;
+    }
+    
+    @media only screen and (max-width: 768px) {
+        flex-direction: column;
+        padding-block-end: 0;
+    }
+}
+
+.map {
+    border-radius: var(--border-radius);
+    overflow: clip;
+    align-self: stretch;
+    flex: 1;
+}
+
+.drag {
+    --drag-thickness: 8px;
+    --drag-length: 200px;
+
+    background-color: var(--color-background);
+    position: relative;
+    align-self: center;
+    border-radius: calc(infinity * 1px);
+    flex-shrink: 0;
+    transition: background-color var(--duration) ease;
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset: -12px;
+    }
+
+    &:hover,
+    &:focus {
+        background-color: var(--color-background-hover);
+    }
+
+    @media only screen and (min-width: 769px) {
+        width: var(--drag-thickness);
+        height: var(--drag-length);
+        cursor: col-resize;
+    }
+
+    @media only screen and (max-width: 768px) {
+        width: var(--drag-length);
+        height: var(--drag-thickness);
+        cursor: row-resize;
+    }
+}
