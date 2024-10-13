@@ -1,11 +1,1 @@
-_site
-.DS_Store
-.bundle
-.sass-cache
-.jekyll-cache
-.jekyll-metadata
-.vscode
-vendor
-.env*
-# Local Netlify folder
-.netlify
+.vercel
