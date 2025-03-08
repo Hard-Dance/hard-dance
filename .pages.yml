@@ -14,10 +14,12 @@ content:
         label: Layout
         type: string
         default: event
+        hidden: true
       - name: category
         label: Category
         type: string
         default: events
+        hidden: true
       - name: title
         label: Title
         type: string
@@ -56,5 +58,6 @@ content:
       - name: image
         label: Image Path
         type: string
+        required: true
         description: Path to the image for the event (e.g. `/assets/img/events/….jpg`)
         pattern: \/assets\/img\/events\/.+\.jpg
