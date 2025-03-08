@@ -7,6 +7,7 @@ datestart: 2025/08/15
 dateend: 2025/08/17
 location: Beekse Bergen 1, 5081 NJ Hilvarenbeek, Netherlands
 hosts:
+  - b2s
   - Decibel Outdoor Festival
 facebook: https://www.facebook.com/events/1615735035669664/
 image: /assets/img/events/decibel-outdoor-festival-2025.jpg
