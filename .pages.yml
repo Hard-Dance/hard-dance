@@ -7,7 +7,7 @@ content:
     view:
       fields: [ title, date, datestart, location, hosts ]
       default:
-        sort: eventstart
+        sort: datestart
         order: desc
     fields:
       - name: layout
