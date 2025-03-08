@@ -5,7 +5,7 @@ content:
     type: collection
     path: '_posts'
     view:
-      fields: [ title ]
+      fields: [ title, date, datestart ]
     fields:
       - name: layout
         label: Layout
