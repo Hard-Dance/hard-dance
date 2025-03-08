@@ -10,4 +10,7 @@ content:
       - name: layout
         label: Layout
         type: string
-        default: true
+        default: event
+      - name: title
+        label: Title
+        type: string
