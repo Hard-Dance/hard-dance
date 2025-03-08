@@ -1,0 +1,13 @@
+media: media
+content:
+  - name: posts
+    label: Posts
+    type: collection
+    path: '_posts'
+    view:
+      fields: [ layout ]
+    fields:
+      - name: layout
+        label: Layout
+        type: string
+        default: true
