@@ -19,7 +19,26 @@ content:
         label: Title
         type: string
       - name: date
-        label: Event Date
+        label: Post Date
+        description: Date when the post was created (i.e. today's date)
         type: date
         options:
-          format: yyyy/mm/dd
+          format: yyyy/MM/dd
+      - name: datestart
+        label: Event Start Date
+        type: date
+        description: Event's start date (i.e. some future fate)
+        options:
+          format: yyyy/MM/dd
+      - name: location
+        label: Location
+        type: string
+        description: Street address of the event. Be sure to include the country. (e.g. 123 Abc Drive, New York, NY 10001, United States).
+      - name: tickets
+        label: Tickets URL
+        type: string
+        description: URL for the website to get the tickets from
+      - name: facebook
+        label: Facebook URL
+        type: string
+        description: URL of the Facebook page that has more info about the event
