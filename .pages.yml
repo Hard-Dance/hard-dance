@@ -11,6 +11,15 @@ content:
         label: Layout
         type: string
         default: event
+      - name: category
+        label: Category
+        type: string
+        default: events
       - name: title
         label: Title
         type: string
+      - name: date
+        label: Event Date
+        type: date
+        options:
+          format: yyyy/mm/dd
