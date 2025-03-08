@@ -1,0 +1,18 @@
+---
+layout: event
+category: events
+title: "Supremacy 2025"
+date: 2025/03/08
+datestart: 2025/09/27
+dateend: 2025/09/27
+locationTitle:
+location:
+hosts:
+  - Supremacy
+  - Art of Dance
+tickets: https://example.com/tickets
+facebook: https://www.facebook.com/events/1103984504733066/
+image: /assets/img/events/supremacy-2025---enter-elysium---official-art-of-dance-event.jpg
+---
+
+On the 27th of September 2025, we will enter a world where the power of RAW reigns supreme. Here, bass and kicks form the very fabric of reality. Are you ready to Enter Elysium?

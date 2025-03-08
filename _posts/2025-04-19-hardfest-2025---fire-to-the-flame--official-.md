@@ -1,0 +1,33 @@
+---
+layout: event
+category: events
+title: "HARDFEST 2025"
+date: 2025/03/08
+datestart: 2025/04/19
+dateend: 2025/04/19
+locationTitle:
+location:
+hosts:
+  - HARDFEST
+  - Absolutely Fresh
+tickets: https://example.com/tickets
+facebook: https://www.facebook.com/events/907243344807078/
+image: /assets/img/events/hardfest-2025---fire-to-the-flame--official-.jpg
+---
+
+Let’s fire up next festival season together again! On 19 April 2025 it's time to unleash the heat, as we bring the best artists to Enschede.
+
+Gather your friends for this tradition and join the hardest festival in the Eastern Netherlands.
+
+LINE UP:  
+Hardstyle, Extra Raw, Uptempo & Hardcore and Classics! Check our full line up here: [www.hardfest.nl/line-up](https://l.facebook.com/l.php?u=http%3A%2F%2Fwww.hardfest.nl%2Fline-up%3Ffbclid%3DIwZXh0bgNhZW0CMTAAAR2dAMlT3NqKwN6XA0MQ149oHFYqw1IneoMU5_YKAE2SvtTcwaBQ5cClUx8_aem_7K_CtNZGY3rrPfb8Csw9PQ&h=AT2J-RP-RFOlqu5-EqzI1lAUR2neIvEK6VogJ3pu1IZRFxQZa1h2VMZjJnBTnyrcQAZ3bNqmkeqBxUeRZKDjhcOyUJkwyYgoVrMbixPbxtuwgfyMbgbq7K9Q8rXaEZ4XCJYxfD3VT7etY-JDZpAbyU4&__tn__=q&c[0]=AT1CiLJX8cxsx0fUOBIStnyhbsRX2ikGE50RWhJytu7_fbpUUN2P7ZWWpQdZBfUgrN1N5Nevsqtnki1uwzSRTF4uHLOKLFQf0lwHa_LAcJ-5WGEzdJdz4smCQLK83pGBhWMFVI1vJkNdqW_UXpPvSElAtmbu6Bhsx4QCPA)
+
+TICKETS ❗️  
+▸ Get your tickets on our website: [www.hardfest.nl/tickets](https://l.facebook.com/l.php?u=http%3A%2F%2Fwww.hardfest.nl%2Ftickets%3Ffbclid%3DIwZXh0bgNhZW0CMTAAAR19R56MBgPhNplh1NBY72IV_p3hA4wbyr5BzvdW_vNUbtDNMH77VViLj1w_aem_NIOnlXog4JvPpCrsqXLgIA&h=AT3sKLv04BS7x2JlBHDkVDks44hMcH1HVEfCPN0JdJrBS6aeWeNY2-2bUrYdCZmXwsrO_t2buG5JLvW8EMtXkXVjBLIKYCum0aYaFSNXSnHplgLuY-Wd1gxtTo2FFuk381p_IRUtZPSxJYLMCEzBd18&__tn__=q&c[0]=AT1CiLJX8cxsx0fUOBIStnyhbsRX2ikGE50RWhJytu7_fbpUUN2P7ZWWpQdZBfUgrN1N5Nevsqtnki1uwzSRTF4uHLOKLFQf0lwHa_LAcJ-5WGEzdJdz4smCQLK83pGBhWMFVI1vJkNdqW_UXpPvSElAtmbu6Bhsx4QCPA)
+
+FIRE TO THE FLAME  
+We celebrate again what makes us so extraordinary: our fire. An untamable spirit, only we feel and see. It sets us apart, changing us from strangers into family. And so it’s time to claim: we are fire to the flame. ❤️‍🔥
+
+HARDFEST 2025  
+Saturday 19 April 2025  
+University of Twente, Enschede (NL)

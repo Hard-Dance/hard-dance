@@ -1,0 +1,19 @@
+---
+layout: event
+category: events
+title: "Pokke Herrie 2025"
+date: 2025/03/08
+datestart: 2025/09/06
+dateend: 2025/09/06
+locationTitle: Turbinenhalle, Im Lipperfeld 23, 46047 Oberhausen
+location: Im Lipperfeld 23, 46047 Oberhausen, Deutschland
+hosts:
+  - A.L.E.X. Events
+  - Pokke Herrie
+tickets: https://example.com/tickets
+facebook: https://www.facebook.com/events/2919660054876427/
+image: /assets/img/events/pokke-herrie---a-dutch-hardcore-festival-2025--official-event-.jpg
+---
+
+Be prepared for a massive edition!  
+More info to be announced.

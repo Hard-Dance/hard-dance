@@ -1,0 +1,17 @@
+---
+layout: event
+category: events
+title: "Eternal 2025"
+date: 2025/03/08
+datestart: 2025/11/22
+dateend: 2025/11/22
+locationTitle:
+location:
+hosts:
+  - I AM HARDSTYLE
+tickets: https://example.com/tickets
+facebook: https://www.facebook.com/events/1127645135618975/
+image: /assets/img/events/i-am-hardstyle---eternal-2025--official-.jpg
+---
+
+𝗜 𝗔𝗠 𝗛𝗔𝗥𝗗𝗦𝗧𝗬𝗟𝗘 - 𝗘𝗧𝗘𝗥𝗡𝗔𝗟 = 𝗕𝗔𝗖𝗞 𝗜𝗡 𝟮𝟬𝟮𝟱 🤩💙 We can't thank you enough for the incredible atmosphere and your dedication to the melodic side of hardstyle. We have only just begun. See you on November 22nd, 2025!
