@@ -6,6 +6,9 @@ content:
     path: '_posts'
     view:
       fields: [ title, date, datestart, location, hosts ]
+      default:
+        sort: eventstart
+        order: desc
     fields:
       - name: layout
         label: Layout
