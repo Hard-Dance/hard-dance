@@ -5,7 +5,7 @@ content:
     type: collection
     path: '_posts'
     view:
-      fields: [ title, date, datestart, location, hosts ]
+      fields: [ title, date, datestart, dateend, location, hosts ]
       default:
         sort: datestart
         order: desc
@@ -35,6 +35,13 @@ content:
         label: Event Start Date
         type: date
         description: Event's start date (i.e. some future fate)
+        options:
+          format: yyyy/MM/dd
+        required: true
+      - name: dateend
+        label: Event End Date
+        type: date
+        description: Event's end date (if event is 1 day, put the same date as Start Date)
         options:
           format: yyyy/MM/dd
         required: true
