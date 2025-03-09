@@ -76,3 +76,6 @@ content:
         required: true
         description: Path to the image for the event (e.g. `/assets/img/events/….jpg`)
         pattern: \/assets\/img\/events\/.+\.jpg
+      - name: body
+        label: Description
+        type: rich-text
