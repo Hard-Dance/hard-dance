@@ -60,7 +60,7 @@ content:
         description: URL for the website to get the tickets from
       - name: starting-price
         label: Starting ticket price
-        type: string
+        type: number
         description: The lowest cost ticket in USD (e.g. if $15, enter 15)
       - name: facebook
         label: Facebook URL
