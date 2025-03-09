@@ -25,32 +25,32 @@ content:
         type: string
         required: true
       - name: date
-        label: Post Date
+        label: Post date
         description: Date when the post was created (i.e. today's date)
         type: date
         options:
           format: yyyy/MM/dd
         required: true
       - name: datestart
-        label: Event Start Date
+        label: Event start date
         type: date
         description: Event's start date (i.e. some future fate)
         options:
           format: yyyy/MM/dd
         required: true
       - name: dateend
-        label: Event End Date
+        label: Event end date
         type: date
         description: Event's end date (if event is 1 day, put the same date as Start Date)
         options:
           format: yyyy/MM/dd
         required: true
       - name: location
-        label: Location
+        label: Event address
         type: string
         description: Street address of the event. Be sure to include the country. (e.g. 123 Abc Drive, New York, NY 10001, United States).
       - name: hosts
-        label: Hosts
+        label: Event host(s)
         type: string
         description: Names of who are performing at the event
         list: true
@@ -63,7 +63,7 @@ content:
         type: string
         description: URL of the Facebook page that has more info about the event
       - name: image
-        label: Image Path
+        label: Image path
         type: string
         required: true
         description: Path to the image for the event (e.g. `/assets/img/events/….jpg`)
