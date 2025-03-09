@@ -53,6 +53,11 @@ content:
         label: Event venue name
         type: string
         description: The name of the venue located at event address.
+      - name: is_online
+        label: Live stream
+        type: boolean
+        default: false
+        description: Is there a live stream for this event?
       - name: hosts
         label: Event host(s)
         type: string
