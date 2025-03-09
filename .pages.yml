@@ -5,7 +5,7 @@ content:
     type: collection
     path: '_posts'
     view:
-      fields: [ title, date, datestart, dateend, location, hosts ]
+      fields: [ title, date, datestart, dateend ]
       default:
         sort: datestart
         order: desc
@@ -58,6 +58,10 @@ content:
         label: Tickets URL
         type: string
         description: URL for the website to get the tickets from
+      - name: starting-price
+        label: Starting ticket price
+        type: string
+        description: The lowest cost ticket in USD (e.g. if $15, enter 15)
       - name: facebook
         label: Facebook URL
         type: string
