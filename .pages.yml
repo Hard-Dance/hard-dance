@@ -49,6 +49,10 @@ content:
         label: Event address
         type: string
         description: Street address of the event. Be sure to include the country. (e.g. 123 Abc Drive, New York, NY 10001, United States).
+      - name: locationTitle
+        label: Event venue name
+        type: string
+        description: The name of the venue located at event address.
       - name: hosts
         label: Event host(s)
         type: string
