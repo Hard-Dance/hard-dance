@@ -12,7 +12,7 @@ hosts:
   - High Energy Events
 tickets: https://example.com/tickets
 facebook: https://www.facebook.com/events/1434297967206967/
-image: /assets/img/events/dance4liberation-2025---official.jpg
+image: /assets/img/events/dance4liberation-2025.jpg
 ---
 
 😱💙 𝙇𝙀𝙏 𝙊𝙋: 𝗕𝗘𝗩𝗥𝗜𝗝𝗗𝗜𝗡𝗚𝗦𝗗𝗔𝗚 = 𝗡𝗢𝗚 𝗗𝗜𝗞𝗞𝗘𝗥 𝗜𝗡 𝗭𝗪𝗢𝗟𝗟𝗘! Dance4Liberation is terug op 5 mei met 30.000 festival fans die volledig uit hun plaat gaan voor onze vrijheid, samen met 𝗲𝗲𝗻 𝗻𝗼́𝗴 𝗱𝗶𝗸𝗸𝗲𝗿𝗲 𝗹𝗶𝗻𝗲-𝘂𝗽, grote vuurwerkshows, onze prachtig aangeklede podia en natuurlijk: 𝘑𝘐𝘑 𝘌𝘕 𝘑𝘌 𝘝𝘙𝘐𝘌𝘕𝘋𝘌𝘕! 🚀🫶
