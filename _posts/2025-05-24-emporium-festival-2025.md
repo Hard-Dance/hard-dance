@@ -6,7 +6,7 @@ date: 2025/03/08
 datestart: 2025/05/24
 dateend: 2025/05/24
 locationTitle:
-location:
+location: Weg door de Berendonck, Wijchen, Netherlands
 hosts:
   - Emporium
   - Matrixx
