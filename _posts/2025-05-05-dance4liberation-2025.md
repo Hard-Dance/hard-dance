@@ -10,7 +10,6 @@ location:
 hosts:
   - Dance4Liberation Festival
   - High Energy Events
-tickets: https://example.com/tickets
 facebook: https://www.facebook.com/events/1434297967206967/
 image: /assets/img/events/dance4liberation-2025.jpg
 ---

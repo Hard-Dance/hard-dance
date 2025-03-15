@@ -9,7 +9,6 @@ locationTitle:
 location:
 hosts:
   - OVERLOUD EVENTS
-tickets: https://example.com/tickets
 facebook: https://www.facebook.com/events/1178245637211915/
 image: /assets/img/events/overloud-presents--the-hardstyle-show-8.jpg
 ---

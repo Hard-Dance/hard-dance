@@ -9,7 +9,6 @@ locationTitle:
 location:
 hosts:
   - BKJN Events
-tickets: https://example.com/tickets
 facebook: https://www.facebook.com/events/1119253179650836/
 image: /assets/img/events/beter-kom-je-niet-festival.jpg
 ---

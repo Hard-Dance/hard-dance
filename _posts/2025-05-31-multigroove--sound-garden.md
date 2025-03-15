@@ -9,7 +9,6 @@ locationTitle:
 location:
 hosts:
   - Multigroove
-tickets: https://example.com/tickets
 facebook: https://www.facebook.com/events/2736032366595374/
 image: /assets/img/events/multigroove--sound-garden.jpg
 ---

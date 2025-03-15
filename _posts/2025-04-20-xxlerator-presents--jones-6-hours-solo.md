@@ -11,7 +11,6 @@ hosts:
   - XXlerator
   - Jones
   - Matrixx
-tickets: https://example.com/tickets
 facebook: https://www.facebook.com/events/1051969693144806/
 image: /assets/img/events/xxlerator-presents--jones-6-hours-solo.jpg
 ---

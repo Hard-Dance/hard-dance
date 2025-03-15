@@ -11,7 +11,6 @@ hosts:
   - Bassquake
   - Me-Events
   - Airbeat One Festival
-tickets: https://example.com/tickets
 facebook: https://www.facebook.com/events/416090314634050/
 image: /assets/img/events/bassquake-festival-2025--official-.jpg
 ---

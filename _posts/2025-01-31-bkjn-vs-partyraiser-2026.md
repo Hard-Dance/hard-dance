@@ -10,7 +10,6 @@ location:
 hosts:
   - BKJN vs. Partyraiser
   - BKJN Events
-tickets: https://example.com/tickets
 facebook: https://www.facebook.com/events/3162230253924817/
 image: /assets/img/events/bkjn-vs-partyraiser-2026.jpg
 ---

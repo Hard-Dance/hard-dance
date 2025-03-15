@@ -9,7 +9,6 @@ locationTitle:
 location:
 hosts:
   - Electric Love Festival
-tickets: https://example.com/tickets
 facebook: https://www.facebook.com/events/446513191525292/
 image: /assets/img/events/electric-love-festival-2025.jpg
 ---

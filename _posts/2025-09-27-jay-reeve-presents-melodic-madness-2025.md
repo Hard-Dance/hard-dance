@@ -9,7 +9,6 @@ locationTitle:
 location:
 hosts:
   - REBiRTH Festival
-tickets: https://example.com/tickets
 facebook: https://www.facebook.com/events/956210089677616/
 image: /assets/img/events/jay-reeve-presents-melodic-madness-2025.jpg
 ---

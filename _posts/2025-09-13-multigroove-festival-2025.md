@@ -11,7 +11,6 @@ hosts:
   - Multigroove
   - De Samenzwering
   - Hellbound
-tickets: https://example.com/tickets
 facebook: https://www.facebook.com/events/578197868088815/
 image: /assets/img/events/multigroove-festival-2025.jpg
 ---

@@ -11,7 +11,6 @@ hosts:
   - Gearbox Digital
   - Outlaw Events
   - TEG Live
-tickets: https://example.com/tickets
 facebook: https://www.facebook.com/events/1134571284283156/
 image: /assets/img/events/gearbox-australia.jpg
 ---

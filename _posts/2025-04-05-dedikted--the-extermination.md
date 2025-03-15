@@ -9,7 +9,6 @@ locationTitle:
 location:
 hosts:
   - DediKted
-tickets: https://example.com/tickets
 facebook: https://www.facebook.com/events/1160156345453805/
 image: /assets/img/events/dedikted--the-extermination.jpg
 ---

@@ -9,7 +9,6 @@ locationTitle:
 location:
 hosts:
   - Airbeat One Festival
-tickets: https://example.com/tickets
 facebook: https://www.facebook.com/events/812202280891539/
 image: /assets/img/events/airbeat-one-festival-2025--official-.jpg
 ---

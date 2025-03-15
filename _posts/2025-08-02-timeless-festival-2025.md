@@ -9,7 +9,6 @@ locationTitle:
 location:
 hosts:
   - Timeless Festival
-tickets: https://example.com/tickets
 facebook: https://www.facebook.com/events/820418416749034/
 image: /assets/img/events/timeless-festival-2025.jpg
 ---

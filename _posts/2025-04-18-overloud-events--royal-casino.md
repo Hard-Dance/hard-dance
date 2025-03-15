@@ -9,7 +9,6 @@ locationTitle:
 location:
 hosts:
   - OVERLOUD EVENTS
-tickets: https://example.com/tickets
 facebook: https://www.facebook.com/events/1068149692020430/
 image: /assets/img/events/overloud-events--royal-casino.jpg
 ---

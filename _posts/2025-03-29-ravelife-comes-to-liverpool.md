@@ -11,7 +11,6 @@ hosts:
   - Ravelife
   - Twisted Events
   - Klubfiller
-tickets: https://example.com/tickets
 facebook: https://www.facebook.com/events/437540005823302/
 image: /assets/img/events/ravelife-comes-to-liverpool.jpg
 ---

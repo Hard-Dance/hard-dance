@@ -11,7 +11,6 @@ hosts:
   - Gearbox Digital
   - Supercharged Festival
   - Outlaw Events
-tickets: https://example.com/tickets
 facebook: https://www.facebook.com/events/582920237894390/
 image: /assets/img/events/supercharged-festival-2025.jpg
 ---

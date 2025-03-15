@@ -10,7 +10,6 @@ location:
 hosts:
   - Bullet Proof Events
   - Future of Hardstyle
-tickets: https://example.com/tickets
 facebook: https://www.facebook.com/events/1392917238549334/
 image: /assets/img/events/harder-is-better.jpg
 ---

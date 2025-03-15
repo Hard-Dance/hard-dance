@@ -9,7 +9,6 @@ locationTitle:
 location:
 hosts:
   - Tomorrowland
-tickets: https://example.com/tickets
 facebook: https://www.facebook.com/events/588143476964380/
 image: /assets/img/events/tomorrowland-2025--weekend-2.jpg
 ---

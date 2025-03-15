@@ -9,7 +9,6 @@ locationTitle:
 location:
 hosts:
   - REBiRTH Festival
-tickets: https://example.com/tickets
 facebook: https://www.facebook.com/events/970502188025510/
 image: /assets/img/events/rebirth-festival-2025.jpg
 ---

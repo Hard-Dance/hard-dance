@@ -10,7 +10,6 @@ location:
 hosts:
   - Luxor Live
   - Future of Hardstyle
-tickets: https://example.com/tickets
 facebook: https://www.facebook.com/events/1150981423130460/
 image: /assets/img/events/radical-redemption---no-retaliation-europe-tour-in-luxor-live.jpg
 ---

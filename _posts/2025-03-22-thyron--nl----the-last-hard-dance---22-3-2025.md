@@ -10,7 +10,6 @@ location:
 hosts:
   - Heart of Hard
   - Hardstyle.cz
-tickets: https://example.com/tickets
 facebook: https://www.facebook.com/events/1237575097299492/
 image: /assets/img/events/thyron--nl----the-last-hard-dance---22-3-2025.jpg
 ---

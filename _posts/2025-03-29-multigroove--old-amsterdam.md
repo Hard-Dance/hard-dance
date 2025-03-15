@@ -10,7 +10,6 @@ location:
 hosts:
   - Multigroove
   - WestWeelde
-tickets: https://example.com/tickets
 facebook: https://www.facebook.com/events/566974586063058/
 image: /assets/img/events/multigroove--old-amsterdam.jpg
 ---

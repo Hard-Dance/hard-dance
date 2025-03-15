@@ -9,7 +9,6 @@ locationTitle:
 location:
 hosts:
   - Infinity Festival
-tickets: https://example.com/tickets
 facebook: https://www.facebook.com/events/1790393401498928/
 image: /assets/img/events/infinity-festival-2025.jpg
 ---

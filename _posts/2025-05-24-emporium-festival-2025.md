@@ -10,7 +10,6 @@ location: Weg door de Berendonck, Wijchen, Netherlands
 hosts:
   - Emporium
   - Matrixx
-tickets: https://example.com/tickets
 facebook: https://www.facebook.com/events/786318063598888/
 image: /assets/img/events/emporium-festival-2025.jpg
 ---

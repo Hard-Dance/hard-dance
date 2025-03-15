@@ -10,7 +10,6 @@ location:
 hosts:
   - Weareonthemissionasia
   - Hi Five Asia
-tickets: https://example.com/tickets
 facebook: https://www.facebook.com/events/508454478899072/
 image: /assets/img/events/hardmission---techmission-malaysia-2025.jpg
 ---

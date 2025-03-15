@@ -10,7 +10,6 @@ hosts:
   - Neorave Nation
   - Ember Music Hall
   - HiScore
-tickets: https://example.com/tickets
 facebook: https://www.facebook.com/events/1627546021421310/
 image: /assets/img/events/retroworld-wasted-penguinz-2024.jpg
 ---
@@ -32,7 +31,5 @@ Date: Labor Day (September 2, 2024)
 Time: \[1:00 PM\] to \[7:00 PM\]  
 Location: \[Ember Music Hall, 309 E Broad St, Richmond, VA 23219\]  
 Tickets: Available online or at the door.
-
-  
 
 Don't miss out on this ultimate fusion of music and gaming. Join us for a Labor Day like no other, where Wasted Penguinz and playable video games come together to create memories that will last long after the last beat drops. Get your tickets now and level up your holiday!

@@ -9,7 +9,6 @@ locationTitle:
 location:
 hosts:
   - Masif Events
-tickets: https://example.com/tickets
 facebook: https://www.facebook.com/events/1569972560255557/
 image: /assets/img/events/masif-one-zero.jpg
 ---

@@ -10,7 +10,6 @@ location:
 hosts:
   - Into The Madness
   - Musical Madness
-tickets: https://example.com/tickets
 facebook: https://www.facebook.com/events/1174289414032407/
 image: /assets/img/events/into-the-madness-2025.jpg
 ---

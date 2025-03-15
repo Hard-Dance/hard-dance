@@ -11,7 +11,6 @@ hosts:
   - Me-Events
   - Bassquake
   - Airbeat One Festival
-tickets: https://example.com/tickets
 facebook: https://www.facebook.com/events/533210512551973/
 image: /assets/img/events/brennan-heart---mec-braunschweig.jpg
 ---

@@ -11,7 +11,6 @@ hosts:
   - Ultra Music Festival
   - UMF Radio
   - Miami Music Week
-tickets: https://example.com/tickets
 facebook: https://www.facebook.com/events/945985704239541/
 image: /assets/img/events/ultra-music-festival-2025.jpg
 ---

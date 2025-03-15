@@ -10,7 +10,6 @@ location:
 hosts:
   - Reminder - Hardstyle 2006/2011
   - Crypsis
-tickets: https://example.com/tickets
 facebook: https://www.facebook.com/events/1610635466448798/
 image: /assets/img/events/reminder--15-years-of-crypsis.jpg
 ---

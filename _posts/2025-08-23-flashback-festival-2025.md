@@ -10,7 +10,6 @@ location:
 hosts:
   - Flashback
   - Bass Events
-tickets: https://example.com/tickets
 facebook: https://www.facebook.com/events/520580750605269/
 image: /assets/img/events/flashback-festival-2025---official.jpg
 ---

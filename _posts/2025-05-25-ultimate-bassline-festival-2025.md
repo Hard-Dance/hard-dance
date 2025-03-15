@@ -9,7 +9,6 @@ locationTitle: La Fabrik Herstal
 location: Rue Pierre-Joseph Antoine 79, 4040 Herstal, Belgique
 hosts:
   - Ultimate Bassline Festival
-tickets: https://example.com/tickets
 facebook: https://www.facebook.com/events/1520365891873890/
 image: /assets/img/events/ultimate-bassline-festival-2025.jpg
 ---

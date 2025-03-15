@@ -10,7 +10,6 @@ location:
 hosts:
   - Me-Events
   - Airbeat One Festival
-tickets: https://example.com/tickets
 facebook: https://www.facebook.com/events/3733412683471892/
 image: /assets/img/events/angerfist---mec-braunschweig.jpg
 ---

@@ -8,7 +8,6 @@ locationTitle:
 location: Netherlands
 hosts:
   - Veranda Events
-tickets: https://example.com/tickets
 facebook: https://www.facebook.com/events/1985751238546124/
 image: /assets/img/events/uptempo-and-you-know-it-2025.jpg
 ---

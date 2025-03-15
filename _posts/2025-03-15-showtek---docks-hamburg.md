@@ -10,7 +10,6 @@ location:
 hosts:
   - Me-Events
   - DOCKS
-tickets: https://example.com/tickets
 facebook: https://www.facebook.com/events/876379541368906/
 image: /assets/img/events/showtek---docks-hamburg.jpg
 ---

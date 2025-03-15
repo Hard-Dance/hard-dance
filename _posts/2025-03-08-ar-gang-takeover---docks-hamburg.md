@@ -10,7 +10,6 @@ location:
 hosts:
   - Me-Events
   - DOCKS
-tickets: https://example.com/tickets
 facebook: https://www.facebook.com/events/1350819412968379/
 image: /assets/img/events/ar-gang-takeover---docks-hamburg.jpg
 ---

@@ -10,7 +10,6 @@ location:
 hosts:
   - Bass Events
   - Pat B
-tickets: https://example.com/tickets
 facebook: https://www.facebook.com/events/1360750985339459/
 image: /assets/img/events/pat-b-birthday-bash-xxl-2025---official.jpg
 ---

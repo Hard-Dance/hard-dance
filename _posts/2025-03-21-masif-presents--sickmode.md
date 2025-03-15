@@ -9,7 +9,6 @@ locationTitle:
 location:
 hosts:
   - Masif Events
-tickets: https://example.com/tickets
 facebook: https://www.facebook.com/events/588515820848494/
 image: /assets/img/events/masif-presents--sickmode.jpg
 ---

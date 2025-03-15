@@ -10,7 +10,6 @@ location:
 hosts:
   - Dreamfields Festival
   - Matrixx
-tickets: https://example.com/tickets
 facebook: https://www.facebook.com/events/2156817491382169/
 image: /assets/img/events/dreamfields-festival-2025.jpg
 ---

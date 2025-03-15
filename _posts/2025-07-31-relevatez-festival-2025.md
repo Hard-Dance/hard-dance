@@ -10,7 +10,6 @@ location:
 hosts:
   - Relevatez Festival
   - Ravefield
-tickets: https://example.com/tickets
 facebook: https://www.facebook.com/events/1376848993700791/
 image: /assets/img/events/relevatez-festival-2025.jpg
 ---

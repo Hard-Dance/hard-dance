@@ -9,7 +9,6 @@ locationTitle:
 location:
 hosts:
   - Masif Events
-tickets: https://example.com/tickets
 facebook: https://www.facebook.com/events/653920870357325/
 image: /assets/img/events/masif-presents--ran-d.jpg
 ---

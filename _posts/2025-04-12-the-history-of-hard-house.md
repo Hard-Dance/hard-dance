@@ -10,7 +10,6 @@ location:
 hosts:
   - Hellfire
   - District Cardiff
-tickets: https://example.com/tickets
 facebook: https://www.facebook.com/events/991904912993698/
 image: /assets/img/events/the-history-of-hard-house.jpg
 ---

@@ -10,7 +10,6 @@ location:
 hosts:
   - Me-Events
   - Airbeat One Festival
-tickets: https://example.com/tickets
 facebook: https://www.facebook.com/events/1058555432535037/
 image: /assets/img/events/neelix-and-friends---mec-braunschweig.jpg
 ---

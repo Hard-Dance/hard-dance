@@ -9,7 +9,6 @@ locationTitle:
 location:
 hosts:
   - Project Hardstyle CH
-tickets: https://example.com/tickets
 facebook: https://www.facebook.com/events/1515255162478237/
 image: /assets/img/events/captain-hardstyle-2025.jpg
 ---

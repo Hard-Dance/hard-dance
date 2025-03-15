@@ -10,7 +10,6 @@ location:
 hosts:
   - Total Loss Festival
   - Matrixx
-tickets: https://example.com/tickets
 facebook: https://www.facebook.com/events/495462203199743/
 image: /assets/img/events/total-loss-festival-2025.jpg
 ---

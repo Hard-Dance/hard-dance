@@ -10,7 +10,6 @@ location:
 hosts:
   - The Hardest
   - Neushoorn
-tickets: https://example.com/tickets
 facebook: https://www.facebook.com/events/3950307325188480/
 image: /assets/img/events/the-hardest-presents--extreme-circus.jpg
 ---

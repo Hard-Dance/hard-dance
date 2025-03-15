@@ -9,7 +9,6 @@ locationTitle:
 location:
 hosts:
   - HSU - Harder Styles United
-tickets: https://example.com/tickets
 facebook: https://www.facebook.com/events/2624795987911314/
 image: /assets/img/events/midnight-mafia-2025.jpg
 ---

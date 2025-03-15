@@ -11,7 +11,6 @@ hosts:
   - TITANIUM Festival
   - Dance 2 Eden
   - BKJN Events
-tickets: https://example.com/tickets
 facebook: https://www.facebook.com/events/1245427143265077/
 image: /assets/img/events/titanium-festival-2025---the-golden-empire--official-.jpg
 ---

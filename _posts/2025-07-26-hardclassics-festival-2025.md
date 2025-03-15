@@ -10,7 +10,6 @@ location:
 hosts:
   - Hardclassics
   - Reminder - Hardstyle 2006/2011
-tickets: https://example.com/tickets
 facebook: https://www.facebook.com/events/219565614585556/
 image: /assets/img/events/hardclassics-festival-2025.jpg
 ---

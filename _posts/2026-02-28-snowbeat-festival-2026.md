@@ -11,7 +11,6 @@ hosts:
   - Snowbeat - Electronic Music Festival
   - Me-Events
   - Airbeat One Festival
-tickets: https://example.com/tickets
 facebook: https://www.facebook.com/events/1360317708435967/
 image: /assets/img/events/snowbeat-festival-2026.jpg
 ---

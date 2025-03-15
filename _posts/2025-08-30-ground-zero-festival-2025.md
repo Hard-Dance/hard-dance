@@ -11,7 +11,6 @@ hosts:
   - Ground Zero Festival
   - Multigroove
   - Hellbound
-tickets: https://example.com/tickets
 facebook: https://www.facebook.com/events/431836653220365/
 image: /assets/img/events/ground-zero-festival-2025.jpg
 ---

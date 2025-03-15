@@ -10,7 +10,6 @@ location:
 hosts:
   - Defqon.1
   - Q-dance
-tickets: https://example.com/tickets
 facebook: https://www.facebook.com/events/500569119300328/
 image: /assets/img/events/defqon-1-2025---where-legends-rise.jpg
 ---
