@@ -5,12 +5,13 @@ title: "Supercharged Festival 2025"
 date: 2025/03/08
 datestart: 2025/05/17
 dateend: 2025/05/17
-locationTitle:
-location:
+locationTitle: Balkenhaven
+location: Hemkade 48, 1506 PS Zaandam, Netherlands
 hosts:
   - Gearbox Digital
   - Supercharged Festival
   - Outlaw Events
+tickets: https://gearboxdigital.com/supercharged/
 facebook: https://www.facebook.com/events/582920237894390/
 image: /assets/img/events/supercharged-festival-2025.jpg
 ---

@@ -5,10 +5,11 @@ title: "Midnight Mafia 2025"
 date: 2025/03/08
 datestart: 2025/05/03
 dateend: 2025/05/03
-locationTitle:
-location:
+locationTitle: Sydney Showground
+location: Grand Parade, Sydney Olympic Park NSW 2127, Australia
 hosts:
   - HSU - Harder Styles United
+tickets: https://events.ticketbooth.com.au/event/midnight-mafia-cinco-de-mayo
 facebook: https://www.facebook.com/events/2624795987911314/
 image: /assets/img/events/midnight-mafia-2025.jpg
 ---

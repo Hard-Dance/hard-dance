@@ -5,11 +5,11 @@ title: "Dance4Liberation 2025"
 date: 2025/03/08
 datestart: 2025/05/05
 dateend: 2025/05/05
-locationTitle:
-location:
+location: Lakeside Zwolle, 8026 Zwolle, Netherlands
 hosts:
   - Dance4Liberation Festival
   - High Energy Events
+tickets: https://www.dance4liberation.nl/
 facebook: https://www.facebook.com/events/1434297967206967/
 image: /assets/img/events/dance4liberation-2025.jpg
 ---

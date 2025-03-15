@@ -5,12 +5,13 @@ title: "XXlerator presents: Jones 6 hours solo"
 date: 2025/03/08
 datestart: 2025/04/20
 dateend: 2025/04/20
-locationTitle:
-location:
+locationTitle: Doornroosje
+location: Stationsplein 11, 6512 AB Nijmegen, Netherlands
 hosts:
   - XXlerator
   - Jones
   - Matrixx
+tickets: https://jonessolo.nl/
 facebook: https://www.facebook.com/events/1051969693144806/
 image: /assets/img/events/xxlerator-presents--jones-6-hours-solo.jpg
 ---

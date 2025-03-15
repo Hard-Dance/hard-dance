@@ -5,10 +5,11 @@ title: "Beter Kom Je Niet Festival"
 date: 2025/03/08
 datestart: 2025/05/10
 dateend: 2025/05/10
-locationTitle:
-location:
+locationTitle: Breepark
+location: Bavelseparklaan, 4817 ZX Breda, Netherlands
 hosts:
   - BKJN Events
+tickets: https://bkjnevents.activehosted.com/f/7
 facebook: https://www.facebook.com/events/1119253179650836/
 image: /assets/img/events/beter-kom-je-niet-festival.jpg
 ---

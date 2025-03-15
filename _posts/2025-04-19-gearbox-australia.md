@@ -5,12 +5,13 @@ title: "Gearbox Australia"
 date: 2025/03/08
 datestart: 2025/04/19
 dateend: 2025/04/19
-locationTitle:
-location:
+locationTitle: Qudos Bank Arena
+location: 19 Edwin Flack Ave, Sydney Olympic Park NSW 2127, Australia
 hosts:
   - Gearbox Digital
   - Outlaw Events
   - TEG Live
+tickets: https://gearboxdigital.com/australia/
 facebook: https://www.facebook.com/events/1134571284283156/
 image: /assets/img/events/gearbox-australia.jpg
 ---

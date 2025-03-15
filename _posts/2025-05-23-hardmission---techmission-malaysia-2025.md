@@ -5,11 +5,12 @@ title: "Hardmission & Techmission Malaysia 2025"
 date: 2025/03/08
 datestart: 2025/05/23
 dateend: 2025/05/23
-locationTitle:
-location:
+locationTitle: Bandar Malaysia Sdn. Bhd.
+location: Jalan Lapangan Terbang Lama, Pengkalan Tentera Udara Diraja Malaysia, 50460 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia
 hosts:
   - Weareonthemissionasia
   - Hi Five Asia
+tickets: https://www.ticketmelon.com/hardtechmissionMY/MY2025
 facebook: https://www.facebook.com/events/508454478899072/
 image: /assets/img/events/hardmission---techmission-malaysia-2025.jpg
 ---

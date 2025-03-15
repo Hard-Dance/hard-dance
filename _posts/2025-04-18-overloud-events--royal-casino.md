@@ -5,10 +5,11 @@ title: "Overloud Events: Royal Casino"
 date: 2025/03/08
 datestart: 2025/04/18
 dateend: 2025/04/18
-locationTitle:
-location:
+locationTitle: Bar La Shop
+location: 4177 R. Saint-Denis 2e étage, Montréal, QC H2W 2M7, Canada
 hosts:
   - OVERLOUD EVENTS
+tickets: https://www.zeffy.com/fr-CA/ticketing/overloud-events-royal-casino-w-nightcraft
 facebook: https://www.facebook.com/events/1068149692020430/
 image: /assets/img/events/overloud-events--royal-casino.jpg
 ---

@@ -10,6 +10,7 @@ location: 17 Meadow Street, Brooklyn, NY, United States
 hosts:
   - The Kingsland Presents
   - Hard Dance NYC
+tickets: https://dice.fm/event/yo9vgv-mish-levenkhan-9th-may-the-meadows-new-york-tickets
 facebook: https://www.facebook.com/events/620721170587152/
 image: /assets/img/events/hard-dance-nyc-presents--mish---levenkhan.jpg
 ---

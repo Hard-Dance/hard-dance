@@ -4,11 +4,11 @@ category: events
 title: "Electric Love Festival 2025"
 date: 2025/03/08
 datestart: 2025/07/03
-dateend: 2025/07/03
-locationTitle:
-location:
+dateend: 2025/07/05
+location: Salzburgring 1, 5325 Plainfeld, Austria
 hosts:
   - Electric Love Festival
+tickets: https://shop.electriclove.at/f98e6fc8d30341e0b916acf0556e3a45/tickets
 facebook: https://www.facebook.com/events/446513191525292/
 image: /assets/img/events/electric-love-festival-2025.jpg
 ---

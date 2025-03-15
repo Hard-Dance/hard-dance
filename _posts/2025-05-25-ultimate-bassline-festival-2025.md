@@ -5,10 +5,11 @@ title: "Ultimate Bassline Festival 2025"
 date: 2025/03/08
 datestart: 2025/05/25
 dateend: 2025/05/25
-locationTitle: La Fabrik Herstal
-location: Rue Pierre-Joseph Antoine 79, 4040 Herstal, Belgique
+locationTitle: La Fabrik
+location: Rue Pierre-Joseph Antoine, 4040 Herstal, Belgium
 hosts:
   - Ultimate Bassline Festival
+tickets: http://www.ultimatebassline-festival.be/
 facebook: https://www.facebook.com/events/1520365891873890/
 image: /assets/img/events/ultimate-bassline-festival-2025.jpg
 ---

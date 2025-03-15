@@ -5,8 +5,7 @@ title: "HARDCLASSICS Festival 2025"
 date: 2025/03/08
 datestart: 2025/07/26
 dateend: 2025/07/26
-locationTitle:
-location:
+location: De Ven 2, 1981 LW Velsen-Zuid, Netherlands
 hosts:
   - Hardclassics
   - Reminder - Hardstyle 2006/2011

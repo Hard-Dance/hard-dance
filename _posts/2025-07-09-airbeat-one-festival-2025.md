@@ -4,13 +4,13 @@ category: events
 title: "Airbeat One Festival 2025"
 date: 2025/03/08
 datestart: 2025/07/09
-dateend: 2025/07/09
-locationTitle:
-location:
+dateend: 2025/07/13
+location: Flugpl. 1, 19306 Neustadt-Glewe, Germany
 hosts:
   - Airbeat One Festival
+tickets: https://airbeat-one.myticket.de/content
 facebook: https://www.facebook.com/events/812202280891539/
-image: /assets/img/events/airbeat-one-festival-2025--official-.jpg
+image: /assets/img/events/airbeat-one-festival-2025.jpg
 ---
 
 Die 22. Ausgabe des AIRBEAT ONE Festivals steht in den Startlöchern! Vom 9. bis 13. Juli 2025 verwandeln wir den Flugplatz Neustadt-Glewe wieder in eine spektakuläre Bühne, auf der die besten DJs der Welt auftreten werden.  

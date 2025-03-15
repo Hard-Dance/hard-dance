@@ -5,11 +5,11 @@ title: "Dreamfields Festival 2025"
 date: 2025/03/08
 datestart: 2025/07/05
 dateend: 2025/07/05
-locationTitle:
-location:
+location: Rhederlaag, De Muggenwaard, 6988 BX Lathum, Netherlands
 hosts:
   - Dreamfields Festival
   - Matrixx
+tickets: https://www.dreamfields.nl/
 facebook: https://www.facebook.com/events/2156817491382169/
 image: /assets/img/events/dreamfields-festival-2025.jpg
 ---
