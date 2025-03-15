@@ -2,13 +2,14 @@
 layout: event
 category: events
 title: "REBiRTH Festival 2025"
-date: 2025/03/08
+date: 2024/09/13
 datestart: 2025/04/11
-dateend: 2025/04/11
-location: Antwerpsebaan 9, 5268 KB Helvoirt, Netherlands
+dateend: 2025/04/13
+locationTitle: REBiRTH Festival
+location: Antwerpsebaan 7, 5268 KB Helvoirt, Netherlands
 hosts:
   - REBiRTH Festival
-tickets: https://tickets.rebirth-festival.nl/fd3884ab8e234c659485c385720e8fe7/camping-and-weekend-tickets-18
+tickets: https://arep.co/m/pre-register-for-rebirth-festival-2025
 facebook: https://www.facebook.com/events/970502188025510/
 image: /assets/img/events/rebirth-festival-2025.jpg
 ---
