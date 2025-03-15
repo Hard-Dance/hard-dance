@@ -8,7 +8,7 @@
     </h1>
     <span>
       <!-- TODO: Have a {{ page.daterange }} variable -->
-      {{ page.datestart | date: "%B %d, %Y" }} {% if page.dateend %} - {{
+      {{ page.datestart | date: "%B %d, %Y" }} {% if page.dateend and page.dateend != page.datestart %} - {{
       page.dateend | date: "%B %d, %Y" }} {% endif %}
     </span>
   </div>
