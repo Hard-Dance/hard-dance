@@ -5,12 +5,12 @@ title: "Multigroove Festival 2025"
 date: 2025/03/08
 datestart: 2025/09/13
 dateend: 2025/09/13
-locationTitle:
-location:
+location: Kennemerstrand 800, 1976 GA IJmuiden, Netherlands
 hosts:
   - Multigroove
   - De Samenzwering
   - Hellbound
+tickets: https://shop.celebratix.io/
 facebook: https://www.facebook.com/events/578197868088815/
 image: /assets/img/events/multigroove-festival-2025.jpg
 ---

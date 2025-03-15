@@ -5,14 +5,14 @@ title: "Titanium Festival 2025"
 date: 2025/03/08
 datestart: 2025/09/20
 dateend: 2025/09/20
-locationTitle:
-location:
+location: Langs de a2 Naast de Brug Over de Lek, 4133 LB Vianen, Netherlands
 hosts:
   - TITANIUM Festival
   - Dance 2 Eden
   - BKJN Events
+tickets: https://bkjnevents.activehosted.com/f/1
 facebook: https://www.facebook.com/events/1245427143265077/
-image: /assets/img/events/titanium-festival-2025---the-golden-empire--official-.jpg
+image: /assets/img/events/titanium-festival-2025.jpg
 ---
 
 𝐓𝐈𝐓𝐀𝐍𝐈𝐔𝐌 𝐅𝐞𝐬𝐭𝐢𝐯𝐚𝐥 𝟐𝟎𝟐𝟓 - 𝐓𝐡𝐞 𝐆𝐨𝐥𝐝𝐞𝐧 𝐄𝐦𝐩𝐢𝐫𝐞 👑 | 𝐆𝐞𝐭 𝐲𝐨𝐮𝐫 𝐭𝐢𝐜𝐤𝐞𝐭𝐬 𝐧𝐨𝐰! �The Titans have conquered, their legacy now cast in gold. After years of battle, they reign supreme in The Golden Empire - an era of power, unity, and relentless hardcore energy. Yet, the hunger for dominance never fades…

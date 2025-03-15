@@ -5,12 +5,12 @@ title: "Snowbeat Festival 2026"
 date: 2025/03/08
 datestart: 2026/02/28
 dateend: 2026/02/28
-locationTitle:
-location:
+location: Zur Winterwelt 1, 19243 Wittenburg, Germany
 hosts:
   - Snowbeat - Electronic Music Festival
   - Me-Events
   - Airbeat One Festival
+tickets: https://shop.paylogic.com/4e4f3c91e6464dbda30734c994d256f7/tickets
 facebook: https://www.facebook.com/events/1360317708435967/
 image: /assets/img/events/snowbeat-festival-2026.jpg
 ---

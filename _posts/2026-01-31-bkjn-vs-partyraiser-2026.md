@@ -3,13 +3,13 @@ layout: event
 category: events
 title: "BKJN vs. Partyraiser 2026"
 date: 2025/03/08
-datestart: 2025/01/31
-dateend: 2025/01/31
-locationTitle:
-location:
+datestart: 2026/01/31
+dateend: 2026/01/31
+location: Van der Hagenstraat 20, 2722 NT Zoetermeer, Netherlands
 hosts:
   - BKJN vs. Partyraiser
   - BKJN Events
+tickets: https://bkjnevents.activehosted.com/f/11
 facebook: https://www.facebook.com/events/3162230253924817/
 image: /assets/img/events/bkjn-vs-partyraiser-2026.jpg
 ---

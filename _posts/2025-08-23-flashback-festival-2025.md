@@ -5,13 +5,13 @@ title: "Flashback Festival 2025"
 date: 2025/03/08
 datestart: 2025/08/23
 dateend: 2025/08/23
-locationTitle:
-location:
+location: Scheldeoeverstraat 4, 8583 Avelgem, Belgium
 hosts:
   - Flashback
   - Bass Events
+tickets: https://flashbackfestival.bassevents.be/
 facebook: https://www.facebook.com/events/520580750605269/
-image: /assets/img/events/flashback-festival-2025---official.jpg
+image: /assets/img/events/flashback-festival-2025.jpg
 ---
 
 Flashback Festival returns on August 23 at Kasteel van Bossuit, Avelgem.

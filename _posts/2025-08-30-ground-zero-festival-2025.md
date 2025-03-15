@@ -5,12 +5,13 @@ title: "Ground Zero Festival 2025"
 date: 2025/03/08
 datestart: 2025/08/30
 dateend: 2025/08/30
-locationTitle:
-location:
+locationTitle: Bussloo Recreation Area
+location: Kneuterstraat 21, 7384 CT Wilp, Netherlands
 hosts:
   - Ground Zero Festival
   - Multigroove
   - Hellbound
+tickets: https://www.groundzerofestival.nl/en/tickets
 facebook: https://www.facebook.com/events/431836653220365/
 image: /assets/img/events/ground-zero-festival-2025.jpg
 ---

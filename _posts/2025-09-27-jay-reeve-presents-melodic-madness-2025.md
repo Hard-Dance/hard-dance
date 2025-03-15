@@ -5,10 +5,11 @@ title: "Jay Reeve presents Melodic Madness 2025"
 date: 2025/03/08
 datestart: 2025/09/27
 dateend: 2025/09/27
-locationTitle:
-location:
+locationTitle: 013 Poppodium
+location: Veemarktstraat 44, 5038 CV Tilburg, Netherlands
 hosts:
   - REBiRTH Festival
+tickets: https://arep.co/w/waiting-list-melodic-madness
 facebook: https://www.facebook.com/events/956210089677616/
 image: /assets/img/events/jay-reeve-presents-melodic-madness-2025.jpg
 ---

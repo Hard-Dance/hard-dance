@@ -5,11 +5,11 @@ title: "Total Loss Festival 2025"
 date: 2025/03/08
 datestart: 2025/09/06
 dateend: 2025/09/06
-locationTitle:
-location:
+location: Ekkersweijer 7, 5681 RZ Best, Netherlands
 hosts:
   - Total Loss Festival
   - Matrixx
+tickets: https://tickets.totalloss.nl/4456a4ebfa2c4251a4b1440827e2c940
 facebook: https://www.facebook.com/events/495462203199743/
 image: /assets/img/events/total-loss-festival-2025.jpg
 ---

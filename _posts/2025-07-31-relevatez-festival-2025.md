@@ -4,12 +4,12 @@ category: events
 title: "Relevatez Festival 2025"
 date: 2025/03/08
 datestart: 2025/07/31
-dateend: 2025/07/31
-locationTitle:
-location:
+dateend: 2025/08/02
+location: Glaubenbergstrasse, 6162 Entlebuch, Switzerland
 hosts:
   - Relevatez Festival
   - Ravefield
+tickets: https://eventfrog.ch/de/p/festivals/weitere-festivals/relevatez-festival-2025-official-event-7225509027987281187.html
 facebook: https://www.facebook.com/events/1376848993700791/
 image: /assets/img/events/relevatez-festival-2025.jpg
 ---

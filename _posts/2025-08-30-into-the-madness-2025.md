@@ -5,11 +5,11 @@ title: "Into The Madness 2025"
 date: 2025/03/08
 datestart: 2025/08/30
 dateend: 2025/08/30
-locationTitle:
-location:
+location: Am Wassersportsee 7, 53909 Zülpich, Germany
 hosts:
   - Into The Madness
   - Musical Madness
+tickets: https://intothemadness.ticket.io/bjzb22pj/
 facebook: https://www.facebook.com/events/1174289414032407/
 image: /assets/img/events/into-the-madness-2025.jpg
 ---

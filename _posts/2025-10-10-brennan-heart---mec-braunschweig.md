@@ -5,12 +5,13 @@ title: "Brennan Heart @ MEC Braunschweig"
 date: 2025/03/08
 datestart: 2025/10/10
 dateend: 2025/10/10
-locationTitle:
-location:
+locationTitle: Millenium Event Center
+location: Madamenweg 77, 38120 Braunschweig, Germany
 hosts:
   - Me-Events
   - Bassquake
   - Airbeat One Festival
+tickets: https://shop.paylogic.com/ef782aab45f746cf8448caaacfdf2b7a/
 facebook: https://www.facebook.com/events/533210512551973/
 image: /assets/img/events/brennan-heart---mec-braunschweig.jpg
 ---

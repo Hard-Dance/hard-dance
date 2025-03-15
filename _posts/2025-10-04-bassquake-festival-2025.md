@@ -5,14 +5,15 @@ title: "BassQuake Festival 2025"
 date: 2025/03/08
 datestart: 2025/10/04
 dateend: 2025/10/04
-locationTitle:
-location:
+locationTitle: alpincenter Hamburg-Wittenburg
+location: Zur Winterwelt 1, 19243 Wittenburg, Germany
 hosts:
   - Bassquake
   - Me-Events
   - Airbeat One Festival
+tickets: https://shop.paylogic.com/7addbd915a2745b2b93c3075d7b8a291/tickets
 facebook: https://www.facebook.com/events/416090314634050/
-image: /assets/img/events/bassquake-festival-2025--official-.jpg
+image: /assets/img/events/bassquake-festival-2025.jpg
 ---
 
 Bassquake Festival – Harder Styles kommen zurück ins Alpincenter Wittenburg!  

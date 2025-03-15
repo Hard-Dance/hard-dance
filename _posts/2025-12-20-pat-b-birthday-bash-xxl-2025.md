@@ -5,13 +5,13 @@ title: "Pat B Birthday Bash XXL 2025"
 date: 2025/03/08
 datestart: 2025/12/20
 dateend: 2025/12/20
-locationTitle:
-location:
+locationTitle: Lotto Arena
+location: Schijnpoortweg 119, 2170 Antwerpen, Belgium
 hosts:
   - Bass Events
   - Pat B
 facebook: https://www.facebook.com/events/1360750985339459/
-image: /assets/img/events/pat-b-birthday-bash-xxl-2025---official.jpg
+image: /assets/img/events/pat-b-birthday-bash-xxl-2025.jpg
 ---
 
 Bass Events proudly presents Pat B Birthday Bash XXL on Saturday 20 December 2025 at Lotto Arena in Antwerp (BE).
