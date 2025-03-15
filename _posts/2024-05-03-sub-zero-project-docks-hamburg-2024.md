@@ -4,6 +4,7 @@ category: events
 title: "Sub Zero Project @ Docks Hamburg"
 date: 2024/01/19
 datestart: 2024/05/03
+locationTitle: Docks
 location: Spielbudenpl. 19, 20359 Hamburg, Germany
 hosts:
   - Airbeat One
