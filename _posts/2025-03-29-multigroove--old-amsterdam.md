@@ -5,8 +5,8 @@ title: "Multigroove: Old Amsterdam"
 date: 2025/03/08
 datestart: 2025/03/29
 dateend: 2025/03/29
-locationTitle:
-location:
+locationTitle: Westerunie
+location: Klönneplein 4-6, 1014 DD Amsterdam, Netherlands
 hosts:
   - Multigroove
   - WestWeelde

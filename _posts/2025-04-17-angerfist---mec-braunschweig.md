@@ -5,11 +5,12 @@ title: "Angerfist @ MEC Braunschweig"
 date: 2025/03/08
 datestart: 2025/04/17
 dateend: 2025/04/17
-locationTitle:
-location:
+locationTitle: Millenium Event Center
+location: Madamenweg 77, 38120 Braunschweig, Germany
 hosts:
   - Me-Events
   - Airbeat One Festival
+tickets: https://shop.paylogic.com/b629ee48b453413ebfcae9703bca8702/
 facebook: https://www.facebook.com/events/3733412683471892/
 image: /assets/img/events/angerfist---mec-braunschweig.jpg
 ---

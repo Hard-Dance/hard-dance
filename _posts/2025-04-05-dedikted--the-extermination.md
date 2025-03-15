@@ -5,10 +5,11 @@ title: "DediKted: The Extermination"
 date: 2025/03/08
 datestart: 2025/04/05
 dateend: 2025/04/05
-locationTitle:
-location:
+locationTitle: Centro de Espectaculos el Jefe
+location: Av. Ferrocarriles Pte. No 8, El Nopalito, 54800 Cuautitlán Izcalli, Méx., Mexico
 hosts:
   - DediKted
+tickets: https://dedikted-the-extermination.boletia.com/
 facebook: https://www.facebook.com/events/1160156345453805/
 image: /assets/img/events/dedikted--the-extermination.jpg
 ---

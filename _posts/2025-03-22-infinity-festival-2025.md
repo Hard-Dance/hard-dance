@@ -5,8 +5,8 @@ title: "Infinity Festival 2025"
 date: 2025/03/08
 datestart: 2025/03/22
 dateend: 2025/03/22
-locationTitle:
-location:
+locationTitle: City Theater
+location: Hoofdstraat 145-147, 5481 AD Schijndel, Netherlands
 hosts:
   - Infinity Festival
 facebook: https://www.facebook.com/events/1790393401498928/

@@ -5,8 +5,8 @@ title: "The History of Hard House"
 date: 2025/03/08
 datestart: 2025/04/12
 dateend: 2025/04/12
-locationTitle:
-location:
+locationTitle: District Cardiff
+location: 2 Greyfriars Rd, Cardiff CF10 3AD, United Kingdom
 hosts:
   - Hellfire
   - District Cardiff

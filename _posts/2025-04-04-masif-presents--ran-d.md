@@ -5,8 +5,8 @@ title: "Masif presents: Ran-D"
 date: 2025/03/08
 datestart: 2025/04/04
 dateend: 2025/04/04
-locationTitle:
-location:
+locationTitle: The Shark Building
+location: 127 Liverpool St, Sydney NSW 2000, Australia
 hosts:
   - Masif Events
 facebook: https://www.facebook.com/events/653920870357325/

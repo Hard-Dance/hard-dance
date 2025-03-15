@@ -5,8 +5,8 @@ title: "AR Gang Takeover @ Docks Hamburg"
 date: 2025/03/08
 datestart: 2025/03/08
 dateend: 2025/03/08
-locationTitle:
-location:
+locationTitle: Docks
+location: Spielbudenpl. 19, 20359 Hamburg, Germany
 hosts:
   - Me-Events
   - DOCKS

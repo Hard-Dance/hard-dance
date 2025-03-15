@@ -5,8 +5,8 @@ title: "Showtek @ Docks Hamburg"
 date: 2025/03/08
 datestart: 2025/03/15
 dateend: 2025/03/15
-locationTitle:
-location:
+locationTitle: Docks
+location: Spielbudenpl. 19, 20359 Hamburg, Germany
 hosts:
   - Me-Events
   - DOCKS

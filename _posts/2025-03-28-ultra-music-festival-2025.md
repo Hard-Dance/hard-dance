@@ -4,9 +4,9 @@ category: events
 title: "Ultra Music Festival 2025"
 date: 2025/03/08
 datestart: 2025/03/28
-dateend: 2025/03/28
-locationTitle:
-location:
+dateend: 2025/03/30
+locationTitle: Bayfront Park
+location: 109 Biscayne Blvd, Miami, FL 33132, United States
 hosts:
   - Ultra Music Festival
   - UMF Radio

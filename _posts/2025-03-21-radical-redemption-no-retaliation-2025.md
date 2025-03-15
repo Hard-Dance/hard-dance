@@ -1,17 +1,17 @@
 ---
 layout: event
 category: events
-title: "Radical Redemption – No Retaliation Europe Tour in Luxor Live"
+title: "Radical Redemption: No Retaliation"
 date: 2025/03/08
 datestart: 2025/03/21
 dateend: 2025/03/21
-locationTitle:
-location:
+locationTitle: Luxor Live
+location: Willemsplein 10, 6811KB Arnhem, Netherlands
 hosts:
   - Luxor Live
   - Future of Hardstyle
 facebook: https://www.facebook.com/events/1150981423130460/
-image: /assets/img/events/radical-redemption---no-retaliation-europe-tour-in-luxor-live.jpg
+image: /assets/img/events/radical-redemption-no-retaliation-2025.jpg
 ---
 
 𝐑𝐀𝐃𝐈𝐂𝐀𝐋 𝐑𝐄𝐃𝐄𝐌𝐏𝐓𝐈𝐎𝐍 – ‘𝐍𝐎 𝐑𝐄𝐓𝐀𝐋𝐈𝐀𝐓𝐈𝐎𝐍 𝐄𝐔𝐑𝐎𝐏𝐄 𝐓𝐎𝐔𝐑’

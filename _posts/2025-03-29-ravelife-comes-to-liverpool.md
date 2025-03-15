@@ -5,8 +5,8 @@ title: "Ravelife comes to Liverpool"
 date: 2025/03/08
 datestart: 2025/03/29
 dateend: 2025/03/29
-locationTitle:
-location:
+locationTitle: Wav
+location: 8 Glegg St, Liverpool L3 7DW, United Kingdom
 hosts:
   - Ravelife
   - Twisted Events

@@ -5,8 +5,8 @@ title: "Harder is Better"
 date: 2025/03/08
 datestart: 2025/04/04
 dateend: 2025/04/04
-locationTitle:
-location:
+locationTitle: Luxor Live
+location: Willemsplein 10, 6811KB Arnhem, Netherlands
 hosts:
   - Bullet Proof Events
   - Future of Hardstyle

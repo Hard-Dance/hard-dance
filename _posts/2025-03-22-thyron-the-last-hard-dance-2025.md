@@ -1,17 +1,17 @@
 ---
 layout: event
 category: events
-title: "THYRON (NL) | The Last Hard Dance | 22.3.2025"
+title: "Thryon: The Last Hard Dance"
 date: 2025/03/08
 datestart: 2025/03/22
 dateend: 2025/03/22
-locationTitle:
-location:
+locationTitle: Storm Club
+location: Tachovské nám. 290, 130 00 Praha 3-Žižkov, Czech Republic
 hosts:
   - Heart of Hard
   - Hardstyle.cz
 facebook: https://www.facebook.com/events/1237575097299492/
-image: /assets/img/events/thyron--nl----the-last-hard-dance---22-3-2025.jpg
+image: /assets/img/events/thyron-the-last-hard-dance-2025.jpg
 ---
 
 💥 22.3.2025 - THYRON ![🇳🇱](https://static.xx.fbcdn.net/images/emoji.php/v9/tbd/2/16/1f1f3_1f1f1.png), Hard or Die Showcase a další  

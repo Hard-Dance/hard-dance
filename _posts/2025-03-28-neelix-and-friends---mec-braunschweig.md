@@ -5,8 +5,8 @@ title: "Neelix and Friends @ MEC Braunschweig"
 date: 2025/03/08
 datestart: 2025/03/28
 dateend: 2025/03/28
-locationTitle:
-location:
+locationTitle: Millenium Event Center
+location: Madamenweg 77, 38120 Braunschweig, Germany
 hosts:
   - Me-Events
   - Airbeat One Festival

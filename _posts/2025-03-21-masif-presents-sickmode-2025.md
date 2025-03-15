@@ -5,12 +5,12 @@ title: "Masif presents: Sickmode"
 date: 2025/03/08
 datestart: 2025/03/21
 dateend: 2025/03/21
-locationTitle:
-location:
+locationTitle: The Shark Building
+location: 127 Liverpool St, Sydney NSW 2000, Australia
 hosts:
   - Masif Events
 facebook: https://www.facebook.com/events/588515820848494/
-image: /assets/img/events/masif-presents--sickmode.jpg
+image: /assets/img/events/masif-presents-sickmode-2025.jpg
 ---
 
 This event is SOLD OUT!

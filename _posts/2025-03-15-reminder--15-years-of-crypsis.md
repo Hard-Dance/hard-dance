@@ -5,8 +5,8 @@ title: "Reminder: 15 years of Crypsis"
 date: 2025/03/08
 datestart: 2025/03/15
 dateend: 2025/03/15
-locationTitle:
-location:
+locationTitle: Hemkade48
+location: Hemkade 48, Zaandam, Netherlands
 hosts:
   - Reminder - Hardstyle 2006/2011
   - Crypsis

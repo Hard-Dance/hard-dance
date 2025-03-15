@@ -5,8 +5,8 @@ title: "The Hardest presents: Extreme Circus"
 date: 2025/03/08
 datestart: 2025/03/15
 dateend: 2025/03/15
-locationTitle:
-location:
+locationTitle: Neushoorn
+location: Ruiterskwartier 41, 8911 BP Leeuwarden, Netherlands
 hosts:
   - The Hardest
   - Neushoorn

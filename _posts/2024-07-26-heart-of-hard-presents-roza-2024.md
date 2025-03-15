@@ -4,8 +4,8 @@ category: events
 title: "Heart of Hard presents: RØZA"
 date: 2024/06/14
 datestart: 2024/07/26
-locationTitle: Storm Club Prague
-location: Tachovské náměstí 5, Prague, Czech Republic
+locationTitle: Storm Club
+location: Tachovské nám. 290, 130 00 Praha 3-Žižkov, Czech Republic
 hosts:
   - Heart of Hard
   - Storm Club Prague
