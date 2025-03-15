@@ -68,7 +68,13 @@
         <li
           class="grid-item events-grid-item {% for host in post.hosts %}filter-host-{{ host | slugify }} {% endfor %}"
           style="
-            --xxx-color-background: {{ average_color }};
+            {% if average_color %}
+              --xxx-color-background: {{ average_color }};
+            {% else %}
+              background-color: rgba(var(--color-background-rgb), 0.5);
+              -webkit-backdrop-filter: saturate(1.8) blur(20px);
+              backdrop-filter: saturate(1.8) blur(20px);
+            {% endif %}
             {% if post.foreground %}
             --xxx-color-text: color-mix(in srgb, {{ average_color }}, black 80%);
             --xxx-color-text-muted: color-mix(in srgb, {{ average_color }} 50%, black 50%);
