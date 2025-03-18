@@ -10,6 +10,4 @@ hosts:
 tickets: https://thegang.argang.nl/
 facebook: https://www.facebook.com/events/1063788291475870
 image: /assets/img/events/welcome-to-the-gang.jpg
-
-foreground: black
 ---

@@ -11,8 +11,6 @@ hosts:
 tickets: https://pages.cm.com/5845072000/4dbb09d0-c8ed-413c-8696-d8efc9a9525d/section/0
 facebook: https://www.facebook.com/events/1115127262976028/
 image: /assets/img/events/vroeger-was-alles-beter-festival-2024.jpg
-
-foreground: black
 ---
 
 𝐆𝐑𝐎𝐎𝐓 𝐍𝐈𝐄𝐔𝐖𝐒: 𝙑𝙒𝘼𝘽 𝙊𝙐𝙏𝘿𝙊𝙊𝙍 𝙁𝙀𝙎𝙏𝙄𝙑𝘼𝙇! ☀️🤯  

@@ -11,8 +11,6 @@ hosts:
 tickets: https://www.phoenix-festival.nl/
 facebook: https://www.facebook.com/events/827651408790117/
 image: /assets/img/events/phoenix-raw-xxl-2024.jpg
-
-foreground: black
 ---
 
 𝐏𝐇𝐎𝐄𝐍𝐈𝐗 𝐑𝐀𝐖 𝐗𝐗𝐋 = 𝐁𝐀𝐂𝐊! 🔥🦅  

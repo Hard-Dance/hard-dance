@@ -10,8 +10,6 @@ hosts:
   - Basscon
 tickets: https://bloomdtsd.com/event/da-tweekaz-edm-events-edm-club-tonight-2024-sep-27-near-me-san-diego/
 image: /assets/img/events/tweeka-road-trip-at-bloom-2024.jpg
-
-foreground: black
 ---
 
 ## BLOOM IS A CASHLESS VENUE

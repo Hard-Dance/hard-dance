@@ -11,8 +11,6 @@ hosts:
   - NRG Events
 tickets: https://posh.vip/e/out-of-this-world-kutski-waterspirit
 image: /assets/img/events/out-of-this-world-2024.jpg
-
-foreground: black
 ---
 
 ☆‧˚*･༓☾ An intergalactic hard dance rave ☾༓･*˚‧☆

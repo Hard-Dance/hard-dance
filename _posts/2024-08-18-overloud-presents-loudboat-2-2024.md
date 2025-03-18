@@ -11,8 +11,6 @@ hosts:
 tickets: https://www.zeffy.com/fr-CA/ticketing/445f6ad6-0a19-4833-b224-97ad226165dd
 facebook: https://www.facebook.com/events/769814955321174/
 image: /assets/img/events/overloud-presents-loudboat-2-2024.jpg
-
-foreground: black
 ---
 
 Souquez les Artimus ! ⚓️

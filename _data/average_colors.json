@@ -1,468 +1,1866 @@
 {
-  "hard-dance-nyc-presents-d-sturb-geo-2024": "#4B3957",
-  "hard-dance-nyc-presents-wasted-penguinz-2024": "#444052",
-  "basscon-presents-wasted-penguinz-2024": "#22201D",
-  "basscon-geo-2024": "#34241F",
-  "hard-dance-nyc-presents--sub-zero-project": "#45213B",
-  "basscon-presents--sub-zero-project": "#4F0E0D",
-  "megarave-the-energiehal-reunion-2025": "#524027",
-  "reverze-2024": "#403E3A",
-  "rawdefinition-2024": "#225234",
-  "madness-presents-sub-zero-project-2024": "#222422",
-  "the-hardest-presents--no-limits": "#566141",
-  "avondje-outsiders": "#302126",
-  "hellbound--welcome-to-the-machine": "#191F18",
-  "kill-the-noise-festival-2024": "#4A545B",
-  "rawfare-2024": "#15452F",
-  "solar-eclipse": "#454E6E",
-  "bkjn-future-night": "#334664",
-  "brennan-heart---docks-hamburg": "#5A466C",
-  "mystica--entangled-mind-games": "#4D4A7F",
-  "thyron-album-release-night-2024": "#141D3C",
-  "city-of-eldorado": "#9D7536",
-  "hardclassics-festival-2024": "#6B5E41",
-  "hardstyle-invasion-2-2024": "#52352C",
-  "revenge--portal-to-the-extreme": "#2A2E28",
-  "sound-of-the-underground": "#2C2E3D",
-  "tomorrowland-winter-2024": "#9F6E92",
-  "welcome-to-the-gang": "#D7D0C9",
-  "hard-dance-nyc-presents-warface-2024": "#5D413A",
-  "ultra-music-festival-2024": "#193E44",
-  "basscon-presents-tnt-wasted-penguinz-2024": "#2F172C",
-  "impact-of-theia-2024": "#3A2F3A",
-  "recharged-city-of-lights-2024": "#3A2730",
-  "hardice-presents--imperatorz": "#16121A",
-  "a-new-era-of-up-the-tempo-2024": "#371B20",
-  "dark-circus": "#5F321C",
-  "paaspop-2024": "#5714A0",
-  "fusion-force-2024": "#392C3C",
-  "masters-of-hardcore-2024": "#342B2B",
-  "ravemania-2024": "#33273C",
-  "route-666-2024": "#494D38",
-  "state-of-bass-classics-2024": "#573247",
-  "timeless-indoor--joker-s-edition": "#533F39",
-  "rawfair-a-new-chapter-2024": "#48373A",
-  "rebelion-the-final-dose-2024": "#112A22",
-  "geen-gezeur-meer-terreur-birthday-rave-2024": "#313441",
-  "masif-gvng-presents-autumn-babies-2024": "#483E2B",
-  "darkraver-all-night-long-2024": "#1D1B11",
-  "dedikted-the-judgement-day-2024": "#3C1B1E",
-  "heart-of-hard-presents-riot-shift-2024": "#583D37",
-  "synergy-revolution-of-raw-2024": "#533C65",
-  "masif-and-high-voltage-present-rob-gee-2024": "#5D5446",
-  "rebirth-festival-2024": "#651C31",
-  "angerfist---docks-hamburg": "#171718",
-  "hard-is-king-april-2024": "#4D3A3A",
-  "hard-dance-nyc-presents-radical-redemption-2024": "#622E28",
-  "extinction-featuring-frontliner-2024": "#683F2D",
-  "gatekeepers-unlocking-new-possibilities-2024": "#533621",
-  "madness-presents-rooler-2024": "#271E1F",
-  "overloud-events-6-year-celebration-2024": "#4A3354",
-  "bassquake-festival-2024": "#4D4F65",
-  "bkjn-21-years-2024": "#403927",
-  "heart-of-hard-presents-angerfist-2024": "#2F4A34",
-  "kingdance-festival-2024": "#382E22",
-  "royal-kingsnight-a-majestic-night-of-uptempo-kings-and-queens-2024": "#685B48",
-  "hardfest-2024": "#B3754A",
-  "stuck-on-earth-30-2024": "#514640",
-  "supersized-kingsday-festival-2024": "#E66A23",
-  "hard-dance-nyc-presents-junkie-kid-2024": "#522150",
-  "hardstyle-dna-outdoor-festival-2024": "#274D37",
-  "sub-zero-project-docks-hamburg-2024": "#2C2826",
-  "-basscon-presents--lil-texas--planet-texas--": "#BB6134",
-  "bkjn-events-presents--bulletproof": "#272E22",
-  "flashback-2024": "#F0D6DB",
-  "infiltration-2024": "#2C1C11",
-  "midnight-mafia-viii-2024": "#454025",
-  "dance4liberation-2024": "#938560",
-  "10yrs-madness-x-bootshaus-2024": "#355D19",
-  "midnight-mafia-order-of-the-lotus-2024": "#3E1B59",
-  "overdose-the-final-dose-2024": "#0C1D15",
-  "hardgate-11-2024": "#422D2A",
-  "basscon-pool-party-2024": "#1B1E1C",
-  "edc-las-vegas-2024": "#A184A5",
-  "freshtival-weekend-2024": "#8D8B95",
-  "hard-is-king-austin-2024": "#653123",
-  "harmony-of-hardcore-2024": "#2A2928",
-  "kickerz-2024": "#453B35",
-  "hard-dance-nyc-presents-devin-wild-keltek-2024": "#2E5A61",
-  "i-am-hardstyle-poland-2024": "#393759",
-  "emporium-festival-2024": "#648B6F",
-  "ultimate-bassline-festival-2024": "#404552",
-  "rumble-in-the-summer-2024": "#94936F",
-  "mission-festival-2024": "#815D3B",
-  "heaven-hill-festival-2024": "#BBB9A1",
-  "multigroove-festival-2024": "#9D6F91",
-  "gatekeepers-the-unstoppable-force-2024": "#315E7B",
-  "i-am-hardstyle-present-save-euphoric-2024": "#3E317C",
-  "masif-presents-hysta-2024": "#52362D",
-  "nexus-festival-2024": "#1B1F0F",
-  "hard-dance-nyc-presents-deadly-guns-2024": "#644045",
-  "hardwired-summer-special-2024": "#1F1D28",
-  "q-dance-take-over-at-world-dj-festival-2024": "#221E25",
-  "hardtrackerz-presents-dj-hysta-2024": "#432C3B",
-  "electrifinity-festival-2024": "#412412",
-  "masif-presents-dna-2024": "#AE3736",
-  "outlands-festival-2024": "#636349",
-  "summer-sanctuary-2024": "#535639",
-  "up-the-tempo-bounce-2024": "#422433",
-  "volume-x-kragelund-festival-2024": "#3B5F53",
-  "addicted-to-oldschool-2024": "#605C68",
-  "gabber-gala-2024": "#9D7171",
-  "hardcore-italia-fight-for-your-right-2024": "#332C1F",
-  "hardstyle-takeover-gunz-4-hire-adaro-2024": "#424B49",
-  "welcome-to-wolf-city-2024": "#684C5B",
-  "8th-annual-qsa-pre-defqon-meetup-2024": "#7B6D71",
-  "defqon-1-weekend-festival-2024": "#8F777D",
-  "sunrise-festival-2024": "#EB80BC",
-  "beach-party-by-nova-era-2024": "#2E2726",
-  "masif-mainstage-present-decadence-2024": "#2D3F4D",
-  "boulevard-outdoor-2024": "#9692C0",
-  "galaxy-2024": "#473B51",
-  "parkcity-live-2024": "#64399F",
-  "beats-for-love-2024": "#352D22",
-  "electric-love-festival-2024": "#693267",
-  "hard-dance-nyc-presents-lady-faith-2024": "#4D3550",
-  "karma-outdoor-2024": "#1F1816",
-  "masif-presents-wasted-penguinz-2024": "#6F5178",
-  "saga-festival-2024": "#D9757B",
-  "sibr-estival-2024": "#313840",
-  "stereo-sunday-2024": "#99857E",
-  "up-the-tempo-extreme-2024": "#1A2914",
-  "wish-outdoor-2024": "#A35439",
-  "dreamfields-festival-2024": "#AA86CA",
-  "hardcore-gladiators-2024": "#312A29",
-  "q-dance-take-over-at-balaton-sound-2024": "#211D24",
-  "dropzone-2024": "#3F4A3F",
-  "airbeat-one-festival-2024": "#BBA8AD",
-  "basscon-presents-geo-2024": "#392D23",
-  "chemistry-presents-element-birthday-bash-2024": "#3A3433",
-  "city-of-dance-festival-2024": "#596B7E",
-  "euphoria-war-present-raakmo-2024": "#3E57AB",
-  "hype-o-dream-2024": "#49363F",
-  "madness-presents-devin-wild-the-purge-imperatorz-2024": "#1D191B",
-  "masif-mainstage-present-hard-trance-reunion-2024": "#3F3951",
-  "so-w-happy-festival-2024": "#A6BAC9",
-  "fantasia-festival-2024": "#5D7678",
-  "infinity-festival-2024": "#5C6A43",
-  "matrixx-at-the-park-2024": "#536F65",
-  "vroeger-was-alles-beter-festival-2024": "#9F7E75",
-  "electrobeach-festival-2024": "#3C5BCD",
-  "dominator-festival-2024": "#322F22",
-  "havelbeats-festival-2024": "#655A53",
-  "hktn-presents-the-funfair-of-tempo-2024": "#3B294D",
-  "parookaville-2024": "#7C5745",
-  "tomorrowland-weekend-1-2024": "#3B4649",
-  "tomorrowland-weekend-2-2024": "#3B4649",
-  "austria-goes-zrce-2024": "#77776C",
-  "dead-brigade-2024": "#794734",
-  "q-dance-take-over-at-sunrise-festival-2024": "#231F26",
-  "break-the-rules-festival-2024": "#636085",
-  "free-hard-dance-nyc-360-rave-2024": "#3F1F1E",
-  "heart-of-hard-presents-roza-2024": "#44505F",
-  "open-beatz-festival-2024": "#778781",
-  "wolf-boat-2024": "#543B40",
-  "bkjn-events-presents-major-conspiracy-2024": "#403A35",
-  "complex-festival-2024": "#3A2C3E",
-  "emotions-festival-2024": "#5F6981",
-  "hard-dance-nyc-presents-neek-2024": "#592B49",
-  "luna-beach-festival-2024": "#A990A9",
-  "supercharged-festival-2024": "#4F352D",
-  "the-end-of-the-world-festival-2024": "#624F49",
-  "dreambeach-festival-2024": "#9F9264",
-  "nature-one-2024": "#333438",
-  "relevatez-festival-2024": "#7A4868",
-  "the-homie-collective-campout-2024": "#4A5252",
-  "cantonale-fvjc-2024": "#C45599",
-  "owl-festival-2024": "#271115",
-  "weekend-festival-2024": "#311F32",
-  "bavaria-goes-zrce-2024": "#76776C",
-  "embryon-outdoor-trilogy-finale-2024": "#311B1B",
-  "hard-dance-nyc-presents-rob-gee-2024": "#554350",
-  "rebellion-outdoor-festival-2024": "#725973",
-  "shutdown-festival-2024": "#316292",
-  "timeless-festival-2024": "#152226",
-  "hardcore-at-sea-2024": "#C1AEA0",
-  "medusa-festival-2024": "#C9A980",
-  "q-dance-take-over-at-sziget-festival-2024": "#221E25",
-  "electrisize-festival-2024": "#3E1610",
-  "lady-faith-360-birthday-party-2024": "#2A1421",
-  "rvrs-bass-2024": "#605145",
-  "the-qontinent-2024": "#9B8778",
-  "ravefield-tweeka-truck-2024": "#857D71",
-  "shangri-la-festival-2024": "#AF8B65",
-  "fm4-frequency-festival-2024": "#464B8D",
-  "eskape-festival-2024": "#8F6F45",
-  "decibel-outdoor-festival-2024": "#643B58",
-  "echelon-festival-2024": "#333024",
-  "hard-dance-nyc-presents-david-rust-2024": "#23363A",
-  "kings-queens-of-hardstyle-2024": "#30252A",
-  "road-to-wasteland-2024": "#1D2A44",
-  "basscon-vital-present-lady-faith-2024": "#2F274B",
-  "hardstyle-maniacs-presents-go-hard-2024": "#118410",
-  "megalixr-2-2024": "#253940",
-  "overloud-presents-loudboat-2-2024": "#C7794E",
-  "creamfields-2024": "#882E19",
-  "hell-festival-2024": "#24221B",
-  "loco-beach-2024": "#B89EA1",
-  "electrolapse-festival-2024": "#394E64",
-  "fabulous-festival-2024": "#4D87A4",
-  "masif-one-zero-2024": "#3A4E45",
-  "rustyland-boat-rave-2024": "#47403C",
-  "sana-duri-2024": "#4F5757",
-  "scandiravia-sommerfestival-2024": "#A0C0C8",
-  "kickerz-festival-2024": "#47392A",
-  "sinners-paradise-2024": "#30211D",
-  "forbidden-island-2024": "#A86584",
-  "hard-dance-nyc-presents-radical-redemption-2024-2": "#482320",
-  "basscon-presents-darren-styles-2024": "#412623",
-  "extinction-presents-kutski-2024": "#4A3428",
-  "basscon-wasteland-2024": "#23282B",
-  "glemmer-beach-2024": "#B05172",
-  "into-the-madness-2024": "#73634E",
-  "masif-presents-noisecontrollers-2024": "#38292C",
-  "mysteryland-2024": "#AD99AF",
-  "affenkafig-festival-2024": "#986135",
-  "asean-evo-present-resonance-2024": "#472560",
-  "ground-zero-festival-2024": "#2E0568",
-  "bass-vault-2024": "#2B4C6C",
-  "basscon-presents-dj-isaac-2024": "#3C3253",
-  "retroworld-wasted-penguinz-2024": "#22453D",
-  "delta-festival-2024": "#8B887F",
-  "dark-chapters-rawzone-2024": "#472822",
-  "festigo-reunion-party-2024": "#6695A6",
-  "hardcore-haven-kutski-2024": "#4B2D71",
-  "mad-house-vermilion-2024": "#4E312E",
-  "stay-hard-2024": "#512F2D",
-  "apocalypse-dance-festival-2024": "#341E49",
-  "dedikted-the-desolated-world-2024": "#9A3D0B",
-  "effekt-outdoor-2024": "#B48259",
-  "hakkuh-voor-kids-2024": "#A6AFA3",
-  "indicator-dj-contest-2024": "#333250",
-  "out-of-this-world-2024": "#A89DBF",
-  "pokke-herrie-2024": "#50708A",
-  "rustyland-kingdom-of-mayhem-2024": "#31251A",
-  "sunglow-2024": "#375E57",
-  "the-hardest-presents-the-ultimate-battles-2024": "#463F55",
-  "the-punisher-hardcore-classics-2024": "#642F34",
-  "only-fucking-hardcore-2024": "#43441F",
-  "dream-village-2024": "#AB7476",
-  "hard-dance-nyc-presents-madgrrl-2024": "#221925",
-  "hardstyle-night-brno-2024": "#20495A",
-  "leaderz-festival-2024": "#7B5B47",
-  "supremacy-2024": "#2C3743",
-  "a-rave-of-ice-and-fire-2024": "#4F5875",
-  "august-hall-presents-da-tweekaz-2024": "#171F1E",
-  "hardstylemania-presents-ran-d-imperatorz-unicorn-on-ketamine-2024": "#47334C",
-  "infamous-armada-2024": "#8C6757",
-  "masif-presents-adjuzt-cryex-2024": "#473047",
-  "miss-k8-all-night-long-2024": "#682420",
-  "tweeka-road-trip-at-august-hall-2024": "#AD8769",
-  "150-the-opening-show-2024": "#1D1D0F",
-  "back-to-the-roots-2024": "#363C4C",
-  "captain-hardstyle-2024": "#6FBFC9",
-  "hardstyle-night-plze-2024": "#563E28",
-  "havoc-capital-conquest-2024": "#4D3B26",
-  "insomnia-part-iv-2024": "#273133",
-  "pelican-festival-2024": "#394246",
-  "the-relaunch-2024": "#633C5B",
-  "titanium-festival-2024": "#292928",
-  "tweeka-road-trip-at-area15-2024": "#AB8468",
-  "masif-presents-anderex-2024": "#224A2F",
-  "tweeka-road-trip-at-bloom-2024": "#AC8568",
-  "art-of-fighters-25-years-of-hardcore-2024": "#2B1E1E",
-  "bombshell-casino-royale-2024": "#322D26",
-  "energy-festival-2024": "#863B27",
-  "invaders-space-odyssey-2024": "#6E6892",
-  "phoenix-raw-xxl-2024": "#CCB8A7",
-  "tweeka-road-trip-at-the-circle-2024": "#AD886A",
-  "volle-gaas-in-dixies-2024": "#301041",
-  "mark-with-a-k-this-is-my-birthday-2024": "#316664",
-  "a-nightmare-in-rotterdam-2024": "#721E18",
-  "gearbox-presents-overdrive-2-2024": "#3C366B",
-  "hard-dance-nyc-presents-gammer-2024": "#876768",
-  "hardstyle-invasion-3-2024": "#9E6E73",
-  "knockout-outdoor-2024": "#5F466B",
-  "reborn-1er-aniversario-2024": "#45535F",
-  "syndicate-2024": "#323939",
-  "this-is-uptempo-2024": "#352D1F",
-  "trinity-presents-spoontech-society-2024": "#252B27",
-  "basscon-presents-geo-2024-2": "#662121",
-  "make-hardcore-great-again-2024": "#543429",
-  "masquerade-of-shadows-2024": "#305656",
-  "phobia-2024": "#283F1C",
-  "elektrum-festival-2024": "#302645",
-  "team-gabber-invites-north-gabber-2024": "#3D4E50",
-  "technostate-30-year-anniversary-2024": "#6E6E6A",
-  "hardmission-thailand-2024": "#75625A",
-  "this-is-sefa-2024": "#562C2D",
-  "dirty-workz-presents-dirty-by-nature-2024": "#2E2E1F",
-  "rooler-at-bloom-2024": "#6C3780",
-  "audio-havok-underground-syndicate-present-industrial-strength-2024": "#363636",
-  "destruction-1er-aniversario-2024": "#693C29",
-  "district-999-we-are-the-resistance-2024": "#1B4C09",
-  "dystopia-au-nexus-2024": "#4F6762",
-  "hard-o-ween-2024": "#6E4060",
-  "harder-force-indoor-festival-2024": "#321F31",
-  "indicator-worlds-collide-2024": "#48362C",
-  "lost-memories-world-of-classics-2024": "#644E33",
-  "origins-radical-redemption-2024": "#D1D2D2",
-  "rooler-at-exchange-2024": "#47796B",
-  "rosbeek-maximaal-klappen-2024": "#5A5555",
-  "xxlerator-hardstyle-classics-2024": "#494C44",
-  "evolve-boiler-xr-volume-1": "#0D1B19",
-  "king-of-the-pieps-2024": "#A92A68",
-  "one-masif-halloween-2024": "#5C3327",
-  "regain-polish-punisher-2024": "#2D2526",
-  "bass-in-the-park-2024": "#33AE2D",
-  "braindead-halloween-2024": "#474040",
-  "chapter-1-genesis-2024": "#251C1C",
-  "cracking-the-code-2024": "#341E19",
-  "gabberland-2024": "#252523",
-  "hardstyle-church-2024": "#5A3610",
-  "karma-indoor-2024": "#3E2E21",
-  "mutilator-presents-cage-of-carnage-2024": "#232B2F",
-  "dream-nation-festival-2024": "#3E2D2A",
-  "faceless-festival-curse-of-pirate-bay-2024": "#4A3C2E",
-  "halloween-dancing-dead-3": "#472353",
-  "sub-zero-project-halloween-special-2024": "#36473D",
-  "5-years-of-team-gabber-2024": "#7F7C73",
-  "jackpot-casino-heist-2024": "#B9ADAD",
-  "rawness-hypnotic-disorder-2024": "#593E64",
-  "snakepit-2024": "#332B35",
-  "the-pirates-curse-2024": "#33221D",
-  "solareclipse-2024": "#10514E",
-  "try-before-you-die-2024": "#4F3824",
-  "a-nightmare-in-germany-2024": "#857E7B",
-  "ar-gang-the-party-2024": "#CEBFA6",
-  "jay-reeve-presents-melodic-madness-2024": "#5E3C1F",
-  "masterminds-2024": "#4F261F",
-  "rauwe-kicks-2024": "#4C3943",
-  "raving-nightmare-2024": "#57403C",
-  "route-666-braunschweig-2024": "#5E4331",
-  "unfold-presents-future-stories-2024": "#2F2447",
-  "basscon-presents-deadly-guns-la-2024": "#3A2B21",
-  "imagination-festival-2024": "#101C16",
-  "basscon-presents-deadly-guns-sf-2024": "#36282B",
-  "dreamfields-mexico-2024": "#99A3B8",
-  "pandemonium-2024": "#484543",
-  "qlimax-2024": "#3D1F1C",
-  "basscon-presents-brennan-heart-soundcheck-2024": "#3C2E2B",
-  "basscon-presents-brennan-heart-bloom-2024": "#302D3E",
-  "coone-at-sound-bar-2024": "#4B436B",
-  "masters-of-hardcore-uk-2024": "#594035",
-  "rebellion-indoor-festival-2024": "#2E3769",
-  "haaren-op-z-n-hollands-2024": "#CC9193",
-  "dimitri-k-sacrifice-day-2024": "#502A2E",
-  "illuminate-2024": "#E2990E",
-  "tropical-dreams-2024": "#C77037",
-  "electric-sea-festival-2024": "#533C5B",
-  "frequencerz-the-last-run-2024": "#664A5C",
-  "reminder-15-years-of-crypsis-2024": "#534528",
-  "route-909-exit-6-2024": "#6A8595",
-  "unity-2024": "#0C224C",
-  "thunderdome-omega-2024": "#366A3D",
-  "20-years-of-b-front-2024": "#115064",
-  "i-am-hardstyle-showcase-2024": "#402449",
-  "iboga-rave-maniacs-festival-hard-sessions-2024": "#193F4B",
-  "shockerz-2024": "#583A54",
-  "thunderdome-alpha-2024": "#366A3D",
-  "louder-generation-2024": "#846138",
-  "eternal-2024": "#352D71",
-  "hardmission-prague-2024": "#2D517C",
-  "masters-of-hardcore-madrid-2024": "#5B493D",
-  "pat-b-birthday-bash-xxl-2024": "#C3B83C",
-  "spitnoise-presents-mix-the-future-2024": "#352A22",
-  "gearbox-hot-pursuit-2024": "#403548",
-  "megarave-the-millennium-edition-2024": "#543C3C",
-  "bad-blood-final-reckoning-2025": "#1C1414",
-  "reactivate-2025": "#5F524A",
-  "origins-2025": "#802946",
-  "promo-style-2025": "#1F1E1E",
-  "snowbass-festival-2025": "#688793",
-  "apex-2025": "#4F391E",
-  "madness-xl-2025": "#303030",
-  "ravezone-2025": "#343829",
-  "reverze-2025": "#65417E",
-  "get-wrecked-indoor-2025": "#3D2A02",
-  "ar-gang-takeover---docks-hamburg": "#402823",
-  "masif-one-zero": "#496156",
-  "overloud-presents--the-hardstyle-show-8": "#251C16",
-  "reminder--15-years-of-crypsis": "#3D2E18",
-  "showtek---docks-hamburg": "#8D2826",
-  "the-hardest-presents--extreme-circus": "#4D1B1D",
-  "masif-presents-sickmode-2025": "#A0A75F",
-  "radical-redemption-no-retaliation-2025": "#30302F",
-  "underground-syndicate-presents-the-purge": "#391D12",
-  "infinity-festival-2025": "#705188",
-  "thyron-the-last-hard-dance-2025": "#604B44",
-  "neelix-and-friends---mec-braunschweig": "#73452E",
-  "ultra-music-festival-2025": "#32486F",
-  "flashback-2025": "#402D25",
-  "masters-of-hardcore-2025": "#3B3830",
-  "multigroove--old-amsterdam": "#382E26",
-  "ravelife-comes-to-liverpool": "#316C94",
-  "harder-is-better": "#200F10",
-  "masif-presents--ran-d": "#344046",
-  "dedikted--the-extermination": "#143F1D",
-  "must-die": "#442857",
-  "rebirth-festival-2025": "#1F2572",
-  "bass-vault-presents-the-purge-noize-suppressor": "#795E39",
-  "the-history-of-hard-house": "#2C2727",
-  "angerfist---mec-braunschweig": "#3C342E",
-  "overloud-events--royal-casino": "#66352B",
-  "paaspop-2025": "#5C0978",
-  "gearbox-australia": "#8E6447",
-  "hardfest-2025": "#9B8F77",
-  "xxlerator-presents--jones-6-hours-solo": "#363A4A",
-  "supersized-kingsday-festival-2025": "#E95213",
-  "midnight-mafia-2025": "#BE917E",
-  "ravemania-2025": "#B0AEB1",
-  "dance4liberation-2025": "#878B8C",
-  "hard-dance-nyc-presents--mish---levenkhan": "#713870",
-  "beter-kom-je-niet-festival": "#22272B",
-  "trinity-outdoor-festival-2025": "#3E1204",
-  "audio-havok-presents-dual-damage": "#333735",
-  "supercharged-festival-2025": "#42301A",
-  "hardmission---techmission-malaysia-2025": "#7F6943",
-  "emporium-festival-2025": "#B0949F",
-  "lost-memories-outdoor-festival-2025": "#A09794",
-  "ultimate-bassline-festival-2025": "#3F4451",
-  "intents-festival-2025": "#298F2D",
-  "multigroove--sound-garden": "#4E3F4E",
-  "harmony-of-hardcore-2025": "#434C4B",
-  "defqon-1-weekend-festival-2025": "#613746",
-  "electric-love-festival-2025": "#FB84AE",
-  "dreamfields-festival-2025": "#B881D6",
-  "ruhr-in-love-2025": "#847E71",
-  "dropzone-2025": "#7B6D72",
-  "airbeat-one-festival-2025": "#482725",
-  "dominator-festival-2025": "#433021",
-  "parookaville-2025": "#B1978E",
-  "tomorrowland-weekend-1-2025": "#212530",
-  "tomorrowland-weekend-2-2025": "#212530",
-  "hardclassics-festival-2025": "#7B6F6F",
-  "uptempo-and-you-know-it-2025": "#684A4C",
-  "relevatez-festival-2025": "#655624",
-  "rebellion-outdoor-festival-2025": "#481B2E",
-  "timeless-festival-2025": "#2F2212",
-  "decibel-outdoor-festival-2025": "#1F353F",
-  "flashback-festival-2025": "#C3B4A0",
-  "ground-zero-festival-2025": "#252424",
-  "into-the-madness-2025": "#643E49",
-  "pokke-herrie-2025": "#293631",
-  "total-loss-festival-2025": "#E88E3E",
-  "multigroove-festival-2025": "#56425D",
-  "captain-hardstyle-2025": "#85A8AC",
-  "titanium-festival-2025": "#5C4424",
-  "jay-reeve-presents-melodic-madness-2025": "#8F3A9A",
-  "supremacy-2025": "#425F54",
-  "bassquake-festival-2025": "#4B4E6C",
-  "brennan-heart---mec-braunschweig": "#5D5F90",
-  "snakepit-2025": "#4C2818",
-  "eternal-2025": "#441D8C",
-  "pat-b-birthday-bash-xxl-2025": "#6D367C",
-  "bkjn-vs-partyraiser-2026": "#1E1D34",
-  "reverze-2026": "#534962",
-  "snowbeat-festival-2026": "#B1A5CA"
+  "hard-dance-nyc-presents-d-sturb-geo-2024": {
+    "background": "#4B3957",
+    "text": "#FFFFFF"
+  },
+  "hard-dance-nyc-presents-wasted-penguinz-2024": {
+    "background": "#444052",
+    "text": "#FFFFFF"
+  },
+  "basscon-presents-wasted-penguinz-2024": {
+    "background": "#22201D",
+    "text": "#FFFFFF"
+  },
+  "basscon-geo-2024": {
+    "background": "#34241F",
+    "text": "#FFFFFF"
+  },
+  "hard-dance-nyc-presents--sub-zero-project": {
+    "background": "#45213B",
+    "text": "#FFFFFF"
+  },
+  "basscon-presents--sub-zero-project": {
+    "background": "#4F0E0D",
+    "text": "#FFFFFF"
+  },
+  "megarave-the-energiehal-reunion-2025": {
+    "background": "#524027",
+    "text": "#FFFFFF"
+  },
+  "reverze-2024": {
+    "background": "#403E3A",
+    "text": "#FFFFFF"
+  },
+  "rawdefinition-2024": {
+    "background": "#225234",
+    "text": "#FFFFFF"
+  },
+  "madness-presents-sub-zero-project-2024": {
+    "background": "#222422",
+    "text": "#FFFFFF"
+  },
+  "the-hardest-presents--no-limits": {
+    "background": "#566141",
+    "text": "#FFFFFF"
+  },
+  "avondje-outsiders": {
+    "background": "#302126",
+    "text": "#FFFFFF"
+  },
+  "hellbound--welcome-to-the-machine": {
+    "background": "#191F18",
+    "text": "#FFFFFF"
+  },
+  "kill-the-noise-festival-2024": {
+    "background": "#4A545B",
+    "text": "#FFFFFF"
+  },
+  "rawfare-2024": {
+    "background": "#15452F",
+    "text": "#FFFFFF"
+  },
+  "solar-eclipse": {
+    "background": "#454E6E",
+    "text": "#FFFFFF"
+  },
+  "bkjn-future-night": {
+    "background": "#334664",
+    "text": "#FFFFFF"
+  },
+  "brennan-heart---docks-hamburg": {
+    "background": "#5A466C",
+    "text": "#FFFFFF"
+  },
+  "mystica--entangled-mind-games": {
+    "background": "#4D4A7F",
+    "text": "#FFFFFF"
+  },
+  "thyron-album-release-night-2024": {
+    "background": "#141D3C",
+    "text": "#FFFFFF"
+  },
+  "city-of-eldorado": {
+    "background": "#9D7536",
+    "text": "#000000"
+  },
+  "hardclassics-festival-2024": {
+    "background": "#6B5E41",
+    "text": "#FFFFFF"
+  },
+  "hardstyle-invasion-2-2024": {
+    "background": "#52352C",
+    "text": "#FFFFFF"
+  },
+  "revenge--portal-to-the-extreme": {
+    "background": "#2A2E28",
+    "text": "#FFFFFF"
+  },
+  "sound-of-the-underground": {
+    "background": "#2C2E3D",
+    "text": "#FFFFFF"
+  },
+  "tomorrowland-winter-2024": {
+    "background": "#9F6E92",
+    "text": "#000000"
+  },
+  "welcome-to-the-gang": {
+    "background": "#D7D0C9",
+    "text": "#000000"
+  },
+  "hard-dance-nyc-presents-warface-2024": {
+    "background": "#5D413A",
+    "text": "#FFFFFF"
+  },
+  "ultra-music-festival-2024": {
+    "background": "#193E44",
+    "text": "#FFFFFF"
+  },
+  "basscon-presents-tnt-wasted-penguinz-2024": {
+    "background": "#2F172C",
+    "text": "#FFFFFF"
+  },
+  "impact-of-theia-2024": {
+    "background": "#3A2F3A",
+    "text": "#FFFFFF"
+  },
+  "recharged-city-of-lights-2024": {
+    "background": "#3A2730",
+    "text": "#FFFFFF"
+  },
+  "hardice-presents--imperatorz": {
+    "background": "#16121A",
+    "text": "#FFFFFF"
+  },
+  "a-new-era-of-up-the-tempo-2024": {
+    "background": "#371B20",
+    "text": "#FFFFFF"
+  },
+  "dark-circus": {
+    "background": "#5F321C",
+    "text": "#FFFFFF"
+  },
+  "paaspop-2024": {
+    "background": "#5714A0",
+    "text": "#FFFFFF"
+  },
+  "fusion-force-2024": {
+    "background": "#392C3C",
+    "text": "#FFFFFF"
+  },
+  "masters-of-hardcore-2024": {
+    "background": "#342B2B",
+    "text": "#FFFFFF"
+  },
+  "ravemania-2024": {
+    "background": "#33273C",
+    "text": "#FFFFFF"
+  },
+  "route-666-2024": {
+    "background": "#494D38",
+    "text": "#FFFFFF"
+  },
+  "state-of-bass-classics-2024": {
+    "background": "#573247",
+    "text": "#FFFFFF"
+  },
+  "timeless-indoor--joker-s-edition": {
+    "background": "#533F39",
+    "text": "#FFFFFF"
+  },
+  "rawfair-a-new-chapter-2024": {
+    "background": "#48373A",
+    "text": "#FFFFFF"
+  },
+  "rebelion-the-final-dose-2024": {
+    "background": "#112A22",
+    "text": "#FFFFFF"
+  },
+  "geen-gezeur-meer-terreur-birthday-rave-2024": {
+    "background": "#313441",
+    "text": "#FFFFFF"
+  },
+  "masif-gvng-presents-autumn-babies-2024": {
+    "background": "#483E2B",
+    "text": "#FFFFFF"
+  },
+  "darkraver-all-night-long-2024": {
+    "background": "#1D1B11",
+    "text": "#FFFFFF"
+  },
+  "dedikted-the-judgement-day-2024": {
+    "background": "#3C1B1E",
+    "text": "#FFFFFF"
+  },
+  "heart-of-hard-presents-riot-shift-2024": {
+    "background": "#583D37",
+    "text": "#FFFFFF"
+  },
+  "synergy-revolution-of-raw-2024": {
+    "background": "#533C65",
+    "text": "#FFFFFF"
+  },
+  "masif-and-high-voltage-present-rob-gee-2024": {
+    "background": "#5D5446",
+    "text": "#FFFFFF"
+  },
+  "rebirth-festival-2024": {
+    "background": "#651C31",
+    "text": "#FFFFFF"
+  },
+  "angerfist---docks-hamburg": {
+    "background": "#171718",
+    "text": "#FFFFFF"
+  },
+  "hard-is-king-april-2024": {
+    "background": "#4D3A3A",
+    "text": "#FFFFFF"
+  },
+  "hard-dance-nyc-presents-radical-redemption-2024": {
+    "background": "#622E28",
+    "text": "#FFFFFF"
+  },
+  "extinction-featuring-frontliner-2024": {
+    "background": "#683F2D",
+    "text": "#FFFFFF"
+  },
+  "gatekeepers-unlocking-new-possibilities-2024": {
+    "background": "#533621",
+    "text": "#FFFFFF"
+  },
+  "madness-presents-rooler-2024": {
+    "background": "#271E1F",
+    "text": "#FFFFFF"
+  },
+  "overloud-events-6-year-celebration-2024": {
+    "background": "#4A3354",
+    "text": "#FFFFFF"
+  },
+  "bassquake-festival-2024": {
+    "background": "#4D4F65",
+    "text": "#FFFFFF"
+  },
+  "bkjn-21-years-2024": {
+    "background": "#403927",
+    "text": "#FFFFFF"
+  },
+  "heart-of-hard-presents-angerfist-2024": {
+    "background": "#2F4A34",
+    "text": "#FFFFFF"
+  },
+  "kingdance-festival-2024": {
+    "background": "#382E22",
+    "text": "#FFFFFF"
+  },
+  "royal-kingsnight-a-majestic-night-of-uptempo-kings-and-queens-2024": {
+    "background": "#685B48",
+    "text": "#FFFFFF"
+  },
+  "hardfest-2024": {
+    "background": "#B3754A",
+    "text": "#000000"
+  },
+  "stuck-on-earth-30-2024": {
+    "background": "#514640",
+    "text": "#FFFFFF"
+  },
+  "supersized-kingsday-festival-2024": {
+    "background": "#E66A23",
+    "text": "#000000"
+  },
+  "hard-dance-nyc-presents-junkie-kid-2024": {
+    "background": "#522150",
+    "text": "#FFFFFF"
+  },
+  "hardstyle-dna-outdoor-festival-2024": {
+    "background": "#274D37",
+    "text": "#FFFFFF"
+  },
+  "sub-zero-project-docks-hamburg-2024": {
+    "background": "#2C2826",
+    "text": "#FFFFFF"
+  },
+  "-basscon-presents--lil-texas--planet-texas--": {
+    "background": "#BB6134",
+    "text": "#000000"
+  },
+  "bkjn-events-presents--bulletproof": {
+    "background": "#272E22",
+    "text": "#FFFFFF"
+  },
+  "flashback-2024": {
+    "background": "#F0D6DB",
+    "text": "#000000"
+  },
+  "infiltration-2024": {
+    "background": "#2C1C11",
+    "text": "#FFFFFF"
+  },
+  "midnight-mafia-viii-2024": {
+    "background": "#454025",
+    "text": "#FFFFFF"
+  },
+  "dance4liberation-2024": {
+    "background": "#938560",
+    "text": "#000000"
+  },
+  "10yrs-madness-x-bootshaus-2024": {
+    "background": "#355D19",
+    "text": "#FFFFFF"
+  },
+  "midnight-mafia-order-of-the-lotus-2024": {
+    "background": "#3E1B59",
+    "text": "#FFFFFF"
+  },
+  "overdose-the-final-dose-2024": {
+    "background": "#0C1D15",
+    "text": "#FFFFFF"
+  },
+  "hardgate-11-2024": {
+    "background": "#422D2A",
+    "text": "#FFFFFF"
+  },
+  "basscon-pool-party-2024": {
+    "background": "#1B1E1C",
+    "text": "#FFFFFF"
+  },
+  "edc-las-vegas-2024": {
+    "background": "#A184A5",
+    "text": "#000000"
+  },
+  "freshtival-weekend-2024": {
+    "background": "#8D8B95",
+    "text": "#000000"
+  },
+  "hard-is-king-austin-2024": {
+    "background": "#653123",
+    "text": "#FFFFFF"
+  },
+  "harmony-of-hardcore-2024": {
+    "background": "#2A2928",
+    "text": "#FFFFFF"
+  },
+  "kickerz-2024": {
+    "background": "#453B35",
+    "text": "#FFFFFF"
+  },
+  "hard-dance-nyc-presents-devin-wild-keltek-2024": {
+    "background": "#2E5A61",
+    "text": "#FFFFFF"
+  },
+  "i-am-hardstyle-poland-2024": {
+    "background": "#393759",
+    "text": "#FFFFFF"
+  },
+  "emporium-festival-2024": {
+    "background": "#648B6F",
+    "text": "#000000"
+  },
+  "ultimate-bassline-festival-2024": {
+    "background": "#404552",
+    "text": "#FFFFFF"
+  },
+  "rumble-in-the-summer-2024": {
+    "background": "#94936F",
+    "text": "#000000"
+  },
+  "mission-festival-2024": {
+    "background": "#815D3B",
+    "text": "#FFFFFF"
+  },
+  "heaven-hill-festival-2024": {
+    "background": "#BBB9A1",
+    "text": "#000000"
+  },
+  "multigroove-festival-2024": {
+    "background": "#9D6F91",
+    "text": "#000000"
+  },
+  "gatekeepers-the-unstoppable-force-2024": {
+    "background": "#315E7B",
+    "text": "#FFFFFF"
+  },
+  "i-am-hardstyle-present-save-euphoric-2024": {
+    "background": "#3E317C",
+    "text": "#FFFFFF"
+  },
+  "masif-presents-hysta-2024": {
+    "background": "#52362D",
+    "text": "#FFFFFF"
+  },
+  "nexus-festival-2024": {
+    "background": "#1B1F0F",
+    "text": "#FFFFFF"
+  },
+  "hard-dance-nyc-presents-deadly-guns-2024": {
+    "background": "#644045",
+    "text": "#FFFFFF"
+  },
+  "hardwired-summer-special-2024": {
+    "background": "#1F1D28",
+    "text": "#FFFFFF"
+  },
+  "q-dance-take-over-at-world-dj-festival-2024": {
+    "background": "#221E25",
+    "text": "#FFFFFF"
+  },
+  "hardtrackerz-presents-dj-hysta-2024": {
+    "background": "#432C3B",
+    "text": "#FFFFFF"
+  },
+  "electrifinity-festival-2024": {
+    "background": "#412412",
+    "text": "#FFFFFF"
+  },
+  "masif-presents-dna-2024": {
+    "background": "#AE3736",
+    "text": "#FFFFFF"
+  },
+  "outlands-festival-2024": {
+    "background": "#636349",
+    "text": "#FFFFFF"
+  },
+  "summer-sanctuary-2024": {
+    "background": "#535639",
+    "text": "#FFFFFF"
+  },
+  "up-the-tempo-bounce-2024": {
+    "background": "#422433",
+    "text": "#FFFFFF"
+  },
+  "volume-x-kragelund-festival-2024": {
+    "background": "#3B5F53",
+    "text": "#FFFFFF"
+  },
+  "addicted-to-oldschool-2024": {
+    "background": "#605C68",
+    "text": "#FFFFFF"
+  },
+  "gabber-gala-2024": {
+    "background": "#9D7171",
+    "text": "#000000"
+  },
+  "hardcore-italia-fight-for-your-right-2024": {
+    "background": "#332C1F",
+    "text": "#FFFFFF"
+  },
+  "hardstyle-takeover-gunz-4-hire-adaro-2024": {
+    "background": "#424B49",
+    "text": "#FFFFFF"
+  },
+  "welcome-to-wolf-city-2024": {
+    "background": "#684C5B",
+    "text": "#FFFFFF"
+  },
+  "8th-annual-qsa-pre-defqon-meetup-2024": {
+    "background": "#7B6D71",
+    "text": "#FFFFFF"
+  },
+  "defqon-1-weekend-festival-2024": {
+    "background": "#8F777D",
+    "text": "#000000"
+  },
+  "sunrise-festival-2024": {
+    "background": "#EB80BC",
+    "text": "#000000"
+  },
+  "beach-party-by-nova-era-2024": {
+    "background": "#2E2726",
+    "text": "#FFFFFF"
+  },
+  "masif-mainstage-present-decadence-2024": {
+    "background": "#2D3F4D",
+    "text": "#FFFFFF"
+  },
+  "boulevard-outdoor-2024": {
+    "background": "#9692C0",
+    "text": "#000000"
+  },
+  "galaxy-2024": {
+    "background": "#473B51",
+    "text": "#FFFFFF"
+  },
+  "parkcity-live-2024": {
+    "background": "#64399F",
+    "text": "#FFFFFF"
+  },
+  "beats-for-love-2024": {
+    "background": "#352D22",
+    "text": "#FFFFFF"
+  },
+  "electric-love-festival-2024": {
+    "background": "#693267",
+    "text": "#FFFFFF"
+  },
+  "hard-dance-nyc-presents-lady-faith-2024": {
+    "background": "#4D3550",
+    "text": "#FFFFFF"
+  },
+  "karma-outdoor-2024": {
+    "background": "#1F1816",
+    "text": "#FFFFFF"
+  },
+  "masif-presents-wasted-penguinz-2024": {
+    "background": "#6F5178",
+    "text": "#FFFFFF"
+  },
+  "saga-festival-2024": {
+    "background": "#D9757B",
+    "text": "#000000"
+  },
+  "sibr-estival-2024": {
+    "background": "#313840",
+    "text": "#FFFFFF"
+  },
+  "stereo-sunday-2024": {
+    "background": "#99857E",
+    "text": "#000000"
+  },
+  "up-the-tempo-extreme-2024": {
+    "background": "#1A2914",
+    "text": "#FFFFFF"
+  },
+  "wish-outdoor-2024": {
+    "background": "#A35439",
+    "text": "#FFFFFF"
+  },
+  "dreamfields-festival-2024": {
+    "background": "#AA86CA",
+    "text": "#000000"
+  },
+  "hardcore-gladiators-2024": {
+    "background": "#312A29",
+    "text": "#FFFFFF"
+  },
+  "q-dance-take-over-at-balaton-sound-2024": {
+    "background": "#211D24",
+    "text": "#FFFFFF"
+  },
+  "dropzone-2024": {
+    "background": "#3F4A3F",
+    "text": "#FFFFFF"
+  },
+  "airbeat-one-festival-2024": {
+    "background": "#BBA8AD",
+    "text": "#000000"
+  },
+  "basscon-presents-geo-2024": {
+    "background": "#392D23",
+    "text": "#FFFFFF"
+  },
+  "chemistry-presents-element-birthday-bash-2024": {
+    "background": "#3A3433",
+    "text": "#FFFFFF"
+  },
+  "city-of-dance-festival-2024": {
+    "background": "#596B7E",
+    "text": "#FFFFFF"
+  },
+  "euphoria-war-present-raakmo-2024": {
+    "background": "#3E57AB",
+    "text": "#FFFFFF"
+  },
+  "hype-o-dream-2024": {
+    "background": "#49363F",
+    "text": "#FFFFFF"
+  },
+  "madness-presents-devin-wild-the-purge-imperatorz-2024": {
+    "background": "#1D191B",
+    "text": "#FFFFFF"
+  },
+  "masif-mainstage-present-hard-trance-reunion-2024": {
+    "background": "#3F3951",
+    "text": "#FFFFFF"
+  },
+  "so-w-happy-festival-2024": {
+    "background": "#A6BAC9",
+    "text": "#000000"
+  },
+  "fantasia-festival-2024": {
+    "background": "#5D7678",
+    "text": "#FFFFFF"
+  },
+  "infinity-festival-2024": {
+    "background": "#5C6A43",
+    "text": "#FFFFFF"
+  },
+  "matrixx-at-the-park-2024": {
+    "background": "#536F65",
+    "text": "#FFFFFF"
+  },
+  "vroeger-was-alles-beter-festival-2024": {
+    "background": "#9F7E75",
+    "text": "#000000"
+  },
+  "electrobeach-festival-2024": {
+    "background": "#3C5BCD",
+    "text": "#FFFFFF"
+  },
+  "dominator-festival-2024": {
+    "background": "#322F22",
+    "text": "#FFFFFF"
+  },
+  "havelbeats-festival-2024": {
+    "background": "#655A53",
+    "text": "#FFFFFF"
+  },
+  "hktn-presents-the-funfair-of-tempo-2024": {
+    "background": "#3B294D",
+    "text": "#FFFFFF"
+  },
+  "parookaville-2024": {
+    "background": "#7C5745",
+    "text": "#FFFFFF"
+  },
+  "tomorrowland-weekend-1-2024": {
+    "background": "#3B4649",
+    "text": "#FFFFFF"
+  },
+  "tomorrowland-weekend-2-2024": {
+    "background": "#3B4649",
+    "text": "#FFFFFF"
+  },
+  "austria-goes-zrce-2024": {
+    "background": "#77776C",
+    "text": "#000000"
+  },
+  "dead-brigade-2024": {
+    "background": "#794734",
+    "text": "#FFFFFF"
+  },
+  "q-dance-take-over-at-sunrise-festival-2024": {
+    "background": "#231F26",
+    "text": "#FFFFFF"
+  },
+  "break-the-rules-festival-2024": {
+    "background": "#636085",
+    "text": "#FFFFFF"
+  },
+  "free-hard-dance-nyc-360-rave-2024": {
+    "background": "#3F1F1E",
+    "text": "#FFFFFF"
+  },
+  "heart-of-hard-presents-roza-2024": {
+    "background": "#44505F",
+    "text": "#FFFFFF"
+  },
+  "open-beatz-festival-2024": {
+    "background": "#778781",
+    "text": "#000000"
+  },
+  "wolf-boat-2024": {
+    "background": "#543B40",
+    "text": "#FFFFFF"
+  },
+  "bkjn-events-presents-major-conspiracy-2024": {
+    "background": "#403A35",
+    "text": "#FFFFFF"
+  },
+  "complex-festival-2024": {
+    "background": "#3A2C3E",
+    "text": "#FFFFFF"
+  },
+  "emotions-festival-2024": {
+    "background": "#5F6981",
+    "text": "#FFFFFF"
+  },
+  "hard-dance-nyc-presents-neek-2024": {
+    "background": "#592B49",
+    "text": "#FFFFFF"
+  },
+  "luna-beach-festival-2024": {
+    "background": "#A990A9",
+    "text": "#000000"
+  },
+  "supercharged-festival-2024": {
+    "background": "#4F352D",
+    "text": "#FFFFFF"
+  },
+  "the-end-of-the-world-festival-2024": {
+    "background": "#624F49",
+    "text": "#FFFFFF"
+  },
+  "dreambeach-festival-2024": {
+    "background": "#9F9264",
+    "text": "#000000"
+  },
+  "nature-one-2024": {
+    "background": "#333438",
+    "text": "#FFFFFF"
+  },
+  "relevatez-festival-2024": {
+    "background": "#7A4868",
+    "text": "#FFFFFF"
+  },
+  "the-homie-collective-campout-2024": {
+    "background": "#4A5252",
+    "text": "#FFFFFF"
+  },
+  "cantonale-fvjc-2024": {
+    "background": "#C45599",
+    "text": "#000000"
+  },
+  "owl-festival-2024": {
+    "background": "#271115",
+    "text": "#FFFFFF"
+  },
+  "weekend-festival-2024": {
+    "background": "#311F32",
+    "text": "#FFFFFF"
+  },
+  "bavaria-goes-zrce-2024": {
+    "background": "#76776C",
+    "text": "#000000"
+  },
+  "embryon-outdoor-trilogy-finale-2024": {
+    "background": "#311B1B",
+    "text": "#FFFFFF"
+  },
+  "hard-dance-nyc-presents-rob-gee-2024": {
+    "background": "#554350",
+    "text": "#FFFFFF"
+  },
+  "rebellion-outdoor-festival-2024": {
+    "background": "#725973",
+    "text": "#FFFFFF"
+  },
+  "shutdown-festival-2024": {
+    "background": "#316292",
+    "text": "#FFFFFF"
+  },
+  "timeless-festival-2024": {
+    "background": "#152226",
+    "text": "#FFFFFF"
+  },
+  "hardcore-at-sea-2024": {
+    "background": "#C1AEA0",
+    "text": "#000000"
+  },
+  "medusa-festival-2024": {
+    "background": "#C9A980",
+    "text": "#000000"
+  },
+  "q-dance-take-over-at-sziget-festival-2024": {
+    "background": "#221E25",
+    "text": "#FFFFFF"
+  },
+  "electrisize-festival-2024": {
+    "background": "#3E1610",
+    "text": "#FFFFFF"
+  },
+  "lady-faith-360-birthday-party-2024": {
+    "background": "#2A1421",
+    "text": "#FFFFFF"
+  },
+  "rvrs-bass-2024": {
+    "background": "#605145",
+    "text": "#FFFFFF"
+  },
+  "the-qontinent-2024": {
+    "background": "#9B8778",
+    "text": "#000000"
+  },
+  "ravefield-tweeka-truck-2024": {
+    "background": "#857D71",
+    "text": "#000000"
+  },
+  "shangri-la-festival-2024": {
+    "background": "#AF8B65",
+    "text": "#000000"
+  },
+  "fm4-frequency-festival-2024": {
+    "background": "#464B8D",
+    "text": "#FFFFFF"
+  },
+  "eskape-festival-2024": {
+    "background": "#8F6F45",
+    "text": "#FFFFFF"
+  },
+  "decibel-outdoor-festival-2024": {
+    "background": "#643B58",
+    "text": "#FFFFFF"
+  },
+  "echelon-festival-2024": {
+    "background": "#333024",
+    "text": "#FFFFFF"
+  },
+  "hard-dance-nyc-presents-david-rust-2024": {
+    "background": "#23363A",
+    "text": "#FFFFFF"
+  },
+  "kings-queens-of-hardstyle-2024": {
+    "background": "#30252A",
+    "text": "#FFFFFF"
+  },
+  "road-to-wasteland-2024": {
+    "background": "#1D2A44",
+    "text": "#FFFFFF"
+  },
+  "basscon-vital-present-lady-faith-2024": {
+    "background": "#2F274B",
+    "text": "#FFFFFF"
+  },
+  "hardstyle-maniacs-presents-go-hard-2024": {
+    "background": "#118410",
+    "text": "#FFFFFF"
+  },
+  "megalixr-2-2024": {
+    "background": "#253940",
+    "text": "#FFFFFF"
+  },
+  "overloud-presents-loudboat-2-2024": {
+    "background": "#C7794E",
+    "text": "#000000"
+  },
+  "creamfields-2024": {
+    "background": "#882E19",
+    "text": "#FFFFFF"
+  },
+  "hell-festival-2024": {
+    "background": "#24221B",
+    "text": "#FFFFFF"
+  },
+  "loco-beach-2024": {
+    "background": "#B89EA1",
+    "text": "#000000"
+  },
+  "electrolapse-festival-2024": {
+    "background": "#394E64",
+    "text": "#FFFFFF"
+  },
+  "fabulous-festival-2024": {
+    "background": "#4D87A4",
+    "text": "#000000"
+  },
+  "masif-one-zero-2024": {
+    "background": "#3A4E45",
+    "text": "#FFFFFF"
+  },
+  "rustyland-boat-rave-2024": {
+    "background": "#47403C",
+    "text": "#FFFFFF"
+  },
+  "sana-duri-2024": {
+    "background": "#4F5757",
+    "text": "#FFFFFF"
+  },
+  "scandiravia-sommerfestival-2024": {
+    "background": "#A0C0C8",
+    "text": "#000000"
+  },
+  "kickerz-festival-2024": {
+    "background": "#47392A",
+    "text": "#FFFFFF"
+  },
+  "sinners-paradise-2024": {
+    "background": "#30211D",
+    "text": "#FFFFFF"
+  },
+  "forbidden-island-2024": {
+    "background": "#A86584",
+    "text": "#000000"
+  },
+  "hard-dance-nyc-presents-radical-redemption-2024-2": {
+    "background": "#482320",
+    "text": "#FFFFFF"
+  },
+  "basscon-presents-darren-styles-2024": {
+    "background": "#412623",
+    "text": "#FFFFFF"
+  },
+  "extinction-presents-kutski-2024": {
+    "background": "#4A3428",
+    "text": "#FFFFFF"
+  },
+  "basscon-wasteland-2024": {
+    "background": "#23282B",
+    "text": "#FFFFFF"
+  },
+  "glemmer-beach-2024": {
+    "background": "#B05172",
+    "text": "#FFFFFF"
+  },
+  "into-the-madness-2024": {
+    "background": "#73634E",
+    "text": "#FFFFFF"
+  },
+  "masif-presents-noisecontrollers-2024": {
+    "background": "#38292C",
+    "text": "#FFFFFF"
+  },
+  "mysteryland-2024": {
+    "background": "#AD99AF",
+    "text": "#000000"
+  },
+  "affenkafig-festival-2024": {
+    "background": "#986135",
+    "text": "#FFFFFF"
+  },
+  "asean-evo-present-resonance-2024": {
+    "background": "#472560",
+    "text": "#FFFFFF"
+  },
+  "ground-zero-festival-2024": {
+    "background": "#2E0568",
+    "text": "#FFFFFF"
+  },
+  "bass-vault-2024": {
+    "background": "#2B4C6C",
+    "text": "#FFFFFF"
+  },
+  "basscon-presents-dj-isaac-2024": {
+    "background": "#3C3253",
+    "text": "#FFFFFF"
+  },
+  "retroworld-wasted-penguinz-2024": {
+    "background": "#22453D",
+    "text": "#FFFFFF"
+  },
+  "delta-festival-2024": {
+    "background": "#8B887F",
+    "text": "#000000"
+  },
+  "dark-chapters-rawzone-2024": {
+    "background": "#472822",
+    "text": "#FFFFFF"
+  },
+  "festigo-reunion-party-2024": {
+    "background": "#6695A6",
+    "text": "#000000"
+  },
+  "hardcore-haven-kutski-2024": {
+    "background": "#4B2D71",
+    "text": "#FFFFFF"
+  },
+  "mad-house-vermilion-2024": {
+    "background": "#4E312E",
+    "text": "#FFFFFF"
+  },
+  "stay-hard-2024": {
+    "background": "#512F2D",
+    "text": "#FFFFFF"
+  },
+  "apocalypse-dance-festival-2024": {
+    "background": "#341E49",
+    "text": "#FFFFFF"
+  },
+  "dedikted-the-desolated-world-2024": {
+    "background": "#9A3D0B",
+    "text": "#FFFFFF"
+  },
+  "effekt-outdoor-2024": {
+    "background": "#B48259",
+    "text": "#000000"
+  },
+  "hakkuh-voor-kids-2024": {
+    "background": "#A6AFA3",
+    "text": "#000000"
+  },
+  "indicator-dj-contest-2024": {
+    "background": "#333250",
+    "text": "#FFFFFF"
+  },
+  "out-of-this-world-2024": {
+    "background": "#A89DBF",
+    "text": "#000000"
+  },
+  "pokke-herrie-2024": {
+    "background": "#50708A",
+    "text": "#FFFFFF"
+  },
+  "rustyland-kingdom-of-mayhem-2024": {
+    "background": "#31251A",
+    "text": "#FFFFFF"
+  },
+  "sunglow-2024": {
+    "background": "#375E57",
+    "text": "#FFFFFF"
+  },
+  "the-hardest-presents-the-ultimate-battles-2024": {
+    "background": "#463F55",
+    "text": "#FFFFFF"
+  },
+  "the-punisher-hardcore-classics-2024": {
+    "background": "#642F34",
+    "text": "#FFFFFF"
+  },
+  "only-fucking-hardcore-2024": {
+    "background": "#43441F",
+    "text": "#FFFFFF"
+  },
+  "dream-village-2024": {
+    "background": "#AB7476",
+    "text": "#000000"
+  },
+  "hard-dance-nyc-presents-madgrrl-2024": {
+    "background": "#221925",
+    "text": "#FFFFFF"
+  },
+  "hardstyle-night-brno-2024": {
+    "background": "#20495A",
+    "text": "#FFFFFF"
+  },
+  "leaderz-festival-2024": {
+    "background": "#7B5B47",
+    "text": "#FFFFFF"
+  },
+  "supremacy-2024": {
+    "background": "#2C3743",
+    "text": "#FFFFFF"
+  },
+  "a-rave-of-ice-and-fire-2024": {
+    "background": "#4F5875",
+    "text": "#FFFFFF"
+  },
+  "august-hall-presents-da-tweekaz-2024": {
+    "background": "#171F1E",
+    "text": "#FFFFFF"
+  },
+  "hardstylemania-presents-ran-d-imperatorz-unicorn-on-ketamine-2024": {
+    "background": "#47334C",
+    "text": "#FFFFFF"
+  },
+  "infamous-armada-2024": {
+    "background": "#8C6757",
+    "text": "#FFFFFF"
+  },
+  "masif-presents-adjuzt-cryex-2024": {
+    "background": "#473047",
+    "text": "#FFFFFF"
+  },
+  "miss-k8-all-night-long-2024": {
+    "background": "#682420",
+    "text": "#FFFFFF"
+  },
+  "tweeka-road-trip-at-august-hall-2024": {
+    "background": "#AD8769",
+    "text": "#000000"
+  },
+  "150-the-opening-show-2024": {
+    "background": "#1D1D0F",
+    "text": "#FFFFFF"
+  },
+  "back-to-the-roots-2024": {
+    "background": "#363C4C",
+    "text": "#FFFFFF"
+  },
+  "captain-hardstyle-2024": {
+    "background": "#6FBFC9",
+    "text": "#000000"
+  },
+  "hardstyle-night-plze-2024": {
+    "background": "#563E28",
+    "text": "#FFFFFF"
+  },
+  "havoc-capital-conquest-2024": {
+    "background": "#4D3B26",
+    "text": "#FFFFFF"
+  },
+  "insomnia-part-iv-2024": {
+    "background": "#273133",
+    "text": "#FFFFFF"
+  },
+  "pelican-festival-2024": {
+    "background": "#394246",
+    "text": "#FFFFFF"
+  },
+  "the-relaunch-2024": {
+    "background": "#633C5B",
+    "text": "#FFFFFF"
+  },
+  "titanium-festival-2024": {
+    "background": "#292928",
+    "text": "#FFFFFF"
+  },
+  "tweeka-road-trip-at-area15-2024": {
+    "background": "#AB8468",
+    "text": "#000000"
+  },
+  "masif-presents-anderex-2024": {
+    "background": "#224A2F",
+    "text": "#FFFFFF"
+  },
+  "tweeka-road-trip-at-bloom-2024": {
+    "background": "#AC8568",
+    "text": "#000000"
+  },
+  "art-of-fighters-25-years-of-hardcore-2024": {
+    "background": "#2B1E1E",
+    "text": "#FFFFFF"
+  },
+  "bombshell-casino-royale-2024": {
+    "background": "#322D26",
+    "text": "#FFFFFF"
+  },
+  "energy-festival-2024": {
+    "background": "#863B27",
+    "text": "#FFFFFF"
+  },
+  "invaders-space-odyssey-2024": {
+    "background": "#6E6892",
+    "text": "#FFFFFF"
+  },
+  "phoenix-raw-xxl-2024": {
+    "background": "#CCB8A7",
+    "text": "#000000"
+  },
+  "tweeka-road-trip-at-the-circle-2024": {
+    "background": "#AD886A",
+    "text": "#000000"
+  },
+  "volle-gaas-in-dixies-2024": {
+    "background": "#301041",
+    "text": "#FFFFFF"
+  },
+  "mark-with-a-k-this-is-my-birthday-2024": {
+    "background": "#316664",
+    "text": "#FFFFFF"
+  },
+  "a-nightmare-in-rotterdam-2024": {
+    "background": "#721E18",
+    "text": "#FFFFFF"
+  },
+  "gearbox-presents-overdrive-2-2024": {
+    "background": "#3C366B",
+    "text": "#FFFFFF"
+  },
+  "hard-dance-nyc-presents-gammer-2024": {
+    "background": "#876768",
+    "text": "#FFFFFF"
+  },
+  "hardstyle-invasion-3-2024": {
+    "background": "#9E6E73",
+    "text": "#000000"
+  },
+  "knockout-outdoor-2024": {
+    "background": "#5F466B",
+    "text": "#FFFFFF"
+  },
+  "reborn-1er-aniversario-2024": {
+    "background": "#45535F",
+    "text": "#FFFFFF"
+  },
+  "syndicate-2024": {
+    "background": "#323939",
+    "text": "#FFFFFF"
+  },
+  "this-is-uptempo-2024": {
+    "background": "#352D1F",
+    "text": "#FFFFFF"
+  },
+  "trinity-presents-spoontech-society-2024": {
+    "background": "#252B27",
+    "text": "#FFFFFF"
+  },
+  "basscon-presents-geo-2024-2": {
+    "background": "#662121",
+    "text": "#FFFFFF"
+  },
+  "make-hardcore-great-again-2024": {
+    "background": "#543429",
+    "text": "#FFFFFF"
+  },
+  "masquerade-of-shadows-2024": {
+    "background": "#305656",
+    "text": "#FFFFFF"
+  },
+  "phobia-2024": {
+    "background": "#283F1C",
+    "text": "#FFFFFF"
+  },
+  "elektrum-festival-2024": {
+    "background": "#302645",
+    "text": "#FFFFFF"
+  },
+  "team-gabber-invites-north-gabber-2024": {
+    "background": "#3D4E50",
+    "text": "#FFFFFF"
+  },
+  "technostate-30-year-anniversary-2024": {
+    "background": "#6E6E6A",
+    "text": "#FFFFFF"
+  },
+  "hardmission-thailand-2024": {
+    "background": "#75625A",
+    "text": "#FFFFFF"
+  },
+  "this-is-sefa-2024": {
+    "background": "#562C2D",
+    "text": "#FFFFFF"
+  },
+  "dirty-workz-presents-dirty-by-nature-2024": {
+    "background": "#2E2E1F",
+    "text": "#FFFFFF"
+  },
+  "rooler-at-bloom-2024": {
+    "background": "#6C3780",
+    "text": "#FFFFFF"
+  },
+  "audio-havok-underground-syndicate-present-industrial-strength-2024": {
+    "background": "#363636",
+    "text": "#FFFFFF"
+  },
+  "destruction-1er-aniversario-2024": {
+    "background": "#693C29",
+    "text": "#FFFFFF"
+  },
+  "district-999-we-are-the-resistance-2024": {
+    "background": "#1B4C09",
+    "text": "#FFFFFF"
+  },
+  "dystopia-au-nexus-2024": {
+    "background": "#4F6762",
+    "text": "#FFFFFF"
+  },
+  "hard-o-ween-2024": {
+    "background": "#6E4060",
+    "text": "#FFFFFF"
+  },
+  "harder-force-indoor-festival-2024": {
+    "background": "#321F31",
+    "text": "#FFFFFF"
+  },
+  "indicator-worlds-collide-2024": {
+    "background": "#48362C",
+    "text": "#FFFFFF"
+  },
+  "lost-memories-world-of-classics-2024": {
+    "background": "#644E33",
+    "text": "#FFFFFF"
+  },
+  "origins-radical-redemption-2024": {
+    "background": "#D1D2D2",
+    "text": "#000000"
+  },
+  "rooler-at-exchange-2024": {
+    "background": "#47796B",
+    "text": "#FFFFFF"
+  },
+  "rosbeek-maximaal-klappen-2024": {
+    "background": "#5A5555",
+    "text": "#FFFFFF"
+  },
+  "xxlerator-hardstyle-classics-2024": {
+    "background": "#494C44",
+    "text": "#FFFFFF"
+  },
+  "evolve-boiler-xr-volume-1": {
+    "background": "#0D1B19",
+    "text": "#FFFFFF"
+  },
+  "king-of-the-pieps-2024": {
+    "background": "#A92A68",
+    "text": "#FFFFFF"
+  },
+  "one-masif-halloween-2024": {
+    "background": "#5C3327",
+    "text": "#FFFFFF"
+  },
+  "regain-polish-punisher-2024": {
+    "background": "#2D2526",
+    "text": "#FFFFFF"
+  },
+  "bass-in-the-park-2024": {
+    "background": "#33AE2D",
+    "text": "#000000"
+  },
+  "braindead-halloween-2024": {
+    "background": "#474040",
+    "text": "#FFFFFF"
+  },
+  "chapter-1-genesis-2024": {
+    "background": "#251C1C",
+    "text": "#FFFFFF"
+  },
+  "cracking-the-code-2024": {
+    "background": "#341E19",
+    "text": "#FFFFFF"
+  },
+  "gabberland-2024": {
+    "background": "#252523",
+    "text": "#FFFFFF"
+  },
+  "hardstyle-church-2024": {
+    "background": "#5A3610",
+    "text": "#FFFFFF"
+  },
+  "karma-indoor-2024": {
+    "background": "#3E2E21",
+    "text": "#FFFFFF"
+  },
+  "mutilator-presents-cage-of-carnage-2024": {
+    "background": "#232B2F",
+    "text": "#FFFFFF"
+  },
+  "dream-nation-festival-2024": {
+    "background": "#3E2D2A",
+    "text": "#FFFFFF"
+  },
+  "faceless-festival-curse-of-pirate-bay-2024": {
+    "background": "#4A3C2E",
+    "text": "#FFFFFF"
+  },
+  "halloween-dancing-dead-3": {
+    "background": "#472353",
+    "text": "#FFFFFF"
+  },
+  "sub-zero-project-halloween-special-2024": {
+    "background": "#36473D",
+    "text": "#FFFFFF"
+  },
+  "5-years-of-team-gabber-2024": {
+    "background": "#7F7C73",
+    "text": "#000000"
+  },
+  "jackpot-casino-heist-2024": {
+    "background": "#B9ADAD",
+    "text": "#000000"
+  },
+  "rawness-hypnotic-disorder-2024": {
+    "background": "#593E64",
+    "text": "#FFFFFF"
+  },
+  "snakepit-2024": {
+    "background": "#332B35",
+    "text": "#FFFFFF"
+  },
+  "the-pirates-curse-2024": {
+    "background": "#33221D",
+    "text": "#FFFFFF"
+  },
+  "solareclipse-2024": {
+    "background": "#10514E",
+    "text": "#FFFFFF"
+  },
+  "try-before-you-die-2024": {
+    "background": "#4F3824",
+    "text": "#FFFFFF"
+  },
+  "a-nightmare-in-germany-2024": {
+    "background": "#857E7B",
+    "text": "#000000"
+  },
+  "ar-gang-the-party-2024": {
+    "background": "#CEBFA6",
+    "text": "#000000"
+  },
+  "jay-reeve-presents-melodic-madness-2024": {
+    "background": "#5E3C1F",
+    "text": "#FFFFFF"
+  },
+  "masterminds-2024": {
+    "background": "#4F261F",
+    "text": "#FFFFFF"
+  },
+  "rauwe-kicks-2024": {
+    "background": "#4C3943",
+    "text": "#FFFFFF"
+  },
+  "raving-nightmare-2024": {
+    "background": "#57403C",
+    "text": "#FFFFFF"
+  },
+  "route-666-braunschweig-2024": {
+    "background": "#5E4331",
+    "text": "#FFFFFF"
+  },
+  "unfold-presents-future-stories-2024": {
+    "background": "#2F2447",
+    "text": "#FFFFFF"
+  },
+  "basscon-presents-deadly-guns-la-2024": {
+    "background": "#3A2B21",
+    "text": "#FFFFFF"
+  },
+  "imagination-festival-2024": {
+    "background": "#101C16",
+    "text": "#FFFFFF"
+  },
+  "basscon-presents-deadly-guns-sf-2024": {
+    "background": "#36282B",
+    "text": "#FFFFFF"
+  },
+  "dreamfields-mexico-2024": {
+    "background": "#99A3B8",
+    "text": "#000000"
+  },
+  "pandemonium-2024": {
+    "background": "#484543",
+    "text": "#FFFFFF"
+  },
+  "qlimax-2024": {
+    "background": "#3D1F1C",
+    "text": "#FFFFFF"
+  },
+  "basscon-presents-brennan-heart-soundcheck-2024": {
+    "background": "#3C2E2B",
+    "text": "#FFFFFF"
+  },
+  "basscon-presents-brennan-heart-bloom-2024": {
+    "background": "#302D3E",
+    "text": "#FFFFFF"
+  },
+  "coone-at-sound-bar-2024": {
+    "background": "#4B436B",
+    "text": "#FFFFFF"
+  },
+  "masters-of-hardcore-uk-2024": {
+    "background": "#594035",
+    "text": "#FFFFFF"
+  },
+  "rebellion-indoor-festival-2024": {
+    "background": "#2E3769",
+    "text": "#FFFFFF"
+  },
+  "haaren-op-z-n-hollands-2024": {
+    "background": "#CC9193",
+    "text": "#000000"
+  },
+  "dimitri-k-sacrifice-day-2024": {
+    "background": "#502A2E",
+    "text": "#FFFFFF"
+  },
+  "illuminate-2024": {
+    "background": "#E2990E",
+    "text": "#000000"
+  },
+  "tropical-dreams-2024": {
+    "background": "#C77037",
+    "text": "#000000"
+  },
+  "electric-sea-festival-2024": {
+    "background": "#533C5B",
+    "text": "#FFFFFF"
+  },
+  "frequencerz-the-last-run-2024": {
+    "background": "#664A5C",
+    "text": "#FFFFFF"
+  },
+  "reminder-15-years-of-crypsis-2024": {
+    "background": "#534528",
+    "text": "#FFFFFF"
+  },
+  "route-909-exit-6-2024": {
+    "background": "#6A8595",
+    "text": "#000000"
+  },
+  "unity-2024": {
+    "background": "#0C224C",
+    "text": "#FFFFFF"
+  },
+  "thunderdome-omega-2024": {
+    "background": "#366A3D",
+    "text": "#FFFFFF"
+  },
+  "20-years-of-b-front-2024": {
+    "background": "#115064",
+    "text": "#FFFFFF"
+  },
+  "i-am-hardstyle-showcase-2024": {
+    "background": "#402449",
+    "text": "#FFFFFF"
+  },
+  "iboga-rave-maniacs-festival-hard-sessions-2024": {
+    "background": "#193F4B",
+    "text": "#FFFFFF"
+  },
+  "shockerz-2024": {
+    "background": "#583A54",
+    "text": "#FFFFFF"
+  },
+  "thunderdome-alpha-2024": {
+    "background": "#366A3D",
+    "text": "#FFFFFF"
+  },
+  "louder-generation-2024": {
+    "background": "#846138",
+    "text": "#FFFFFF"
+  },
+  "eternal-2024": {
+    "background": "#352D71",
+    "text": "#FFFFFF"
+  },
+  "hardmission-prague-2024": {
+    "background": "#2D517C",
+    "text": "#FFFFFF"
+  },
+  "masters-of-hardcore-madrid-2024": {
+    "background": "#5B493D",
+    "text": "#FFFFFF"
+  },
+  "pat-b-birthday-bash-xxl-2024": {
+    "background": "#C3B83C",
+    "text": "#000000"
+  },
+  "spitnoise-presents-mix-the-future-2024": {
+    "background": "#352A22",
+    "text": "#FFFFFF"
+  },
+  "gearbox-hot-pursuit-2024": {
+    "background": "#403548",
+    "text": "#FFFFFF"
+  },
+  "megarave-the-millennium-edition-2024": {
+    "background": "#543C3C",
+    "text": "#FFFFFF"
+  },
+  "bad-blood-final-reckoning-2025": {
+    "background": "#1C1414",
+    "text": "#FFFFFF"
+  },
+  "reactivate-2025": {
+    "background": "#5F524A",
+    "text": "#FFFFFF"
+  },
+  "origins-2025": {
+    "background": "#802946",
+    "text": "#FFFFFF"
+  },
+  "promo-style-2025": {
+    "background": "#1F1E1E",
+    "text": "#FFFFFF"
+  },
+  "snowbass-festival-2025": {
+    "background": "#688793",
+    "text": "#000000"
+  },
+  "apex-2025": {
+    "background": "#4F391E",
+    "text": "#FFFFFF"
+  },
+  "madness-xl-2025": {
+    "background": "#303030",
+    "text": "#FFFFFF"
+  },
+  "ravezone-2025": {
+    "background": "#343829",
+    "text": "#FFFFFF"
+  },
+  "reverze-2025": {
+    "background": "#65417E",
+    "text": "#FFFFFF"
+  },
+  "get-wrecked-indoor-2025": {
+    "background": "#3D2A02",
+    "text": "#FFFFFF"
+  },
+  "ar-gang-takeover---docks-hamburg": {
+    "background": "#402823",
+    "text": "#FFFFFF"
+  },
+  "masif-one-zero": {
+    "background": "#496156",
+    "text": "#FFFFFF"
+  },
+  "overloud-presents--the-hardstyle-show-8": {
+    "background": "#251C16",
+    "text": "#FFFFFF"
+  },
+  "reminder--15-years-of-crypsis": {
+    "background": "#3D2E18",
+    "text": "#FFFFFF"
+  },
+  "showtek---docks-hamburg": {
+    "background": "#8D2826",
+    "text": "#FFFFFF"
+  },
+  "the-hardest-presents--extreme-circus": {
+    "background": "#4D1B1D",
+    "text": "#FFFFFF"
+  },
+  "masif-presents-sickmode-2025": {
+    "background": "#A0A75F",
+    "text": "#000000"
+  },
+  "radical-redemption-no-retaliation-2025": {
+    "background": "#30302F",
+    "text": "#FFFFFF"
+  },
+  "underground-syndicate-presents-the-purge": {
+    "background": "#391D12",
+    "text": "#FFFFFF"
+  },
+  "infinity-festival-2025": {
+    "background": "#705188",
+    "text": "#FFFFFF"
+  },
+  "thyron-the-last-hard-dance-2025": {
+    "background": "#604B44",
+    "text": "#FFFFFF"
+  },
+  "neelix-and-friends---mec-braunschweig": {
+    "background": "#73452E",
+    "text": "#FFFFFF"
+  },
+  "ultra-music-festival-2025": {
+    "background": "#32486F",
+    "text": "#FFFFFF"
+  },
+  "flashback-2025": {
+    "background": "#402D25",
+    "text": "#FFFFFF"
+  },
+  "masters-of-hardcore-2025": {
+    "background": "#3B3830",
+    "text": "#FFFFFF"
+  },
+  "multigroove--old-amsterdam": {
+    "background": "#382E26",
+    "text": "#FFFFFF"
+  },
+  "ravelife-comes-to-liverpool": {
+    "background": "#316C94",
+    "text": "#FFFFFF"
+  },
+  "harder-is-better": {
+    "background": "#200F10",
+    "text": "#FFFFFF"
+  },
+  "masif-presents--ran-d": {
+    "background": "#344046",
+    "text": "#FFFFFF"
+  },
+  "dedikted--the-extermination": {
+    "background": "#143F1D",
+    "text": "#FFFFFF"
+  },
+  "must-die": {
+    "background": "#442857",
+    "text": "#FFFFFF"
+  },
+  "rebirth-festival-2025": {
+    "background": "#1F2572",
+    "text": "#FFFFFF"
+  },
+  "bass-vault-presents-the-purge-noize-suppressor": {
+    "background": "#795E39",
+    "text": "#FFFFFF"
+  },
+  "the-history-of-hard-house": {
+    "background": "#2C2727",
+    "text": "#FFFFFF"
+  },
+  "angerfist---mec-braunschweig": {
+    "background": "#3C342E",
+    "text": "#FFFFFF"
+  },
+  "overloud-events--royal-casino": {
+    "background": "#66352B",
+    "text": "#FFFFFF"
+  },
+  "paaspop-2025": {
+    "background": "#5C0978",
+    "text": "#FFFFFF"
+  },
+  "gearbox-australia": {
+    "background": "#8E6447",
+    "text": "#FFFFFF"
+  },
+  "hardfest-2025": {
+    "background": "#9B8F77",
+    "text": "#000000"
+  },
+  "xxlerator-presents--jones-6-hours-solo": {
+    "background": "#363A4A",
+    "text": "#FFFFFF"
+  },
+  "supersized-kingsday-festival-2025": {
+    "background": "#E95213",
+    "text": "#000000"
+  },
+  "midnight-mafia-2025": {
+    "background": "#BE917E",
+    "text": "#000000"
+  },
+  "ravemania-2025": {
+    "background": "#B0AEB1",
+    "text": "#000000"
+  },
+  "dance4liberation-2025": {
+    "background": "#878B8C",
+    "text": "#000000"
+  },
+  "hard-dance-nyc-presents--mish---levenkhan": {
+    "background": "#713870",
+    "text": "#FFFFFF"
+  },
+  "beter-kom-je-niet-festival": {
+    "background": "#22272B",
+    "text": "#FFFFFF"
+  },
+  "trinity-outdoor-festival-2025": {
+    "background": "#3E1204",
+    "text": "#FFFFFF"
+  },
+  "audio-havok-presents-dual-damage": {
+    "background": "#333735",
+    "text": "#FFFFFF"
+  },
+  "supercharged-festival-2025": {
+    "background": "#42301A",
+    "text": "#FFFFFF"
+  },
+  "hardmission---techmission-malaysia-2025": {
+    "background": "#7F6943",
+    "text": "#FFFFFF"
+  },
+  "emporium-festival-2025": {
+    "background": "#B0949F",
+    "text": "#000000"
+  },
+  "lost-memories-outdoor-festival-2025": {
+    "background": "#A09794",
+    "text": "#000000"
+  },
+  "ultimate-bassline-festival-2025": {
+    "background": "#3F4451",
+    "text": "#FFFFFF"
+  },
+  "intents-festival-2025": {
+    "background": "#298F2D",
+    "text": "#000000"
+  },
+  "multigroove--sound-garden": {
+    "background": "#4E3F4E",
+    "text": "#FFFFFF"
+  },
+  "harmony-of-hardcore-2025": {
+    "background": "#434C4B",
+    "text": "#FFFFFF"
+  },
+  "defqon-1-weekend-festival-2025": {
+    "background": "#613746",
+    "text": "#FFFFFF"
+  },
+  "electric-love-festival-2025": {
+    "background": "#FB84AE",
+    "text": "#000000"
+  },
+  "dreamfields-festival-2025": {
+    "background": "#B881D6",
+    "text": "#000000"
+  },
+  "ruhr-in-love-2025": {
+    "background": "#847E71",
+    "text": "#000000"
+  },
+  "dropzone-2025": {
+    "background": "#7B6D72",
+    "text": "#FFFFFF"
+  },
+  "airbeat-one-festival-2025": {
+    "background": "#482725",
+    "text": "#FFFFFF"
+  },
+  "dominator-festival-2025": {
+    "background": "#433021",
+    "text": "#FFFFFF"
+  },
+  "parookaville-2025": {
+    "background": "#B1978E",
+    "text": "#000000"
+  },
+  "tomorrowland-weekend-1-2025": {
+    "background": "#212530",
+    "text": "#FFFFFF"
+  },
+  "tomorrowland-weekend-2-2025": {
+    "background": "#212530",
+    "text": "#FFFFFF"
+  },
+  "hardclassics-festival-2025": {
+    "background": "#7B6F6F",
+    "text": "#FFFFFF"
+  },
+  "uptempo-and-you-know-it-2025": {
+    "background": "#684A4C",
+    "text": "#FFFFFF"
+  },
+  "relevatez-festival-2025": {
+    "background": "#655624",
+    "text": "#FFFFFF"
+  },
+  "rebellion-outdoor-festival-2025": {
+    "background": "#481B2E",
+    "text": "#FFFFFF"
+  },
+  "timeless-festival-2025": {
+    "background": "#2F2212",
+    "text": "#FFFFFF"
+  },
+  "decibel-outdoor-festival-2025": {
+    "background": "#1F353F",
+    "text": "#FFFFFF"
+  },
+  "flashback-festival-2025": {
+    "background": "#C3B4A0",
+    "text": "#000000"
+  },
+  "ground-zero-festival-2025": {
+    "background": "#252424",
+    "text": "#FFFFFF"
+  },
+  "into-the-madness-2025": {
+    "background": "#643E49",
+    "text": "#FFFFFF"
+  },
+  "pokke-herrie-2025": {
+    "background": "#293631",
+    "text": "#FFFFFF"
+  },
+  "total-loss-festival-2025": {
+    "background": "#E88E3E",
+    "text": "#000000"
+  },
+  "multigroove-festival-2025": {
+    "background": "#56425D",
+    "text": "#FFFFFF"
+  },
+  "captain-hardstyle-2025": {
+    "background": "#85A8AC",
+    "text": "#000000"
+  },
+  "titanium-festival-2025": {
+    "background": "#5C4424",
+    "text": "#FFFFFF"
+  },
+  "jay-reeve-presents-melodic-madness-2025": {
+    "background": "#8F3A9A",
+    "text": "#FFFFFF"
+  },
+  "supremacy-2025": {
+    "background": "#425F54",
+    "text": "#FFFFFF"
+  },
+  "bassquake-festival-2025": {
+    "background": "#4B4E6C",
+    "text": "#FFFFFF"
+  },
+  "brennan-heart---mec-braunschweig": {
+    "background": "#5D5F90",
+    "text": "#FFFFFF"
+  },
+  "snakepit-2025": {
+    "background": "#4C2818",
+    "text": "#FFFFFF"
+  },
+  "eternal-2025": {
+    "background": "#441D8C",
+    "text": "#FFFFFF"
+  },
+  "pat-b-birthday-bash-xxl-2025": {
+    "background": "#6D367C",
+    "text": "#FFFFFF"
+  },
+  "bkjn-vs-partyraiser-2026": {
+    "background": "#1E1D34",
+    "text": "#FFFFFF"
+  },
+  "reverze-2026": {
+    "background": "#534962",
+    "text": "#FFFFFF"
+  },
+  "snowbeat-festival-2026": {
+    "background": "#B1A5CA",
+    "text": "#000000"
+  }
 }

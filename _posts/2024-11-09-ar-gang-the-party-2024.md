@@ -14,8 +14,6 @@ hosts:
 tickets: https://madness.dj/ARGANG-PreRegistration
 facebook: https://www.facebook.com/events/499516282591214/
 image: /assets/img/events/ar-gang-the-party-2024.jpg
-
-foreground: black
 ---
 
 AR GANG. THE PARTY. 09 NOVEMBER. MITSUBISHI ELECTRIC HALLE ![🇩🇪](https://static.xx.fbcdn.net/images/emoji.php/v9/t75/2/16/1f1e9_1f1ea.png) YOU ARE NOT READY FOR THIS ONE 🤯 PRE-REGISTER NOW IN B10

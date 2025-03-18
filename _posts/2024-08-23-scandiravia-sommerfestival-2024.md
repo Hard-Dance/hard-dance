@@ -13,11 +13,8 @@ hosts:
 tickets: https://billetto.no/e/scandiravia-billetter-984836
 facebook: https://www.facebook.com/events/762721039260220/
 image: /assets/img/events/scandiravia-sommerfestival-2024.jpg
-
-foreground: black
 ---
 
-  
 Bli med på todagers utendørsfestival i naturskjønne omgivelser på Huntonstranda i Gjøvik.
 
 Langs Mjøsas bredder kan du oppleve en fullspekket lineup som kombinerer de beste up-and-coming artistene i Skandinavias Hardstyle-verden.

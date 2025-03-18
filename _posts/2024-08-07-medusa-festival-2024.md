@@ -10,6 +10,4 @@ hosts:
   - Medusa Festival
 tickets: https://www.medusasunbeach.com/entradas
 image: /assets/img/events/medusa-festival-2024.jpg
-
-foreground: black
 ---

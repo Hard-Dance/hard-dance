@@ -10,8 +10,6 @@ hosts:
   - Origins of Raw
 facebook: https://www.facebook.com/events/341483749039240/
 image: /assets/img/events/origins-radical-redemption-2024.jpg
-
-foreground: black
 ---
 
 ONE-TIME-ONLY: RADICAL REDEMPTION CLASSICS EVENT!  

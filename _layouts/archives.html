@@ -29,17 +29,23 @@
             = site.posts | sort: 'datestart' %} {% for post in sorted_posts
             reversed %} {% assign post_start_date = post.datestart | date:
             '%Y-%m-%d' %} {% if post_start_date < today %} {% assign
-            average_color = site.data.average_colors[post.slug] %}
+            average_colors = site.data.average_colors[post.slug] %}
             <tr>
-              <th scope="row" style="background-color: {{ average_color }};">
+              <th
+                scope="row"
+                style="
+                {% if average_colors.background %}
+                  background-color: {{ average_colors.background }};
+                  color: {{ average_colors.text }};
+                {% endif %}
+              "
+              >
                 <a
                   href="{{ post.url }}"
                   style="
                     outline-color: currentColor;
-                    {% if post.foreground %}
-                    color: color-mix(in srgb, {{ average_color }}, black 80%);
-                    {% else %}
-                    color: color-mix(in srgb, {{ average_color }}, white 80%);
+                    {% if average_colors.text %}
+                      color: {{ average_colors.text }};
                     {% endif %}
                   "
                 >

@@ -64,25 +64,15 @@
           {% assign flag = '' %}
         {% endcase %}
 
-        {% assign average_color = site.data.average_colors[post.slug] %}
+        {% assign average_colors = site.data.average_colors[post.slug] %}
         <li
           class="grid-item events-grid-item {% for host in post.hosts %}filter-host-{{ host | slugify }} {% endfor %}"
           style="
-            {% if average_color %}
-              --xxx-color-background: {{ average_color }};
-            {% else %}
-              background-color: rgba(var(--color-background-rgb), 0.5);
-              -webkit-backdrop-filter: saturate(1.8) blur(20px);
-              backdrop-filter: saturate(1.8) blur(20px);
-            {% endif %}
-            {% if post.foreground %}
-            --xxx-color-text: color-mix(in srgb, {{ average_color }}, black 80%);
-            --xxx-color-text-muted: color-mix(in srgb, {{ average_color }} 50%, black 50%);
-            --xxx-color-accent: color-mix(in srgb, {{ average_color }} 100%, black 25%);
-            {% else %}
-            --xxx-color-text: color-mix(in srgb, {{ average_color }}, white 80%);
-            --xxx-color-text-muted: color-mix(in srgb, {{ average_color }} 50%, white 50%);
-            --xxx-color-accent: color-mix(in srgb, {{ average_color }} 100%, white 25%);
+            {% if average_colors.background %}
+              --xxx-color-background: {{ average_colors.background }};
+              --xxx-color-text: {{ average_colors.text }};
+              --xxx-color-text-muted: {{ average_colors.text | append: '80' }};
+              --xxx-color-accent: {{ average_colors.text | append: 'CC' }};
             {% endif %}
           "
           id="grid-item-{{ forloop.index }}"
@@ -90,14 +80,9 @@
           {% if post.is_online == true %}
             data-virtual
           {% endif %}
-          {%
-          if
-          post.featured
-          %}
-          data-featured="true"
-          {%
-          endif
-          %}
+          {% if post.featured %}
+            data-featured="true"
+          {% endif %}
         >
           {% if post.featured and post.video %}
           <video

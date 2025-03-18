@@ -11,6 +11,4 @@ hosts:
 tickets: https://airbeat-one.myticket.de/content
 facebook: https://www.facebook.com/events/995809308512395/
 image: /assets/img/events/airbeat-one-festival-2024.jpg
-
-foreground: black
 ---

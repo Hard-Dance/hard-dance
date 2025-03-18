@@ -10,6 +10,4 @@ hosts:
   - Dreambeach Festival
 tickets: https://www.dreambeach.es
 image: /assets/img/events/dreambeach-festival-2024.jpg
-
-foreground: black
 ---
