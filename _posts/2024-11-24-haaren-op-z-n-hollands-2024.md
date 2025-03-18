@@ -11,8 +11,6 @@ hosts:
 tickets: https://tickets.rebirth-events.nl/f697ea2631164049b61dbffa26f12ca1/
 facebook: https://www.facebook.com/events/532131932520075/
 image: /assets/img/events/haaren-op-z-n-hollands-2024.jpg
-
-foreground: black
 ---
 
 𝗛𝗔𝗔𝗥𝗘𝗡 𝗢𝗣 𝗭'𝗡 𝗛𝗢𝗟𝗟𝗔𝗡𝗗𝗦 𝗜𝗦 𝗧𝗘𝗥𝗨𝗚!  

@@ -10,6 +10,4 @@ hosts:
 tickets: https://www.bassevents.be/events/pat-b-birthday-bash-xxl-2024
 facebook: https://www.facebook.com/events/1119576626137576
 image: /assets/img/events/pat-b-birthday-bash-xxl-2024.jpg
-
-foreground: black
 ---

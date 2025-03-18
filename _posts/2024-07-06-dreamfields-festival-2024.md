@@ -12,8 +12,6 @@ hosts:
 tickets: https://www.dreamfields.nl
 facebook: https://www.facebook.com/events/2485568488259532/
 image: /assets/img/events/dreamfields-festival-2024.jpg
-
-foreground: black
 ---
 
 𝗗𝗥𝗘𝗔𝗠𝗙𝗜𝗘𝗟𝗗𝗦 𝗙𝗘𝗦𝗧𝗜𝗩𝗔𝗟 𝟮𝟬𝟮𝟰🦋

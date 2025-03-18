@@ -12,7 +12,6 @@ tickets: https://www.tomorrowland.com/home/
 facebook: https://www.facebook.com/events/2179621302235182
 image: /assets/img/events/tomorrowland-winter-2024.jpg
 
-foreground: black
 is_online: true
 ---
 

@@ -11,8 +11,6 @@ hosts:
 tickets: https://www.boulevardoutdoor.nl
 facebook: https://www.facebook.com/events/916093139882213/
 image: /assets/img/events/boulevard-outdoor-2024.jpg
-
-foreground: black
 ---
 
 Stap binnen in de betoverende wereld van Boulevard Outdoor 2024 land of wonder!🌟🎡

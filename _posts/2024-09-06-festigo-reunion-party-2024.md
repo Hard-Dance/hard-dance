@@ -10,8 +10,6 @@ hosts:
   - Masif Events
 facebook: https://www.facebook.com/events/2757581174420085/
 image: /assets/img/events/festigo-reunion-party-2024.jpg
-
-foreground: black
 ---
 
 BUY TIX HERE: [fanlink.tv/masiftix](http://fanlink.tv/masiftix)

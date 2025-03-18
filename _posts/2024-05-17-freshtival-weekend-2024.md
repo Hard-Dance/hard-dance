@@ -11,6 +11,4 @@ hosts:
 tickets: https://tickets.freshtival.nl/cf3c06dd82a446c889512562b4d9cf39
 facebook: https://www.facebook.com/events/1008069643713218
 image: /assets/img/events/freshtival-weekend-2024.jpg
-
-foreground: black
 ---

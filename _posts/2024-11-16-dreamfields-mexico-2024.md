@@ -12,8 +12,6 @@ hosts:
 tickets: https://boletomovil.com/evento/dreamfields-mexico-abono-2024
 facebook: https://www.facebook.com/events/959164179032879/
 image: /assets/img/events/dreamfields-mexico-2024.jpg
-
-foreground: black
 ---
 
 Bienvenidos dreamers a Dreamfields México \[5to Aniversario\] “The Color Of Harmony" 🩵

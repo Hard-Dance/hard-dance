@@ -10,6 +10,4 @@ hosts:
   - So W'Happy Festival
 facebook: https://www.facebook.com/events/1503630443733551
 image: /assets/img/events/so-w-happy-festival-2024.jpg
-
-foreground: black
 ---

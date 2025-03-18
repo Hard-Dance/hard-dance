@@ -10,8 +10,6 @@ hosts:
   - Basscon
 tickets: https://area15.com/events/da-tweekaz/
 image: /assets/img/events/tweeka-road-trip-at-area15-2024.jpg
-
-foreground: black
 ---
 
 Get ready for Da Tweekaz: Tweeka Road Trip at AREA15’s A-Lot on September 21st! Presented by AREA15, Basscon, and RVLTN, join Norwegian Hardstyle duo Da Tweekaz for an electrifying show. Known for their high-energy performances and down-to-earth vibe, Kenth Kvien and Marcus Nordli will ignite the crowd with their unique style and passion. Don’t miss this unforgettable night of Hard Dance!

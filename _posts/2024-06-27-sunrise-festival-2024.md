@@ -11,8 +11,6 @@ hosts:
 tickets: https://www.sunrisefestival.be
 facebook: https://www.facebook.com/events/204166075519316/
 image: /assets/img/events/sunrise-festival-2024.jpg
-
-foreground: black
 ---
 
 Op 28, 29 en 30 juni trappen we Sunrise Festival 2024 spetterend af op De Lilse Bergen: 𝗵𝗲́𝘁 𝗜𝗯𝗶𝘇𝗮 𝘃𝗮𝗻 𝗱𝗲 𝗞𝗲𝗺𝗽𝗲𝗻 = 𝗲𝗲𝗻 𝘃𝗶𝗯𝗲!

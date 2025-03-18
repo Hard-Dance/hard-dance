@@ -11,8 +11,6 @@ hosts:
   - Decibel Outdoor Festival
 facebook: https://www.facebook.com/events/1615735035669664/
 image: /assets/img/events/decibel-outdoor-festival-2025.jpg
-
-foreground: black
 ---
 
 THE LOUDEST CITY ON EARTH  

@@ -11,8 +11,6 @@ hosts:
 tickets: https://shop.eventix.io/5d3c010b-fe59-11ee-a9cb-7e126431635e/tickets
 facebook: https://www.facebook.com/events/1629384424512943/
 image: /assets/img/events/hardcore-at-sea-2024.jpg
-
-foreground: black
 ---
 
 𝐇𝐀𝐑𝐃𝐂𝐎𝐑𝐄 𝐀𝐓 𝐒𝐄𝐀 - 𝐏𝐎𝐖𝐄𝐑 𝐎𝐅 𝐏𝐎𝐒𝐄𝐈𝐃𝐎𝐍 🔱 | 𝐆𝐞𝐭 𝐲𝐨𝐮𝐫 𝐭𝐢𝐜𝐤𝐞𝐭𝐬 𝐧𝐨𝐰! 🌊

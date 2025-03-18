@@ -1,23 +1,17 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: 'en' }}">
-  {% include head.html %} {% assign average_color =
+  {% include head.html %} {% assign average_colors =
   site.data.average_colors[page.slug] %}
   <body
     style="
-      --xxx-color-background-backdrop: {{ average_color }};
-
-      {% if page.foreground %}
-      --xxx-color-text: color-mix(in srgb, {{ average_color }}, black 80%);
-      --xxx-color-text-muted: color-mix(in srgb, {{ average_color }} 50%, black 50%);
-      --xxx-color-background-transparent-hover: color-mix(in srgb, {{ average_color }} 95%, black 5%);
-      --xxx-color-accent: color-mix(in srgb, {{ average_color }} 100%, black 25%);
-      {% else %}
-      --xxx-color-text: color-mix(in srgb, {{ average_color }}, white 80%);
-      --xxx-color-text-muted: color-mix(in srgb, {{ average_color }} 50%, white 50%);
-      --xxx-color-background-transparent-hover: color-mix(in srgb, {{ average_color }} 95%, white 5%);
-      --xxx-color-accent: color-mix(in srgb, {{ average_color }} 100%, white 25%);
+      {% if average_colors.background %}
+        --xxx-color-background-backdrop: {{ average_colors.background }};
+        --xxx-color-text: {{ average_colors.text }};
+        --xxx-color-text-muted: {{ average_colors.text | append: '80' }};
+        --xxx-color-background-transparent-hover: {{ average_colors.background | append: '1A' }};
+        --xxx-color-accent: {{ average_colors.text | append: 'CC' }};
       {% endif %}
-      "
+    "
   >
     {% include header.html %}
 

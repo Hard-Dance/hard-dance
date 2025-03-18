@@ -10,8 +10,6 @@ hosts:
   - Basscon
 tickets: https://www.ticketweb.com/event/da-tweekaz-august-hall-tickets/13693033
 image: /assets/img/events/tweeka-road-trip-at-august-hall-2024.jpg
-
-foreground: black
 ---
 
 Buckle up, Hard Dance Fam! Da Tweekaz are taking Basscon on a TWEEKA ROAD TRIP this September!
